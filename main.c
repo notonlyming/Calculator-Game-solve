@@ -14,6 +14,13 @@ typedef struct{
     int number; //操作数
 }Button;  //存储按钮的详细信息
 
+struct{
+    int resultNum; //储存计算后的结果，也是游戏中屏幕显示的内容
+    int buttonNum;
+    int gameAchieve;
+    Button *buttons;
+}Game;
+
 void printButtons(Button buttons[], int buttonNumber){
     printf("-----------------当前已有按钮-----------------\n");
     for (int i = 0; i < buttonNumber; i++){
@@ -22,23 +29,45 @@ void printButtons(Button buttons[], int buttonNumber){
     printf("---------------------------------------------\n");
 }
 
-int main(void){
-    int result = 0; //储存计算后的结果，也是游戏中屏幕显示的内容
+void pressButton(Button buttonToPress, int* result){
+    switch (buttonToPress.operation){
+        case '+':
+            *result += buttonToPress.number;
+            break;
+        case '-':
+            *result -= buttonToPress.number;
+            break;
+        case '*':
+            *result *= buttonToPress.number;
+            break;
+        case '/':
+            *result /= buttonToPress.number;
+            break;
+        case '<':
+            *result = (int)(*result / 10);
+            break;
+    }
+}
+
+void getGameLevelInfo(){
     printf("请输入计算器起始的数值：");
-    scanf("%i", &result);
+    scanf( "%i", &(Game.resultNum) );
     getchar();  //拿掉换行符
 
     printf("请输入有多少个按钮：");
-    int buttonNumber;
-    scanf("%i", &buttonNumber);
+    scanf("%i", &(Game.buttonNum) );
     getchar();  //拿掉换行符
-    Button *buttonArry = malloc(sizeof(Button) * buttonNumber);
+    Game.buttons = malloc(sizeof(Button) * Game.buttonNum);
 
-    for (int i = 0; i < buttonNumber; i++){
+    for (int i = 0; i < Game.buttonNum; i++){
         printf("请输入按钮信息(操作符和数字)：");
-        scanf("%c%i", &(buttonArry[i].operation), &(buttonArry[i].number));
+        scanf("%c%i", &(Game.buttons[i].operation), &(Game.buttons[i].number));
         getchar();  //拿掉换行符
-        printButtons(buttonArry, i+1);
+        printButtons(Game.buttons, i+1);
     }
+}
+
+int main(void){
+    getGameLevelInfo();
     return 0;
 }
