@@ -15,7 +15,7 @@ typedef struct{
 }Button;  //存储按钮的详细信息
 
 struct{
-    int resultNum; //储存计算后的结果，也是游戏中屏幕显示的内容
+    int startNum; //储存计算后的结果，也是游戏中屏幕显示的内容
     int buttonNum; //按钮个数
     int allowMaxStep; //允许的最大步数
     int gameAchieve; //游戏目标
@@ -30,8 +30,8 @@ void printButtons(Button buttons[], int buttonNumber){
     printf("---------------------------------------------\n");
 }
 
-int pressButton(Button buttonToPress, int startNumber){
-    int result = startNumber;
+int pressButton(Button buttonToPress, int currentNumber){
+    int result = currentNumber;
     switch (buttonToPress.operation){
         case '+':
             result += buttonToPress.number;
@@ -54,11 +54,15 @@ int pressButton(Button buttonToPress, int startNumber){
 
 void getGameLevelInfo(){
     printf("请输入计算器起始的数值：");
-    scanf( "%i", &(Game.resultNum) );
+    scanf( "%i", &(Game.startNum) );
     getchar();  //拿掉换行符
 
     printf("请输入允许的最大步数：");
     scanf( "%i", &(Game.allowMaxStep) );
+    getchar();  //拿掉换行符
+
+    printf("请输入游戏目标：");
+    scanf( "%i", &(Game.gameAchieve) );
     getchar();  //拿掉换行符
 
     printf("请输入有多少个按钮：");
@@ -86,7 +90,7 @@ int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radi
     }
 }
 
-//该函数用于实现特定的进制数加1，多少进制的数用来表示那个按钮按下，当进制数溢出，即为所有情况试错完成
+//该函数用于实现特定的进制数加1，多少进制的数用来表示那个按钮按下，当进制数溢出，返回-1，即为所有情况试错完成，否则返回0
 int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth){
 //    if (number[0]+1 < radix){
 //        number[0] += 1;
@@ -124,7 +128,36 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
     return 0;
 }
 
+void solveIt(){
+    int tempResult; //试错临时结果变量
+    unsigned short *answer = malloc( sizeof(unsigned short) * Game.allowMaxStep ); //用于存储解的过程
+
+    //从最少的步数开始尝试，看看有没有最优解
+    for (int stepsNum=1; stepsNum<=Game.allowMaxStep; stepsNum++){
+        for (int i=0; i<Game.allowMaxStep; i++)
+            answer[i] = 0; //所有位初始化为0
+        do{
+            tempResult = Game.startNum;
+            //逐个"按下"按钮
+            for(int step=0; step<stepsNum; step++){
+                tempResult = pressButton(Game.buttons[ answer[step] ], tempResult);
+            }
+            //判断是否成功
+            if(tempResult == Game.gameAchieve){
+                printf("发现解(%d步)：" , stepsNum);
+                //打印解
+                for (int step=0; step<stepsNum; step++){
+                    printf("(%c%d) ", Game.buttons[ answer[step] ].operation, Game.buttons[ answer[step] ].number);
+                }
+                printf("结果：%d", tempResult);
+                putchar('\n');
+            }
+        }while(numerationAddOne(answer, Game.buttonNum, stepsNum)!=-1);
+    }
+}
+
 int main(void){
     getGameLevelInfo();
+    solveIt();
     return 0;
 }
