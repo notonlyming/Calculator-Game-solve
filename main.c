@@ -160,7 +160,11 @@ void solveIt(){
 }
 
 int main(void){
-    getGameLevelInfo();
-    solveIt();
+    do{ 
+        getGameLevelInfo();
+        solveIt();
+        puts("温馨提示：退出请按Ctrl+C");
+        puts("-----------------新的一关开始啦-----------------");
+    }while(1);
     return 0;
 }
