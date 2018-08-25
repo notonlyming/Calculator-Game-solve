@@ -23,6 +23,24 @@ struct{
     Button *buttons; //按钮数组头指针
 }Game;
 
+void printButtons(Button buttons[], int buttonNumber);
+int calculateNumberLength(int number);
+int pressButton(Button buttonToPress, int currentNumber);
+void getGameLevelInfo();
+int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radix);
+int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth);
+void solveIt();
+
+int main(void){
+    do{ 
+        getGameLevelInfo();
+        solveIt();
+        puts("温馨提示：退出请按Ctrl+C");
+        puts("-----------------新的一关开始啦-----------------");
+    }while(1);
+    return 0;
+}
+
 void printButtons(Button buttons[], int buttonNumber){
     printf("-----------------当前已有按钮-----------------\n");
     for (int i = 0; i < buttonNumber; i++){
@@ -167,14 +185,4 @@ void solveIt(){
             }
         }while(numerationAddOne(answer, Game.buttonNum, stepsNum)!=-1);
     }
-}
-
-int main(void){
-    do{ 
-        getGameLevelInfo();
-        solveIt();
-        puts("温馨提示：退出请按Ctrl+C");
-        puts("-----------------新的一关开始啦-----------------");
-    }while(1);
-    return 0;
 }
