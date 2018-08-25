@@ -74,23 +74,53 @@ void getGameLevelInfo(){
     }
 }
 
-//该函数用于实现特定的进制数加1，多少进制的数用来表示那个按钮按下，当进制数溢出，即为所有情况试错完成
-int numerationAddOne(int number[], int bitWeight, int numberWidth){
-    if (number[0]+1 < bitWeight){
-        number[0] += 1;
+//有必要写一个为某一进制位加一的函数减轻复杂度,直接加1返回0，发生进位返回-1
+int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radix){
+    if (number[witchBit]+1 != radix){
+        number[witchBit] += 1;
+        return 0;
     }else{
-        number[0] = 0;
-        if (number[1]+1 < bitWeight){
-            number[1] += 1;
+        //发生进位
+        number[witchBit] = 0;
+        return -1;
+    }
+}
+
+//该函数用于实现特定的进制数加1，多少进制的数用来表示那个按钮按下，当进制数溢出，即为所有情况试错完成
+int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth){
+//    if (number[0]+1 < radix){
+//        number[0] += 1;
+//    }else{
+//        number[0] = 0;
+//        if (number[1]+1 < radix){
+//            number[1] += 1;
+//        }else{
+//            number[1] = 0;
+//            if (number[2]+1 < radix){
+//                number[2] += 1;
+//            }else{
+//                return -1;
+//            }
+//        }
+//    }
+    unsigned short witchBit;
+    for(witchBit=0; witchBit<numberWidth; witchBit++){
+        if(bitAdd(number, witchBit, radix) == 0){
+            //位加1成功且未发生进位
+            break;
         }else{
-            number[1] = 0;
-            if (number[2]+1 < bitWeight){
-                number[2] += 1;
-            }else{
+            //位加1成功，发生进位
+            if(witchBit == numberWidth - 1){
+                //已经"溢出"，恢复状态
+                number[witchBit] = radix - 1;
                 return -1;
+            }else{
+                //未溢出，继续给高位加一
+                continue;
             }
         }
     }
+    //加一操作顺利结束，未发生数满溢出
     return 0;
 }
 
