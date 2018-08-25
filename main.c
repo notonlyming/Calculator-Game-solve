@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 typedef struct{
     char operation; //加减乘除操作储存区
@@ -30,6 +31,15 @@ void printButtons(Button buttons[], int buttonNumber){
     printf("---------------------------------------------\n");
 }
 
+int calculateNumberLength(int number){
+    int count = 0;
+    while(number>0){
+        number/=10;
+        count++;
+    }
+    return count;
+}
+
 int pressButton(Button buttonToPress, int currentNumber){
     int result = currentNumber;
     switch (buttonToPress.operation){
@@ -49,7 +59,7 @@ int pressButton(Button buttonToPress, int currentNumber){
             result = (int)(result / 10);
             break;
         case 'a':
-            result = result*10 + buttonToPress.number;
+            result = result * pow( 10, calculateNumberLength(buttonToPress.number) ) + buttonToPress.number;
             break;
     }
     return result;
