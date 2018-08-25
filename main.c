@@ -48,6 +48,9 @@ int pressButton(Button buttonToPress, int currentNumber){
         case '<':
             result = (int)(result / 10);
             break;
+        case 'a':
+            result = result*10 + buttonToPress.number;
+            break;
     }
     return result;
 }
