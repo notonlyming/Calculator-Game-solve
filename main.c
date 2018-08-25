@@ -16,9 +16,10 @@ typedef struct{
 
 struct{
     int resultNum; //储存计算后的结果，也是游戏中屏幕显示的内容
-    int buttonNum;
-    int gameAchieve;
-    Button *buttons;
+    int buttonNum; //按钮个数
+    int allowMaxStep; //允许的最大步数
+    int gameAchieve; //游戏目标
+    Button *buttons; //按钮数组头指针
 }Game;
 
 void printButtons(Button buttons[], int buttonNumber){
@@ -29,29 +30,35 @@ void printButtons(Button buttons[], int buttonNumber){
     printf("---------------------------------------------\n");
 }
 
-void pressButton(Button buttonToPress, int* result){
+int pressButton(Button buttonToPress, int startNumber){
+    int result = startNumber;
     switch (buttonToPress.operation){
         case '+':
-            *result += buttonToPress.number;
+            result += buttonToPress.number;
             break;
         case '-':
-            *result -= buttonToPress.number;
+            result -= buttonToPress.number;
             break;
         case '*':
-            *result *= buttonToPress.number;
+            result *= buttonToPress.number;
             break;
         case '/':
-            *result /= buttonToPress.number;
+            result /= buttonToPress.number;
             break;
         case '<':
-            *result = (int)(*result / 10);
+            result = (int)(result / 10);
             break;
     }
+    return result;
 }
 
 void getGameLevelInfo(){
     printf("请输入计算器起始的数值：");
     scanf( "%i", &(Game.resultNum) );
+    getchar();  //拿掉换行符
+
+    printf("请输入允许的最大步数：");
+    scanf( "%i", &(Game.allowMaxStep) );
     getchar();  //拿掉换行符
 
     printf("请输入有多少个按钮：");
@@ -65,6 +72,26 @@ void getGameLevelInfo(){
         getchar();  //拿掉换行符
         printButtons(Game.buttons, i+1);
     }
+}
+
+//该函数用于实现特定的进制数加1，多少进制的数用来表示那个按钮按下，当进制数溢出，即为所有情况试错完成
+int numerationAddOne(int number[], int bitWeight, int numberWidth){
+    if (number[0]+1 < bitWeight){
+        number[0] += 1;
+    }else{
+        number[0] = 0;
+        if (number[1]+1 < bitWeight){
+            number[1] += 1;
+        }else{
+            number[1] = 0;
+            if (number[2]+1 < bitWeight){
+                number[2] += 1;
+            }else{
+                return -1;
+            }
+        }
+    }
+    return 0;
 }
 
 int main(void){
