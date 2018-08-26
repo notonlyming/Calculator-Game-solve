@@ -91,12 +91,16 @@ void printButtons(Button buttons[], int buttonNumber){
 }
 
 int calculateNumberLength(int number){
-    int count = 0;
-    while(number>0){
-        number/=10;
-        count++;
+    if(number == 0){
+        return 1;
+    }else{
+        int count = 0;
+        while(number>0){
+            number/=10;
+            count++;
+        }
+        return count;
     }
-    return count;
 }
 
 //该函数将一个数字中的某部分替换乘另外一部分，并返回替换后的数字
