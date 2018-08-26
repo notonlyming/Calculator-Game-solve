@@ -11,6 +11,7 @@
 #include <math.h>
 #include <string.h>
 #define BUTTON_STR_MAX_LENGTH 10
+#define NUMBER_STR_MAX_LENGTH 20
 
 typedef enum {APPEND, PLUS, MINUS, MULTIPLY, DIVIDE, BACKSPACE, REPLACE, UNKNOW} ButtonTpye;
 
@@ -36,6 +37,7 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
 void solveIt();
 Button analyseButtonStr(char* buttonStr);
 char* buttonStr(Button button);
+int numberReplace(int number, int fromNum, int toNum);
 
 
 int main(void){
@@ -97,6 +99,34 @@ int calculateNumberLength(int number){
     return count;
 }
 
+//该函数将一个数字中的某部分替换乘另外一部分，并返回替换后的数字
+int numberReplace(int number, int fromNum, int toNum)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH] = {0},
+         fromNumStr[NUMBER_STR_MAX_LENGTH] = {0},
+         toNumStr[NUMBER_STR_MAX_LENGTH] = {0};
+    sprintf(numberStr, "%i", number);
+    sprintf(fromNumStr, "%i", fromNum);
+    sprintf(toNumStr, "%i", toNum);
+    char *startPosition, *endPosition;
+    char *strP = numberStr; //用于查找替换的指针，初始化为数字字符串的头部表示从头开始找
+    //要么已经查找到了末尾，要么找不到要替换的子串了
+    while (strP != ( numberStr + strlen(numberStr) ) && strstr(strP, fromNumStr) != NULL)
+    {
+        //查找要替换的字符串
+        startPosition = strstr(strP, fromNumStr);
+        endPosition = startPosition + strlen(fromNumStr);
+        //截断
+        numberStr[startPosition - numberStr] = '\0';
+        //拼接
+        sprintf(numberStr, "%s%s%s", numberStr, toNumStr, numberStr + (endPosition - numberStr));
+        //前面的已经查找并替换过了，现在查找指针移到后面
+        strP = endPosition;
+    }
+    sscanf(numberStr, "%i", &number); //转换为整型
+    return number;
+}
+
 int pressButton(Button buttonToPress, int currentNumber){
     int result = currentNumber;
     switch (buttonToPress.type){
@@ -119,7 +149,7 @@ int pressButton(Button buttonToPress, int currentNumber){
             result = result * pow( 10, calculateNumberLength(*(buttonToPress.number)) ) + *(buttonToPress.number);
             break;
         case REPLACE:
-            //占坑
+            result = numberReplace(result, buttonToPress.number[0], buttonToPress.number[1]);
             break;
         case UNKNOW:
             ; //do nothing
