@@ -1,2 +1,2 @@
 main:main.c
-	gcc $^ -Wall -lm -o $@
+	gcc $^ -Wall -Wextra -Werror -lm -o $@

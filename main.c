@@ -9,11 +9,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
+#define BUTTON_STR_MAX_LENGTH 10
 
 typedef struct{
-    char operation; //加减乘除操作储存区
-    int number; //操作数
-}Button;  //存储按钮的详细信息
+    char operation; //操作
+    int *number; //操作数指针，如果是数组（多个操作数），就是头指针
+} Button;  //存储按钮的详细信息
 
 struct{
     int startNum; //储存计算后的结果，也是游戏中屏幕显示的内容
@@ -30,6 +32,8 @@ void getGameLevelInfo();
 int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radix);
 int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth);
 void solveIt();
+Button analyseButtonStr(char* buttonStr);
+
 
 int main(void){
     do{ 
@@ -44,7 +48,7 @@ int main(void){
 void printButtons(Button buttons[], int buttonNumber){
     printf("-----------------当前已有按钮-----------------\n");
     for (int i = 0; i < buttonNumber; i++){
-        printf("按钮%i：【%c%i】\n", i+1, buttons[i].operation, buttons[i].number);
+        printf("按钮%i：【%c%i】\n", i+1, buttons[i].operation, *(buttons[i].number));
     }
     printf("---------------------------------------------\n");
 }
@@ -62,49 +66,89 @@ int pressButton(Button buttonToPress, int currentNumber){
     int result = currentNumber;
     switch (buttonToPress.operation){
         case '+':
-            result += buttonToPress.number;
+            result += *(buttonToPress.number);
             break;
         case '-':
-            result -= buttonToPress.number;
+            result -= *(buttonToPress.number);
             break;
         case '*':
-            result *= buttonToPress.number;
+            result *= *(buttonToPress.number);
             break;
         case '/':
-            result /= buttonToPress.number;
+            result /= *(buttonToPress.number);
             break;
-        case '<':
+        case 'b':
             result = (int)(result / 10);
             break;
         case 'a':
-            result = result * pow( 10, calculateNumberLength(buttonToPress.number) ) + buttonToPress.number;
+            result = result * pow( 10, calculateNumberLength(*(buttonToPress.number)) ) + *(buttonToPress.number);
             break;
     }
     return result;
 }
 
+//将传入的按钮字符串解析为按钮结构
+Button analyseButtonStr(char* buttonStr){
+    Button tempButton = {.operation = '?', .number = NULL};
+    //解析按钮是不是加减乘除
+    switch (buttonStr[0]){
+        case '+': 
+            tempButton.operation = '+';
+            tempButton.number = (int*)malloc(sizeof(int));
+            sscanf(buttonStr, "+%i\n", tempButton.number);
+            break;
+        case '-': 
+            tempButton.operation = '-';
+            tempButton.number = (int*)malloc(sizeof(int));
+            sscanf(buttonStr, "-%i", tempButton.number);
+            break;
+        case '*': 
+            tempButton.operation = '*';
+            tempButton.number = (int*)malloc(sizeof(int));
+            sscanf(buttonStr, "*%i", tempButton.number);
+            break;
+        case '/': 
+            tempButton.operation = '/';
+            tempButton.number = (int*)malloc(sizeof(int));
+            sscanf(buttonStr, "/%i", tempButton.number);
+            break;
+        case '<':
+            tempButton.operation = 'b';
+            tempButton.number = NULL;
+            break;
+    }
+    if ( strstr(buttonStr, "=>") ){
+        tempButton.operation = 'r';
+        tempButton.number = (int*)malloc(sizeof(int) * 2);
+        sscanf(buttonStr, "%i=>%i", tempButton.number, tempButton.number+1);
+    }else if(buttonStr[0] >= '0' && buttonStr[0] <= '9'){
+        tempButton.operation = 'a';
+        tempButton.number = (int*)malloc(sizeof(int));
+        sscanf(buttonStr, "%i", tempButton.number);
+    }
+    return tempButton;
+}
+
 void getGameLevelInfo(){
     printf("请输入计算器起始的数值：");
     scanf( "%i", &(Game.startNum) );
-    getchar();  //拿掉换行符
 
     printf("请输入允许的最大步数：");
     scanf( "%i", &(Game.allowMaxStep) );
-    getchar();  //拿掉换行符
 
     printf("请输入游戏目标：");
     scanf( "%i", &(Game.gameAchieve) );
-    getchar();  //拿掉换行符
 
     printf("请输入有多少个按钮：");
     scanf("%i", &(Game.buttonNum) );
-    getchar();  //拿掉换行符
-    Game.buttons = malloc(sizeof(Button) * Game.buttonNum);
+    getchar(); //拿掉换行符
+    Game.buttons = (Button*)malloc(sizeof(Button) * Game.buttonNum);
 
+    char buttonStr[BUTTON_STR_MAX_LENGTH];
     for (int i = 0; i < Game.buttonNum; i++){
         printf("请输入按钮信息(操作符和数字)：");
-        scanf("%c%i", &(Game.buttons[i].operation), &(Game.buttons[i].number));
-        getchar();  //拿掉换行符
+        fgets(buttonStr, sizeof(buttonStr), stdin);
+        Game.buttons[i] = analyseButtonStr(buttonStr);
         printButtons(Game.buttons, i+1);
     }
 }
@@ -161,7 +205,7 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
 
 void solveIt(){
     int tempResult; //试错临时结果变量
-    unsigned short *answer = malloc( sizeof(unsigned short) * Game.allowMaxStep ); //用于存储解的过程
+    unsigned short *answer = (unsigned short*)malloc( sizeof(unsigned short) * Game.allowMaxStep ); //用于存储解的过程
 
     //从最少的步数开始尝试，看看有没有最优解
     for (int stepsNum=1; stepsNum<=Game.allowMaxStep; stepsNum++){
@@ -178,7 +222,7 @@ void solveIt(){
                 printf("发现解(%d步)：" , stepsNum);
                 //打印解
                 for (int step=0; step<stepsNum; step++){
-                    printf("(%c%d) ", Game.buttons[ answer[step] ].operation, Game.buttons[ answer[step] ].number);
+                    printf("(%c%d) ", Game.buttons[ answer[step] ].operation, *( Game.buttons[ answer[step] ].number) );
                 }
                 printf("结果：%d", tempResult);
                 putchar('\n');
