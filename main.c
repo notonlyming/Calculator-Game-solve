@@ -150,7 +150,10 @@ int pressButton(Button buttonToPress, int currentNumber){
             result = (int)(result / 10);
             break;
         case APPEND:
-            result = result * pow( 10, calculateNumberLength(*(buttonToPress.number)) ) + *(buttonToPress.number);
+            if(result>=0)
+                result = result * pow( 10, calculateNumberLength(*(buttonToPress.number)) ) + *(buttonToPress.number);
+            else
+                result = result * pow( 10, calculateNumberLength(*(buttonToPress.number)) ) - *(buttonToPress.number);
             break;
         case REPLACE:
             result = numberReplace(result, buttonToPress.number[0], buttonToPress.number[1]);
