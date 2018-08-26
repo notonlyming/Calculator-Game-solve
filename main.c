@@ -12,6 +12,8 @@
 #include <string.h>
 #define BUTTON_STR_MAX_LENGTH 10
 #define NUMBER_STR_MAX_LENGTH 20
+#define TRUE 1
+#define FALSE 0
 
 typedef enum
 {
@@ -40,7 +42,8 @@ struct
     int allowMaxStep; //允许的最大步数
     int gameAchieve;  //游戏目标
     Button *buttons;  //按钮数组头指针
-} Game;
+    short isOnError;  //判断计算是否出现错误，如出现小数
+} Game = {.isOnError = FALSE};
 
 void printButtons(Button buttons[], int buttonNumber);
 int calculateNumberLength(int number);
@@ -176,7 +179,15 @@ int pressButton(Button buttonToPress, int currentNumber)
         result *= *(buttonToPress.number);
         break;
     case DIVIDE:
-        result /= *(buttonToPress.number);
+        //进行是否产生小数判断
+        if ( result % *(buttonToPress.number) != 0 )
+        {
+            Game.isOnError = TRUE;
+        }
+        else
+        {
+            result /= *(buttonToPress.number);
+        }
         break;
     case BACKSPACE:
         result = (int)(result / 10);
@@ -356,7 +367,7 @@ void solveIt()
                 tempResult = pressButton(Game.buttons[answer[step]], tempResult);
             }
             //判断是否成功
-            if (tempResult == Game.gameAchieve)
+            if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
             {
                 printf("发现解(%d步)：", stepsNum);
                 //打印解
@@ -366,6 +377,11 @@ void solveIt()
                 }
                 printf("结果：%d", tempResult);
                 putchar('\n');
+            }
+            else //本次尝试失败
+            {
+                //重置错误状态
+                Game.isOnError = FALSE;
             }
         } while (numerationAddOne(answer, Game.buttonNum, stepsNum) != -1);
     }
