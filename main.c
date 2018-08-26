@@ -191,19 +191,27 @@ int numberReplace(int number, int fromNum, int toNum)
     sprintf(toNumStr, "%d", toNum);
     char *startPosition, *endPosition;
     char *strP = numberStr; //用于查找替换的指针，初始化为数字字符串的头部表示从头开始找
-    //要么已经查找到了末尾，要么找不到要替换的子串了
-    while (strP != (numberStr + strlen(numberStr)) && strstr(strP, fromNumStr) != NULL)
+    if (strstr(strP, fromNumStr) == NULL)
     {
-        //查找要替换的字符串
-        startPosition = strstr(strP, fromNumStr);
-        endPosition = startPosition + strlen(fromNumStr);
-        //截断
-        *startPosition = '\0';
-        //拼接
-        sprintf(newNumStr, "%s%s%s", numberStr, toNumStr, endPosition);
-        strcpy(numberStr, newNumStr);
-        //前面的已经查找并替换过了，现在查找指针移到后面
-        strP = endPosition;
+        //如果没有可替换的字串，说明这次替换按钮是无效的
+        Game.isOnError = TRUE;
+    }
+    else
+    {
+        //要么已经查找到了末尾，要么找不到要替换的子串了
+        while (strP != (numberStr + strlen(numberStr)) && strstr(strP, fromNumStr) != NULL)
+        {
+            //查找要替换的字符串
+            startPosition = strstr(strP, fromNumStr);
+            endPosition = startPosition + strlen(fromNumStr);
+            //截断
+            *startPosition = '\0';
+            //拼接
+            sprintf(newNumStr, "%s%s%s", numberStr, toNumStr, endPosition);
+            strcpy(numberStr, newNumStr);
+            //前面的已经查找并替换过了，现在查找指针移到后面
+            strP = endPosition;
+        }
     }
     sscanf(newNumStr, "%d", &number); //转换为整型
     return number;
