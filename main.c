@@ -100,6 +100,11 @@ int reverseNum(int number)
         numberStr[strlen(numberStr) - 1 - index] = tempChar;
     }
     sscanf(numberStr, "%d", &number); //转回数值
+    //反转负值时带上负号
+    if (numberStr[ strlen(numberStr)-1 ] == '-')
+    {
+        number *= -1;
+    }
     return number;
 }
 
