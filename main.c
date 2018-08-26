@@ -90,8 +90,8 @@ char* strlwr(char *str)
 int reverseNum(int number)
 {
     char numberStr[NUMBER_STR_MAX_LENGTH];
-    sprintf(numberStr, "%i", number); //转成字符串
-    //开始回文
+    sprintf(numberStr, "%d", number); //转成字符串
+    //开始反转
     char tempChar;
     for (unsigned short index=0; index < (strlen(numberStr) / 2); index++)
     {
@@ -115,25 +115,25 @@ char *buttonStr(Button button)
     switch (button.type)
     {
     case PLUS:
-        sprintf(infoStr, "＋%i", *(button.number));
+        sprintf(infoStr, "＋%d", *(button.number));
         break;
     case MINUS:
-        sprintf(infoStr, "－%i", *(button.number));
+        sprintf(infoStr, "－%d", *(button.number));
         break;
     case MULTIPLY:
-        sprintf(infoStr, "×%i", *(button.number));
+        sprintf(infoStr, "×%d", *(button.number));
         break;
     case DIVIDE:
-        sprintf(infoStr, "÷%i", *(button.number));
+        sprintf(infoStr, "÷%d", *(button.number));
         break;
     case BACKSPACE:
         infoStr = "<<";
         break;
     case APPEND:
-        sprintf(infoStr, "%i", *(button.number));
+        sprintf(infoStr, "%d", *(button.number));
         break;
     case REPLACE:
-        sprintf(infoStr, "%i=>%i", button.number[0], button.number[1]);
+        sprintf(infoStr, "%d=>%d", button.number[0], button.number[1]);
         break;
     case SQUARE:
         infoStr = "x^2";
@@ -156,7 +156,7 @@ void printButtons(Button buttons[], int buttonNumber)
     printf("-----------------当前已有按钮-----------------\n");
     for (int i = 0; i < buttonNumber; i++)
     {
-        printf("按钮%i：【%s】\n", i, buttonStr(buttons[i]));
+        printf("按钮%d：【%s】\n", i, buttonStr(buttons[i]));
     }
     printf("---------------------------------------------\n");
 }
@@ -185,9 +185,9 @@ int numberReplace(int number, int fromNum, int toNum)
     char numberStr[NUMBER_STR_MAX_LENGTH] = {0},
          fromNumStr[NUMBER_STR_MAX_LENGTH] = {0},
          toNumStr[NUMBER_STR_MAX_LENGTH] = {0};
-    sprintf(numberStr, "%i", number);
-    sprintf(fromNumStr, "%i", fromNum);
-    sprintf(toNumStr, "%i", toNum);
+    sprintf(numberStr, "%d", number);
+    sprintf(fromNumStr, "%d", fromNum);
+    sprintf(toNumStr, "%d", toNum);
     char *startPosition, *endPosition;
     char *strP = numberStr; //用于查找替换的指针，初始化为数字字符串的头部表示从头开始找
     //要么已经查找到了末尾，要么找不到要替换的子串了
@@ -203,7 +203,7 @@ int numberReplace(int number, int fromNum, int toNum)
         //前面的已经查找并替换过了，现在查找指针移到后面
         strP = endPosition;
     }
-    sscanf(numberStr, "%i", &number); //转换为整型
+    sscanf(numberStr, "%d", &number); //转换为整型
     return number;
 }
 
@@ -269,22 +269,22 @@ Button analyseButtonStr(char *buttonStr)
     case '+':
         tempButton.type = PLUS;
         tempButton.number = (int *)malloc(sizeof(int));
-        sscanf(buttonStr, "+%i\n", tempButton.number);
+        sscanf(buttonStr, "+%d\n", tempButton.number);
         break;
     case '-':
         tempButton.type = MINUS;
         tempButton.number = (int *)malloc(sizeof(int));
-        sscanf(buttonStr, "-%i", tempButton.number);
+        sscanf(buttonStr, "-%d", tempButton.number);
         break;
     case '*':
         tempButton.type = MULTIPLY;
         tempButton.number = (int *)malloc(sizeof(int));
-        sscanf(buttonStr, "*%i", tempButton.number);
+        sscanf(buttonStr, "*%d", tempButton.number);
         break;
     case '/':
         tempButton.type = DIVIDE;
         tempButton.number = (int *)malloc(sizeof(int));
-        sscanf(buttonStr, "/%i", tempButton.number);
+        sscanf(buttonStr, "/%d", tempButton.number);
         break;
     case '<':
         tempButton.type = BACKSPACE;
@@ -295,13 +295,13 @@ Button analyseButtonStr(char *buttonStr)
     {
         tempButton.type = REPLACE;
         tempButton.number = (int *)malloc(sizeof(int) * 2);
-        sscanf(buttonStr, "%i=>%i", tempButton.number, tempButton.number + 1);
+        sscanf(buttonStr, "%d=>%d", tempButton.number, tempButton.number + 1);
     }
     else if (buttonStr[0] >= '0' && buttonStr[0] <= '9')
     {
         tempButton.type = APPEND;
         tempButton.number = (int *)malloc(sizeof(int));
-        sscanf(buttonStr, "%i", tempButton.number);
+        sscanf(buttonStr, "%d", tempButton.number);
     }
     else if (strstr(buttonStr, "x^2"))
     {
@@ -329,16 +329,16 @@ Button analyseButtonStr(char *buttonStr)
 void getGameLevelInfo()
 {
     printf("请输入计算器起始的数值：");
-    scanf("%i", &(Game.startNum));
+    scanf("%d", &(Game.startNum));
 
     printf("请输入允许的最大步数：");
-    scanf("%i", &(Game.allowMaxStep));
+    scanf("%d", &(Game.allowMaxStep));
 
     printf("请输入游戏目标：");
-    scanf("%i", &(Game.gameAchieve));
+    scanf("%d", &(Game.gameAchieve));
 
     printf("请输入有多少个按钮：");
-    scanf("%i", &(Game.buttonNum));
+    scanf("%d", &(Game.buttonNum));
     getchar(); //拿掉换行符
     Game.buttons = (Button *)malloc(sizeof(Button) * Game.buttonNum);
 
