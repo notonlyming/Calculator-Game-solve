@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <ctype.h>
 #define BUTTON_STR_MAX_LENGTH 10
 #define NUMBER_STR_MAX_LENGTH 20
 #define TRUE 1
@@ -26,6 +27,7 @@ typedef enum
     REPLACE,//替换
     SQUARE,//平方
     SIGN_CONVERT,//符号转换
+    REVERSE,//反转
     UNKNOW//未知类型
 } ButtonTpye;
 
@@ -55,6 +57,8 @@ void solveIt();
 Button analyseButtonStr(char *buttonStr);
 char *buttonStr(Button button);
 int numberReplace(int number, int fromNum, int toNum);
+char* strlwr(char *str);
+int reverseNum(int number);
 
 int main(void)
 {
@@ -66,6 +70,37 @@ int main(void)
         puts("-----------------新的一关开始啦-----------------");
     } while (1);
     return 0;
+}
+
+//字符串转小写函数
+char* strlwr(char *str)
+{
+    if(str == NULL)
+        return NULL;
+    char *p = str;
+    while (*p != '\0')
+    {
+        if(*p >= 'A' && *p <= 'Z')
+            *p = (*p) + 0x20;
+        p++;
+    }
+    return str;
+}
+
+int reverseNum(int number)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%i", number); //转成字符串
+    //开始回文
+    char tempChar;
+    for (unsigned short index=0; index < (strlen(numberStr) / 2); index++)
+    {
+        tempChar = numberStr[index];
+        numberStr[index] = numberStr[strlen(numberStr) - 1 - index];
+        numberStr[strlen(numberStr) - 1 - index] = tempChar;
+    }
+    sscanf(numberStr, "%d", &number); //转回数值
+    return number;
 }
 
 //该函数用于取得按钮对应信息的字符串
@@ -100,6 +135,9 @@ char *buttonStr(Button button)
         break;
     case SIGN_CONVERT:
         infoStr = "+/-";
+        break;
+    case REVERSE:
+        infoStr = "Reverse";
         break;
     case UNKNOW:
         infoStr = "unkown";
@@ -207,6 +245,9 @@ int pressButton(Button buttonToPress, int currentNumber)
     case SIGN_CONVERT:
         result *= -1;
         break;
+    case REVERSE:
+        result = reverseNum(result);
+        break;
     case UNKNOW:; //do nothing
         break;
     }
@@ -265,6 +306,11 @@ Button analyseButtonStr(char *buttonStr)
     else if (strstr(buttonStr, "+/-"))
     {
         tempButton.type = SIGN_CONVERT;
+        tempButton.number = NULL;
+    }
+    else if ( !strcmp( strlwr(buttonStr), "reverse" ) )
+    {
+        tempButton.type = REVERSE;
         tempButton.number = NULL;
     }
     if (tempButton.type == UNKNOW)
