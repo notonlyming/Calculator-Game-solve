@@ -39,7 +39,7 @@ char* buttonStr(Button button);
 
 
 int main(void){
-    do{ 
+    do{
         getGameLevelInfo();
         solveIt();
         puts("温馨提示：退出请按Ctrl+C");
@@ -50,7 +50,7 @@ int main(void){
 
 //该函数用于取得按钮对应信息的字符串
 char* buttonStr(Button button){
-    char* infoStr;
+    char* infoStr = (char*)malloc(sizeof(char) * BUTTON_STR_MAX_LENGTH);
     switch (button.type){
         case PLUS:
             sprintf(infoStr, "＋%i", *(button.number) );
@@ -70,6 +70,13 @@ char* buttonStr(Button button){
         case APPEND:
             sprintf(infoStr, "%i", *(button.number) );
             break;
+        case REPLACE:
+            sprintf(infoStr, "%i=>%i", button.number[0], button.number[1]);
+            break;
+        case UNKNOW:
+            infoStr = "unkown";
+            break;
+    }
     return infoStr;
 }
 
@@ -110,6 +117,12 @@ int pressButton(Button buttonToPress, int currentNumber){
             break;
         case APPEND:
             result = result * pow( 10, calculateNumberLength(*(buttonToPress.number)) ) + *(buttonToPress.number);
+            break;
+        case REPLACE:
+            //占坑
+            break;
+        case UNKNOW:
+            ; //do nothing
             break;
     }
     return result;
@@ -153,6 +166,10 @@ Button analyseButtonStr(char* buttonStr){
         tempButton.type = APPEND;
         tempButton.number = (int*)malloc(sizeof(int));
         sscanf(buttonStr, "%i", tempButton.number);
+    }
+    if (tempButton.type == UNKNOW){
+        fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");
+        exit(1);
     }
     return tempButton;
 }
