@@ -185,6 +185,7 @@ int numberReplace(int number, int fromNum, int toNum)
     char numberStr[NUMBER_STR_MAX_LENGTH] = {0},
          fromNumStr[NUMBER_STR_MAX_LENGTH] = {0},
          toNumStr[NUMBER_STR_MAX_LENGTH] = {0};
+	char newNumStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
     sprintf(fromNumStr, "%d", fromNum);
     sprintf(toNumStr, "%d", toNum);
@@ -197,13 +198,14 @@ int numberReplace(int number, int fromNum, int toNum)
         startPosition = strstr(strP, fromNumStr);
         endPosition = startPosition + strlen(fromNumStr);
         //截断
-        numberStr[startPosition - numberStr] = '\0';
+        *startPosition = '\0';
         //拼接
-        sprintf(numberStr, "%s%s%s", numberStr, toNumStr, numberStr + (endPosition - numberStr));
+        sprintf(newNumStr, "%s%s%s", numberStr, toNumStr, endPosition);
+        strcpy(numberStr, newNumStr);
         //前面的已经查找并替换过了，现在查找指针移到后面
         strP = endPosition;
     }
-    sscanf(numberStr, "%d", &number); //转换为整型
+    sscanf(newNumStr, "%d", &number); //转换为整型
     return number;
 }
 
