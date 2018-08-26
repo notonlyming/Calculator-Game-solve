@@ -13,7 +13,7 @@
 #define BUTTON_STR_MAX_LENGTH 10
 #define NUMBER_STR_MAX_LENGTH 20
 
-typedef enum {APPEND, PLUS, MINUS, MULTIPLY, DIVIDE, BACKSPACE, REPLACE, UNKNOW} ButtonTpye;
+typedef enum {APPEND, PLUS, MINUS, MULTIPLY, DIVIDE, BACKSPACE, REPLACE, SQUARE, UNKNOW} ButtonTpye;
 
 typedef struct{
     ButtonTpye type; //按钮类型
@@ -74,6 +74,9 @@ char* buttonStr(Button button){
             break;
         case REPLACE:
             sprintf(infoStr, "%i=>%i", button.number[0], button.number[1]);
+            break;
+        case SQUARE:
+            infoStr = "x^2";
             break;
         case UNKNOW:
             infoStr = "unkown";
@@ -158,6 +161,9 @@ int pressButton(Button buttonToPress, int currentNumber){
         case REPLACE:
             result = numberReplace(result, buttonToPress.number[0], buttonToPress.number[1]);
             break;
+        case SQUARE:
+            result = result * result;
+            break;
         case UNKNOW:
             ; //do nothing
             break;
@@ -203,6 +209,9 @@ Button analyseButtonStr(char* buttonStr){
         tempButton.type = APPEND;
         tempButton.number = (int*)malloc(sizeof(int));
         sscanf(buttonStr, "%i", tempButton.number);
+    }else if( strstr(buttonStr, "x^2") ){
+        tempButton.type = SQUARE;
+        tempButton.number = NULL;
     }
     if (tempButton.type == UNKNOW){
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");
