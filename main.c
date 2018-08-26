@@ -365,6 +365,11 @@ void solveIt()
             for (int step = 0; step < stepsNum; step++)
             {
                 tempResult = pressButton(Game.buttons[answer[step]], tempResult);
+                if (Game.isOnError == TRUE)
+                {
+                    //已经计算出错，此方案不可行
+                    break;
+                }
             }
             //判断是否成功
             if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
