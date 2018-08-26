@@ -296,6 +296,7 @@ void getGameLevelInfo()
     {
         printf("请输入按钮信息(操作符和数字)：");
         fgets(buttonStr, sizeof(buttonStr), stdin);
+        buttonStr[strlen(buttonStr)-1] = '\0';  //去掉fgets读取的换行符
         Game.buttons[i] = analyseButtonStr(buttonStr);
         printButtons(Game.buttons, i + 1);
     }
