@@ -12,8 +12,10 @@
 #include <string.h>
 #define BUTTON_STR_MAX_LENGTH 10
 
+typedef enum {APPEND, PLUS, MINUS, MULTIPLY, DIVIDE, BACKSPACE, REPLACE, UNKNOW} ButtonTpye;
+
 typedef struct{
-    char operation; //操作
+    ButtonTpye type; //按钮类型
     int *number; //操作数指针，如果是数组（多个操作数），就是头指针
 } Button;  //存储按钮的详细信息
 
@@ -33,6 +35,7 @@ int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radi
 int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth);
 void solveIt();
 Button analyseButtonStr(char* buttonStr);
+char* buttonStr(Button button);
 
 
 int main(void){
@@ -45,10 +48,35 @@ int main(void){
     return 0;
 }
 
+//该函数用于取得按钮对应信息的字符串
+char* buttonStr(Button button){
+    char* infoStr;
+    switch (button.type){
+        case PLUS:
+            sprintf(infoStr, "＋%i", *(button.number) );
+            break;
+        case MINUS:
+            sprintf(infoStr, "－%i", *(button.number) );
+            break;
+        case MULTIPLY:
+            sprintf(infoStr, "×%i", *(button.number) );
+            break;
+        case DIVIDE:
+            sprintf(infoStr, "÷%i", *(button.number) );
+            break;
+        case BACKSPACE:
+            infoStr = "<<";
+            break;
+        case APPEND:
+            sprintf(infoStr, "%i", *(button.number) );
+            break;
+    return infoStr;
+}
+
 void printButtons(Button buttons[], int buttonNumber){
     printf("-----------------当前已有按钮-----------------\n");
     for (int i = 0; i < buttonNumber; i++){
-        printf("按钮%i：【%c%i】\n", i+1, buttons[i].operation, *(buttons[i].number));
+        printf("按钮%i：【%s】\n", i, buttonStr( buttons[i] ) );
     }
     printf("---------------------------------------------\n");
 }
@@ -64,23 +92,23 @@ int calculateNumberLength(int number){
 
 int pressButton(Button buttonToPress, int currentNumber){
     int result = currentNumber;
-    switch (buttonToPress.operation){
-        case '+':
+    switch (buttonToPress.type){
+        case PLUS:
             result += *(buttonToPress.number);
             break;
-        case '-':
+        case MINUS:
             result -= *(buttonToPress.number);
             break;
-        case '*':
+        case MULTIPLY:
             result *= *(buttonToPress.number);
             break;
-        case '/':
+        case DIVIDE:
             result /= *(buttonToPress.number);
             break;
-        case 'b':
+        case BACKSPACE:
             result = (int)(result / 10);
             break;
-        case 'a':
+        case APPEND:
             result = result * pow( 10, calculateNumberLength(*(buttonToPress.number)) ) + *(buttonToPress.number);
             break;
     }
@@ -89,40 +117,40 @@ int pressButton(Button buttonToPress, int currentNumber){
 
 //将传入的按钮字符串解析为按钮结构
 Button analyseButtonStr(char* buttonStr){
-    Button tempButton = {.operation = '?', .number = NULL};
+    Button tempButton = {.type = UNKNOW, .number = NULL};
     //解析按钮是不是加减乘除
     switch (buttonStr[0]){
         case '+': 
-            tempButton.operation = '+';
+            tempButton.type = PLUS;
             tempButton.number = (int*)malloc(sizeof(int));
             sscanf(buttonStr, "+%i\n", tempButton.number);
             break;
         case '-': 
-            tempButton.operation = '-';
+            tempButton.type = MINUS;
             tempButton.number = (int*)malloc(sizeof(int));
             sscanf(buttonStr, "-%i", tempButton.number);
             break;
         case '*': 
-            tempButton.operation = '*';
+            tempButton.type = MULTIPLY;
             tempButton.number = (int*)malloc(sizeof(int));
             sscanf(buttonStr, "*%i", tempButton.number);
             break;
         case '/': 
-            tempButton.operation = '/';
+            tempButton.type = DIVIDE;
             tempButton.number = (int*)malloc(sizeof(int));
             sscanf(buttonStr, "/%i", tempButton.number);
             break;
         case '<':
-            tempButton.operation = 'b';
+            tempButton.type = BACKSPACE;
             tempButton.number = NULL;
             break;
     }
     if ( strstr(buttonStr, "=>") ){
-        tempButton.operation = 'r';
+        tempButton.type = REPLACE;
         tempButton.number = (int*)malloc(sizeof(int) * 2);
         sscanf(buttonStr, "%i=>%i", tempButton.number, tempButton.number+1);
     }else if(buttonStr[0] >= '0' && buttonStr[0] <= '9'){
-        tempButton.operation = 'a';
+        tempButton.type = APPEND;
         tempButton.number = (int*)malloc(sizeof(int));
         sscanf(buttonStr, "%i", tempButton.number);
     }
@@ -222,7 +250,7 @@ void solveIt(){
                 printf("发现解(%d步)：" , stepsNum);
                 //打印解
                 for (int step=0; step<stepsNum; step++){
-                    printf("(%c%d) ", Game.buttons[ answer[step] ].operation, *( Game.buttons[ answer[step] ].number) );
+                    printf("(%s) ", buttonStr(Game.buttons[ answer[step] ]) );
                 }
                 printf("结果：%d", tempResult);
                 putchar('\n');
