@@ -10,3 +10,4 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
 unsigned int* solveIt(unsigned int counter[2]);
 int numberReplace(int number, int fromNum, int toNum);
 int reverseNum(int number);
+int numberSum(int number);

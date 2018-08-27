@@ -131,7 +131,12 @@ int numberSum(int number)
     }
     else
     {
-        Game.isOnError = TRUE;
+        for (unsigned int i=1; i<strlen(numberStr); i++)
+        {
+            tempNum = numberStr[i] - '0';  //取出一位
+            number += tempNum;
+        }
+        number *= -1;
     }
     return number;
 }
