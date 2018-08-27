@@ -1,5 +1,7 @@
 /*
+ * 打印欢迎信息
  * 打印按钮
+ * 打印结果统计信息
  */
 
 #ifndef _STDIO_H_
@@ -19,10 +21,44 @@
 
 void printButtons(Button buttons[], int buttonNumber)
 {
-    printf("-----------------当前已有按钮-----------------\n");
+    puts("--------------------当前已有按钮--------------------");
     for (int i = 0; i < buttonNumber; i++)
     {
-        printf("按钮%d：【%s】\n", i, buttonStr(buttons[i]));
+        printf("【%s】 ", buttonStr(buttons[i]));
+        //每五个一换行,且不是最后一行
+        if ( (i+1)%5==0 && (i+1)!=buttonNumber )
+        {
+            putchar('\n');
+        }
     }
-    printf("----------------------------------------------\n");
+    putchar('\n');
+    puts("----------------------------------------------------");
+}
+
+//打印结果统计信息
+void printSolutionInfo(unsigned int counter[2], struct GameStruct *gameP)
+{
+    if (counter[1] == 0)
+        {
+            fprintf(stderr,
+                    "我们做了%d次尝试，还是无法找到任何解。\n请检查输入是否有误，如果确认无误且有解，请在Github提issue。\n",
+                    counter[0]);
+            printf("note:\n  start:%d steps:%d achieve:%d Buttons:%d\n",
+            gameP->startNum, gameP->allowMaxStep, gameP->gameAchieve, gameP->buttonNum);
+        }
+        else
+        {
+            printf("\nnote: %d time(s) try, %d solution(s) found\n", counter[0], counter[1]);
+        }
+}
+
+void printWelcome()
+{
+    puts("+-+-+-+-+-+-+-+-+-+-+");
+    puts("|C|a|l|c|u|l|a|t|o|r|");
+    puts("+-+-+-+-+-+-+-+-+-+-+");
+    puts("----------------------------------------------------");
+    puts("Welcome to solution calculator of calculator game!");
+    puts("项目已在GitHub开源，欢迎各位大佬提出宝贵意见。");
+    puts("https://github.com/notonlyming/Calculator-Game-solve");
 }

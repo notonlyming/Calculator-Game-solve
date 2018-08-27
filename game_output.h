@@ -4,3 +4,5 @@
 #endif
 
 void printButtons(Button buttons[], int buttonNumber);
+void printSolutionInfo(unsigned int counter[2], struct GameStruct *gameP);
+void printWelcome();
