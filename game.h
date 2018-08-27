@@ -15,6 +15,7 @@ typedef enum
     SQUARE,       //平方
     SIGN_CONVERT, //符号转换
     REVERSE,      //反转
+    SUM,          //求每一位数字的和
     UNKNOW        //未知类型
 } ButtonTpye;
 

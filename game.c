@@ -58,6 +58,9 @@ char *buttonStr(Button button)
     case REVERSE:
         infoStr = "Reverse";
         break;
+    case SUM:
+        infoStr = "SUM";
+        break;
     case UNKNOW:
         infoStr = "unkown";
         break;

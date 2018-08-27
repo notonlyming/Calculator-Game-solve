@@ -126,6 +126,11 @@ Button analyseButtonStr(char *buttonStr)
         tempButton.type = REVERSE;
         tempButton.number = NULL;
     }
+    else if (!strcmp(strlwr(buttonStr), "sum") || !strcmp(strlwr(buttonStr), "s"))
+    {
+        tempButton.type = SUM;
+        tempButton.number = NULL;
+    }
     if (tempButton.type == UNKNOW)
     {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");

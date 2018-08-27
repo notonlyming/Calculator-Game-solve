@@ -114,6 +114,28 @@ int numberReplace(int number, int fromNum, int toNum)
     return number;
 }
 
+//求每一位数字的和并返回求和后的数字,这里假设求和的数字必须是正的
+int numberSum(int number)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%d", number);  //取出
+    unsigned short tempNum;
+    number = 0;  //结果先初始化为0
+    if (numberStr[0] != '-')
+    {
+        for (unsigned int i=0; i<strlen(numberStr); i++)
+        {
+            tempNum = numberStr[i] - '0';  //取出一位
+            number += tempNum;
+        }
+    }
+    else
+    {
+        Game.isOnError = TRUE;
+    }
+    return number;
+}
+
 int pressButton(Button buttonToPress, int currentNumber)
 {
     int result = currentNumber;
@@ -159,6 +181,9 @@ int pressButton(Button buttonToPress, int currentNumber)
         break;
     case REVERSE:
         result = reverseNum(result);
+        break;
+    case SUM:
+        result = numberSum(result);
         break;
     case UNKNOW:; //do nothing
         break;
