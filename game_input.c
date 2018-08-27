@@ -104,6 +104,7 @@ Button analyseButtonStr(char *buttonStr)
         tempButton.number = (int *)malloc(sizeof(int) * 2);
         sscanf(buttonStr, "%d=>%d", tempButton.number, tempButton.number + 1);
     }
+    //隐含条件，先判定不是=》按钮，再判定是不是第一个数字才能确定时追加按钮
     else if (buttonStr[0] >= '0' && buttonStr[0] <= '9')
     {
         tempButton.type = APPEND;
@@ -120,7 +121,7 @@ Button analyseButtonStr(char *buttonStr)
         tempButton.type = SIGN_CONVERT;
         tempButton.number = NULL;
     }
-    else if (!strcmp(strlwr(buttonStr), "reverse"))
+    else if (!strcmp(strlwr(buttonStr), "reverse") || !strcmp(strlwr(buttonStr), "r"))
     {
         tempButton.type = REVERSE;
         tempButton.number = NULL;
