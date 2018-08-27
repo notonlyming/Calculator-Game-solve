@@ -178,8 +178,8 @@ int pressButton(Button buttonToPress, int currentNumber)
     case REPLACE:
         result = numberReplace(result, buttonToPress.number[0], buttonToPress.number[1]);
         break;
-    case SQUARE:
-        result = result * result;
+    case POW:
+        result = pow(result, *(buttonToPress.number) );
         break;
     case SIGN_CONVERT:
         result *= -1;

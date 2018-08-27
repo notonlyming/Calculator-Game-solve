@@ -49,8 +49,8 @@ char *buttonStr(Button button)
     case REPLACE:
         sprintf(infoStr, "%d=>%d", button.number[0], button.number[1]);
         break;
-    case SQUARE:
-        infoStr = "x^2";
+    case POW:
+        sprintf(infoStr, "x^%d", *(button.number) );
         break;
     case SIGN_CONVERT:
         infoStr = "+/-";

@@ -113,10 +113,11 @@ Button analyseButtonStr(char *buttonStr)
         tempButton.number = (int *)malloc(sizeof(int));
         sscanf(buttonStr, "%d", tempButton.number);
     }
-    else if (strstr(buttonStr, "x^2"))
+    else if (strstr(buttonStr, "x^"))
     {
-        tempButton.type = SQUARE;
-        tempButton.number = NULL;
+        tempButton.type = POW;
+        tempButton.number = (int *)malloc(sizeof(int));
+        sscanf(buttonStr, "x^%d", tempButton.number);
     }
     else if (strstr(buttonStr, "+/-"))
     {

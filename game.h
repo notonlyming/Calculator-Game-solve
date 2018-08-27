@@ -12,7 +12,7 @@ typedef enum
     DIVIDE,       //算术除
     BACKSPACE,    //退格，既:<<
     REPLACE,      //替换
-    SQUARE,       //平方
+    POW,          //幂次方
     SIGN_CONVERT, //符号转换
     REVERSE,      //反转
     SUM,          //求每一位数字的和
