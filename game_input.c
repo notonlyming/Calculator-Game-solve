@@ -54,7 +54,7 @@ struct GameStruct* getGameLevelInfo()
     printf("请输入有多少个按钮：");
     scanf("%d", &(Game.buttonNum));
     getchar(); //拿掉换行符
-    Game.buttons = (Button *)malloc(sizeof(Button) * Game.buttonNum);
+    Game.buttons = (Button *)malloc(sizeof(Button) * Game.buttonNum);  //注意，将在gameover时free！！
 
     char buttonStr[BUTTON_STR_MAX_LENGTH];
     for (int i = 0; i < Game.buttonNum; i++)
@@ -71,68 +71,61 @@ struct GameStruct* getGameLevelInfo()
 //将传入的按钮字符串解析为按钮结构
 Button analyseButtonStr(char *buttonStr)
 {
-    Button tempButton = {.type = UNKNOW, .number = NULL};
+    Button tempButton = {.type = UNKNOW, .number = {0}};
     //解析按钮是不是加减乘除
     switch (buttonStr[0])
     {
     case '+':
         tempButton.type = PLUS;
-        tempButton.number = (int *)malloc(sizeof(int));
         sscanf(buttonStr, "+%d\n", tempButton.number);
         break;
     case '-':
         tempButton.type = MINUS;
-        tempButton.number = (int *)malloc(sizeof(int));
         sscanf(buttonStr, "-%d", tempButton.number);
         break;
     case '*':
         tempButton.type = MULTIPLY;
-        tempButton.number = (int *)malloc(sizeof(int));
         sscanf(buttonStr, "*%d", tempButton.number);
         break;
     case '/':
         tempButton.type = DIVIDE;
-        tempButton.number = (int *)malloc(sizeof(int));
         sscanf(buttonStr, "/%d", tempButton.number);
         break;
     case '<':
         tempButton.type = BACKSPACE;
-        tempButton.number = NULL;
+        *tempButton.number = 0;
         break;
     }
     if (strstr(buttonStr, "=>"))
     {
         tempButton.type = REPLACE;
-        tempButton.number = (int *)malloc(sizeof(int) * 2);
         sscanf(buttonStr, "%d=>%d", tempButton.number, tempButton.number + 1);
     }
     //隐含条件，先判定不是=》按钮，再判定是不是第一个数字才能确定时追加按钮
     else if (buttonStr[0] >= '0' && buttonStr[0] <= '9')
     {
         tempButton.type = APPEND;
-        tempButton.number = (int *)malloc(sizeof(int));
         sscanf(buttonStr, "%d", tempButton.number);
     }
     else if (strstr(buttonStr, "x^"))
     {
         tempButton.type = POW;
-        tempButton.number = (int *)malloc(sizeof(int));
         sscanf(buttonStr, "x^%d", tempButton.number);
     }
     else if (strstr(buttonStr, "+/-"))
     {
         tempButton.type = SIGN_CONVERT;
-        tempButton.number = NULL;
+        *tempButton.number = 0;
     }
     else if (!strcmp(strlwr(buttonStr), "reverse") || !strcmp(strlwr(buttonStr), "r"))
     {
         tempButton.type = REVERSE;
-        tempButton.number = NULL;
+        *tempButton.number = 0;
     }
     else if (!strcmp(strlwr(buttonStr), "sum") || !strcmp(strlwr(buttonStr), "s"))
     {
         tempButton.type = SUM;
-        tempButton.number = NULL;
+        *tempButton.number = 0;
     }
     if (tempButton.type == UNKNOW)
     {

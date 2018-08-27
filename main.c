@@ -20,6 +20,7 @@ int main(void)
     {
         gameP = getGameLevelInfo();
         solveIt(counter);
+        gameOver();
         if (counter[1] == 0)
         {
             fprintf(stderr,

@@ -290,5 +290,6 @@ unsigned int* solveIt(unsigned int counter[2])
             counter[0]++;
         } while (numerationAddOne(answer, Game.buttonNum, stepsNum) != -1);
     }
+    free(answer); //释放
     return counter;
 }

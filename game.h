@@ -22,7 +22,7 @@ typedef enum
 typedef struct
 {
     ButtonTpye type; //按钮类型
-    int *number;     //操作数指针，如果是数组（多个操作数），就是头指针
+    int number[2];     //操作数数组（最多存两个，也可只存一个）
 } Button;            //存储按钮的详细信息
 
 struct GameStruct
@@ -37,3 +37,4 @@ struct GameStruct
 
 char *buttonStr(Button button);
 extern struct GameStruct Game;
+void gameOver();

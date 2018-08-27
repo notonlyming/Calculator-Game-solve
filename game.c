@@ -15,6 +15,11 @@
 #include <stdlib.h>
 #endif
 
+#ifndef _STRING_H_
+#define _STRING_H_
+#include <string.h>
+#endif
+
 #ifndef _GAME_H_
 #define _GAME_H_
 #include "game.h"
@@ -25,7 +30,7 @@ struct GameStruct Game = {.isOnError = FALSE};
 //该函数用于取得按钮对应信息的字符串
 char *buttonStr(Button button)
 {
-    char *infoStr = (char *)malloc(sizeof(char) * BUTTON_STR_MAX_LENGTH);
+    static char infoStr[BUTTON_STR_MAX_LENGTH];
     switch (button.type)
     {
     case PLUS:
@@ -41,7 +46,7 @@ char *buttonStr(Button button)
         sprintf(infoStr, "÷%d", *(button.number));
         break;
     case BACKSPACE:
-        infoStr = "<<";
+        strcpy(infoStr, "<<");
         break;
     case APPEND:
         sprintf(infoStr, "%d", *(button.number));
@@ -53,17 +58,23 @@ char *buttonStr(Button button)
         sprintf(infoStr, "x^%d", *(button.number) );
         break;
     case SIGN_CONVERT:
-        infoStr = "+/-";
+        strcpy(infoStr, "+/-");
         break;
     case REVERSE:
-        infoStr = "Reverse";
+        strcpy(infoStr, "Reverse");
         break;
     case SUM:
-        infoStr = "SUM";
+        strcpy(infoStr, "SUM");
         break;
     case UNKNOW:
-        infoStr = "unkown";
+        strcpy(infoStr, "UNKNOW");
         break;
     }
     return infoStr;
+}
+
+//释放malloc来用来存储一波按钮的空间，以便复用
+void gameOver()
+{
+    free(Game.buttons); //有借有还
 }
