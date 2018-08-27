@@ -57,11 +57,10 @@ struct GameStruct* getGameLevelInfo()
     Game.buttons = (Button *)malloc(sizeof(Button) * Game.buttonNum);  //注意，将在gameover时free！！
 
     char buttonStr[BUTTON_STR_MAX_LENGTH];
+    printf("请输入按钮信息(空格分隔)：");
     for (int i = 0; i < Game.buttonNum; i++)
     {
-        printf("请输入按钮信息(操作符和数字)：");
-        fgets(buttonStr, sizeof(buttonStr), stdin);
-        buttonStr[strlen(buttonStr) - 1] = '\0'; //去掉fgets读取的换行符
+        scanf("%s", buttonStr);
         Game.buttons[i] = analyseButtonStr(buttonStr);
     }
     printButtons(Game.buttons, Game.buttonNum);
