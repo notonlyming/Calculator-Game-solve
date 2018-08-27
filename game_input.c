@@ -118,6 +118,12 @@ Button analyseButtonStr(char *buttonStr)
     {
         tempButton.type = REVERSE;
     }
+    else if ( strstr(strlwr(buttonStr), "shift") )
+    {
+        tempButton.type = SHIFT;
+        //用操作数存储左移和或右移的信息
+        *tempButton.number = strstr(buttonStr, ">") ? '>' : strstr(buttonStr, "<") ? '<' : '?' ;
+    }
     else if (!strcmp(strlwr(buttonStr), "sum") || !strcmp(strlwr(buttonStr), "s"))
     {
         tempButton.type = SUM;

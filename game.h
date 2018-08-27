@@ -16,6 +16,7 @@ typedef enum
     SIGN_CONVERT, //符号转换
     REVERSE,      //反转
     SUM,          //求每一位数字的和
+    SHIFT,        //左右移动数字
     UNKNOW        //未知类型
 } ButtonTpye;
 

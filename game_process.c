@@ -115,6 +115,39 @@ int numberReplace(int number, int fromNum, int toNum)
     return number;
 }
 
+//左移或右移数字，放回移动后的数字
+int shiftNumber(int number, char deraction)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    char newNumStr[NUMBER_STR_MAX_LENGTH];
+    short sign = number>=0? +1 : -1;  //记录符号
+    if (sign == 1)
+    {
+        sprintf(numberStr, "%d", number);  //取出
+    }
+    else
+    {
+        sprintf(numberStr, "%d", -number);  //取出
+    }
+    if (deraction == '>')
+    {
+        char tempChar;  //用于存储因向右移位被“挤”出来的字符
+        tempChar = numberStr[strlen(numberStr)-1];
+        numberStr[strlen(numberStr)-1] = '\0';
+        sprintf(newNumStr, "%c%s", tempChar, numberStr);
+    }
+    else if(deraction == '<')
+    {
+        sprintf(newNumStr, "%s%c", numberStr + 1, numberStr[0]);
+    }
+    else
+    {
+        Game.isOnError = TRUE;
+    }
+    sscanf(newNumStr, "%d", &number); //转换为整型
+    return number*sign;
+}
+
 //求每一位数字的和并返回求和后的数字,这里假设求和的数字必须是正的
 int numberSum(int number)
 {
@@ -191,6 +224,8 @@ int pressButton(Button buttonToPress, int currentNumber)
     case SUM:
         result = numberSum(result);
         break;
+    case SHIFT:
+        result = shiftNumber(result, *(buttonToPress.number) );
     case UNKNOW:; //do nothing
         break;
     }

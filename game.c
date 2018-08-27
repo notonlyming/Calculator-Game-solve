@@ -66,6 +66,9 @@ char *buttonStr(Button button)
     case SUM:
         strcpy(infoStr, "SUM");
         break;
+    case SHIFT:
+        sprintf(infoStr, "Shift%c", *(button.number) );
+        break;
     case UNKNOW:
         strcpy(infoStr, "UNKNOW");
         break;
