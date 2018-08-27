@@ -24,5 +24,5 @@ void printButtons(Button buttons[], int buttonNumber)
     {
         printf("按钮%d：【%s】\n", i, buttonStr(buttons[i]));
     }
-    printf("---------------------------------------------\n");
+    printf("----------------------------------------------\n");
 }

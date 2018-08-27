@@ -238,10 +238,13 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
     return 0;
 }
 
-void solveIt()
+//尝试所有可能，并返回由尝试次数和解的个数构成的数组地址，需要传入用于存储计数的数组
+unsigned int* solveIt(unsigned int counter[2])
 {
     int tempResult;                                                                                //试错临时结果变量
     unsigned short *answer = (unsigned short *)malloc(sizeof(unsigned short) * Game.allowMaxStep); //用于存储解的过程
+    counter[0] = 0;  //尝试个数的计数器
+    counter[1] = 0;  //求得解的个数计数器
 
     //从最少的步数开始尝试，看看有没有最优解
     for (int stepsNum = 1; stepsNum <= Game.allowMaxStep; stepsNum++)
@@ -264,6 +267,7 @@ void solveIt()
             //判断是否成功
             if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
             {
+                counter[1]++;
                 printf("发现解(%d步)：", stepsNum);
                 //打印解
                 for (int step = 0; step < stepsNum; step++)
@@ -278,6 +282,8 @@ void solveIt()
                 //重置错误状态
                 Game.isOnError = FALSE;
             }
+            counter[0]++;
         } while (numerationAddOne(answer, Game.buttonNum, stepsNum) != -1);
     }
+    return counter;
 }

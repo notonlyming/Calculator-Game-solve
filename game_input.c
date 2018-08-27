@@ -39,7 +39,8 @@
 #include "game_output.h"
 #endif
 
-void getGameLevelInfo()
+//读入数据，并返回存储好数据的game结构指针，方便查阅
+struct GameStruct* getGameLevelInfo()
 {
     printf("请输入计算器起始的数值：");
     scanf("%d", &(Game.startNum));
@@ -62,8 +63,9 @@ void getGameLevelInfo()
         fgets(buttonStr, sizeof(buttonStr), stdin);
         buttonStr[strlen(buttonStr) - 1] = '\0'; //去掉fgets读取的换行符
         Game.buttons[i] = analyseButtonStr(buttonStr);
-        printButtons(Game.buttons, i + 1);
     }
+    printButtons(Game.buttons, Game.buttonNum);
+    return &Game;
 }
 
 //将传入的按钮字符串解析为按钮结构

@@ -3,6 +3,6 @@
 #include "game.h"
 #endif
 
-void getGameLevelInfo();
+struct GameStruct* getGameLevelInfo();
 Button analyseButtonStr(char *buttonStr);
 char *strlwr(char *str);
