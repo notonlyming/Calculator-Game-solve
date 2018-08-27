@@ -92,7 +92,6 @@ Button analyseButtonStr(char *buttonStr)
         break;
     case '<':
         tempButton.type = BACKSPACE;
-        *tempButton.number = 0;
         break;
     }
     if (strstr(buttonStr, "=>"))
@@ -114,17 +113,14 @@ Button analyseButtonStr(char *buttonStr)
     else if (strstr(buttonStr, "+/-"))
     {
         tempButton.type = SIGN_CONVERT;
-        *tempButton.number = 0;
     }
     else if (!strcmp(strlwr(buttonStr), "reverse") || !strcmp(strlwr(buttonStr), "r"))
     {
         tempButton.type = REVERSE;
-        *tempButton.number = 0;
     }
     else if (!strcmp(strlwr(buttonStr), "sum") || !strcmp(strlwr(buttonStr), "s"))
     {
         tempButton.type = SUM;
-        *tempButton.number = 0;
     }
     if (tempButton.type == UNKNOW)
     {
