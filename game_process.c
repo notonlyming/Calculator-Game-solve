@@ -159,7 +159,15 @@ int mirrorNumber(int number)
 		number *= -1;
 	}
 	sprintf(numberStr, "%d", number);
-	sprintf(reverseNumberStr, "%d", reverseNum(number) );
+	sprintf(reverseNumberStr, "%d", number);
+    //开始反转
+    char tempChar;
+    for (unsigned short index = 0; index < (strlen(reverseNumberStr) / 2); index++)
+    {
+        tempChar = reverseNumberStr[index];
+        reverseNumberStr[index] = reverseNumberStr[strlen(reverseNumberStr) - 1 - index];
+        reverseNumberStr[strlen(reverseNumberStr) - 1 - index] = tempChar;
+    }
 	strcat(numberStr, reverseNumberStr);
     sscanf(numberStr, "%d", &number); //转换为整型
 	return number * sign ;
@@ -257,9 +265,9 @@ int pressButton(Button buttonToPress, int currentNumber)
 //检查结果的数字是否超过6位，如果超过，game.error为真，该方案无效
 int checkNumberLarge(int number)
 {
-	if (number > 999999 || number < -999999)
+	if (number > 999999 || number < -99999)
 	{
-		//Game.isOnError = TRUE;
+		Game.isOnError = TRUE;
 	}
 	return number;
 }
