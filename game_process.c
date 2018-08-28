@@ -77,7 +77,7 @@ int calculateNumberLength(int number)
     }
 }
 
-//该函数将一个数字中的某部分替换乘另外一部分，并返回替换后的数字
+//该函数将一个数字中的某部分替换成另外一部分，并返回替换后的数字
 int numberReplace(int number, int fromNum, int toNum)
 {
     char numberStr[NUMBER_STR_MAX_LENGTH] = {0},
@@ -115,7 +115,7 @@ int numberReplace(int number, int fromNum, int toNum)
     return number;
 }
 
-//左移或右移数字，放回移动后的数字
+//左移或右移数字，返回移动后的数字
 int shiftNumber(int number, char deraction)
 {
     char numberStr[NUMBER_STR_MAX_LENGTH];
@@ -255,8 +255,11 @@ int pressButton(Button buttonToPress, int currentNumber)
 	case MIRROR:
 		result = mirrorNumber(result);
 		break;
-    case UNKNOW:; //do nothing
+    case MODIFY:
+        modifyButton(buttonToPress.number[0], buttonToPress.number[1]);
         break;
+    case UNKNOW:; //do nothing
+    break;
     }
 	checkNumberLarge(result);
     return result;
@@ -364,8 +367,40 @@ unsigned int* solveIt(unsigned int counter[2])
                 Game.isOnError = FALSE;
             }
             counter[0]++;
+            resetButton();
         } while (numerationAddOne(answer, Game.buttonNum, stepsNum) != -1);
     }
     free(answer); //释放
     return counter;
+}
+
+void modifyButton(char operationChar, int operationNum)
+{
+    if (Game.isButtonModify == FALSE)
+        backupButton();
+    for (int i=0; i<Game.buttonNum; i++)
+    {
+        if (Game.buttons[i].type == PLUS ||
+            Game.buttons[i].type == MINUS ||
+            Game.buttons[i].type == MULTIPLY ||
+            Game.buttons[i].type == DIVIDE ||
+            Game.buttons[i].type == APPEND)
+        {
+            switch (operationChar)
+            {
+                case '+':
+                    Game.buttons[i].number[0] += operationNum;
+                    break;
+                case '-':
+                    Game.buttons[i].number[0] -= operationNum;
+                    break;
+                case '*':
+                    Game.buttons[i].number[0] *= operationNum;
+                    break;
+                case '/':
+                    Game.buttons[i].number[0] /= operationNum;
+                    break;
+            }
+        }
+    }
 }

@@ -25,7 +25,7 @@
 #include "game.h"
 #endif
 
-struct GameStruct Game = {.isOnError = FALSE};
+struct GameStruct Game = {.isOnError = FALSE, .unchangeButtons=NULL, .isButtonModify=FALSE};
 
 //该函数用于取得按钮对应信息的字符串
 char *buttonStr(Button button)
@@ -72,6 +72,9 @@ char *buttonStr(Button button)
     case SHIFT:
         sprintf(infoStr, "Shift%c", *(button.number) );
         break;
+    case MODIFY:
+        sprintf(infoStr, "[%c]%d", button.number[0], button.number[1]);
+        break;
     case UNKNOW:
         strcpy(infoStr, "UNKNOW");
         break;
@@ -83,4 +86,32 @@ char *buttonStr(Button button)
 void gameOver()
 {
     free(Game.buttons); //有借有还
+    free(Game.unchangeButtons);
+    Game.buttons = NULL;
+    Game.unchangeButtons = NULL;
+}
+
+void resetButton()
+{
+    if (Game.isButtonModify == TRUE)
+    {
+        for (int i=0; i<Game.buttonNum; i++)
+        {
+            Game.buttons[i] = Game.unchangeButtons[i];
+        }
+        Game.isButtonModify = FALSE;
+    }
+}
+
+void backupButton()
+{
+    Game.isButtonModify = TRUE;
+    if (Game.unchangeButtons == NULL)
+    {
+        Game.unchangeButtons = (Button*)malloc(sizeof(Button) * Game.buttonNum);
+    }
+    for (int i=0; i<Game.buttonNum; i++)
+    {
+        Game.unchangeButtons[i] = Game.buttons[i];
+    }
 }

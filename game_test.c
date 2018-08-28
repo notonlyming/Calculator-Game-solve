@@ -21,9 +21,17 @@ int main(void)
 			printf("输入按钮编号：");
 			scanf("%d", &buttonIndex);
 			printf("按下按钮：【%s】\n", buttonStr(Game.buttons[buttonIndex-1]));
-			printf("%d -> ", result);
-			result = pressButton(Game.buttons[buttonIndex-1], result);
-			printf("%d status:%s\n", result, Game.isOnError?"ERROR":"OK");
+			if(Game.buttons[buttonIndex-1].type == MODIFY)
+			{
+				pressButton(Game.buttons[buttonIndex-1], result);
+				printButtons(Game.buttons, Game.buttonNum);
+			}
+			else
+			{
+				printf("%d -> ", result);
+				result = pressButton(Game.buttons[buttonIndex-1], result);
+				printf("%d status:%s\n", result, Game.isOnError?"ERROR":"OK");
+			}
 			puts("-----------------------------------------------------");
 		}
         gameOver();

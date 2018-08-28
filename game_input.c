@@ -132,6 +132,12 @@ Button analyseButtonStr(char *buttonStr)
     {
         tempButton.type = SUM;
     }
+    else if (buttonStr[0]=='[' && buttonStr[2]==']')
+    {
+        tempButton.type = MODIFY;
+        tempButton.number[0] = buttonStr[1];  //存储操作符
+        sscanf(buttonStr+3, "%d", tempButton.number+1);  //存储操作数
+    }
     if (tempButton.type == UNKNOW)
     {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");
