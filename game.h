@@ -17,6 +17,7 @@ typedef enum
     REVERSE,      //反转
     SUM,          //求每一位数字的和
     SHIFT,        //左右移动数字
+	MIRROR,	      //镜像数字
     UNKNOW        //未知类型
 } ButtonTpye;
 

@@ -148,6 +148,18 @@ int shiftNumber(int number, char deraction)
     return number*sign;
 }
 
+//mirror number, retern ok number
+int mirrorNumber(int number)
+{
+	char numberStr[NUMBER_STR_MAX_LENGTH];
+	char reverseNumberStr[NUMBER_STR_MAX_LENGTH];
+	sprintf(numberStr, "%d", number);
+	sprintf(reverseNumberStr, "%d", reverseNum(number) );
+	strcat(numberStr, reverseNumberStr);
+    sscanf(numberStr, "%d", &number); //转换为整型
+	return number;
+}
+
 //求每一位数字的和并返回求和后的数字,这里假设求和的数字必须是正的
 int numberSum(int number)
 {
@@ -226,6 +238,10 @@ int pressButton(Button buttonToPress, int currentNumber)
         break;
     case SHIFT:
         result = shiftNumber(result, *(buttonToPress.number) );
+		break;
+	case MIRROR:
+		result = mirrorNumber(result);
+		break;
     case UNKNOW:; //do nothing
         break;
     }

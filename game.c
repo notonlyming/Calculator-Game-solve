@@ -63,6 +63,9 @@ char *buttonStr(Button button)
     case REVERSE:
         strcpy(infoStr, "Reverse");
         break;
+	case MIRROR:
+		strcpy(infoStr, "Mirror");
+		break;
     case SUM:
         strcpy(infoStr, "SUM");
         break;

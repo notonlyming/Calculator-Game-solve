@@ -124,6 +124,10 @@ Button analyseButtonStr(char *buttonStr)
         //用操作数存储左移和或右移的信息
         *tempButton.number = strstr(buttonStr, ">") ? '>' : strstr(buttonStr, "<") ? '<' : '?' ;
     }
+	else if ( !strcmp(strlwr(buttonStr), "mirror") )
+	{
+		tempButton.type = MIRROR;
+	}
     else if (!strcmp(strlwr(buttonStr), "sum") || !strcmp(strlwr(buttonStr), "s"))
     {
         tempButton.type = SUM;
