@@ -153,11 +153,16 @@ int mirrorNumber(int number)
 {
 	char numberStr[NUMBER_STR_MAX_LENGTH];
 	char reverseNumberStr[NUMBER_STR_MAX_LENGTH];
+	short sign = number>=0 ? +1 : -1 ;
+	if (number < 0)
+	{
+		number *= -1;
+	}
 	sprintf(numberStr, "%d", number);
 	sprintf(reverseNumberStr, "%d", reverseNum(number) );
 	strcat(numberStr, reverseNumberStr);
     sscanf(numberStr, "%d", &number); //转换为整型
-	return number;
+	return number * sign ;
 }
 
 //求每一位数字的和并返回求和后的数字,这里假设求和的数字必须是正的
@@ -245,7 +250,18 @@ int pressButton(Button buttonToPress, int currentNumber)
     case UNKNOW:; //do nothing
         break;
     }
+	checkNumberLarge(result);
     return result;
+}
+
+//检查结果的数字是否超过6位，如果超过，game.error为真，该方案无效
+int checkNumberLarge(int number)
+{
+	if (number > 999999 || number < -999999)
+	{
+		//Game.isOnError = TRUE;
+	}
+	return number;
 }
 
 //有必要写一个为某一进制位加一的函数减轻复杂度,直接加1返回0，发生进位返回-1

@@ -12,3 +12,4 @@ int numberReplace(int number, int fromNum, int toNum);
 int reverseNum(int number);
 int numberSum(int number);
 int mirrorNumber(int number);
+int checkNumberLarge(int number);
