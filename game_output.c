@@ -19,6 +19,11 @@
 #include "game_output.h"
 #endif
 
+#ifndef _GAME_PROCESS_H_
+#define _GAME_PROCESS_H_
+#include "game_process.h"
+#endif
+
 void printButtons(Button buttons[], int buttonNumber)
 {
     puts("--------------------当前已有按钮--------------------");
@@ -61,4 +66,18 @@ void printWelcome()
     puts("Welcome to solution calculator of calculator game!");
     puts("项目已在GitHub开源，欢迎各位大佬提出宝贵意见。");
     puts("https://github.com/notonlyming/Calculator-Game-solve");
+}
+
+void printSolution(unsigned short answer[], int stepsNum)
+{
+    resetButton();
+    int tempResult = Game.startNum;
+    printf("发现解(%d步)：", stepsNum);
+    //打印解
+    for (int step = 0; step < stepsNum; step++)
+    {
+        tempResult = pressButton(Game.buttons[answer[step]], tempResult);
+        printf("(%s) ", buttonStr(Game.buttons[answer[step]]));
+    }
+    printf("结果：%d\n", tempResult);
 }

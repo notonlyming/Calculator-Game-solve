@@ -33,6 +33,11 @@
 #include <string.h>
 #endif
 
+#ifndef _GAME_OUTPUT_H_
+#define _GAME_OUTPUT_H_
+#include "game_output.h"
+#endif
+
 #ifndef _GAME_PROCESS_H_
 #define _GAME_PROCESS_H_
 #include "game_process.h"
@@ -351,15 +356,8 @@ unsigned int* solveIt(unsigned int counter[2])
             //判断是否成功
             if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
             {
+                printSolution(answer, stepsNum);
                 counter[1]++;
-                printf("发现解(%d步)：", stepsNum);
-                //打印解
-                for (int step = 0; step < stepsNum; step++)
-                {
-                    printf("(%s) ", buttonStr(Game.buttons[answer[step]]));
-                }
-                printf("结果：%d", tempResult);
-                putchar('\n');
             }
             else //本次尝试失败
             {
