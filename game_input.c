@@ -100,9 +100,13 @@ Button analyseButtonStr(char *buttonStr)
 	{
 		tempButton.type = MIRROR;
 	}
-    else if (!strcmp(strlwr(buttonStr), "sum") || !strcmp(strlwr(buttonStr), "s"))
+    else if ( !strcmp(strlwr(buttonStr), "sum") )
     {
         tempButton.type = SUM;
+    }
+    else if ( !strcmp(strlwr(buttonStr), "store") )
+    {
+        tempButton.type = STORE;
     }
     else if (buttonStr[0]=='[' && buttonStr[2]==']')
     {

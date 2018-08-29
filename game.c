@@ -60,6 +60,9 @@ char *buttonStr(Button button)
     case MODIFY:
         sprintf(infoStr, "[%c]%d", button.number[0], button.number[1]);
         break;
+    case STORE:
+        strcpy(infoStr, "STORE");
+        break;
     case UNKNOW:
         strcpy(infoStr, "UNKNOW");
         break;

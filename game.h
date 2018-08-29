@@ -21,7 +21,8 @@ typedef enum
     SUM,          //求每一位数字的和
     SHIFT,        //左右移动数字
 	MIRROR,	      //镜像数字
-    MODIFY, //更改按钮的数值
+    STORE,        //存储数字
+    MODIFY,       //更改按钮的数值
     UNKNOW        //未知类型
 } ButtonTpye;
 

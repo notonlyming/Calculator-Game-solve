@@ -238,6 +238,9 @@ int pressButton(Button buttonToPress, int currentNumber)
     case MODIFY:
         modifyButton(buttonToPress.number[0], buttonToPress.number[1]);
         break;
+    case STORE:
+        //未实现
+        break;
     case UNKNOW:; //do nothing
     break;
     }
