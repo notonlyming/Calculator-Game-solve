@@ -5,25 +5,10 @@
  * 获取按钮字符串
  */
 
-#ifndef _STDIO_H_
-#define _STDIO_H_
 #include <stdio.h>
-#endif
-
-#ifndef _STDLIB_H_
-#define _STDLIB_H_
 #include <stdlib.h>
-#endif
-
-#ifndef _STRING_H_
-#define _STRING_H_
 #include <string.h>
-#endif
-
-#ifndef _GAME_H_
-#define _GAME_H_
 #include "game.h"
-#endif
 
 struct GameStruct Game = {.isOnError = FALSE, .unchangeButtons=NULL, .isButtonModify=FALSE};
 

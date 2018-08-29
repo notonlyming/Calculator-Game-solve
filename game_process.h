@@ -1,7 +1,6 @@
-#ifndef _GAME_H_
-#define _GAME_H_
+#ifndef _GAME_PROCESS_H_
+#define _GAME_PROCESS_H_
 #include "game.h"
-#endif
 
 int calculateNumberLength(int number);
 int pressButton(Button buttonToPress, int currentNumber);
@@ -14,3 +13,5 @@ int numberSum(int number);
 int mirrorNumber(int number);
 int checkNumberLarge(int number);
 void modifyButton(char operationChar, int operationNum);
+
+#endif

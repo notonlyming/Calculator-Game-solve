@@ -1,3 +1,6 @@
+#ifndef _GAME_H_
+#define _GAME_H_
+
 #define TRUE 1
 #define FALSE 0
 #define BUTTON_STR_MAX_LENGTH 10
@@ -45,3 +48,5 @@ extern struct GameStruct Game;
 void gameOver();
 void resetButton();
 void backupButton();
+
+#endif

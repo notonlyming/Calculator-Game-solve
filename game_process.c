@@ -7,41 +7,13 @@
  * 反转数字
  * 数字按位求和
  */
-
-#ifndef _STDIO_H_
-#define _STDIO_H_
 #include <stdio.h>
-#endif
-
-#ifndef _MATH_H_
-#define _MATH_H_
 #include <math.h>
-#endif
-
-#ifndef _STDLIB_H_
-#define _STDLIB_H_
 #include <stdlib.h>
-#endif
-
-#ifndef _GAME_H_
-#define _GAME_H_
 #include "game.h"
-#endif
-
-#ifndef _STRING_H_
-#define _STRING_H_
 #include <string.h>
-#endif
-
-#ifndef _GAME_OUTPUT_H_
-#define _GAME_OUTPUT_H_
 #include "game_output.h"
-#endif
-
-#ifndef _GAME_PROCESS_H_
-#define _GAME_PROCESS_H_
 #include "game_process.h"
-#endif
 
 int reverseNum(int number)
 {

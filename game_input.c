@@ -3,41 +3,13 @@
  * 解析按钮字符串
  * 字符串转小写
  */
-
-#ifndef _STDIO_H_
-#define _STDIO_H_
 #include <stdio.h>
-#endif
-
-#ifndef _STDLIB_H_
-#define _STDLIB_H_
 #include <stdlib.h>
-#endif
-
-#ifndef _CTYPE_H_
-#define _CTYPE_H_
 #include <ctype.h>
-#endif
-
-#ifndef _STRING_H_
-#define _STRING_H_
 #include <string.h>
-#endif
-
-#ifndef _GAME_H_
-#define _GAME_H_
 #include "game.h"
-#endif
-
-#ifndef _GAME_INPUT_H_
-#define _GAME_INPUT_H_
 #include "game_input.h"
-#endif
-
-#ifndef _GAME_OUTPUT_H_
-#define _GAME_OUTPUT_H_
 #include "game_output.h"
-#endif
 
 //读入数据，并返回存储好数据的game结构指针，方便查阅
 struct GameStruct* getGameLevelInfo()
