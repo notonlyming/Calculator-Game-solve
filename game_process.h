@@ -13,5 +13,6 @@ int numberSum(int number);
 int mirrorNumber(int number);
 int checkNumberLarge(int number);
 void modifyButton(char operationChar, int operationNum);
+void strReverse(char stringToReverse[]);
 
 #endif

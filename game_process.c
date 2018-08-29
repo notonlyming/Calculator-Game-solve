@@ -19,14 +19,7 @@ int reverseNum(int number)
 {
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number); //转成字符串
-    //开始反转
-    char tempChar;
-    for (unsigned short index = 0; index < (strlen(numberStr) / 2); index++)
-    {
-        tempChar = numberStr[index];
-        numberStr[index] = numberStr[strlen(numberStr) - 1 - index];
-        numberStr[strlen(numberStr) - 1 - index] = tempChar;
-    }
+    strReverse(numberStr);
     sscanf(numberStr, "%d", &number); //转回数值
     //反转负值时带上负号
     if (numberStr[strlen(numberStr) - 1] == '-')
@@ -34,6 +27,19 @@ int reverseNum(int number)
         number *= -1;
     }
     return number;
+}
+
+//反转字符串
+void strReverse(char stringToReverse[])
+{
+    //开始反转
+    char tempChar;
+    for (unsigned short index = 0; index < (strlen(stringToReverse) / 2); index++)
+    {
+        tempChar = stringToReverse[index];
+        stringToReverse[index] = stringToReverse[strlen(stringToReverse) - 1 - index];
+        stringToReverse[strlen(stringToReverse) - 1 - index] = tempChar;
+    }
 }
 
 int calculateNumberLength(int number)
@@ -44,6 +50,10 @@ int calculateNumberLength(int number)
     }
     else
     {
+        if(number < 0)
+        {
+            number *= -1;
+        }
         int count = 0;
         while (number > 0)
         {
@@ -137,14 +147,7 @@ int mirrorNumber(int number)
 	}
 	sprintf(numberStr, "%d", number);
 	sprintf(reverseNumberStr, "%d", number);
-    //开始反转
-    char tempChar;
-    for (unsigned short index = 0; index < (strlen(reverseNumberStr) / 2); index++)
-    {
-        tempChar = reverseNumberStr[index];
-        reverseNumberStr[index] = reverseNumberStr[strlen(reverseNumberStr) - 1 - index];
-        reverseNumberStr[strlen(reverseNumberStr) - 1 - index] = tempChar;
-    }
+    strReverse(reverseNumberStr);
 	strcat(numberStr, reverseNumberStr);
     sscanf(numberStr, "%d", &number); //转换为整型
 	return number * sign ;
