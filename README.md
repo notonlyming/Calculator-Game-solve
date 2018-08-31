@@ -195,13 +195,13 @@ Note：这时C盘下应该有一个名字是tcc的文件夹，并且文件夹里
 用tcc从源代码编译构建
 -------------------
 
-4.下载源代码
+1.下载源代码
 
 方法一：直接在[项目地址](https://github.com/notonlyming/Calculator-Game-solve)的页面上单击文件列表右上方(约3点钟方向)的clone or download,然后点击下载 zip。下载后解压。
 
 方法二：使用[GitHub Desktop](https://desktop.github.com/)克隆，这里不过多叙述。
 
-5.切换工作目录
+2.切换工作目录
 
 方法一：打开文件资源管理器(此电脑)，进入包含下载的源代码的文件夹。按住Shift键不放，在空白处右击在此处打开PowerShell。此时打开的Powershell工作目录即为源代码文件夹。
 
@@ -209,7 +209,7 @@ Note：这时C盘下应该有一个名字是tcc的文件夹，并且文件夹里
 
 Note：在cmd中 请尽量始终使用 `cd /D "路径"`切换
 
-6.切换代码页
+3.切换代码页
 
 重要！该操作是为了解决cmd通过默认代码页解析UTF-8出现乱码的问题。
 
@@ -217,7 +217,7 @@ Note：在cmd中 请尽量始终使用 `cd /D "路径"`切换
 
 在cmd或powershell中输入：`chcp 65001`来切换至正确的代码页
 
-6.编译
+4.编译
 
 主程序：`tcc main.c game.c game_input.c game_output.c game_process.c -Wall -Wextra -Werror -o calulator_game.exe`
 
@@ -229,8 +229,6 @@ Note:在cmd和powershell中复制完后，若要粘贴复制的内容只需在�
 
 运行构建好的程序
 --------------
-
-7.运行
 
 编译成功后，同样由于编码问题。编译出来的balabala.exe文件中文默认以Ascii解析。因此需要使用cmd或powershell切换默认代码页(即操作6)后打开。
 
