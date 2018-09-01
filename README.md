@@ -20,7 +20,7 @@ Code by LittleMing 2018.08.25
         - [Linux 发行版](#linux-发行版)
         - [Mac os系统](#mac-os)
         - [Windows系统](#windows)
-            - [WSL方案](#WSL方案)
+            - [WSL方案](#wsl方案)
                 - [安装适用于Linux的Windows子系统](#安装适用于linux的windows子系统)
                 - [从Windows应用商店下载并安装](#从windows应用商店下载并安装)
                 - [完成发行版的初始化](#完成发行版的初始化)
