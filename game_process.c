@@ -331,6 +331,7 @@ unsigned int* solveIt(unsigned int counter[2])
                     break;
                 }
             }
+            counter[0]++;  //尝试次数加一
             //判断是否成功
             if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
             {
@@ -342,7 +343,6 @@ unsigned int* solveIt(unsigned int counter[2])
                 //重置错误状态
                 Game.isOnError = FALSE;
             }
-            counter[0]++;
             resetButton();
         } while (numerationAddOne(answer, Game.buttonNum, stepsNum) != -1);
     }

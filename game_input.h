@@ -4,6 +4,7 @@
 
 struct GameStruct* getGameLevelInfo();
 Button analyseButtonStr(char *buttonStr);
+int countBlankNum(char *strTocount);
 char *strlwr(char *str);
 
 #endif

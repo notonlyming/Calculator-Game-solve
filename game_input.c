@@ -22,21 +22,43 @@ struct GameStruct* getGameLevelInfo()
 
     printf("请输入游戏目标：");
     scanf("%d", &(Game.gameAchieve));
-
-    printf("请输入有多少个按钮：");
-    scanf("%d", &(Game.buttonNum));
     getchar(); //拿掉换行符
+
+    //读入按钮信息字符串
+    char buttonAllStr[BUTTON_STR_MAX_LENGTH * MAX_BUTTON_NUM];
+    printf("请输入按钮信息(单个空格分隔,回车结束)：");
+    fgets(buttonAllStr, BUTTON_STR_MAX_LENGTH * MAX_BUTTON_NUM, stdin);
+    buttonAllStr[strlen(buttonAllStr) - 1] = '\0';  //除去末尾的换行符
+
+    //计算按钮个数和申请空间
+    Game.buttonNum = countBlankNum(buttonAllStr) + 1;
     Game.buttons = (Button *)malloc(sizeof(Button) * Game.buttonNum);  //注意，将在gameover时free！！
 
+    //将数据写入按钮数组
     char buttonStr[BUTTON_STR_MAX_LENGTH];
-    printf("请输入按钮信息(空格分隔)：");
+    char *strP = buttonAllStr; //字符串指针，指向没有读取的按钮字符串信息的开头
     for (int i = 0; i < Game.buttonNum; i++)
     {
-        scanf("%s", buttonStr);
+        sscanf(strP, "%s", buttonStr);
+        //移动字符串的指针越过已经读过的字节和开头的空格
+        strP = strP + strlen(buttonStr) + 1;
         Game.buttons[i] = analyseButtonStr(buttonStr);
     }
+
     printButtons(Game.buttons, Game.buttonNum);
     return &Game;
+}
+
+int countBlankNum(char *strTocount)
+{
+    int counter = 0;
+    while (strchr(strTocount, ' '))
+    {
+        //后移指针，继续找后面的空格
+        strTocount = strchr(strTocount, ' ') + 1;
+        counter++;
+    }
+    return counter;
 }
 
 //将传入的按钮字符串解析为按钮结构
