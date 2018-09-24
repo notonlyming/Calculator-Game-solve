@@ -34,6 +34,17 @@ typedef struct
     int number[2];     //操作数数组（最多存两个，也可只存一个）
 } Button;            //存储按钮的详细信息
 
+typedef struct storeOrNotAnswerList{
+    union{
+        short storeButtonCount;  //头节点存储了存储按钮的个数
+        unsigned short *isStoreAnswer;  //单个store按钮对应存储方法
+    };
+    Button *storeNuttonP;  //指向对应的store按钮，方便去按它
+    struct storeOrNotAnswerList *next;
+} storeOrNotAnswerList;
+
+typedef storeOrNotAnswerList storeOrNotAnswerNode;
+
 struct GameStruct
 {
     int startNum;     //储存开始状态下游戏中屏幕显示的内容
@@ -46,17 +57,6 @@ struct GameStruct
     Button *unchangeButtons;  //如果按钮被更改，将会复制一份原始值到这里
     storeOrNotAnswerList *storeOrNotAnswerListHead;  //如果存在store按钮，将会在这里建立存储方案链表
 };
-
-typedef struct storeOrNotAnswerList{
-    union{
-        short storeButtonCount;  //头节点存储了存储按钮的个数
-        short *isStoreAnswer;  //单个store按钮对应存储方法
-    };
-    Button *storeNuttonP;  //指向对应的store按钮，方便去按它
-    struct storeOrNotAnswerList *next;
-} storeOrNotAnswerList;
-
-typedef storeOrNotAnswerList storeOrNotAnswerNode;
 
 char *buttonStr(Button button);
 extern struct GameStruct Game;
