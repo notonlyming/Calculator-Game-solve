@@ -95,7 +95,7 @@ int numberReplace(int number, int fromNum, int toNum)
             sprintf(newNumStr, "%s%s%s", numberStr, toNumStr, endPosition);
             strcpy(numberStr, newNumStr);
             //前面的已经查找并替换过了，现在查找指针移到后面
-            strP = endPosition;
+            strP = endPosition + (strlen(toNumStr) - strlen(fromNumStr));
         }
     }
     sscanf(newNumStr, "%d", &number); //转换为整型
