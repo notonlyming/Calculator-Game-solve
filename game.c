@@ -10,7 +10,7 @@
 #include <string.h>
 #include "game.h"
 
-struct GameStruct Game = {.isOnError = FALSE, .unchangeButtons=NULL, .isButtonModify=FALSE};
+struct GameStruct Game = {.isOnError = FALSE, .unchangeButtons=NULL, .isButtonModify=FALSE, .storeOrNotAnswerListHead=NULL};
 
 //该函数用于取得按钮对应信息的字符串
 char *buttonStr(Button button)
@@ -61,7 +61,7 @@ char *buttonStr(Button button)
         sprintf(infoStr, "[%c]%d", button.number[0], button.number[1]);
         break;
     case STORE:
-        strcpy(infoStr, "STORE");
+        sprintf(infoStr, "%d", *(button.number));
         break;
     case UNKNOW:
         strcpy(infoStr, "UNKNOW");

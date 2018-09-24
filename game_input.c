@@ -129,6 +129,7 @@ Button analyseButtonStr(char *buttonStr)
     else if ( !strcmp(strlwr(buttonStr), "store") )
     {
         tempButton.type = STORE;
+        tempButton.number[0] = STORE_NOTHING;  //存储为-1表示没有存储相应的数字，短按将不能追加
     }
     else if (buttonStr[0]=='[' && buttonStr[2]==']')
     {

@@ -209,10 +209,7 @@ int pressButton(Button buttonToPress, int currentNumber)
         result = (int)(result / 10);
         break;
     case APPEND:
-        if (result >= 0)
-            result = result * pow(10, calculateNumberLength(*(buttonToPress.number))) + *(buttonToPress.number);
-        else
-            result = result * pow(10, calculateNumberLength(*(buttonToPress.number))) - *(buttonToPress.number);
+        result = numberAppend(result, *(buttonToPress.number));
         break;
     case REPLACE:
         result = numberReplace(result, buttonToPress.number[0], buttonToPress.number[1]);
@@ -239,13 +236,32 @@ int pressButton(Button buttonToPress, int currentNumber)
         modifyButton(buttonToPress.number[0], buttonToPress.number[1]);
         break;
     case STORE:
-        //未实现
+        //这里仅处理断按
+        if (buttonToPress.number[0] != STORE_NOTHING)
+            result = numberAppend(result, *(buttonToPress.number));
+        else
+            Game.isOnError = TRUE;
         break;
     case UNKNOW:; //do nothing
     break;
     }
 	checkNumberLarge(result);
     return result;
+}
+
+//这里处理长按
+void storeNumberToButton(int currentNumber, Button *storeButton)
+{
+    *(storeButton->number) = currentNumber;
+}
+
+int numberAppend(int sourceNum, int numberToAppend)
+{
+    if (sourceNum >= 0)
+        sourceNum = sourceNum * pow(10, calculateNumberLength(numberToAppend)) + numberToAppend;
+    else
+        sourceNum = sourceNum * pow(10, calculateNumberLength(numberToAppend)) - numberToAppend;
+    return sourceNum;
 }
 
 //检查结果的数字是否超过6位，如果超过，game.error为真，该方案无效
@@ -305,6 +321,48 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
     return 0;
 }
 
+void creatStoreAnswerListForStoreButton()
+{
+    //计算存储按钮的个数
+    int storeButtonIndex[5];  //记录按钮的索引信息，方便后面添加该按钮到存储方案链表里
+    int storeButtonCounter = 0;
+    for (int i=0; i<Game.buttonNum; i++)
+    {
+        if (Game.buttons[i].type == STORE)
+        {
+            storeButtonIndex[storeButtonCounter] = i;  //记录索引信息
+            storeButtonCounter++;  //计数器加一
+        }
+    }
+    if (storeButtonCounter != 0)
+    {
+        //创建头节点
+        Game.storeOrNotAnswerListHead = (storeOrNotAnswerNode*)malloc(sizeof(storeOrNotAnswerNode));
+        Game.storeOrNotAnswerListHead->storeButtonCount = storeButtonCounter;
+        //创建存储方案链表
+        storeOrNotAnswerNode *tailP = Game.storeOrNotAnswerListHead;
+        for (int i=0; i<Game.storeOrNotAnswerListHead->storeButtonCount; i++)
+        {
+            //创建新节点
+            tailP->next = (storeOrNotAnswerNode*)malloc(sizeof(storeOrNotAnswerNode));
+            //指针后移
+            tailP = tailP->next;
+            //结尾next先赋值NULL
+            tailP->next = NULL;
+            //为新添加的节点指明它对应的是哪个按钮的存储方案
+            tailP = &(Game.buttons[storeButtonIndex[i]]);
+            //创建插空法存储方案数组
+            tailP->isStoreAnswer = malloc( sizeof(tailP->isStoreAnswer[0]) * (Game.allowMaxStep + 1) );
+            //数组元素初始化为0表示不按
+            for (int i=0; i<Game.allowMaxStep + 1; i++)
+            {
+                tailP->isStoreAnswer[i] = 0;
+            }
+        }
+    }
+    return;
+}
+
 //尝试所有可能，并返回由尝试次数和解的个数构成的数组地址，需要传入用于存储计数的数组
 unsigned int* solveIt(unsigned int counter[2])
 {
@@ -312,6 +370,7 @@ unsigned int* solveIt(unsigned int counter[2])
     unsigned short *answer = (unsigned short *)malloc(sizeof(unsigned short) * Game.allowMaxStep); //用于存储解的过程
     counter[0] = 0;  //尝试个数的计数器
     counter[1] = 0;  //求得解的个数计数器
+    creatStoreAnswerListForStoreButton();
 
     //从最少的步数开始尝试，看看有没有最优解
     for (int stepsNum = 1; stepsNum <= Game.allowMaxStep; stepsNum++)
