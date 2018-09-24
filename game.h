@@ -5,6 +5,7 @@
 #define FALSE 0
 #define BUTTON_STR_MAX_LENGTH 10
 #define NUMBER_STR_MAX_LENGTH 20
+#define MAX_BUTTON_NUM 5
 
 typedef enum
 {
