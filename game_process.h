@@ -14,5 +14,9 @@ int mirrorNumber(int number);
 int checkNumberLarge(int number);
 void modifyButton(char operationChar, int operationNum);
 void strReverse(char stringToReverse[]);
+int numberAppend(int sourceNum, int numberToAppend);
+void storeNumberToButton(int currentNumber, Button *storeButton);
+void creatStoreAnswerListForStoreButton();
+void initAllIsStoreAnswer();
 
 #endif
