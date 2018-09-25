@@ -52,3 +52,6 @@ Mkfile.old
 dkms.conf
 calulator_game
 game_test
+CMakeLists.txt
+cmake-build-debug/
+.idea/

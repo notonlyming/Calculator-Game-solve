@@ -61,7 +61,10 @@ char *buttonStr(Button button)
         sprintf(infoStr, "[%c]%d", button.number[0], button.number[1]);
         break;
     case STORE:
-        sprintf(infoStr, "%d", *(button.number));
+        if (*(button.number) != -1)
+            sprintf(infoStr, "%d", *(button.number));
+        else
+            strcpy(infoStr, "Store");
         break;
     case UNKNOW:
         strcpy(infoStr, "UNKNOW");
@@ -75,8 +78,28 @@ void gameOver()
 {
     free(Game.buttons); //有借有还
     free(Game.unchangeButtons);
+    freeStoreWayList();
     Game.buttons = NULL;
     Game.unchangeButtons = NULL;
+}
+
+void freeStoreWayList()
+{
+    if (Game.storeOrNotAnswerListHead)
+    {
+        storeOrNotAnswerNode *listPCurrent = Game.storeOrNotAnswerListHead;
+        storeOrNotAnswerNode *listPNext = listPCurrent->next;
+        free(listPCurrent);  //释放头节点
+        do
+        {
+            //指针后移
+            listPCurrent = listPNext;
+            listPNext = listPNext->next;
+            free(listPCurrent->isStoreAnswer);  //释放存储方案数组
+            free(listPCurrent);
+        } while (listPNext);
+    }
+
 }
 
 void resetButton()

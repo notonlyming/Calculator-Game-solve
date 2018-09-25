@@ -237,7 +237,7 @@ int pressButton(Button buttonToPress, int currentNumber)
         break;
     case STORE:
         //这里仅处理断按
-        if (buttonToPress.number[0] != STORE_NOTHING)
+        if (buttonToPress.number[0] >= 0)
             result = numberAppend(result, *(buttonToPress.number));
         else
             Game.isOnError = TRUE;
@@ -252,7 +252,18 @@ int pressButton(Button buttonToPress, int currentNumber)
 //这里处理长按
 void storeNumberToButton(int currentNumber, Button *storeButton)
 {
-    *(storeButton->number) = currentNumber;
+    if (Game.isButtonModify == FALSE)
+    {
+        backupButton();
+    }
+    if (currentNumber >= 0)
+    {
+        *(storeButton->number) = currentNumber;
+    }
+    else
+    {
+        Game.isOnError = TRUE;
+    }
 }
 
 int numberAppend(int sourceNum, int numberToAppend)
@@ -324,9 +335,9 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
 void creatStoreAnswerListForStoreButton()
 {
     //计算存储按钮的个数
-    int storeButtonIndex[5];  //记录按钮的索引信息，方便后面添加该按钮到存储方案链表里
-    int storeButtonCounter = 0;
-    for (int i=0; i<Game.buttonNum; i++)
+    short storeButtonIndex[MAX_BUTTON_NUM];  //记录按钮的索引信息，方便后面添加该按钮到存储方案链表里
+    short storeButtonCounter = 0;
+    for (short i=0; i<Game.buttonNum; i++)
     {
         if (Game.buttons[i].type == STORE)
         {
@@ -350,7 +361,7 @@ void creatStoreAnswerListForStoreButton()
             //结尾next先赋值NULL
             tailP->next = NULL;
             //为新添加的节点指明它对应的是哪个按钮的存储方案
-            tailP->storeNuttonP = &(Game.buttons[storeButtonIndex[i]]);
+            tailP->storeButtonP = &(Game.buttons[storeButtonIndex[i]]);
             //创建插空法存储方案数组
             tailP->isStoreAnswer = malloc( sizeof(tailP->isStoreAnswer[0]) * Game.allowMaxStep );
             //数组元素初始化为0表示不按
@@ -360,66 +371,98 @@ void creatStoreAnswerListForStoreButton()
             }
         }
     }
-    return;
+}
+
+void initAllIsStoreAnswer()
+{
+    storeOrNotAnswerNode *listP = Game.storeOrNotAnswerListHead;
+    if (listP)
+    {
+        listP = listP->next;
+        while (listP)
+        {
+            for (int i = 0; i < Game.allowMaxStep; i++)
+                listP->isStoreAnswer[i] = 0; //所有位初始化为0
+            listP = listP->next;
+        }
+    }
 }
 
 //尝试所有可能，并返回由尝试次数和解的个数构成的数组地址，需要传入用于存储计数的数组
 unsigned int* solveIt(unsigned int counter[2])
 {
-    int tempResult;                                                                                //试错临时结果变量
+    int tempResult;    //试错临时结果变量
     unsigned short *answer = (unsigned short *)malloc(sizeof(unsigned short) * Game.allowMaxStep); //用于存储解的过程
     counter[0] = 0;  //尝试个数的计数器
     counter[1] = 0;  //求得解的个数计数器
     creatStoreAnswerListForStoreButton();
 
     //从最少的步数开始尝试，看看有没有最优解
+    storeOrNotAnswerList *storeAnswer = NULL;  //存储当前尝试的store答案数组指针
     for (int stepsNum = 1; stepsNum <= Game.allowMaxStep; stepsNum++)
     {
         for (int i = 0; i < Game.allowMaxStep; i++)
             answer[i] = 0; //所有位初始化为0
-        do
+        do  //尝试普通按钮的循环
         {
-            tempResult = Game.startNum;
-            //逐个"按下"按钮
-            storeOrNotAnswerList *storeAnswer = NULL;  //存储当前决策的store答案数组指针
-            do  //按存储按钮的外层循环
+            initAllIsStoreAnswer();
+            do  //尝试存储按钮各种方案的循环
             {
+                tempResult = Game.startNum;  //每次按尝试一种存储方式都要重置结果变量
                 for (int step = 0; step < stepsNum; step++)
                 {
-                        //判断是否存在store按钮
-                        if (Game.storeOrNotAnswerListHead->next != NULL)
+                    //判断是否存在store按钮
+                    if (Game.storeOrNotAnswerListHead != NULL)
+                    {
+                        //根据存储按钮答案数组，决定是否存储
+                        storeAnswer = Game.storeOrNotAnswerListHead->next;
+                        //如果为真就存储长按
+                        if(storeAnswer->isStoreAnswer[step])
                         {
-                            //根据存储按钮答案数组，决定是否存储
-                            storeAnswer = Game.storeOrNotAnswerListHead->next;
-                            if(storeAnswer->isStoreAnswer[step])
-                            {
-                                storeNumberToButton(tempResult, storeAnswer->storeNuttonP);
-                            }
+                            storeNumberToButton(tempResult, storeAnswer->storeButtonP);
                         }
-                        tempResult = pressButton(Game.buttons[answer[step]], tempResult);
-                        if (Game.isOnError == TRUE)
-                        {
-                            //已经计算出错，此方案不可行
-                            break;
-                        }
+                    }
+                    tempResult = pressButton(Game.buttons[answer[step]], tempResult);
+
+                    if (Game.isOnError == TRUE)
+                    {
+                        //已经计算出错，此方案不可行
+                        break;
+                    }
                 }
-            }while(storeAnswer != NULL &&
-                    numerationAddOne(storeAnswer->isStoreAnswer, Game.buttonNum, stepsNum) != -1);
-            counter[0]++;  //尝试次数加一
-            //判断是否成功
-            if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
-            {
-                printSolution(answer, stepsNum);
-                counter[1]++;
-            }
-            else //本次尝试失败
-            {
-                //重置错误状态
-                Game.isOnError = FALSE;
-            }
-            resetButton();
-        } while (numerationAddOne(answer, Game.buttonNum, stepsNum) != -1);
+                /*{
+                    printf("当前解决方案 普通：");
+                    for (int i = 0; i < Game.allowMaxStep; ++i) {
+                        printf("%d", answer[i]);
+                    }
+                    printf(" 存储：");
+                    for (int j = 0; j < Game.allowMaxStep; ++j) {
+                        printf("%d", storeAnswer->isStoreAnswer[j]);
+                    }
+                    putchar('\n');
+                }*/
+                counter[0]++;  //尝试次数加一
+                //判断是否成功
+                if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
+                {
+                    printSolution(answer, stepsNum);
+                    counter[1]++;
+                    if (counter[1] >= 10)
+                    {
+                        resetButton();
+                        goto findEnd;
+                    }
+                }
+                else //本次尝试失败
+                {
+                    //重置错误状态
+                    Game.isOnError = FALSE;
+                }
+                resetButton();
+            } while(storeAnswer != NULL && !numerationAddOne(storeAnswer->isStoreAnswer, Game.buttonNum, stepsNum));
+        } while (!numerationAddOne(answer, Game.buttonNum, stepsNum));
     }
+    findEnd:
     free(answer); //释放
     return counter;
 }

@@ -17,5 +17,6 @@ void strReverse(char stringToReverse[]);
 int numberAppend(int sourceNum, int numberToAppend);
 void storeNumberToButton(int currentNumber, Button *storeButton);
 void creatStoreAnswerListForStoreButton();
+void initAllIsStoreAnswer();
 
 #endif

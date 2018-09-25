@@ -39,7 +39,7 @@ typedef struct storeOrNotAnswerList{
         short storeButtonCount;  //头节点存储了存储按钮的个数
         unsigned short *isStoreAnswer;  //单个store按钮对应存储方法
     };
-    Button *storeNuttonP;  //指向对应的store按钮，方便去按它
+    Button *storeButtonP;  //指向对应的store按钮，方便去按它
     struct storeOrNotAnswerList *next;
 } storeOrNotAnswerList;
 
@@ -63,5 +63,6 @@ extern struct GameStruct Game;
 void gameOver();
 void resetButton();
 void backupButton();
+void freeStoreWayList();
 
 #endif
