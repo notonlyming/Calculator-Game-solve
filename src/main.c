@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "game_input.h"
 #include "game_process.h"
 #include "game_output.h"
@@ -29,9 +30,11 @@ int main(int argc, char **argv)
         {
             puts("-------------------新的一关开始啦-------------------");
             gameP = getGameLevelInfo();
+            clock_t startTime = clock();
             solveIt(counter , isOutputSteps);
             gameOver();
             printSolutionInfo(counter, gameP);
+            printf("Finish task in %lfs.\n", (clock() - startTime) / (double)CLOCKS_PER_SEC);
             do {
                 printf("Continue?(y/n):");
             }while ( (isContinue = (char) getchar()) == '\n' );
