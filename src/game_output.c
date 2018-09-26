@@ -14,7 +14,7 @@ void printButtons(Button buttons[], int buttonNumber)
     puts("--------------------当前已有按钮--------------------");
     for (int i = 0; i < buttonNumber; i++)
     {
-        printf("【%s】 ", buttonStr(buttons[i]));
+        printf("%d.【%s】 ", i, buttonStr(buttons[i]));
         //每五个一换行,且不是最后一行
         if ( (i+1)%5==0 && (i+1)!=buttonNumber )
         {
