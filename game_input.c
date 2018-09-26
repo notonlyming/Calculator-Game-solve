@@ -18,7 +18,7 @@ struct GameStruct* getGameLevelInfo()
     scanf("%d", &(Game.startNum));
 
     printf("请输入允许的最大步数：");
-    scanf("%d", &(Game.allowMaxStep));
+    scanf("%hu", &(Game.allowMaxStep));
 
     printf("请输入游戏目标：");
     scanf("%d", &(Game.gameAchieve));
@@ -31,7 +31,7 @@ struct GameStruct* getGameLevelInfo()
     buttonAllStr[strlen(buttonAllStr) - 1] = '\0';  //除去末尾的换行符
 
     //计算按钮个数和申请空间
-    Game.buttonNum = countBlankNum(buttonAllStr) + 1;
+    Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr) + 1);
     Game.buttons = (Button *)malloc(sizeof(Button) * Game.buttonNum);  //注意，将在gameover时free！！
 
     //将数据写入按钮数组
@@ -64,51 +64,51 @@ int countBlankNum(char *strTocount)
 //将传入的按钮字符串解析为按钮结构
 Button analyseButtonStr(char *buttonStr)
 {
-    Button tempButton = {.type = UNKNOW, .number = {0}};
+    Button tempButton = {.type = UNKNOW};
     //解析按钮是不是加减乘除
     switch (buttonStr[0])
     {
     case '+':
         tempButton.type = PLUS;
-        sscanf(buttonStr, "+%d\n", tempButton.number);
+        sscanf(buttonStr, "+%d\n", &tempButton.attachedInfo.operationNum);
         break;
     case '-':
         tempButton.type = MINUS;
-        sscanf(buttonStr, "-%d", tempButton.number);
+        sscanf(buttonStr, "-%d", &tempButton.attachedInfo.operationNum);
         break;
     case '*':
         tempButton.type = MULTIPLY;
-        sscanf(buttonStr, "*%d", tempButton.number);
+        sscanf(buttonStr, "*%d", &tempButton.attachedInfo.operationNum);
         break;
     case '/':
         tempButton.type = DIVIDE;
-        sscanf(buttonStr, "/%d", tempButton.number);
+        sscanf(buttonStr, "/%d", &tempButton.attachedInfo.operationNum);
         break;
-    case '<':
-        tempButton.type = BACKSPACE;
-        break;
+    default:break;
     }
     if (strstr(buttonStr, "=>"))
     {
         tempButton.type = REPLACE;
-        sscanf(buttonStr, "%d=>%d", tempButton.number, tempButton.number + 1);
+        sscanf(strstr(buttonStr, "=>") + 2, "%s",tempButton.attachedInfo.replaceInfo.strReplaceTo);
+        *strstr(buttonStr, "=>") = '\0';
+        sscanf(buttonStr, "%s", tempButton.attachedInfo.replaceInfo.strReplaceFrom);
     }
     //隐含条件，先判定不是=》按钮，再判定是不是第一个数字才能确定时追加按钮
     else if (buttonStr[0] >= '0' && buttonStr[0] <= '9')
     {
         tempButton.type = APPEND;
-        sscanf(buttonStr, "%d", tempButton.number);
+        sscanf(buttonStr, "%d", &tempButton.attachedInfo.appendNum);
     }
     else if (strstr(buttonStr, "x^"))
     {
         tempButton.type = POW;
-        sscanf(buttonStr, "x^%d", tempButton.number);
+        sscanf(buttonStr, "x^%d", &tempButton.attachedInfo.exponent);
     }
     else if (strstr(buttonStr, "+/-"))
     {
         tempButton.type = SIGN_CONVERT;
     }
-    else if (!strcmp(strlwr(buttonStr), "reverse") || !strcmp(strlwr(buttonStr), "r"))
+    else if (!strcmp(strlwr(buttonStr), "reverse"))
     {
         tempButton.type = REVERSE;
     }
@@ -116,9 +116,20 @@ Button analyseButtonStr(char *buttonStr)
     {
         tempButton.type = SHIFT;
         //用操作数存储左移和或右移的信息
-        *tempButton.number = strstr(buttonStr, ">") ? '>' : strstr(buttonStr, "<") ? '<' : '?' ;
+        if (strstr(buttonStr, ">"))
+        {
+            tempButton.attachedInfo.shiftDirection = SHIFT_RIGHT;
+        }
+        else if (strstr(buttonStr, "<"))
+        {
+            tempButton.attachedInfo.shiftDirection = SHIFT_LEFT;
+        }
+        else
+        {
+            tempButton.type = UNKNOW;
+        }
     }
-	else if ( !strcmp(strlwr(buttonStr), "mirror") )
+    else if ( !strcmp(strlwr(buttonStr), "mirror") )
 	{
 		tempButton.type = MIRROR;
 	}
@@ -129,13 +140,17 @@ Button analyseButtonStr(char *buttonStr)
     else if ( !strcmp(strlwr(buttonStr), "store") )
     {
         tempButton.type = STORE;
-        tempButton.number[0] = STORE_NOTHING;  //存储为-1表示没有存储相应的数字，短按将不能追加
+        tempButton.attachedInfo.storeNum = STORE_NOTHING;  //存储为-1表示没有存储相应的数字，短按将不能追加
     }
     else if (buttonStr[0]=='[' && buttonStr[2]==']')
     {
         tempButton.type = MODIFY;
-        tempButton.number[0] = buttonStr[1];  //存储操作符
-        sscanf(buttonStr+3, "%d", tempButton.number+1);  //存储操作数
+        tempButton.attachedInfo.modifyInfo.arithmeticSymbol = buttonStr[1];  //存储操作符
+        sscanf(buttonStr+3, "%d", &tempButton.attachedInfo.modifyInfo.operationNum);  //存储操作数
+    }
+    else if (!strcmp(buttonStr, "<<"))
+    {
+        tempButton.type = BACKSPACE;
     }
     if (tempButton.type == UNKNOW)
     {
@@ -154,7 +169,7 @@ char *strlwr(char *str)
     while (*p != '\0')
     {
         if (*p >= 'A' && *p <= 'Z')
-            *p = (*p) + 0x20;
+            *p = (char) ((*p) + 0x20);
         p++;
     }
     return str;

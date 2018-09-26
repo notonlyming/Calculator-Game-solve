@@ -19,28 +19,28 @@ char *buttonStr(Button button)
     switch (button.type)
     {
     case PLUS:
-        sprintf(infoStr, "＋%d", *(button.number));
+        sprintf(infoStr, "＋%d", button.attachedInfo.operationNum);
         break;
     case MINUS:
-        sprintf(infoStr, "－%d", *(button.number));
+        sprintf(infoStr, "－%d", button.attachedInfo.operationNum);
         break;
     case MULTIPLY:
-        sprintf(infoStr, "×%d", *(button.number));
+        sprintf(infoStr, "×%d", button.attachedInfo.operationNum);
         break;
     case DIVIDE:
-        sprintf(infoStr, "÷%d", *(button.number));
+        sprintf(infoStr, "÷%d", button.attachedInfo.operationNum);
         break;
     case BACKSPACE:
         strcpy(infoStr, "<<");
         break;
     case APPEND:
-        sprintf(infoStr, "%d", *(button.number));
+        sprintf(infoStr, "%d", button.attachedInfo.appendNum);
         break;
     case REPLACE:
-        sprintf(infoStr, "%d=>%d", button.number[0], button.number[1]);
+        sprintf(infoStr, "%s=>%s", button.attachedInfo.replaceInfo.strReplaceFrom, button.attachedInfo.replaceInfo.strReplaceTo);
         break;
     case POW:
-        sprintf(infoStr, "x^%d", *(button.number) );
+        sprintf(infoStr, "x^%d", button.attachedInfo.exponent);
         break;
     case SIGN_CONVERT:
         strcpy(infoStr, "+/-");
@@ -55,14 +55,14 @@ char *buttonStr(Button button)
         strcpy(infoStr, "SUM");
         break;
     case SHIFT:
-        sprintf(infoStr, "Shift%c", *(button.number) );
+        sprintf(infoStr, "Shift%c", button.attachedInfo.shiftDirection == SHIFT_RIGHT ? '>' : '<' );
         break;
     case MODIFY:
-        sprintf(infoStr, "[%c]%d", button.number[0], button.number[1]);
+        sprintf(infoStr, "[%c]%d", button.attachedInfo.modifyInfo.arithmeticSymbol, button.attachedInfo.modifyInfo.operationNum);
         break;
     case STORE:
-        if (*(button.number) != -1)
-            sprintf(infoStr, "%d", *(button.number));
+        if (button.attachedInfo.storeNum != STORE_NOTHING)
+            sprintf(infoStr, "%d", button.attachedInfo.storeNum);
         else
             strcpy(infoStr, "Store");
         break;

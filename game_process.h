@@ -7,16 +7,18 @@ int pressButton(Button buttonToPress, int currentNumber);
 int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radix);
 int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth);
 unsigned int* solveIt(unsigned int counter[2]);
-int numberReplace(int number, int fromNum, int toNum);
+int numberReplace(int number, char *fromNumStr, char *toNumStr);
 int reverseNum(int number);
 int numberSum(int number);
 int mirrorNumber(int number);
 int checkNumberLarge(int number);
-void modifyButton(char operationChar, int operationNum);
+void modifyButtons(char operationChar, int operationNum);
 void strReverse(char stringToReverse[]);
 int numberAppend(int sourceNum, int numberToAppend);
 void storeNumberToButton(int currentNumber, Button *storeButton);
 void creatStoreAnswerListForStoreButton();
 void initAllIsStoreAnswer();
+unsigned short isArithmeticButton(Button *button);
+unsigned short isModifiableButton(Button *button);
 
 #endif

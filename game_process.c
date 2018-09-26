@@ -65,15 +65,11 @@ int calculateNumberLength(int number)
 }
 
 //该函数将一个数字中的某部分替换成另外一部分，并返回替换后的数字
-int numberReplace(int number, int fromNum, int toNum)
+int numberReplace(int number, char *fromNumStr, char *toNumStr)
 {
-    char numberStr[NUMBER_STR_MAX_LENGTH] = {0},
-         fromNumStr[NUMBER_STR_MAX_LENGTH] = {0},
-         toNumStr[NUMBER_STR_MAX_LENGTH] = {0};
+    char numberStr[NUMBER_STR_MAX_LENGTH] = {0};
     char newNumStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
-    sprintf(fromNumStr, "%d", fromNum);
-    sprintf(toNumStr, "%d", toNum);
     char *startPosition, *endPosition;
     char *strP = numberStr; //用于查找替换的指针，初始化为数字字符串的头部表示从头开始找
     if (strstr(strP, fromNumStr) == NULL)
@@ -103,11 +99,11 @@ int numberReplace(int number, int fromNum, int toNum)
 }
 
 //左移或右移数字，返回移动后的数字
-int shiftNumber(int number, char deraction)
+int shiftNumber(int number, enum shiftDirection direction)
 {
     char numberStr[NUMBER_STR_MAX_LENGTH];
     char newNumStr[NUMBER_STR_MAX_LENGTH];
-    short sign = number>=0? +1 : -1;  //记录符号
+    short sign = (short) (number >= 0 ? +1 : -1);  //记录符号
     if (sign == 1)
     {
         sprintf(numberStr, "%d", number);  //取出
@@ -116,14 +112,14 @@ int shiftNumber(int number, char deraction)
     {
         sprintf(numberStr, "%d", -number);  //取出
     }
-    if (deraction == '>')
+    if (direction == SHIFT_RIGHT)
     {
         char tempChar;  //用于存储因向右移位被“挤”出来的字符
         tempChar = numberStr[strlen(numberStr)-1];
         numberStr[strlen(numberStr)-1] = '\0';
         sprintf(newNumStr, "%c%s", tempChar, numberStr);
     }
-    else if(deraction == '<')
+    else if(direction == SHIFT_LEFT)
     {
         sprintf(newNumStr, "%s%c", numberStr + 1, numberStr[0]);
     }
@@ -140,7 +136,7 @@ int mirrorNumber(int number)
 {
 	char numberStr[NUMBER_STR_MAX_LENGTH];
 	char reverseNumberStr[NUMBER_STR_MAX_LENGTH];
-	short sign = number>=0 ? +1 : -1 ;
+	short sign = (short) (number >= 0 ? +1 : -1);
 	if (number < 0)
 	{
 		number *= -1;
@@ -164,7 +160,7 @@ int numberSum(int number)
     {
         for (unsigned int i=0; i<strlen(numberStr); i++)
         {
-            tempNum = numberStr[i] - '0';  //取出一位
+            tempNum = (unsigned short) (numberStr[i] - '0');  //取出一位
             number += tempNum;
         }
     }
@@ -172,7 +168,7 @@ int numberSum(int number)
     {
         for (unsigned int i=1; i<strlen(numberStr); i++)
         {
-            tempNum = numberStr[i] - '0';  //取出一位
+            tempNum = (unsigned short) (numberStr[i] - '0');  //取出一位
             number += tempNum;
         }
         number *= -1;
@@ -186,36 +182,36 @@ int pressButton(Button buttonToPress, int currentNumber)
     switch (buttonToPress.type)
     {
     case PLUS:
-        result += *(buttonToPress.number);
+        result += buttonToPress.attachedInfo.operationNum;
         break;
     case MINUS:
-        result -= *(buttonToPress.number);
+        result -= buttonToPress.attachedInfo.operationNum;
         break;
     case MULTIPLY:
-        result *= *(buttonToPress.number);
+        result *= buttonToPress.attachedInfo.operationNum;
         break;
     case DIVIDE:
         //进行是否产生小数判断
-        if (result % *(buttonToPress.number) != 0)
+        if (result % buttonToPress.attachedInfo.operationNum != 0)
         {
             Game.isOnError = TRUE;
         }
         else
         {
-            result /= *(buttonToPress.number);
+            result /= buttonToPress.attachedInfo.operationNum;
         }
         break;
     case BACKSPACE:
-        result = (int)(result / 10);
+        result = result / 10;
         break;
     case APPEND:
-        result = numberAppend(result, *(buttonToPress.number));
+        result = numberAppend(result, buttonToPress.attachedInfo.appendNum);
         break;
     case REPLACE:
-        result = numberReplace(result, buttonToPress.number[0], buttonToPress.number[1]);
+        result = numberReplace(result, buttonToPress.attachedInfo.replaceInfo.strReplaceFrom, buttonToPress.attachedInfo.replaceInfo.strReplaceTo);
         break;
     case POW:
-        result = pow(result, *(buttonToPress.number) );
+        result = (int) pow( result, buttonToPress.attachedInfo.exponent );
         break;
     case SIGN_CONVERT:
         result *= -1;
@@ -227,18 +223,19 @@ int pressButton(Button buttonToPress, int currentNumber)
         result = numberSum(result);
         break;
     case SHIFT:
-        result = shiftNumber(result, *(buttonToPress.number) );
+        result = shiftNumber(result, buttonToPress.attachedInfo.shiftDirection);
 		break;
 	case MIRROR:
 		result = mirrorNumber(result);
 		break;
     case MODIFY:
-        modifyButton(buttonToPress.number[0], buttonToPress.number[1]);
+        modifyButtons(buttonToPress.attachedInfo.modifyInfo.arithmeticSymbol,
+                      buttonToPress.attachedInfo.modifyInfo.operationNum);
         break;
     case STORE:
-        //这里仅处理断按
-        if (buttonToPress.number[0] >= 0)
-            result = numberAppend(result, *(buttonToPress.number));
+        //这里仅处理短按
+        if (buttonToPress.attachedInfo.storeNum >= 0)
+            result = numberAppend(result, buttonToPress.attachedInfo.storeNum);
         else
             Game.isOnError = TRUE;
         break;
@@ -258,7 +255,7 @@ void storeNumberToButton(int currentNumber, Button *storeButton)
     }
     if (currentNumber >= 0)
     {
-        *(storeButton->number) = currentNumber;
+        storeButton->attachedInfo.storeNum = currentNumber;
     }
     else
     {
@@ -269,9 +266,9 @@ void storeNumberToButton(int currentNumber, Button *storeButton)
 int numberAppend(int sourceNum, int numberToAppend)
 {
     if (sourceNum >= 0)
-        sourceNum = sourceNum * pow(10, calculateNumberLength(numberToAppend)) + numberToAppend;
+        sourceNum = (int) (sourceNum * pow(10, calculateNumberLength(numberToAppend)) + numberToAppend);
     else
-        sourceNum = sourceNum * pow(10, calculateNumberLength(numberToAppend)) - numberToAppend;
+        sourceNum = (int) (sourceNum * pow(10, calculateNumberLength(numberToAppend)) - numberToAppend);
     return sourceNum;
 }
 
@@ -318,7 +315,7 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
             if (witchBit == numberWidth - 1)
             {
                 //已经"溢出"，恢复状态
-                number[witchBit] = radix - 1;
+                number[witchBit] = (unsigned short) (radix - 1);
                 return -1;
             }
             else
@@ -365,9 +362,9 @@ void creatStoreAnswerListForStoreButton()
             //创建插空法存储方案数组
             tailP->isStoreAnswer = malloc( sizeof(tailP->isStoreAnswer[0]) * Game.allowMaxStep );
             //数组元素初始化为0表示不按
-            for (int i=0; i<Game.allowMaxStep; i++)
+            for (int j=0; j<Game.allowMaxStep; j++)
             {
-                tailP->isStoreAnswer[i] = 0;
+                tailP->isStoreAnswer[j] = 0;
             }
         }
     }
@@ -399,7 +396,7 @@ unsigned int* solveIt(unsigned int counter[2])
 
     //从最少的步数开始尝试，看看有没有最优解
     storeOrNotAnswerList *storeAnswer = NULL;  //存储当前尝试的store答案数组指针
-    for (int stepsNum = 1; stepsNum <= Game.allowMaxStep; stepsNum++)
+    for (unsigned short stepsNum = 1; stepsNum <= Game.allowMaxStep; stepsNum++)
     {
         for (int i = 0; i < Game.allowMaxStep; i++)
             answer[i] = 0; //所有位初始化为0
@@ -430,17 +427,6 @@ unsigned int* solveIt(unsigned int counter[2])
                         break;
                     }
                 }
-                /*{
-                    printf("当前解决方案 普通：");
-                    for (int i = 0; i < Game.allowMaxStep; ++i) {
-                        printf("%d", answer[i]);
-                    }
-                    printf(" 存储：");
-                    for (int j = 0; j < Game.allowMaxStep; ++j) {
-                        printf("%d", storeAnswer->isStoreAnswer[j]);
-                    }
-                    putchar('\n');
-                }*/
                 counter[0]++;  //尝试次数加一
                 //判断是否成功
                 if (tempResult == Game.gameAchieve && Game.isOnError == FALSE)
@@ -467,32 +453,91 @@ unsigned int* solveIt(unsigned int counter[2])
     return counter;
 }
 
-void modifyButton(char operationChar, int operationNum)
+unsigned short isArithmeticButton(Button *button)
+{
+    unsigned short isTrue = FALSE;
+    switch (button->type)
+    {
+        case PLUS:
+            isTrue = TRUE;
+            break;
+        case MINUS:
+            isTrue = TRUE;
+            break;
+        case MULTIPLY:
+            isTrue = TRUE;
+            break;
+        case DIVIDE:
+            isTrue = TRUE;
+            break;
+        default:
+            break;
+    }
+    return isTrue;
+}
+
+unsigned short isModifiableButton(Button *button)
+{
+    unsigned short isTrue = FALSE;
+    isTrue = isArithmeticButton(button);
+    if (button->type == APPEND)
+    {
+        isTrue = TRUE;
+    }
+    return isTrue;
+}
+
+void modifyButtons(char operationChar, int operationNum)
 {
     if (Game.isButtonModify == FALSE)
         backupButton();
     for (int i=0; i<Game.buttonNum; i++)
     {
-        if (Game.buttons[i].type == PLUS ||
-            Game.buttons[i].type == MINUS ||
-            Game.buttons[i].type == MULTIPLY ||
-            Game.buttons[i].type == DIVIDE ||
-            Game.buttons[i].type == APPEND)
+        if (isModifiableButton(&Game.buttons[i]))
         {
             switch (operationChar)
             {
                 case '+':
-                    Game.buttons[i].number[0] += operationNum;
+                    if (Game.buttons[i].type == APPEND)
+                    {
+                        Game.buttons[i].attachedInfo.appendNum += operationNum;
+                    }
+                    else if (isArithmeticButton(&Game.buttons[i]))
+                    {
+                        Game.buttons[i].attachedInfo.operationNum += operationNum;
+                    }
                     break;
                 case '-':
-                    Game.buttons[i].number[0] -= operationNum;
+                    if (Game.buttons[i].type == APPEND)
+                    {
+                        Game.buttons[i].attachedInfo.appendNum -= operationNum;
+                    }
+                    else if (isArithmeticButton(&Game.buttons[i]))
+                    {
+                        Game.buttons[i].attachedInfo.operationNum -= operationNum;
+                    }
                     break;
                 case '*':
-                    Game.buttons[i].number[0] *= operationNum;
+                    if (Game.buttons[i].type == APPEND)
+                    {
+                        Game.buttons[i].attachedInfo.appendNum *= operationNum;
+                    }
+                    else if (isArithmeticButton(&Game.buttons[i]))
+                    {
+                        Game.buttons[i].attachedInfo.operationNum *= operationNum;
+                    }
                     break;
                 case '/':
-                    Game.buttons[i].number[0] /= operationNum;
+                    if (Game.buttons[i].type == APPEND)
+                    {
+                        Game.buttons[i].attachedInfo.appendNum /= operationNum;
+                    }
+                    else if (isArithmeticButton(&Game.buttons[i]))
+                    {
+                        Game.buttons[i].attachedInfo.operationNum /= operationNum;
+                    }
                     break;
+                default:break;
             }
         }
     }

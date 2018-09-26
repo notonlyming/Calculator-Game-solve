@@ -7,6 +7,7 @@
 #define NUMBER_STR_MAX_LENGTH 20
 #define MAX_BUTTON_NUM 5
 #define STORE_NOTHING -1
+#define MAX_REPLACE_NUM_LENGTH 3
 
 typedef enum
 {
@@ -26,12 +27,26 @@ typedef enum
     STORE,        //存储数字
     MODIFY,       //更改按钮的数值
     UNKNOW        //未知类型
-} ButtonTpye;
+} ButtonType;
 
 typedef struct
 {
-    ButtonTpye type; //按钮类型
-    int number[2];     //操作数数组（最多存两个，也可只存一个）
+    ButtonType type; //按钮类型
+    union{
+        int operationNum;  //用于存储加减乘除操作
+        struct {
+            char strReplaceFrom[MAX_REPLACE_NUM_LENGTH];
+            char strReplaceTo[MAX_REPLACE_NUM_LENGTH];
+        } replaceInfo;  //存储用于替换的值
+        struct {
+            char arithmeticSymbol;
+            int operationNum;
+        } modifyInfo;
+        enum shiftDirection {SHIFT_RIGHT, SHIFT_LEFT} shiftDirection;  //移位方向
+        int exponent;  //存储幂运算的指数
+        int appendNum;  //追加到末尾的数字
+        int storeNum;  //存储按钮存储区
+    } attachedInfo;
 } Button;            //存储按钮的详细信息
 
 typedef struct storeOrNotAnswerList{
@@ -48,8 +63,8 @@ typedef storeOrNotAnswerList storeOrNotAnswerNode;
 struct GameStruct
 {
     int startNum;     //储存开始状态下游戏中屏幕显示的内容
-    int buttonNum;    //按钮个数
-    int allowMaxStep; //允许的最大步数
+    unsigned short buttonNum;    //按钮个数
+    unsigned short allowMaxStep; //允许的最大步数
     int gameAchieve;  //游戏目标
     Button *buttons;  //按钮数组头指针
     unsigned short isOnError;  //判断计算是否出现错误，如出现小数
