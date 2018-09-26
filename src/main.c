@@ -22,6 +22,7 @@ int main(int argc, char **argv)
         unsigned int counter[2] = {0};
         struct GameStruct *gameP;
         printWelcome();
+        char isContinue;
         do
         {
             puts("-------------------新的一关开始啦-------------------");
@@ -30,7 +31,10 @@ int main(int argc, char **argv)
             gameOver();
             printSolutionInfo(counter, gameP);
             puts("温馨提示：退出请按Ctrl+C");
-        } while (1);
+            do {
+                printf("Continue?(y/n):");
+            }while ( (isContinue = (char) getchar()) == '\n' );
+        } while (isContinue != 'n');
     }
     else if ( argc == 2 && !strcmp(argv[1], "debug") )
     {
