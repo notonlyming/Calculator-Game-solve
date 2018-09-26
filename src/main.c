@@ -32,7 +32,6 @@ int main(int argc, char **argv)
             solveIt(counter);
             gameOver();
             printSolutionInfo(counter, gameP);
-            puts("温馨提示：退出请按Ctrl+C");
             do {
                 printf("Continue?(y/n):");
             }while ( (isContinue = (char) getchar()) == '\n' );
