@@ -26,6 +26,7 @@ typedef enum
 	MIRROR,	      //镜像数字
     STORE,        //存储数字
     MODIFY,       //更改按钮的数值
+    LNV10,        //每一位减去10 取绝对值 并取余10
     UNKNOW        //未知类型
 } ButtonType;
 

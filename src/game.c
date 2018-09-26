@@ -66,6 +66,9 @@ char *buttonStr(Button button)
         else
             strcpy(infoStr, "Store");
         break;
+    case LNV10:
+        strcpy(infoStr, "lnv10");
+        break;
     case UNKNOW:
         strcpy(infoStr, "UNKNOW");
         break;

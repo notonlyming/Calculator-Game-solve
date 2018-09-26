@@ -240,11 +240,40 @@ int pressButton(Button buttonToPress, int currentNumber)
         else
             Game.isOnError = TRUE;
         break;
+    case LNV10:
+        result = lnv10(result);
+        break;
     case UNKNOW:; //do nothing
     break;
     }
 	checkNumberLarge(result);
     return result;
+}
+
+int lnv10(int number)
+{
+    short sign;
+    if (number >= 0) {
+        sign = (short) +1;
+    } else {
+        sign = (short) -1;
+        number *= -1;
+    }
+    unsigned short numberLength = (unsigned short) calculateNumberLength(number);
+    unsigned short *numberBit = (unsigned short*)malloc(numberLength * sizeof(unsigned short));
+    //取出每一位
+    for (int i=0; i<numberLength; i++)
+    {
+        numberBit[i] = (unsigned short) (number % 10);
+        number /= 10;
+        numberBit[i] = (unsigned short) (10 - numberBit[i]); //用10减去它
+    }
+    //放回每一位
+    for (int i=0; i<numberLength; i++)
+    {
+        number += numberBit[i] * (int)pow(10, i);
+    }
+    return number*sign;
 }
 
 //这里处理长按

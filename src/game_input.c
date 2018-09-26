@@ -152,6 +152,10 @@ Button analyseButtonStr(char *buttonStr)
     {
         tempButton.type = BACKSPACE;
     }
+    else if (!strcmp(strlwr(buttonStr), "lnv10"))
+    {
+        tempButton.type = LNV10;
+    }
     if (tempButton.type == UNKNOW)
     {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");
