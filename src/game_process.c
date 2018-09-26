@@ -502,7 +502,7 @@ void modifyButtons(char operationChar, int operationNum)
                     {
                         Game.buttons[i].attachedInfo.appendNum += operationNum;
                     }
-                    else if (isArithmeticButton(&Game.buttons[i]))
+                    else
                     {
                         Game.buttons[i].attachedInfo.operationNum += operationNum;
                     }
@@ -512,7 +512,7 @@ void modifyButtons(char operationChar, int operationNum)
                     {
                         Game.buttons[i].attachedInfo.appendNum -= operationNum;
                     }
-                    else if (isArithmeticButton(&Game.buttons[i]))
+                    else
                     {
                         Game.buttons[i].attachedInfo.operationNum -= operationNum;
                     }
@@ -522,7 +522,7 @@ void modifyButtons(char operationChar, int operationNum)
                     {
                         Game.buttons[i].attachedInfo.appendNum *= operationNum;
                     }
-                    else if (isArithmeticButton(&Game.buttons[i]))
+                    else
                     {
                         Game.buttons[i].attachedInfo.operationNum *= operationNum;
                     }
@@ -532,7 +532,7 @@ void modifyButtons(char operationChar, int operationNum)
                     {
                         Game.buttons[i].attachedInfo.appendNum /= operationNum;
                     }
-                    else if (isArithmeticButton(&Game.buttons[i]))
+                    else
                     {
                         Game.buttons[i].attachedInfo.operationNum /= operationNum;
                     }
