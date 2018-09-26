@@ -6,7 +6,7 @@ int calculateNumberLength(int number);
 int pressButton(Button buttonToPress, int currentNumber);
 int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radix);
 int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth);
-unsigned int* solveIt(unsigned int counter[2]);
+unsigned int* solveIt(unsigned int counter[2], short isOutputSteps);
 int numberReplace(int number, char *fromNumStr, char *toNumStr);
 int reverseNum(int number);
 int numberSum(int number);

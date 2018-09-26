@@ -47,3 +47,16 @@ void pressButtonStepByStep()
         puts("-----------------------------------------------------");
     }
 }
+
+void printSteps(unsigned short answer[], unsigned short isStoreAnswer[])
+{
+    printf("当前解决方案 普通：");
+    for (int i = 0; i < Game.allowMaxStep; ++i) {
+        printf("%d", answer[i]);
+    }
+    printf(" 存储：");
+    for (int j = 0; j < Game.allowMaxStep; ++j) {
+        printf("%d", isStoreAnswer[j]);
+    }
+    putchar('\n');
+}

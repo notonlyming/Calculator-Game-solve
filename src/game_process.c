@@ -14,6 +14,7 @@
 #include <string.h>
 #include "game_output.h"
 #include "game_process.h"
+#include "stepObserver.h"
 
 int reverseNum(int number)
 {
@@ -386,7 +387,7 @@ void initAllIsStoreAnswer()
 }
 
 //尝试所有可能，并返回由尝试次数和解的个数构成的数组地址，需要传入用于存储计数的数组
-unsigned int* solveIt(unsigned int counter[2])
+unsigned int* solveIt(unsigned int counter[2], short isOutputSteps)
 {
     int tempResult;    //试错临时结果变量
     unsigned short *answer = (unsigned short *)malloc(sizeof(unsigned short) * Game.allowMaxStep); //用于存储解的过程
@@ -420,7 +421,9 @@ unsigned int* solveIt(unsigned int counter[2])
                         }
                     }
                     tempResult = pressButton(Game.buttons[answer[step]], tempResult);
-
+                    //Output for debug...
+                    if (isOutputSteps)
+                        printSteps(answer, storeAnswer->isStoreAnswer);
                     if (Game.isOnError == TRUE)
                     {
                         //已经计算出错，此方案不可行

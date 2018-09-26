@@ -18,8 +18,8 @@
 
 int main(int argc, char **argv)
 {
-
-    if ( argc == 1 )
+    short isOutputSteps = ( argc == 2 && !strcmp(argv[1], "showSteps") );
+    if ( argc == 1 || isOutputSteps )
     {
         unsigned int counter[2] = {0};
         struct GameStruct *gameP;
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
         {
             puts("-------------------新的一关开始啦-------------------");
             gameP = getGameLevelInfo();
-            solveIt(counter);
+            solveIt(counter , isOutputSteps);
             gameOver();
             printSolutionInfo(counter, gameP);
             do {
