@@ -448,7 +448,7 @@ unsigned int* solveIt(unsigned int counter[2], short isOutputSteps)
                     Game.isOnError = FALSE;
                 }
                 resetButton();
-            } while(storeAnswer != NULL && !numerationAddOne(storeAnswer->isStoreAnswer, Game.buttonNum, stepsNum));
+            } while(storeAnswer != NULL && !numerationAddOne(storeAnswer->isStoreAnswer, 2, stepsNum));
         } while (!numerationAddOne(answer, Game.buttonNum, stepsNum));
     }
     findEnd:
