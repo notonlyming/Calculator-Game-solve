@@ -102,7 +102,7 @@ void freeStoreWayList()
             free(listPCurrent);
         } while (listPNext);
     }
-
+    Game.storeOrNotAnswerListHead = NULL;
 }
 
 void resetButton()

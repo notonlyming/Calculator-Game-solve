@@ -58,7 +58,7 @@ void printSteps(unsigned short answer[], storeOrNotAnswerNode *storeAnswerList)
     {
         printf(" 存储：");
         for (int j = 0; j < Game.allowMaxStep; ++j) {
-            printf("%d", storeAnswerList->isStoreAnswer[j]);
+            printf("%d", storeAnswerList->next->isStoreAnswer[j]);
         }
     }
 
