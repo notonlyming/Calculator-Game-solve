@@ -452,7 +452,7 @@ unsigned int* solveIt(unsigned int counter[2], short isOutputSteps)
                     tempResult = pressButton(Game.buttons[answer[step]], tempResult);
                     //Output for debug...
                     if (isOutputSteps)
-                        printSteps(answer, storeAnswer->isStoreAnswer);
+                        printSteps(answer, storeAnswer);
                     if (Game.isOnError == TRUE)
                     {
                         //已经计算出错，此方案不可行
