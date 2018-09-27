@@ -266,7 +266,7 @@ int lnv10(int number)
     {
         numberBit[i] = (unsigned short) (number % 10);
         number /= 10;
-        numberBit[i] = (unsigned short) (10 - numberBit[i]); //用10减去它
+        numberBit[i] = (unsigned short) ((10 - numberBit[i]) % 10); //用10减去它
     }
     //放回每一位
     for (int i=0; i<numberLength; i++)
