@@ -321,7 +321,7 @@ Note：这时C盘下应该有一个名字是tcc的文件夹，并且文件夹里
 
 1.下载源代码
 
-方法一：直接在[项目地址](https://github.com/notonlyming/Calculator-Game-solve)的页面上单击文件列表右上方(约3点钟方向)的clone or download,然后点击下载 zip。下载后解压。
+方法一：直接在[项目地址](https://github.com/notonlyming/Calculator-Game-solve)的页面上单击文件列表右上方(约2点钟方向)的clone or download,然后点击下载 zip。下载后解压。
 
 方法二：使用[GitHub Desktop](https://desktop.github.com/)克隆，这里不过多叙述。
 
@@ -343,9 +343,7 @@ Note：在cmd中 请尽量始终使用 `cd /D "路径"`切换
 
 3.编译
 
-主程序：`tcc main.c game.c game_input.c game_output.c game_process.c -Wall -Wextra -Werror -o calulator_game.exe`
-
-跟踪测试程序：`tcc game_test.c game.c game_input.c game_output.c game_process.c -Wall -Wextra -Werror -o game_test.exe`
+主程序：`tcc src/*.c -Wall -Wextra -Werror -o calulator_game.exe`
 
 若编译器无报错则编译成功！
 
