@@ -50,7 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-calulator_game
+calculator_game
 game_test
 CMakeLists.txt
 cmake-build-debug/
