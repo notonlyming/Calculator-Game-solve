@@ -1,3 +1,2 @@
-source := $(shell ls src/*.c)
-calulator_game:$(source)
+calculator_game:src/*.c
 	clang $^ -Wall -Wextra -Werror -lm -o $@
