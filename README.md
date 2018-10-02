@@ -239,7 +239,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted
 
 回到Ubuntu按下小写i进入插入模式，右击鼠标粘贴
 
-ESC退出插入模式 输入英文状态下的:wq并回车，保存退出。
+ESC退出插入模式 输入英文状态下的`:wq`并回车，保存退出。
 
 更新Linux子系统
 ------------------------
