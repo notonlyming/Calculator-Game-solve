@@ -23,6 +23,7 @@ int main(int argc, char **argv)
     if ( argc == 1 || isOutputSteps )
     {
         unsigned int counter[2] = {0};
+        clock_t startTime;
         struct GameStruct *gameP;
         printWelcome();
         char isContinue;
@@ -30,7 +31,7 @@ int main(int argc, char **argv)
         {
             puts("-------------------新的一关开始啦-------------------");
             gameP = getGameLevelInfo();
-            clock_t startTime = clock();
+            startTime = clock();
             solveIt(counter , isOutputSteps);
             gameOver();
             printSolutionInfo(counter, gameP);
