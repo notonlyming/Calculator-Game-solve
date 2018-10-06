@@ -10,7 +10,9 @@
 #include <string.h>
 #include "game.h"
 
-struct GameStruct Game = {.isOnError = FALSE, .unchangeButtons=NULL, .isButtonModify=FALSE, .storeOrNotAnswerListHead=NULL};
+struct GameStruct Game = { .isOnError = FALSE, .unchangeButtons=NULL,
+        .isButtonModify=FALSE, .storeOrNotAnswerListHead=NULL,
+        .portalPointer=NULL };
 
 //该函数用于取得按钮对应信息的字符串
 char *buttonStr(Button button)
@@ -82,6 +84,7 @@ void gameOver()
     free(Game.buttons); //有借有还
     free(Game.unchangeButtons);
     freeStoreWayList();
+    free(Game.portalPointer);
     Game.buttons = NULL;
     Game.unchangeButtons = NULL;
 }

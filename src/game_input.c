@@ -44,7 +44,7 @@ struct GameStruct* getGameLevelInfo()
         strP = strP + strlen(buttonStr) + 1;
         Game.buttons[i] = analyseButtonStr(buttonStr);
     }
-
+    getAndInitialisePortal();
     printButtons(Game.buttons, Game.buttonNum);
     return &Game;
 }

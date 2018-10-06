@@ -1,6 +1,8 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 
+#include "game_portal.h"
+
 #define TRUE 1
 #define FALSE 0
 #define BUTTON_STR_MAX_LENGTH 10
@@ -70,6 +72,7 @@ struct GameStruct
     Button *buttons;  //按钮数组头指针
     unsigned short isOnError;  //判断计算是否出现错误，如出现小数
     unsigned short isButtonModify; //用于记录按钮是否被修改
+    portal* portalPointer;  //传送门指针
     Button *unchangeButtons;  //如果按钮被更改，将会复制一份原始值到这里
     storeOrNotAnswerList *storeOrNotAnswerListHead;  //如果存在store按钮，将会在这里建立存储方案链表
 };

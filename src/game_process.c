@@ -15,6 +15,7 @@
 #include "game_output.h"
 #include "game_process.h"
 #include "stepObserver.h"
+#include "game_portal.h"
 
 int reverseNum(int number)
 {
@@ -247,6 +248,10 @@ int pressButton(Button buttonToPress, int currentNumber)
     break;
     }
 	checkNumberLarge(result);
+    if (Game.portalPointer)
+    {
+        result = doTransmit(*Game.portalPointer, result);
+    }
     return result;
 }
 

@@ -35,8 +35,9 @@ int main(int argc, char **argv)
             gameOver();
             printSolutionInfo(counter, gameP);
             printf("Finish task in %lfs.\n", (clock() - startTime) / (double)CLOCKS_PER_SEC);
+            printf("Continue?(y/n):");
             do {
-                printf("Continue?(y/n):");
+                ;
             }while ( (isContinue = (char) getchar()) == '\n' );
         } while (isContinue != 'n');
     }
