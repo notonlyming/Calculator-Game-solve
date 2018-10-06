@@ -50,5 +50,5 @@ void getAndInitialisePortal() {
         printf("请输入传送门传送入口和传送出口位置（空格分隔）：");
         scanf("%d%d", &Game.portalPointer->portalEntranceIndex, &Game.portalPointer->portalExitIndex);
     }
-
+    getchar();  //拿掉换行符
 }

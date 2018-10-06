@@ -478,10 +478,17 @@ unsigned int* solveIt(unsigned int counter[2], short isOutputSteps)
                 {
                     printSolution(answer, stepsNum);
                     counter[1]++;
-                    if (counter[1] >= 10)
+                    if (counter[1] == 10)
                     {
-                        resetButton();
-                        goto findEnd;
+                        char isCalculaterAllSolve;
+                        printf("该level可能有10个以上的解...\n"
+                               "继续计算可能需要消耗大量时间，是否继续？(y/n):");
+                        scanf("%c", &isCalculaterAllSolve);
+                        if (isCalculaterAllSolve == 'n')
+                        {
+                            resetButton();
+                            goto findEnd;
+                        }
                     }
                 }
                 else //本次尝试失败
