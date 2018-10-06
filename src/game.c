@@ -87,6 +87,7 @@ void gameOver()
     free(Game.portalPointer);
     Game.buttons = NULL;
     Game.unchangeButtons = NULL;
+    Game.portalPointer = NULL;
 }
 
 void freeStoreWayList()
