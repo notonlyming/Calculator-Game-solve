@@ -278,6 +278,7 @@ int lnv10(int number)
     {
         number += numberBit[i] * (int)pow(10, i);
     }
+	free(numberBit);
     return number*sign;
 }
 
