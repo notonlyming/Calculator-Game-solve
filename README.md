@@ -131,8 +131,6 @@ Note：如果不希望安装git可以使用[GitHub Desktop](https://desktop.gith
 
 TCC方案。[TCC项目简介传送门](https://bellard.org/tcc/)
 
-### TCC方案
-
 安装TCC
 -------
 
