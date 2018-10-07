@@ -36,10 +36,10 @@ int main(int argc, char **argv)
             gameOver();
             printSolutionInfo(counter, gameP);
             printf("Finish task in %lfs.\n", (clock() - startTime) / (double)CLOCKS_PER_SEC);
-            printf("Continue?(y/n):");
             do {
-                ;
-            }while ( (isContinue = (char) getchar()) == '\n' );
+                printf("Continue?(y/n):");
+                //循环读入，直到得到有效值
+            }while ( (isContinue = (char) getchar()) != 'y' && isContinue != 'n' );
         } while (isContinue != 'n');
     }
     else if ( argc == 2 && !strcmp(argv[1], "debug") )

@@ -98,7 +98,6 @@ void freeStoreWayList()
         free(Game.storeOrNotAnswerStructP);
         Game.storeOrNotAnswerStructP = NULL;
     }
-
 }
 
 void resetButton()
