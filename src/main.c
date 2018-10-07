@@ -7,6 +7,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include "game_input.h"
@@ -16,6 +17,9 @@
 #include "stepObserver.h"
 
 int main(int argc, char **argv) {
+    #ifdef WINVER
+    system("chcp 65001");
+    #endif
     short isOutputSteps = (argc == 2 && !strcmp(argv[1], "showSteps"));
     if (argc == 1 || isOutputSteps) {
         unsigned int counter[2] = {0};
