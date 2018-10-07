@@ -10,7 +10,9 @@ typedef struct {
 } portal;
 
 int checkPortalStatus(portal portalToCheck, int currentNumber);
+
 int doTransmit(portal portalToDoTransmit, int currentNumber);
+
 void getAndInitialisePortal();
 
 #endif //CALCULATOR_GAME_SOLVE_PORTAL_H

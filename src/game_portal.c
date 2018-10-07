@@ -1,6 +1,5 @@
 /*
  * 处理传送门的代码
- * Created by lm on 18-10-6.
  */
 
 #include "game_portal.h"
@@ -35,8 +34,8 @@ int doTransmit(portal portalToDoTransmit, int currentNumber) {
                  //传送区域中间的已传送数值
                  (numberToAdd + numberOnEntrance) * (int) pow(10, portalToDoTransmit.portalExitIndex - 1) +
                  (portalToDoTransmit.portalExitIndex > 1 ?
-                 result % (int) pow(10, portalToDoTransmit.portalExitIndex - 1)
-                 : 0);  //传送区域右边的数值
+                  result % (int) pow(10, portalToDoTransmit.portalExitIndex - 1)
+                                                         : 0);  //传送区域右边的数值
     }
     return result * sign;
 }
