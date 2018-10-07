@@ -382,6 +382,7 @@ unsigned int *solveIt(unsigned int counter[2], short isOutputSteps) {
                         printf("该level可能有10个以上的解...\n"
                                "继续计算可能需要消耗大量时间，是否继续？(y/n):");
                         scanf("%c", &isCalculateAllSolve);
+						getchar();  //拿掉换行符
                         if (isCalculateAllSolve == 'n') {
                             resetButton();
                             goto findEnd;
