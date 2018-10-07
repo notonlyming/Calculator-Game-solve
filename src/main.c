@@ -31,8 +31,8 @@ int main(int argc, char **argv) {
             gameOver();
             printSolutionInfo(counter, gameP);
             printf("Finish task in %lfs.\n", (clock() - startTime) / (double) CLOCKS_PER_SEC);
+            printf("Continue?(y/n):");
             do {
-                printf("Continue?(y/n):");
                 //循环读入，直到得到有效值
             } while ((isContinue = (char) getchar()) != 'y' && isContinue != 'n');
         } while (isContinue != 'n');
