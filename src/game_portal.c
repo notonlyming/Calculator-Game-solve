@@ -4,13 +4,13 @@
 
 #include "game_portal.h"
 #include "game.h"
+#include "game_process.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 int checkPortalStatus(portal portalToCheck, int currentNumber) {
     int status;
-    if (currentNumber / (int) pow(10, portalToCheck.portalEntranceIndex - 1) > 0) {
+    if (currentNumber / (int) powInt(10, portalToCheck.portalEntranceIndex - 1) > 0) {
         status = PORTAL_HAS_NUMBER;
     } else {
         status = PORTAL_NO_NUMBER;
@@ -22,19 +22,19 @@ int doTransmit(portal portalToDoTransmit, int currentNumber) {
     short sign = (short) (currentNumber >= 0 ? +1 : -1);
     int result = currentNumber < 0 ? -currentNumber : currentNumber;
     while (checkPortalStatus(portalToDoTransmit, result) == PORTAL_HAS_NUMBER) {
-        int numberOnEntrance = result / (int) pow(10, portalToDoTransmit.portalEntranceIndex - 1) % 10;
+        int numberOnEntrance = result / (int) powInt(10, portalToDoTransmit.portalEntranceIndex - 1) % 10;
         int numberToAdd = ((result -
                             //除去传送区域左边的数值
-                            (result / (int) pow(10, portalToDoTransmit.portalEntranceIndex - 1) *
-                             (int) pow(10, portalToDoTransmit.portalEntranceIndex - 1)))) /
+                            (result / (int) powInt(10, portalToDoTransmit.portalEntranceIndex - 1) *
+                             (int) powInt(10, portalToDoTransmit.portalEntranceIndex - 1)))) /
                           //除去传送区域右边的数值
-                          (int) pow(10, portalToDoTransmit.portalExitIndex - 1);
-        result = result / (int) pow(10, portalToDoTransmit.portalEntranceIndex) *
-                 (int) pow(10, portalToDoTransmit.portalEntranceIndex - 1) +  //传送区域左端的数值
+                          (int) powInt(10, portalToDoTransmit.portalExitIndex - 1);
+        result = result / (int) powInt(10, portalToDoTransmit.portalEntranceIndex) *
+                 (int) powInt(10, portalToDoTransmit.portalEntranceIndex - 1) +  //传送区域左端的数值
                  //传送区域中间的已传送数值
-                 (numberToAdd + numberOnEntrance) * (int) pow(10, portalToDoTransmit.portalExitIndex - 1) +
+                 (numberToAdd + numberOnEntrance) * (int) powInt(10, portalToDoTransmit.portalExitIndex - 1) +
                  (portalToDoTransmit.portalExitIndex > 1 ?
-                  result % (int) pow(10, portalToDoTransmit.portalExitIndex - 1)
+                  result % (int) powInt(10, portalToDoTransmit.portalExitIndex - 1)
                                                          : 0);  //传送区域右边的数值
     }
     return result * sign;

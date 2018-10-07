@@ -3,7 +3,6 @@
  */
 
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 #include "game.h"
 #include <string.h>
@@ -74,8 +73,8 @@ int numberReplace(int number, char *fromNumStr, char *toNumStr) {
             //前面的已经查找并替换过了，现在查找指针移到后面
             strP = endPosition + (strlen(toNumStr) - strlen(fromNumStr));
         }
-    }
     sscanf(newNumStr, "%d", &number); //转换为整型
+    }
     return number;
 }
 
@@ -171,7 +170,7 @@ int pressButton(Button buttonToPress, int currentNumber) {
                                    buttonToPress.attachedInfo.replaceInfo.strReplaceTo);
             break;
         case POW:
-            result = (int) pow(result, buttonToPress.attachedInfo.exponent);
+            result = (int) powInt(result, buttonToPress.attachedInfo.exponent);
             break;
         case SIGN_CONVERT:
             result *= -1;
@@ -220,20 +219,30 @@ int lnv10(int number) {
         sign = (short) -1;
         number *= -1;
     }
-    unsigned short numberLength = (unsigned short) calculateNumberLength(number);
-    unsigned short *numberBit = (unsigned short *) malloc(numberLength * sizeof(unsigned short));
+    short numberLength = (short) calculateNumberLength(number);
+    short *numberBit = (short*) malloc(numberLength * sizeof(short));
     //取出每一位
     for (int i = 0; i < numberLength; i++) {
-        numberBit[i] = (unsigned short) (number % 10);
+        numberBit[i] = (short) (number % 10);
         number /= 10;
-        numberBit[i] = (unsigned short) ((10 - numberBit[i]) % 10); //用10减去它
+        numberBit[i] = (short) ((10 - numberBit[i]) % 10); //用10减去它
     }
     //放回每一位
     for (int i = 0; i < numberLength; i++) {
-        number += numberBit[i] * (int) pow(10, i);
+        number += (int) numberBit[i] * powInt(10, i);
     }
     free(numberBit);
     return number * sign;
+}
+
+int powInt(int base, int exponent)
+{
+    int result = 1;
+    for (int i=0; i<exponent; i++)
+    {
+        result *= base;
+    }
+    return result;
 }
 
 //这里处理长按
@@ -250,9 +259,9 @@ void storeNumberToButton(int currentNumber, Button *storeButton) {
 
 int numberAppend(int sourceNum, int numberToAppend) {
     if (sourceNum >= 0)
-        sourceNum = (int) (sourceNum * pow(10, calculateNumberLength(numberToAppend)) + numberToAppend);
+        sourceNum = (int) (sourceNum * powInt(10, calculateNumberLength(numberToAppend)) + numberToAppend);
     else
-        sourceNum = (int) (sourceNum * pow(10, calculateNumberLength(numberToAppend)) - numberToAppend);
+        sourceNum = (int) (sourceNum * powInt(10, calculateNumberLength(numberToAppend)) - numberToAppend);
     return sourceNum;
 }
 
