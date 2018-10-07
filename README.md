@@ -220,6 +220,12 @@ Note:在cmd和powershell中复制完后，若要粘贴复制的内容只需在�
 
 windows下可双击运行，unix或类unix系统可在终端中运行
 
+### 乱码问题
+
+若windows下出现乱码（一般为非win10系统），请先安装<a href="https://github.com/notonlyming/Calculator-Game-solve/releases/download/1.0.1/Consola.ttf" target="_blank">该字体</a>
+
+并右击标题栏点属性将字体切换为Consola后确定。重启程序后，乱码问题应当得到解决。
+
 ### 如何录入关卡
 
 运行起来后需要输入如下信息：
