@@ -16,7 +16,7 @@ void modifyButtons(char operationChar, int operationNum);
 void strReverse(char stringToReverse[]);
 int numberAppend(int sourceNum, int numberToAppend);
 void storeNumberToButton(int currentNumber, Button *storeButton);
-storeOrNotAnswerList* createStoreAnswerListForStoreButton();
+storeOrNotAnswerStruct* createStoreAnswerListForStoreButton();
 short initAllIsStoreAnswer();
 unsigned short isArithmeticButton(Button *button);
 unsigned short isModifiableButton(Button *button);

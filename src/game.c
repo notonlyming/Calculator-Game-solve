@@ -11,7 +11,7 @@
 #include "game.h"
 
 struct GameStruct Game = { .isOnError = FALSE, .unchangeButtons=NULL,
-        .isButtonModify=FALSE, .storeOrNotAnswerListHead=NULL,
+        .isButtonModify=FALSE, .storeOrNotAnswerStructP=NULL,
         .portalPointer=NULL };
 
 //该函数用于取得按钮对应信息的字符串
@@ -92,21 +92,13 @@ void gameOver()
 
 void freeStoreWayList()
 {
-    if (Game.storeOrNotAnswerListHead)
+    if (Game.storeOrNotAnswerStructP)
     {
-        storeOrNotAnswerNode *listPCurrent = Game.storeOrNotAnswerListHead;
-        storeOrNotAnswerNode *listPNext = listPCurrent->next;
-        free(listPCurrent);  //释放头节点
-        do
-        {
-            //指针后移
-            listPCurrent = listPNext;
-            listPNext = listPNext->next;
-            free(listPCurrent->isStoreAnswer);  //释放存储方案数组
-            free(listPCurrent);
-        } while (listPNext);
+        free(Game.storeOrNotAnswerStructP->isStoreAnswer);  //释放存储方案数组
+        free(Game.storeOrNotAnswerStructP);
+        Game.storeOrNotAnswerStructP = NULL;
     }
-    Game.storeOrNotAnswerListHead = NULL;
+
 }
 
 void resetButton()

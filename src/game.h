@@ -52,16 +52,10 @@ typedef struct
     } attachedInfo;
 } Button;            //存储按钮的详细信息
 
-typedef struct storeOrNotAnswerList{
-    union{
-        short storeButtonCount;  //头节点存储了存储按钮的个数
-        unsigned short *isStoreAnswer;  //单个store按钮对应存储方法
-    };
+typedef struct {
+    unsigned short *isStoreAnswer;  //单个store按钮对应存储方法
     Button *storeButtonP;  //指向对应的store按钮，方便去按它
-    struct storeOrNotAnswerList *next;
-} storeOrNotAnswerList;
-
-typedef storeOrNotAnswerList storeOrNotAnswerNode;
+} storeOrNotAnswerStruct;
 
 struct GameStruct
 {
@@ -74,7 +68,7 @@ struct GameStruct
     unsigned short isButtonModify; //用于记录按钮是否被修改
     portal* portalPointer;  //传送门指针
     Button *unchangeButtons;  //如果按钮被更改，将会复制一份原始值到这里
-    storeOrNotAnswerList *storeOrNotAnswerListHead;  //如果存在store按钮，将会在这里建立存储方案链表
+    storeOrNotAnswerStruct *storeOrNotAnswerStructP;  //如果存在store按钮，将会在这里建立存储方案链表
 };
 
 char *buttonStr(Button button);

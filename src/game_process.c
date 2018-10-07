@@ -365,62 +365,43 @@ int numerationAddOne(unsigned short number[], unsigned short radix, unsigned sho
     return 0;
 }
 
-storeOrNotAnswerList* createStoreAnswerListForStoreButton()
+storeOrNotAnswerStruct* createStoreAnswerListForStoreButton()
 {
     //计算存储按钮的个数
-    short storeButtonIndex[MAX_BUTTON_NUM];  //记录按钮的索引信息，方便后面添加该按钮到存储方案链表里
-    short storeButtonCounter = 0;
+    short storeButtonIndex = -1;  //记录按钮的索引信息，方便后面添加该按钮到存储方案链表里
     for (short i=0; i<Game.buttonNum; i++)
     {
         if (Game.buttons[i].type == STORE)
         {
-            storeButtonIndex[storeButtonCounter] = i;  //记录索引信息
-            storeButtonCounter++;  //计数器加一
+            storeButtonIndex = i;  //记录索引信息
+            break;
         }
     }
-    if (storeButtonCounter != 0)
+    if (storeButtonIndex != -1)
     {
-        //创建头节点
-        Game.storeOrNotAnswerListHead = (storeOrNotAnswerNode*)malloc(sizeof(storeOrNotAnswerNode));
-        Game.storeOrNotAnswerListHead->storeButtonCount = storeButtonCounter;
-        //创建存储方案链表
-        storeOrNotAnswerNode *tailP = Game.storeOrNotAnswerListHead;
-        for (int i=0; i<Game.storeOrNotAnswerListHead->storeButtonCount; i++)
+        //申请空间
+        Game.storeOrNotAnswerStructP = (storeOrNotAnswerStruct*)malloc(sizeof(storeOrNotAnswerStruct));
+        //为新添加的节点指明它对应的是哪个按钮的存储方案
+        Game.storeOrNotAnswerStructP->storeButtonP = &(Game.buttons[storeButtonIndex]);
+        //创建插空法存储方案数组
+        Game.storeOrNotAnswerStructP->isStoreAnswer = malloc( sizeof(Game.storeOrNotAnswerStructP->isStoreAnswer[0]) * Game.allowMaxStep );
+        //数组元素初始化为0表示不按
+        for (int j=0; j<Game.allowMaxStep; j++)
         {
-            //创建新节点
-            tailP->next = (storeOrNotAnswerNode*)malloc(sizeof(storeOrNotAnswerNode));
-            //指针后移
-            tailP = tailP->next;
-            //结尾next先赋值NULL
-            tailP->next = NULL;
-            //为新添加的节点指明它对应的是哪个按钮的存储方案
-            tailP->storeButtonP = &(Game.buttons[storeButtonIndex[i]]);
-            //创建插空法存储方案数组
-            tailP->isStoreAnswer = malloc( sizeof(tailP->isStoreAnswer[0]) * Game.allowMaxStep );
-            //数组元素初始化为0表示不按
-            for (int j=0; j<Game.allowMaxStep; j++)
-            {
-                tailP->isStoreAnswer[j] = 0;
-            }
+            Game.storeOrNotAnswerStructP->isStoreAnswer[j] = 0;
         }
     }
-    return Game.storeOrNotAnswerListHead;
+    return Game.storeOrNotAnswerStructP;
 }
 
 short initAllIsStoreAnswer()
 {
-    if (Game.storeOrNotAnswerListHead)
+    if (Game.storeOrNotAnswerStructP)
     {
-        storeOrNotAnswerNode *listP = Game.storeOrNotAnswerListHead;
-        if (listP)
+        if (Game.storeOrNotAnswerStructP)
         {
-            listP = listP->next;
-            while (listP)
-            {
-                for (int i = 0; i < Game.allowMaxStep; i++)
-                    listP->isStoreAnswer[i] = 0; //所有位初始化为0
-                listP = listP->next;
-            }
+            for (int i = 0; i < Game.allowMaxStep; i++)
+                Game.storeOrNotAnswerStructP->isStoreAnswer[i] = 0; //所有位初始化为0
         }
         return 0;
     }
@@ -439,7 +420,7 @@ unsigned int* solveIt(unsigned int counter[2], short isOutputSteps)
     counter[1] = 0;  //求得解的个数计数器
 
     //从最少的步数开始尝试，看看有没有最优解
-    storeOrNotAnswerList *storeAnswer = createStoreAnswerListForStoreButton();  //存储当前尝试的store答案数组指针
+    storeOrNotAnswerStruct *storeAnswer = createStoreAnswerListForStoreButton();  //存储当前尝试的store答案数组指针
     for (unsigned short stepsNum = 1; stepsNum <= Game.allowMaxStep; stepsNum++)
     {
         for (int i = 0; i < Game.allowMaxStep; i++)
@@ -457,9 +438,9 @@ unsigned int* solveIt(unsigned int counter[2], short isOutputSteps)
                     {
                         //根据存储按钮答案数组，决定是否存储
                         //如果为真就存储长按
-                        if(storeAnswer->next->isStoreAnswer[step])
+                        if(storeAnswer->isStoreAnswer[step])
                         {
-                            storeNumberToButton(tempResult, storeAnswer->next->storeButtonP);
+                            storeNumberToButton(tempResult, storeAnswer->storeButtonP);
                         }
                     }
                     tempResult = pressButton(Game.buttons[answer[step]], tempResult);
@@ -497,7 +478,7 @@ unsigned int* solveIt(unsigned int counter[2], short isOutputSteps)
                     Game.isOnError = FALSE;
                 }
                 resetButton();
-            } while(storeAnswer != NULL && !numerationAddOne(storeAnswer->next->isStoreAnswer, 2, stepsNum));
+            } while(storeAnswer != NULL && !numerationAddOne(storeAnswer->isStoreAnswer, 2, stepsNum));
         } while (!numerationAddOne(answer, Game.buttonNum, stepsNum));
     }
     findEnd:

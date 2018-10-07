@@ -61,11 +61,11 @@ void printSolution(unsigned short answer[], int stepsNum)
     //打印解
     for (int step = 0; step < stepsNum; step++)
     {
-        if (Game.storeOrNotAnswerListHead)
+        if (Game.storeOrNotAnswerStructP)
         {
-            if (Game.storeOrNotAnswerListHead->next->isStoreAnswer[step])
+            if (Game.storeOrNotAnswerStructP->isStoreAnswer[step])
             {
-                storeNumberToButton(tempResult, Game.storeOrNotAnswerListHead->next->storeButtonP);
+                storeNumberToButton(tempResult, Game.storeOrNotAnswerStructP->storeButtonP);
                 printf("(Store) ");
             }
         }

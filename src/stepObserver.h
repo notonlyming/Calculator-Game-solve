@@ -2,6 +2,6 @@
 #define STEP_OBSERVER
 
 void pressButtonStepByStep();
-void printSteps(unsigned short answer[], storeOrNotAnswerNode *storeAnswerList);
+void printSteps(unsigned short answer[], storeOrNotAnswerStruct *storeOrNotAnswerStructP);
 
 #endif

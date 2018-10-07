@@ -48,17 +48,17 @@ void pressButtonStepByStep()
     }
 }
 
-void printSteps(unsigned short answer[], storeOrNotAnswerNode *storeAnswerList)
+void printSteps(unsigned short answer[], storeOrNotAnswerStruct *storeOrNotAnswerStructP)
 {
     printf("当前解决方案 普通：");
     for (int i = 0; i < Game.allowMaxStep; ++i) {
         printf("%d", answer[i]);
     }
-    if (storeAnswerList)
+    if (storeOrNotAnswerStructP)
     {
         printf(" 存储：");
         for (int j = 0; j < Game.allowMaxStep; ++j) {
-            printf("%d", storeAnswerList->next->isStoreAnswer[j]);
+            printf("%d", storeOrNotAnswerStructP->isStoreAnswer[j]);
         }
     }
 
