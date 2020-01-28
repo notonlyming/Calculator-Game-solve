@@ -17,7 +17,6 @@ void printButtons(Button buttons[], int buttonNumber) {
         }
     }
     putchar('\n');
-    puts("----------------------------------------------------");
 }
 
 //打印结果统计信息

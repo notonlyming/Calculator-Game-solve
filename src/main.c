@@ -34,6 +34,7 @@ int main(int argc, char **argv) {
             gameP = getGameLevelInfo();
             for (int i=0; i < achieveCount; i++)
             {
+            printf("-----------------------%d-----------------------\n", achieveNumbers[i]);
                 gameP->gameAchieve = achieveNumbers[i];
                 startTime = clock();
                 solveIt(counter, isOutputSteps);
@@ -42,6 +43,7 @@ int main(int argc, char **argv) {
             free(achieveNumbers);
             gameOver();
             printf("Finish task in %lfs.\n", (clock() - startTime) / (double) CLOCKS_PER_SEC);
+            puts("---------------------------------------------------");
             printf("Continue?(y/n):");
             do {
                 //循环读入，直到得到有效值
