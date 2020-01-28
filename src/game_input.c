@@ -51,7 +51,7 @@ int* getGameAchieve(int* achieveCount)
  * 返回值：返回替换之后的字符串
  */
 char* strrpc(char *str, char *oldstr, char *newstr){
-    char bstr[strlen(str)];//转换缓冲区
+    char bstr[BUTTON_STR_MAX_LENGTH];//转换缓冲区
     memset(bstr,0,sizeof(bstr));
  
     for(unsigned int i = 0; i < strlen(str); i++) {
@@ -99,6 +99,8 @@ struct GameStruct *getGameLevelInfo() {
     printf("请输入按钮信息(单个空格分隔,回车结束)：");
     fgets(buttonAllStr, BUTTON_STR_MAX_LENGTH * MAX_BUTTON_NUM, stdin);
     buttonAllStr[strlen(buttonAllStr) - 1] = '\0';  //除去末尾的换行符
+    strlwr(buttonAllStr);   // 全部转换为小写，方便处理
+    detectAndInsertDeleteButton(buttonAllStr);
 
     //计算按钮个数和申请空间
     Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr, ' ') + 1);
@@ -118,6 +120,22 @@ struct GameStruct *getGameLevelInfo() {
     return &Game;
 }
 
+// 传入用户输入的按钮字符串，如果内含独立的delete则替换为8个独立的delete以实现删除任意位。
+void detectAndInsertDeleteButton(char* buttonAllStr)
+{
+    char* deleteStrStartP = strstr(buttonAllStr, "delete");
+    // 如果包含delete字符串，且后边不跟数字，则需要替换！
+    if(deleteStrStartP && !isNumberBit(deleteStrStartP + strlen("delete")))
+    {
+        strrpc(buttonAllStr, "delete", "delete1 delete2 delete3 delete4 delete5 delete6 delete7 delete8");
+    }
+}
+
+int isNumberBit(char* p)
+{
+    return *p >= '0' && *p <= '9';
+}
+
 int countBlankNum(char *strToCount, char charToFind) {
     int counter = 0;
     while (strchr(strToCount, charToFind)) {
@@ -131,7 +149,6 @@ int countBlankNum(char *strToCount, char charToFind) {
 //将传入的按钮字符串解析为按钮结构
 Button analyseButtonStr(char *buttonStr) {
     Button tempButton = {.type = UNKNOW};
-    buttonStr = strlwr(buttonStr);
     //解析按钮是不是加减乘除
     switch (buttonStr[0]) {
         case '+':
@@ -208,6 +225,9 @@ Button analyseButtonStr(char *buttonStr) {
     } else if(strstr(buttonStr, "cut")) {
         tempButton.type = CUT;
         sscanf(buttonStr, "cut%s", tempButton.attachedInfo.cutNum);
+    } else if(strstr(buttonStr, "delete")) {
+        tempButton.type = DELETE;
+        sscanf(buttonStr, "delete%d", &tempButton.attachedInfo.deleteBit);
     }
     if (tempButton.type == UNKNOW) {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");

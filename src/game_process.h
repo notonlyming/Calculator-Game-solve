@@ -48,4 +48,6 @@ int sortNumber(int number, enum sort sortType);
 int descendCmp(const void*, const void*);
 int ascendCmp(const void*, const void*);
 
+int deleteBit(int number, int bit);
+
 #endif

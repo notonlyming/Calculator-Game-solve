@@ -74,6 +74,9 @@ char *buttonStr(Button button) {
         case CUT:
             sprintf(infoStr, "CUT%s", button.attachedInfo.cutNum);
             break;
+        case DELETE:
+            sprintf(infoStr, "Delete Bit:%d", button.attachedInfo.deleteBit);
+            break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
             break;

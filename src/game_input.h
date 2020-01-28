@@ -17,4 +17,8 @@ int* getGameAchieve(int* achieveCount);
 
 char *strrpc(char *str,char *oldstr,char *newstr);
 
+void detectAndInsertDeleteButton(char* buttonAllStr);
+
+int isNumberBit(char* p);
+
 #endif

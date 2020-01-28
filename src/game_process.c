@@ -235,6 +235,9 @@ int pressButton(Button buttonToPress, int currentNumber) {
         case CUT:
             result = cutNumber(result, buttonToPress.attachedInfo.cutNum);
             break;
+        case DELETE:
+            result = deleteBit(result, buttonToPress.attachedInfo.deleteBit);
+            break;
         case UNKNOW:; //do nothing
             break;
     }
@@ -243,6 +246,22 @@ int pressButton(Button buttonToPress, int currentNumber) {
         result = doTransmit(*Game.portalPointer, result);
     }
     return result;
+}
+
+// 删除指定位的数字
+// 如果传入bit不对，则返回原值
+int deleteBit(int number, int bit)
+{
+    char numberStr[MAX_BIT];
+    sprintf(numberStr, "%d", number);
+    short numberStrLen = strlen(numberStr);
+    if(bit <= numberStrLen)
+    {
+        numberStr[bit - 1] = ' ';
+        strrpc(numberStr, " ", "");
+        sscanf(numberStr, "%d", &number);
+    }
+    return number;
 }
 
 int lnv10(int number) {

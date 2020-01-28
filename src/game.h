@@ -5,13 +5,14 @@
 
 #define TRUE 1
 #define FALSE 0
-#define BUTTON_STR_MAX_LENGTH 10
+#define BUTTON_STR_MAX_LENGTH 100
 #define NUMBER_STR_MAX_LENGTH 20
-#define MAX_BUTTON_NUM 5
+#define MAX_BUTTON_NUM 15
 #define MAX_ACHIEVE_NUM 5
 #define STORE_NOTHING (-1)
 #define MAX_REPLACE_NUM_LENGTH 3
 #define CUT_MAX_LENGTH 5
+#define MAX_BIT 8
 
 typedef enum {
     APPEND,       //追加
@@ -31,7 +32,8 @@ typedef enum {
     MODIFY,       //更改按钮的数值
     SORT,         //对暂存区中的数字排序
     LNV10,        //每一位减去10 取绝对值 并取余10
-    CUT,          //删除某数
+    CUT,          //删除特定数字
+    DELETE,       //删除任意位上的数字
     UNKNOW        //未知类型
 } ButtonType;
 
@@ -57,6 +59,7 @@ typedef struct {
         int appendNum;  //追加到末尾的数字
         int storeNum;  //存储按钮存储区
         char cutNum[CUT_MAX_LENGTH];   //要删除的东西
+        int deleteBit;   //删除操作所在位置，左边数起，从1开始
     } attachedInfo;
 } Button;            //存储按钮的详细信息
 
