@@ -139,6 +139,44 @@ int numberSum(int number) {
     return number;
 }
 
+//此处声明qsort所用的比较器函数
+int descendCmp(const void *number1, const void *number2){
+    short a = *(short*)number1;
+    short b = *(short*)number2;
+    return a - b;
+}
+
+int ascendCmp(const void *number1, const void *number2){
+    short a = *(short*)number1;
+    short b = *(short*)number2;
+    return b - a;
+}
+
+int sortNumber(int number, enum sort sortType){
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%d", number);   //转为字符串
+    int numberLen = strlen(numberStr);
+    short numberArray[numberLen];
+    //提取字符串中的数字到数字数组中
+    for(int i=0; numberStr[i] != '\0'; i++){
+        numberArray[i] = numberStr[i] - 48;
+    }
+    if (sortType == SORT_DESCENDING)
+    {
+        qsort(numberArray, numberLen, sizeof(short), descendCmp);
+    }
+    else
+    {
+        qsort(numberArray, numberLen, sizeof(short), ascendCmp);
+    }
+    // 将数字数组乘以位权并相加
+    int result = 0;
+    for(int i=0; i < numberLen; i++){
+        result += numberArray[i] * powInt(10, i);
+    }
+    return result;
+}
+
 int pressButton(Button buttonToPress, int currentNumber) {
     int result = currentNumber;
     switch (buttonToPress.type) {
@@ -200,6 +238,9 @@ int pressButton(Button buttonToPress, int currentNumber) {
             break;
         case LNV10:
             result = lnv10(result);
+            break;
+        case SORT:
+            result = sortNumber(result, buttonToPress.attachedInfo.sortType);
             break;
         case UNKNOW:; //do nothing
             break;

@@ -9,6 +9,60 @@
 #include "game_input.h"
 #include "game_output.h"
 
+// 该函数用于获取游戏目标，因为游戏目标有多个，因此单独一个函数处理
+// 返回从用户输入处获得的目标数组(int)，记得free.
+// 参数为返回目标数组的元素总数。
+int* getGameAchieve(int* achieveCount)
+{
+    char achieveStr[NUMBER_STR_MAX_LENGTH];
+    printf("请输入游戏目标：");
+    fgets(achieveStr, NUMBER_STR_MAX_LENGTH, stdin);
+    achieveStr[strlen(achieveStr) - 1] = '\0';   //除去末尾的换行符
+    
+    *achieveCount = countBlankNum(achieveStr, ' ') + 1;
+    int* achieveNumbers = (int*)malloc(sizeof(int) * (*achieveCount));  //目标数组
+    char** achieveStrs;
+    if(*achieveCount > 1){
+        achieveStrs = split(achieveStr, " ");
+    } else if(*achieveCount == 1 && achieveStr[0] != '\0') {
+        achieveStrs = (char**)malloc(sizeof(char**));
+        achieveStrs[0] = (char*)malloc(sizeof(char*) * NUMBER_STR_MAX_LENGTH);
+        strcpy(achieveStrs[0], achieveStr);
+    }else{
+        puts("错误的目标字符串！");
+        exit(1);
+    }
+    for (int i=0; i < (*achieveCount); i++)
+    {
+        sscanf(achieveStrs[i], "%d", &(achieveNumbers[i]));
+    }
+    // 释放分割字符串数组的内存
+    for (int i=0; i < (*achieveCount); i++)
+    {
+        free(achieveStrs[i]);
+    }
+    free(achieveStrs);
+    return achieveNumbers;    
+}
+
+// 分割字符串。返回的字符串数组在堆上，记得free。
+char** split(char* strToSplit, char* splitChar)
+{
+    int subStrCount = countBlankNum(strToSplit, ' ') + 1;
+    char *strP = strToSplit; //字符串指针，指向没有读取的按钮字符串信息的开头
+    char *findCharP;
+    char** result = (char**)malloc(sizeof(char**) * subStrCount);
+    for (int i=0; i < subStrCount; i++)
+    {
+        findCharP = strstr(strP, splitChar);
+        if(findCharP) *findCharP = '\0';
+        result[i] = (char*)malloc(sizeof(char*) * MAX_ACHIEVE_NUM);
+        strcpy(result[i], strP);
+        strP += strlen(result[i]) + 1;
+    }
+    return result;
+}
+
 //读入数据，并返回存储好数据的game结构指针，方便查阅
 struct GameStruct *getGameLevelInfo() {
     printf("请输入计算器起始的数值：");
@@ -16,10 +70,7 @@ struct GameStruct *getGameLevelInfo() {
 
     printf("请输入允许的最大步数：");
     scanf("%hu", &(Game.allowMaxStep));
-
-    printf("请输入游戏目标：");
-    scanf("%d", &(Game.gameAchieve));
-    getchar(); //拿掉换行符
+    getchar();  //拿掉换行符
 
     //读入按钮信息字符串
     char buttonAllStr[BUTTON_STR_MAX_LENGTH * MAX_BUTTON_NUM];
@@ -28,12 +79,12 @@ struct GameStruct *getGameLevelInfo() {
     buttonAllStr[strlen(buttonAllStr) - 1] = '\0';  //除去末尾的换行符
 
     //计算按钮个数和申请空间
-    Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr) + 1);
+    Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr, ' ') + 1);
     Game.buttons = (Button *) malloc(sizeof(Button) * Game.buttonNum);  //注意，将在gameOver时free！！
 
     //将数据写入按钮数组
     char buttonStr[BUTTON_STR_MAX_LENGTH];
-    char *strP = buttonAllStr; //字符串指针，指向没有读取的按钮字符串信息的开头
+    char* strP = buttonAllStr;
     for (int i = 0; i < Game.buttonNum; i++) {
         sscanf(strP, "%s", buttonStr);
         //移动字符串的指针越过已经读过的字节和开头的空格
@@ -45,9 +96,9 @@ struct GameStruct *getGameLevelInfo() {
     return &Game;
 }
 
-int countBlankNum(char *strToCount) {
+int countBlankNum(char *strToCount, char charToFind) {
     int counter = 0;
-    while (strchr(strToCount, ' ')) {
+    while (strchr(strToCount, charToFind)) {
         //后移指针，继续找后面的空格
         strToCount = strchr(strToCount, ' ') + 1;
         counter++;
@@ -85,7 +136,7 @@ Button analyseButtonStr(char *buttonStr) {
         *strstr(buttonStr, "=>") = '\0';
         sscanf(buttonStr, "%s", tempButton.attachedInfo.replaceInfo.strReplaceFrom);
     }
-        //隐含条件，先判定不是=》按钮，再判定是不是第一个数字才能确定时追加按钮
+        //隐含条件，先判定不是=》按钮，再判定是不是第一个数字才能确定是追加按钮
     else if (buttonStr[0] >= '0' && buttonStr[0] <= '9') {
         tempButton.type = APPEND;
         sscanf(buttonStr, "%d", &tempButton.attachedInfo.appendNum);
@@ -121,6 +172,16 @@ Button analyseButtonStr(char *buttonStr) {
         tempButton.type = BACKSPACE;
     } else if (!strcmp(strlwr(buttonStr), "lnv10")) {
         tempButton.type = LNV10;
+    } else if (strstr(strlwr(buttonStr), "sort")) {
+        tempButton.type = SORT;
+        //升序和降序的信息
+        if (strstr(buttonStr, ">")) {
+            tempButton.attachedInfo.sortType = SORT_ASCENDING;
+        } else if (strstr(buttonStr, "<")) {
+            tempButton.attachedInfo.sortType = SORT_DESCENDING;
+        } else {
+            tempButton.type = UNKNOW;
+        }
     }
     if (tempButton.type == UNKNOW) {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");

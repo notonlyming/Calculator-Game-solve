@@ -8,6 +8,7 @@
 #define BUTTON_STR_MAX_LENGTH 10
 #define NUMBER_STR_MAX_LENGTH 20
 #define MAX_BUTTON_NUM 5
+#define MAX_ACHIEVE_NUM 5
 #define STORE_NOTHING (-1)
 #define MAX_REPLACE_NUM_LENGTH 3
 
@@ -27,6 +28,7 @@ typedef enum {
     MIRROR,       //镜像数字
     STORE,        //存储数字
     MODIFY,       //更改按钮的数值
+    SORT,         //对暂存区中的数字排序
     LNV10,        //每一位减去10 取绝对值 并取余10
     UNKNOW        //未知类型
 } ButtonType;
@@ -46,6 +48,9 @@ typedef struct {
         enum direction {
             SHIFT_RIGHT, SHIFT_LEFT
         } shiftDirection;  //移位方向
+        enum sort {
+            SORT_DESCENDING, SORT_ASCENDING
+        } sortType;  //排序类型
         int exponent;  //存储幂运算的指数
         int appendNum;  //追加到末尾的数字
         int storeNum;  //存储按钮存储区

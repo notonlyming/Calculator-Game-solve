@@ -68,6 +68,9 @@ char *buttonStr(Button button) {
         case LNV10:
             strcpy(infoStr, "lnv10");
             break;
+        case SORT:
+            sprintf(infoStr, "Sort%c", button.attachedInfo.sortType == SORT_ASCENDING ? '>' : '<');
+            break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
             break;
