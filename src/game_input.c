@@ -45,6 +45,28 @@ int* getGameAchieve(int* achieveCount)
     return achieveNumbers;    
 }
 
+
+/* 功  能：将str字符串中的oldstr字符串替换为newstr字符串
+ * 参  数：str：操作目标 oldstr：被替换者 newstr：替换者
+ * 返回值：返回替换之后的字符串
+ */
+char* strrpc(char *str, char *oldstr, char *newstr){
+    char bstr[strlen(str)];//转换缓冲区
+    memset(bstr,0,sizeof(bstr));
+ 
+    for(unsigned int i = 0; i < strlen(str); i++) {
+        if(!strncmp(str+i, oldstr, strlen(oldstr))){//查找目标字符串
+            strcat(bstr, newstr);
+            i += strlen(oldstr) - 1;
+        } else {
+        	strncat(bstr,str + i,1);//保存一字节进缓冲区
+	    }
+    }
+ 
+    strcpy(str,bstr);
+    return str;
+}
+
 // 分割字符串。返回的字符串数组在堆上，记得free。
 char** split(char* strToSplit, char* splitChar)
 {
@@ -109,6 +131,7 @@ int countBlankNum(char *strToCount, char charToFind) {
 //将传入的按钮字符串解析为按钮结构
 Button analyseButtonStr(char *buttonStr) {
     Button tempButton = {.type = UNKNOW};
+    buttonStr = strlwr(buttonStr);
     //解析按钮是不是加减乘除
     switch (buttonStr[0]) {
         case '+':
@@ -145,9 +168,9 @@ Button analyseButtonStr(char *buttonStr) {
         sscanf(buttonStr, "x^%d", &tempButton.attachedInfo.exponent);
     } else if (strstr(buttonStr, "+/-")) {
         tempButton.type = SIGN_CONVERT;
-    } else if (!strcmp(strlwr(buttonStr), "reverse")) {
+    } else if (!strcmp(buttonStr, "reverse")) {
         tempButton.type = REVERSE;
-    } else if (strstr(strlwr(buttonStr), "shift")) {
+    } else if (strstr(buttonStr, "shift")) {
         tempButton.type = SHIFT;
         //用操作数存储左移和或右移的信息
         if (strstr(buttonStr, ">")) {
@@ -157,11 +180,11 @@ Button analyseButtonStr(char *buttonStr) {
         } else {
             tempButton.type = UNKNOW;
         }
-    } else if (!strcmp(strlwr(buttonStr), "mirror")) {
+    } else if (!strcmp(buttonStr, "mirror")) {
         tempButton.type = MIRROR;
-    } else if (!strcmp(strlwr(buttonStr), "sum")) {
+    } else if (!strcmp(buttonStr, "sum")) {
         tempButton.type = SUM;
-    } else if (!strcmp(strlwr(buttonStr), "store")) {
+    } else if (!strcmp(buttonStr, "store")) {
         tempButton.type = STORE;
         tempButton.attachedInfo.storeNum = STORE_NOTHING;  //存储为-1表示没有存储相应的数字，短按将不能追加
     } else if (buttonStr[0] == '[' && buttonStr[2] == ']') {
@@ -170,9 +193,9 @@ Button analyseButtonStr(char *buttonStr) {
         sscanf(buttonStr + 3, "%d", &tempButton.attachedInfo.modifyInfo.operationNum);  //存储操作数
     } else if (!strcmp(buttonStr, "<<")) {
         tempButton.type = BACKSPACE;
-    } else if (!strcmp(strlwr(buttonStr), "lnv10")) {
+    } else if (!strcmp(buttonStr, "lnv10")) {
         tempButton.type = LNV10;
-    } else if (strstr(strlwr(buttonStr), "sort")) {
+    } else if (strstr(buttonStr, "sort")) {
         tempButton.type = SORT;
         //升序和降序的信息
         if (strstr(buttonStr, ">")) {
@@ -182,6 +205,9 @@ Button analyseButtonStr(char *buttonStr) {
         } else {
             tempButton.type = UNKNOW;
         }
+    } else if(strstr(buttonStr, "cut")) {
+        tempButton.type = CUT;
+        sscanf(buttonStr, "cut%s", tempButton.attachedInfo.cutNum);
     }
     if (tempButton.type == UNKNOW) {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");

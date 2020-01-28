@@ -7,6 +7,7 @@
 #include "game.h"
 #include <string.h>
 #include "game_output.h"
+#include "game_input.h"
 #include "game_process.h"
 #include "stepObserver.h"
 
@@ -52,29 +53,9 @@ int calculateNumberLength(int number) {
 //该函数将一个数字中的某部分替换成另外一部分，并返回替换后的数字
 int numberReplace(int number, char *fromNumStr, char *toNumStr) {
     char numberStr[NUMBER_STR_MAX_LENGTH] = {0};
-    char newNumStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
-    char *startPosition, *endPosition;
-    char *strP = numberStr; //用于查找替换的指针，初始化为数字字符串的头部表示从头开始找
-    if (strstr(strP, fromNumStr) == NULL) {
-        //如果没有可替换的字串，说明这次替换按钮是无效的
-        Game.isOnError = TRUE;
-    } else {
-        //要么已经查找到了末尾，要么找不到要替换的子串了
-        while (strP != (numberStr + strlen(numberStr)) && strstr(strP, fromNumStr) != NULL) {
-            //查找要替换的字符串
-            startPosition = strstr(strP, fromNumStr);
-            endPosition = startPosition + strlen(fromNumStr);
-            //截断
-            *startPosition = '\0';
-            //拼接
-            sprintf(newNumStr, "%s%s%s", numberStr, toNumStr, endPosition);
-            strcpy(numberStr, newNumStr);
-            //前面的已经查找并替换过了，现在查找指针移到后面
-            strP = endPosition + (strlen(toNumStr) - strlen(fromNumStr));
-        }
-    sscanf(newNumStr, "%d", &number); //转换为整型
-    }
+    strrpc(numberStr, fromNumStr, toNumStr);
+    sscanf(numberStr, "%d", &number); //转换为整型
     return number;
 }
 
@@ -116,6 +97,15 @@ int mirrorNumber(int number) {
     strcat(numberStr, reverseNumberStr);
     sscanf(numberStr, "%d", &number); //转换为整型
     return number * sign;
+}
+
+int cutNumber(int number, char* cutNum)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%d", number);
+    strrpc(numberStr, cutNum, "");
+    sscanf(numberStr, "%d", &number);
+    return number;
 }
 
 //求每一位数字的和并返回求和后的数字,这里假设求和的数字必须是正的
@@ -190,7 +180,7 @@ int pressButton(Button buttonToPress, int currentNumber) {
             result *= buttonToPress.attachedInfo.operationNum;
             break;
         case DIVIDE:
-            //进行是否产生小数判断
+            //是否产生小数判断
             if (result % buttonToPress.attachedInfo.operationNum != 0) {
                 Game.isOnError = TRUE;
             } else {
@@ -241,6 +231,9 @@ int pressButton(Button buttonToPress, int currentNumber) {
             break;
         case SORT:
             result = sortNumber(result, buttonToPress.attachedInfo.sortType);
+            break;
+        case CUT:
+            result = cutNumber(result, buttonToPress.attachedInfo.cutNum);
             break;
         case UNKNOW:; //do nothing
             break;

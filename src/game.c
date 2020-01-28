@@ -71,6 +71,9 @@ char *buttonStr(Button button) {
         case SORT:
             sprintf(infoStr, "Sort%c", button.attachedInfo.sortType == SORT_ASCENDING ? '>' : '<');
             break;
+        case CUT:
+            sprintf(infoStr, "CUT%s", button.attachedInfo.cutNum);
+            break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
             break;

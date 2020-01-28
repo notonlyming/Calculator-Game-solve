@@ -7,12 +7,14 @@ struct GameStruct *getGameLevelInfo();
 
 Button analyseButtonStr(char *buttonStr);
 
-int countBlankNum(char *strToCount, char);
+int countBlankNum(char *strToCount, char charToFind);
 
 char *strlwr(char *str);
 
 char** split(char* strToSplit, char* splitChar);
 
 int* getGameAchieve(int* achieveCount);
+
+char *strrpc(char *str,char *oldstr,char *newstr);
 
 #endif
