@@ -52,4 +52,6 @@ int ascendCmp(const void*, const void*);
 int deleteBit(int number, size_t bit);
 int roundBit(int number, size_t roundBit);
 
+int numberReplaceBit(int number, struct replaceBitInfo rplBitInfo);
+
 #endif

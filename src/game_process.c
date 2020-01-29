@@ -241,6 +241,9 @@ int pressButton(Button buttonToPress, int currentNumber) {
         case ROUND:
             result = roundBit(result, buttonToPress.attachedInfo.roundBit);
             break;
+        case REPLACE_BIT:
+            result = numberReplaceBit(result, buttonToPress.attachedInfo.rplBitInfo);
+            break;
         case UNKNOW:; //do nothing
             break;
     }
@@ -249,6 +252,19 @@ int pressButton(Button buttonToPress, int currentNumber) {
         result = doTransmit(*Game.portalPointer, result);
     }
     return result;
+}
+
+int numberReplaceBit(int number, struct replaceBitInfo rplBitInfo)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%d", number);
+    size_t numberStrLen = strlen(numberStr);
+    if(rplBitInfo.replaceBit <= numberStrLen)
+    {
+        numberStr[rplBitInfo.replaceBit - 1] = rplBitInfo.replaceNumberChar;
+        sscanf(numberStr, "%d", &number);
+    }
+    return number;
 }
 
 int roundBit(int number, size_t roundBit)

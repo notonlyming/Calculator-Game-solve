@@ -179,11 +179,11 @@ void detectAndInsertReplaceButton(char* buttonAllStr)
     char* replaceStrStartP = strstr(buttonAllStr, "replace");
     int numberToReplace;
     char replaceStr[BUTTON_STR_MAX_LENGTH];
-    // 如果包含replace字符串，且后边跟数字，则需要替换！
-    if(replaceStrStartP && isNumberBit(replaceStrStartP + strlen("replace")))
+    // 如果包含replace字符串，且前边没指定数字，且后边有数字，则需要替换！
+    if(replaceStrStartP && !isNumberBit(replaceStrStartP - 1) && isNumberBit(replaceStrStartP + strlen("replace")))
     {
         sscanf(replaceStrStartP, "replace%d", &numberToReplace);
-        sprintf(replaceStr, "0=>%d 1=>%d 2=>%d 3=>%d 4=>%d 5=>%d 6=>%d 7=>%d 8=>%d 9=>%d",
+        sprintf(replaceStr, "0replace%d 1replace%d 2replace%d 3replace%d 4replace%d 5replace%d 6replace%d 7replace%d 8replace%d 9replace%d",
         numberToReplace, numberToReplace, numberToReplace, numberToReplace, numberToReplace, 
         numberToReplace, numberToReplace, numberToReplace, numberToReplace, numberToReplace
         );
@@ -235,8 +235,18 @@ Button analyseButtonStr(char *buttonStr) {
         sscanf(strstr(buttonStr, "=>") + 2, "%s", tempButton.attachedInfo.replaceInfo.strReplaceTo);
         *strstr(buttonStr, "=>") = '\0';
         sscanf(buttonStr, "%s", tempButton.attachedInfo.replaceInfo.strReplaceFrom);
+    } else if(strstr(buttonStr, "replace")) {
+        char* replaceStrStartP = strstr(buttonStr, "replace");
+        // 如果指定了位，则符合指定位替换按钮。
+        // 未指定位则为任意位替换，应当在传入之前就被船利为8个替换位按钮。
+        if(isNumberBit(replaceStrStartP - 1))
+        {
+            tempButton.type = REPLACE_BIT;
+            sscanf(buttonStr, "%hdreplace%c", &tempButton.attachedInfo.rplBitInfo.replaceBit,
+            &tempButton.attachedInfo.rplBitInfo.replaceNumberChar);
+        }
     }
-        //隐含条件，先判定不是=》按钮，再判定是不是第一个数字才能确定是追加按钮
+        //隐含条件，先排除第一个是数字的特殊功能按钮，再判定第一个是数字才能确定是追加按钮
     else if (buttonStr[0] >= '0' && buttonStr[0] <= '9') {
         tempButton.type = APPEND;
         sscanf(buttonStr, "%d", &tempButton.attachedInfo.appendNum);

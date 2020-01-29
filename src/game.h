@@ -23,6 +23,7 @@ typedef enum {
     DIVIDE,       //算术除
     BACKSPACE,    //退格，既:<<
     REPLACE,      //替换
+    REPLACE_BIT,  //按位替换
     POW,          //幂次方
     SIGN_CONVERT, //符号转换
     REVERSE,      //反转
@@ -63,6 +64,10 @@ typedef struct {
         char cutNum[CUT_MAX_LENGTH];   //要删除的东西
         size_t deleteBit;   //删除操作所在位置，左边数起，从1开始
         size_t roundBit;  //要四舍五入的位，左边数起，从1开始
+        struct replaceBitInfo{
+            unsigned short replaceBit;
+            char replaceNumberChar;
+        } rplBitInfo;   //按位替换的附加信息
     } attachedInfo;
 } Button;            //存储按钮的详细信息
 

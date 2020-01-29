@@ -80,6 +80,10 @@ char *buttonStr(Button button) {
         case ROUND:
             sprintf(infoStr, "Round Bit:%zd", button.attachedInfo.roundBit);
             break;
+        case REPLACE_BIT:
+            sprintf(infoStr, "at %dth REPLACE%c", button.attachedInfo.rplBitInfo.replaceBit,
+            button.attachedInfo.rplBitInfo.replaceNumberChar);
+            break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
             break;
