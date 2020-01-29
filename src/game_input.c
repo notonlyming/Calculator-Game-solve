@@ -164,7 +164,7 @@ void detectAndInsertDeleteButton(char* buttonAllStr)
     // 如果包含delete字符串，且后边不跟数字，则需要替换！
     if(deleteStrStartP && !isNumberBit(deleteStrStartP + strlen("delete")))
     {
-        strrpc(buttonAllStr, "delete", "delete1 delete2 delete3 delete4 delete5 delete6 delete7 delete8");
+        strrpc(buttonAllStr, "delete", "delete1 delete2 delete3 delete4 delete5 delete6");
     }
 }
 
@@ -175,7 +175,7 @@ void detectAndInsertShiftButton(char* buttonAllStr)
     // 如果包含shift字符串，且后边不跟数字，则需要替换！
     if(shiftStrStartP && !isNumberBit(shiftStrStartP + strlen("shift")))
     {
-        strrpc(buttonAllStr, "shift", "shift1 shift2 shift3 shift4 shift5 shift6 shift7 shift8");
+        strrpc(buttonAllStr, "shift", "shift1 shift2 shift3 shift4 shift5 shift6");
     }
 }
 
