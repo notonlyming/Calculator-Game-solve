@@ -53,9 +53,9 @@ int main(int argc, char **argv) {
     } else if (argc == 2 && !strcmp(argv[1], "debug")) {
         puts("请注意，这是一个程序计算过程观察测试程序！\n只允许使用一个目标！");
         puts("-------------------Debug模式已开启-------------------");
-        getGameLevelInfo();
         int achieveCount;
         int* achieveNumbers = getGameAchieve(&achieveCount);
+        getGameLevelInfo();
         Game.gameAchieve = achieveNumbers[0];
         pressButtonStepByStep();
         gameOver();
