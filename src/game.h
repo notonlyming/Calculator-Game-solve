@@ -7,7 +7,7 @@
 #define TRUE 1
 #define FALSE 0
 #define BUTTON_STR_MAX_LENGTH 500
-#define NUMBER_STR_MAX_LENGTH 20
+#define NUMBER_STR_MAX_LENGTH 30
 #define MAX_BUTTON_NUM 15
 #define MAX_ACHIEVE_NUM 5
 #define STORE_NOTHING (-1)
