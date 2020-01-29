@@ -20,6 +20,7 @@ char *strrpc(char *str,char *oldstr,char *newstr);
 void detectAndInsertDeleteButton(char* buttonAllStr);
 void detectAndInsertReplaceButton(char* buttonAllStr);
 void detectAndInsertRoundButton(char* buttonAllStr);
+void detectCharAndConvertToNumber(char* achieveStr);
 
 int isNumberBit(char* p);
 

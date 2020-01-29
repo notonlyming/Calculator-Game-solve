@@ -9,6 +9,34 @@
 #include "game_input.h"
 #include "game_output.h"
 
+//该函数用于检测是否目标输入了字符，如果输入字符则转换为合适的数值。
+void detectCharAndConvertToNumber(char* achieveStr)
+{
+    strlwr(achieveStr);
+    int achieveStrLen = strlen(achieveStr);
+    int code;  //字母所在字母表的编号，非ascii表
+    int convertedCode;  //转换后的数字
+    for(int i = 0; i < achieveStrLen; i++)
+    {
+        if(achieveStr[i] >= 'a' && achieveStr[i] <= 'z')
+        {
+            code = achieveStr[i] - 96;
+            // 除3向上取整
+            if(code % 3 == 0)
+            {
+                convertedCode = code / 3;
+            }
+            else
+            {
+                convertedCode = code / 3 + 1;
+            }
+            printf("%c =======> %d\n", achieveStr[i], convertedCode);
+            achieveStr[i] = '0' + convertedCode;
+        }
+    }
+    printf("新的游戏目标：%s\n", achieveStr);
+}
+
 // 该函数用于获取游戏目标，因为游戏目标有多个，因此单独一个函数处理
 // 返回从用户输入处获得的目标数组(int)，记得free.
 // 参数为返回目标数组的元素总数。
@@ -18,6 +46,7 @@ int* getGameAchieve(int* achieveCount)
     printf("请输入游戏目标：");
     fgets(achieveStr, NUMBER_STR_MAX_LENGTH, stdin);
     achieveStr[strlen(achieveStr) - 1] = '\0';   //除去末尾的换行符
+    detectCharAndConvertToNumber(achieveStr);
     
     *achieveCount = countBlankNum(achieveStr, ' ') + 1;
     int* achieveNumbers = (int*)malloc(sizeof(int) * (*achieveCount));  //目标数组
