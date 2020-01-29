@@ -15,7 +15,7 @@ void detectCharAndConvertToNumber(char* achieveStr)
     strlwr(achieveStr);
     int achieveStrLen = strlen(achieveStr);
     int code;  //字母所在字母表的编号，非ascii表
-    int convertedCode;  //转换后的数字
+    int convertedCode = -1;  //转换后的数字
     for(int i = 0; i < achieveStrLen; i++)
     {
         if(achieveStr[i] >= 'a' && achieveStr[i] <= 'z')
@@ -33,6 +33,9 @@ void detectCharAndConvertToNumber(char* achieveStr)
             printf("%c =======> %d\n", achieveStr[i], convertedCode);
             achieveStr[i] = '0' + convertedCode;
         }
+    }
+    if(convertedCode != -1)
+    {
         printf("新的游戏目标：%s\n", achieveStr);
     }
 }
@@ -183,9 +186,9 @@ void detectAndInsertReplaceButton(char* buttonAllStr)
     if(replaceStrStartP && !isNumberBit(replaceStrStartP - 1) && isNumberBit(replaceStrStartP + strlen("replace")))
     {
         sscanf(replaceStrStartP, "replace%d", &numberToReplace);
-        sprintf(replaceStr, "0replace%d 1replace%d 2replace%d 3replace%d 4replace%d 5replace%d 6replace%d 7replace%d 8replace%d 9replace%d",
-        numberToReplace, numberToReplace, numberToReplace, numberToReplace, numberToReplace, 
-        numberToReplace, numberToReplace, numberToReplace, numberToReplace, numberToReplace
+        sprintf(replaceStr, "1replace%d 2replace%d 3replace%d 4replace%d 5replace%d 6replace%d 7replace%d 8replace%d",
+        numberToReplace, numberToReplace, numberToReplace, numberToReplace,
+        numberToReplace, numberToReplace, numberToReplace, numberToReplace
         );
         strrpc(buttonAllStr, "replace", replaceStr);
     }

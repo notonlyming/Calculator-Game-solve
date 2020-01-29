@@ -259,10 +259,15 @@ int numberReplaceBit(int number, struct replaceBitInfo rplBitInfo)
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
     size_t numberStrLen = strlen(numberStr);
-    if(rplBitInfo.replaceBit <= numberStrLen)
+    // 如果传入的位数不对，则无效讲出错设置为true
+    if(rplBitInfo.replaceBit <= numberStrLen && rplBitInfo.replaceBit > 0)
     {
         numberStr[rplBitInfo.replaceBit - 1] = rplBitInfo.replaceNumberChar;
         sscanf(numberStr, "%d", &number);
+    }
+    else
+    {
+        Game.isOnError = TRUE;
     }
     return number;
 }
@@ -273,7 +278,7 @@ int roundBit(int number, size_t roundBit)
     sprintf(numberStr, "%d", number);
     size_t numberStrLen = strlen(numberStr);
     // 仅当传入的要round的位不是最后一位且不超过总位数时才执行操作
-    if (roundBit < numberStrLen)
+    if (roundBit < numberStrLen && roundBit > 0)
     {
         // 往前读一位
         char bit = numberStr[roundBit];
@@ -285,21 +290,30 @@ int roundBit(int number, size_t roundBit)
         }
         sscanf(numberStr, "%d", &number);
     }
+    else
+    {
+        Game.isOnError = TRUE;
+    }
+    
     return number;
 }
 
 // 删除指定位的数字
-// 如果传入bit不对，则返回原值
+// 如果传入bit不对，则置为游戏出错，重新计算
 int deleteBit(int number, size_t bit)
 {
     char numberStr[MAX_BIT];
     sprintf(numberStr, "%d", number);
     size_t numberStrLen = strlen(numberStr);
-    if(bit <= numberStrLen)
+    if(bit <= numberStrLen && bit > 0)
     {
         numberStr[bit - 1] = ' ';
         strrpc(numberStr, " ", "");
         sscanf(numberStr, "%d", &number);
+    }
+    else
+    {
+        Game.isOnError = TRUE;
     }
     return number;
 }
