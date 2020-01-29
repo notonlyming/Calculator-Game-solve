@@ -101,6 +101,7 @@ struct GameStruct *getGameLevelInfo() {
     buttonAllStr[strlen(buttonAllStr) - 1] = '\0';  //除去末尾的换行符
     strlwr(buttonAllStr);   // 全部转换为小写，方便处理
     detectAndInsertDeleteButton(buttonAllStr);
+    detectAndInsertReplaceButton(buttonAllStr);
 
     //计算按钮个数和申请空间
     Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr, ' ') + 1);
@@ -128,6 +129,24 @@ void detectAndInsertDeleteButton(char* buttonAllStr)
     if(deleteStrStartP && !isNumberBit(deleteStrStartP + strlen("delete")))
     {
         strrpc(buttonAllStr, "delete", "delete1 delete2 delete3 delete4 delete5 delete6 delete7 delete8");
+    }
+}
+
+// 传入用户输入的按钮字符串，如果内含replace则替换为任意=》指定位以实现替换任意位。
+void detectAndInsertReplaceButton(char* buttonAllStr)
+{
+    char* replaceStrStartP = strstr(buttonAllStr, "replace");
+    int numberToReplace;
+    char replaceStr[BUTTON_STR_MAX_LENGTH];
+    // 如果包含replace字符串，且后边跟数字，则需要替换！
+    if(replaceStrStartP && isNumberBit(replaceStrStartP + strlen("replace")))
+    {
+        sscanf(replaceStrStartP, "replace%d", &numberToReplace);
+        sprintf(replaceStr, "0=>%d 1=>%d 2=>%d 3=>%d 4=>%d 5=>%d 6=>%d 7=>%d 8=>%d 9=>%d",
+        numberToReplace, numberToReplace, numberToReplace, numberToReplace, numberToReplace, 
+        numberToReplace, numberToReplace, numberToReplace, numberToReplace, numberToReplace
+        );
+        strrpc(buttonAllStr, "replace", replaceStr);
     }
 }
 
