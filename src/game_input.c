@@ -33,8 +33,8 @@ void detectCharAndConvertToNumber(char* achieveStr)
             printf("%c =======> %d\n", achieveStr[i], convertedCode);
             achieveStr[i] = '0' + convertedCode;
         }
+        printf("新的游戏目标：%s\n", achieveStr);
     }
-    printf("新的游戏目标：%s\n", achieveStr);
 }
 
 // 该函数用于获取游戏目标，因为游戏目标有多个，因此单独一个函数处理
