@@ -133,6 +133,7 @@ struct GameStruct *getGameLevelInfo() {
     buttonAllStr[strlen(buttonAllStr) - 1] = '\0';  //除去末尾的换行符
     strlwr(buttonAllStr);   // 全部转换为小写，方便处理
     detectAndInsertDeleteButton(buttonAllStr);
+    detectAndInsertShiftButton(buttonAllStr);
     detectAndInsertReplaceButton(buttonAllStr);
     detectAndInsertRoundButton(buttonAllStr);
     detectAndInsertInsertButton(buttonAllStr);
@@ -164,6 +165,17 @@ void detectAndInsertDeleteButton(char* buttonAllStr)
     if(deleteStrStartP && !isNumberBit(deleteStrStartP + strlen("delete")))
     {
         strrpc(buttonAllStr, "delete", "delete1 delete2 delete3 delete4 delete5 delete6 delete7 delete8");
+    }
+}
+
+void detectAndInsertShiftButton(char* buttonAllStr)
+{
+    //基于shift只有一个这一事实，使用替换。
+    char* shiftStrStartP = strstr(buttonAllStr, "shift");
+    // 如果包含shift字符串，且后边不跟数字，则需要替换！
+    if(shiftStrStartP && !isNumberBit(shiftStrStartP + strlen("shift")))
+    {
+        strrpc(buttonAllStr, "shift", "shift1 shift2 shift3 shift4 shift5 shift6 shift7 shift8");
     }
 }
 
@@ -319,6 +331,9 @@ Button analyseButtonStr(char *buttonStr) {
             tempButton.attachedInfo.shiftDirection = SHIFT_RIGHT;
         } else if (strstr(buttonStr, "<")) {
             tempButton.attachedInfo.shiftDirection = SHIFT_LEFT;
+        } else if (buttonStr[strlen(buttonStr) - 1] > '0' && buttonStr[strlen(buttonStr) - 1] < '9')  {
+            tempButton.type = SHIFT_TIMES;
+            tempButton.attachedInfo.shiftTimes = buttonStr[strlen(buttonStr) - 1] - 48;
         } else {
             tempButton.type = UNKNOW;
         }

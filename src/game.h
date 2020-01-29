@@ -29,6 +29,7 @@ typedef enum {
     REVERSE,      //反转
     SUM,          //求每一位数字的和
     SHIFT,        //左右移动数字
+    SHIFT_TIMES,  //多次移动数字
     MIRROR,       //镜像数字
     STORE,        //存储数字
     MODIFY,       //更改按钮的数值
@@ -73,6 +74,7 @@ typedef struct {
             unsigned short insertBit;
             char insertNumberChar;
         } insertBitInfo;   //按位替换的附加信息
+        int shiftTimes;    //移位次数
     } attachedInfo;
 } Button;            //存储按钮的详细信息
 

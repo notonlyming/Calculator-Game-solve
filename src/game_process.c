@@ -212,6 +212,12 @@ int pressButton(Button buttonToPress, int currentNumber) {
         case SHIFT:
             result = shiftNumber(result, buttonToPress.attachedInfo.shiftDirection);
             break;
+        case SHIFT_TIMES:
+            for (int i = 0; i < buttonToPress.attachedInfo.shiftTimes; i++)
+            {
+                result = shiftNumber(result, SHIFT_LEFT);
+            }
+            break;
         case MIRROR:
             result = mirrorNumber(result);
             break;
