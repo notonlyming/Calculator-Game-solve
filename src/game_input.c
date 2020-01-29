@@ -135,6 +135,7 @@ struct GameStruct *getGameLevelInfo() {
     detectAndInsertDeleteButton(buttonAllStr);
     detectAndInsertReplaceButton(buttonAllStr);
     detectAndInsertRoundButton(buttonAllStr);
+    detectAndInsertInsertButton(buttonAllStr);
 
     //计算按钮个数和申请空间
     Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr, ' ') + 1);
@@ -157,6 +158,7 @@ struct GameStruct *getGameLevelInfo() {
 // 传入用户输入的按钮字符串，如果内含独立的delete则替换为8个独立的delete以实现删除任意位。
 void detectAndInsertDeleteButton(char* buttonAllStr)
 {
+    //基于delete只有一个这一事实，使用替换。
     char* deleteStrStartP = strstr(buttonAllStr, "delete");
     // 如果包含delete字符串，且后边不跟数字，则需要替换！
     if(deleteStrStartP && !isNumberBit(deleteStrStartP + strlen("delete")))
@@ -168,6 +170,7 @@ void detectAndInsertDeleteButton(char* buttonAllStr)
 // 传入用户输入的按钮字符串，如果内含独立的round则替换为6个独立的round以实现删除任意位。
 void detectAndInsertRoundButton(char* buttonAllStr)
 {
+    //基于round按钮只可能有一个这个事实，使用替换。
     char* roundStrStartP = strstr(buttonAllStr, "round");
     // 如果包含round字符串，且后边不跟数字，则需要替换！
     if(roundStrStartP && !isNumberBit(roundStrStartP + strlen("round")))
@@ -176,21 +179,61 @@ void detectAndInsertRoundButton(char* buttonAllStr)
     }
 }
 
-// 传入用户输入的按钮字符串，如果内含replace则替换为任意=》指定位以实现替换任意位。
+// 传入用户输入的按钮字符串，如果内含replace则替换为任意位以实现替换任意位。
 void detectAndInsertReplaceButton(char* buttonAllStr)
 {
-    char* replaceStrStartP = strstr(buttonAllStr, "replace");
+    char* replaceStrStartP;
     int numberToReplace;
     char replaceStr[BUTTON_STR_MAX_LENGTH];
     // 如果包含replace字符串，且前边没指定数字，且后边有数字，则需要替换！
-    if(replaceStrStartP && !isNumberBit(replaceStrStartP - 1) && isNumberBit(replaceStrStartP + strlen("replace")))
+    while( 
+        ((replaceStrStartP = strstr(buttonAllStr, "replace")) &&
+        !isNumberBit(replaceStrStartP - 1) && isNumberBit(replaceStrStartP + strlen("replace"))) ||
+        (replaceStrStartP = strstr(buttonAllStr, " replace"))
+    )
     {
-        sscanf(replaceStrStartP, "replace%d", &numberToReplace);
+        if (replaceStrStartP[0] != ' ') sscanf(replaceStrStartP, "replace%d", &numberToReplace);
+        else sscanf(replaceStrStartP, " replace%d", &numberToReplace);
         sprintf(replaceStr, "1replace%d 2replace%d 3replace%d 4replace%d 5replace%d 6replace%d 7replace%d 8replace%d",
         numberToReplace, numberToReplace, numberToReplace, numberToReplace,
         numberToReplace, numberToReplace, numberToReplace, numberToReplace
         );
-        strrpc(buttonAllStr, "replace", replaceStr);
+        char before[BUTTON_STR_MAX_LENGTH];
+        memset(before, 0, sizeof(before));
+        // 复制replace前面的部分，注意这里复制不包括replace前面的数字
+        strncpy(before, buttonAllStr, replaceStrStartP - buttonAllStr);
+        strcat(before, replaceStr);
+        strcat(before, replaceStrStartP + strlen("replace?"));
+        strcpy(buttonAllStr, before);
+    }
+}
+
+// 传入用户输入的按钮字符串，如果内含insert则替换为任意位以实现插入任意位。
+void detectAndInsertInsertButton(char* buttonAllStr)
+{
+    char* insertStrStartP;
+    int numberToInsert;
+    char insertStr[BUTTON_STR_MAX_LENGTH];
+    // 如果包含insert字符串，且前边没指定数字，且后边有数字，则需要替换！
+    while( 
+        ((insertStrStartP = strstr(buttonAllStr, "insert")) &&
+        !isNumberBit(insertStrStartP - 1) && isNumberBit(insertStrStartP + strlen("insert"))) ||
+        (insertStrStartP = strstr(buttonAllStr, " insert"))
+    )
+    {
+        if (insertStrStartP[0] != ' ') sscanf(insertStrStartP, "insert%d", &numberToInsert);
+        else sscanf(insertStrStartP, " insert%d", &numberToInsert);
+        sprintf(insertStr, "1insert%d 2insert%d 3insert%d 4insert%d 5insert%d 6insert%d 7insert%d 8insert%d",
+        numberToInsert, numberToInsert, numberToInsert, numberToInsert,
+        numberToInsert, numberToInsert, numberToInsert, numberToInsert
+        );
+        char before[BUTTON_STR_MAX_LENGTH];
+        // 复制replace前面的部分
+        memset(before, 0, sizeof(before));
+        strncpy(before, buttonAllStr, insertStrStartP - buttonAllStr);
+        strcat(before, insertStr);
+        strcat(before, insertStrStartP + strlen("insert?"));
+        strcpy(buttonAllStr, before);
     }
 }
 
@@ -247,6 +290,15 @@ Button analyseButtonStr(char *buttonStr) {
             tempButton.type = REPLACE_BIT;
             sscanf(buttonStr, "%hdreplace%c", &tempButton.attachedInfo.rplBitInfo.replaceBit,
             &tempButton.attachedInfo.rplBitInfo.replaceNumberChar);
+        }
+    } else if(strstr(buttonStr, "insert")) {
+        char* insertStrStartP = strstr(buttonStr, "insert");
+        // 类似上面的替换按钮
+        if(isNumberBit(insertStrStartP - 1))
+        {
+            tempButton.type = INSERT;
+            sscanf(buttonStr, "%hdinsert%c", &tempButton.attachedInfo.insertBitInfo.insertBit,
+            &tempButton.attachedInfo.insertBitInfo.insertNumberChar);
         }
     }
         //隐含条件，先排除第一个是数字的特殊功能按钮，再判定第一个是数字才能确定是追加按钮

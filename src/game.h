@@ -37,6 +37,7 @@ typedef enum {
     CUT,          //删除特定数字
     ROUND,        //对任意位四舍五入，位右边全部置零
     DELETE,       //删除任意位上的数字
+    INSERT,       //在某一位 “前” 插入。因此传入的位索引是1~长度加1
     UNKNOW        //未知类型
 } ButtonType;
 
@@ -68,6 +69,10 @@ typedef struct {
             unsigned short replaceBit;
             char replaceNumberChar;
         } rplBitInfo;   //按位替换的附加信息
+        struct insertBitInfo{
+            unsigned short insertBit;
+            char insertNumberChar;
+        } insertBitInfo;   //按位替换的附加信息
     } attachedInfo;
 } Button;            //存储按钮的详细信息
 

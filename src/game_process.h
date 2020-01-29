@@ -53,5 +53,7 @@ int deleteBit(int number, size_t bit);
 int roundBit(int number, size_t roundBit);
 
 int numberReplaceBit(int number, struct replaceBitInfo rplBitInfo);
+int numberInsertBit(int number, struct insertBitInfo insertBitInfo);
+
 
 #endif
