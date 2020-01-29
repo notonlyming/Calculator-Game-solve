@@ -246,7 +246,10 @@ Button analyseButtonStr(char *buttonStr) {
         sscanf(buttonStr, "cut%s", tempButton.attachedInfo.cutNum);
     } else if(strstr(buttonStr, "delete")) {
         tempButton.type = DELETE;
-        sscanf(buttonStr, "delete%d", &tempButton.attachedInfo.deleteBit);
+        sscanf(buttonStr, "delete%zd", &tempButton.attachedInfo.deleteBit);
+    } else if(strstr(buttonStr, "round")) {
+        tempButton.type = ROUND;
+        sscanf(buttonStr, "round%zd", &tempButton.attachedInfo.roundBit);
     }
     if (tempButton.type == UNKNOW) {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");

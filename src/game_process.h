@@ -2,6 +2,7 @@
 #define _GAME_PROCESS_H_
 
 #include "game.h"
+#include <stdio.h>
 
 int calculateNumberLength(int number);
 
@@ -48,6 +49,7 @@ int sortNumber(int number, enum sort sortType);
 int descendCmp(const void*, const void*);
 int ascendCmp(const void*, const void*);
 
-int deleteBit(int number, int bit);
+int deleteBit(int number, size_t bit);
+int roundBit(int number, size_t roundBit);
 
 #endif

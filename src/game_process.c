@@ -238,6 +238,9 @@ int pressButton(Button buttonToPress, int currentNumber) {
         case DELETE:
             result = deleteBit(result, buttonToPress.attachedInfo.deleteBit);
             break;
+        case ROUND:
+            result = roundBit(result, buttonToPress.attachedInfo.roundBit);
+            break;
         case UNKNOW:; //do nothing
             break;
     }
@@ -248,13 +251,34 @@ int pressButton(Button buttonToPress, int currentNumber) {
     return result;
 }
 
+int roundBit(int number, size_t roundBit)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%d", number);
+    size_t numberStrLen = strlen(numberStr);
+    // 仅当传入的要round的位不是最后一位且不超过总位数时才执行操作
+    if (roundBit < numberStrLen)
+    {
+        // 往前读一位
+        char bit = numberStr[roundBit];
+        if (bit > '4') numberStr[roundBit - 1] += 1;
+        // 从round前面的一位开始，一直到最后一位，全部置零。
+        for (size_t i = roundBit; i < numberStrLen; i++)
+        {
+            numberStr[i] = '0';
+        }
+        sscanf(numberStr, "%d", &number);
+    }
+    return number;
+}
+
 // 删除指定位的数字
 // 如果传入bit不对，则返回原值
-int deleteBit(int number, int bit)
+int deleteBit(int number, size_t bit)
 {
     char numberStr[MAX_BIT];
     sprintf(numberStr, "%d", number);
-    short numberStrLen = strlen(numberStr);
+    size_t numberStrLen = strlen(numberStr);
     if(bit <= numberStrLen)
     {
         numberStr[bit - 1] = ' ';

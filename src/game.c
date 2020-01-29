@@ -75,7 +75,10 @@ char *buttonStr(Button button) {
             sprintf(infoStr, "CUT%s", button.attachedInfo.cutNum);
             break;
         case DELETE:
-            sprintf(infoStr, "Delete Bit:%d", button.attachedInfo.deleteBit);
+            sprintf(infoStr, "Delete Bit:%zd", button.attachedInfo.deleteBit);
+            break;
+        case ROUND:
+            sprintf(infoStr, "Round Bit:%zd", button.attachedInfo.roundBit);
             break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
