@@ -257,8 +257,20 @@ int pressButton(Button buttonToPress, int currentNumber) {
             break;
     }
     checkNumberLarge(result);
+    int before = result;
     if (Game.portalPointer) {
-        result = doTransmit(*Game.portalPointer, result);
+        while(1)
+        {
+            result = doTransmit(*Game.portalPointer, result);
+            if (result != before)
+            {
+                before = result;
+            }
+            else
+            {
+                break;
+            }
+        }
     }
     return result;
 }
