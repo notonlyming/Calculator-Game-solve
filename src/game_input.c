@@ -102,6 +102,7 @@ struct GameStruct *getGameLevelInfo() {
     strlwr(buttonAllStr);   // 全部转换为小写，方便处理
     detectAndInsertDeleteButton(buttonAllStr);
     detectAndInsertReplaceButton(buttonAllStr);
+    detectAndInsertRoundButton(buttonAllStr);
 
     //计算按钮个数和申请空间
     Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr, ' ') + 1);
@@ -129,6 +130,17 @@ void detectAndInsertDeleteButton(char* buttonAllStr)
     if(deleteStrStartP && !isNumberBit(deleteStrStartP + strlen("delete")))
     {
         strrpc(buttonAllStr, "delete", "delete1 delete2 delete3 delete4 delete5 delete6 delete7 delete8");
+    }
+}
+
+// 传入用户输入的按钮字符串，如果内含独立的round则替换为6个独立的round以实现删除任意位。
+void detectAndInsertRoundButton(char* buttonAllStr)
+{
+    char* roundStrStartP = strstr(buttonAllStr, "round");
+    // 如果包含round字符串，且后边不跟数字，则需要替换！
+    if(roundStrStartP && !isNumberBit(roundStrStartP + strlen("round")))
+    {
+        strrpc(buttonAllStr, "round", "round1 round2 round3 round4 round5 round6");
     }
 }
 

@@ -19,6 +19,7 @@ char *strrpc(char *str,char *oldstr,char *newstr);
 
 void detectAndInsertDeleteButton(char* buttonAllStr);
 void detectAndInsertReplaceButton(char* buttonAllStr);
+void detectAndInsertRoundButton(char* buttonAllStr);
 
 int isNumberBit(char* p);
 
