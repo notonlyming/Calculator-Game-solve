@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
             free(achieveNumbers);
             gameOver();
             if(!isSilent) printf("Finish task in %lfs.\n", (clock() - startTime) / (double) CLOCKS_PER_SEC);
-            puts("---------------------------------------------------");
+            if(!isSilent) puts("---------------------------------------------------");
             if(!isSilent) printf("Continue?(y/n):");
             do {
                 //循环读入，直到得到有效值
