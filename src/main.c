@@ -20,31 +20,33 @@ int main(int argc, char **argv) {
     #ifdef WINVER
     system("chcp 65001");
     #endif
-    short isOutputSteps = (argc == 2 && !strcmp(argv[1], "showSteps"));
-    if (argc == 1 || isOutputSteps) {
+    // 参数判别
+    short isOutputSteps = (argc == 2 && !strcmp(argv[1], "--show-steps"));
+    short isSilent = (argc == 2 && !strcmp(argv[1], "--silent"));
+    if (argc == 1 || isOutputSteps || isSilent) {
         unsigned int counter[2] = {0};
         clock_t startTime;
         struct GameStruct *gameP;
-        printWelcome();
+        if(!isSilent) printWelcome();
         char isContinue;
         do {
-            puts("-------------------新的一关开始啦-------------------");
+            if(!isSilent) puts("-------------------新的一关开始啦-------------------");
             int achieveCount;
-            int* achieveNumbers = getGameAchieve(&achieveCount);
-            gameP = getGameLevelInfo();
+            int* achieveNumbers = getGameAchieve(&achieveCount, isSilent);
+            gameP = getGameLevelInfo(isSilent);
             for (int i=0; i < achieveCount; i++)
             {
             printf("-----------------------%d-----------------------\n", achieveNumbers[i]);
                 gameP->gameAchieve = achieveNumbers[i];
                 startTime = clock();
-                solveIt(counter, isOutputSteps);
+                solveIt(counter, isOutputSteps, isSilent);
                 printSolutionInfo(counter, gameP);
             }
             free(achieveNumbers);
             gameOver();
-            printf("Finish task in %lfs.\n", (clock() - startTime) / (double) CLOCKS_PER_SEC);
+            if(!isSilent) printf("Finish task in %lfs.\n", (clock() - startTime) / (double) CLOCKS_PER_SEC);
             puts("---------------------------------------------------");
-            printf("Continue?(y/n):");
+            if(!isSilent) printf("Continue?(y/n):");
             do {
                 //循环读入，直到得到有效值
             } while ((isContinue = (char) getchar()) != 'y' && isContinue != 'n');
@@ -54,8 +56,8 @@ int main(int argc, char **argv) {
         puts("请注意，这是一个程序计算过程观察测试程序！\n只允许使用一个目标！");
         puts("-------------------Debug模式已开启-------------------");
         int achieveCount;
-        int* achieveNumbers = getGameAchieve(&achieveCount);
-        getGameLevelInfo();
+        int* achieveNumbers = getGameAchieve(&achieveCount, isSilent);
+        getGameLevelInfo(isSilent);
         Game.gameAchieve = achieveNumbers[0];
         pressButtonStepByStep();
         gameOver();

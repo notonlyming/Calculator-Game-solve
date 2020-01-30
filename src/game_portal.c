@@ -40,8 +40,8 @@ int doTransmit(portal portalToDoTransmit, int currentNumber) {
     return result * sign;
 }
 
-void getAndInitialisePortal() {
-    printf("有传送门吗？（y/n）");
+void getAndInitialisePortal(short isSilent) {
+    if(!isSilent) printf("有传送门吗？（y/n）");
     if (getchar() == 'y') {
         if (Game.portalPointer == NULL) {
             Game.portalPointer = (portal *) malloc(sizeof(portal));

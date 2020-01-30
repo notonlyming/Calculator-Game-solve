@@ -12,7 +12,7 @@ int bitAdd(unsigned short number[], unsigned short witchBit, unsigned short radi
 
 int numerationAddOne(unsigned short number[], unsigned short radix, unsigned short numberWidth);
 
-unsigned int *solveIt(unsigned int counter[2], short isOutputSteps);
+unsigned int *solveIt(unsigned int counter[2], short isOutputSteps, short isSilent);
 
 int numberReplace(int number, char *fromNumStr, char *toNumStr);
 

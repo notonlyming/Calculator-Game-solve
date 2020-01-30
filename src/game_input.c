@@ -43,10 +43,10 @@ void detectCharAndConvertToNumber(char* achieveStr)
 // 该函数用于获取游戏目标，因为游戏目标有多个，因此单独一个函数处理
 // 返回从用户输入处获得的目标数组(int)，记得free.
 // 参数为返回目标数组的元素总数。
-int* getGameAchieve(int* achieveCount)
+int* getGameAchieve(int* achieveCount, short isSilent)
 {
     char achieveStr[NUMBER_STR_MAX_LENGTH];
-    printf("请输入游戏目标：");
+    if(!isSilent) printf("请输入游戏目标：");
     fgets(achieveStr, NUMBER_STR_MAX_LENGTH, stdin);
     achieveStr[strlen(achieveStr) - 1] = '\0';   //除去末尾的换行符
     detectCharAndConvertToNumber(achieveStr);
@@ -118,17 +118,17 @@ char** split(char* strToSplit, char* splitChar)
 }
 
 //读入数据，并返回存储好数据的game结构指针，方便查阅
-struct GameStruct *getGameLevelInfo() {
-    printf("请输入计算器起始的数值：");
+struct GameStruct *getGameLevelInfo(short isSilent) {
+    if(!isSilent) printf("请输入计算器起始的数值：");
     scanf("%d", &(Game.startNum));
 
-    printf("请输入允许的最大步数：");
+    if(!isSilent) printf("请输入允许的最大步数：");
     scanf("%hu", &(Game.allowMaxStep));
     getchar();  //拿掉换行符
 
     //读入按钮信息字符串
     char buttonAllStr[BUTTON_STR_MAX_LENGTH * MAX_BUTTON_NUM];
-    printf("请输入按钮信息(单个空格分隔,回车结束)：");
+    if(!isSilent) printf("请输入按钮信息(单个空格分隔,回车结束)：");
     fgets(buttonAllStr, BUTTON_STR_MAX_LENGTH * MAX_BUTTON_NUM, stdin);
     buttonAllStr[strlen(buttonAllStr) - 1] = '\0';  //除去末尾的换行符
     strlwr(buttonAllStr);   // 全部转换为小写，方便处理
@@ -152,8 +152,8 @@ struct GameStruct *getGameLevelInfo() {
         strP = strP + strlen(buttonStr) + 1;
         Game.buttons[i] = analyseButtonStr(buttonStr);
     }
-    getAndInitialisePortal();
-    printButtons(Game.buttons, Game.buttonNum);
+    getAndInitialisePortal(isSilent);
+    if(!isSilent) printButtons(Game.buttons, Game.buttonNum);
     return &Game;
 }
 

@@ -3,7 +3,7 @@
 
 #include "game.h"
 
-struct GameStruct *getGameLevelInfo();
+struct GameStruct *getGameLevelInfo(short isSilent);
 
 Button analyseButtonStr(char *buttonStr);
 
@@ -13,7 +13,7 @@ char *strlwr(char *str);
 
 char** split(char* strToSplit, char* splitChar);
 
-int* getGameAchieve(int* achieveCount);
+int* getGameAchieve(int* achieveCount, short isSilent);
 
 char *strrpc(char *str,char *oldstr,char *newstr);
 

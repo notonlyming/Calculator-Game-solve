@@ -525,7 +525,7 @@ short initAllIsStoreAnswer() {
 }
 
 //尝试所有可能，并返回由尝试次数和解的个数构成的数组地址，需要传入用于存储计数的数组
-unsigned int *solveIt(unsigned int counter[2], short isOutputSteps) {
+unsigned int *solveIt(unsigned int counter[2], short isOutputSteps, short isSilent) {
     int tempResult;    //试错临时结果变量
     unsigned short *answer = (unsigned short *) malloc(sizeof(unsigned short) * Game.allowMaxStep); //用于存储解的过程
     counter[0] = 0;  //尝试个数的计数器
@@ -565,7 +565,7 @@ unsigned int *solveIt(unsigned int counter[2], short isOutputSteps) {
                 if (tempResult == Game.gameAchieve && Game.isOnError == FALSE) {
                     printSolution(answer, stepsNum);
                     counter[1]++;
-                    if (counter[1] == 10) {
+                    if (counter[1] == 10 && !isSilent) {
                         char isCalculateAllSolve;
                         printf("该level可能有10个以上的解...\n"
                                "继续计算可能需要消耗大量时间，是否继续？(y/n):");

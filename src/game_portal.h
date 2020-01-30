@@ -13,6 +13,6 @@ int checkPortalStatus(portal portalToCheck, int currentNumber);
 
 int doTransmit(portal portalToDoTransmit, int currentNumber);
 
-void getAndInitialisePortal();
+void getAndInitialisePortal(short isSilent);
 
 #endif //CALCULATOR_GAME_SOLVE_PORTAL_H
