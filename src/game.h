@@ -21,6 +21,7 @@ typedef enum {
     MINUS,        //算术减
     MULTIPLY,     //算术乘
     DIVIDE,       //算术除
+    BIT_PLUS,    //按位加
     BACKSPACE,    //退格，既:<<
     REPLACE,      //替换
     REPLACE_BIT,  //按位替换
@@ -66,14 +67,18 @@ typedef struct {
         char cutNum[CUT_MAX_LENGTH];   //要删除的东西
         size_t deleteBit;   //删除操作所在位置，左边数起，从1开始
         size_t roundBit;  //要四舍五入的位，左边数起，从1开始
-        struct replaceBitInfo{
+        struct replaceBitInfo {
             unsigned short replaceBit;
             char replaceNumberChar;
         } rplBitInfo;   //按位替换的附加信息
-        struct insertBitInfo{
+        struct insertBitInfo {
             unsigned short insertBit;
             char insertNumberChar;
         } insertBitInfo;   //按位替换的附加信息
+        struct plusBitInfo {
+            unsigned short plusBit;
+            char plusNumberChar;
+        } plusBitInfo;
         int shiftTimes;    //移位次数
     } attachedInfo;
 } Button;            //存储按钮的详细信息
@@ -96,9 +101,9 @@ struct GameStruct {
     storeOrNotAnswerStruct *storeOrNotAnswerStructP;  //如果存在store按钮，将会在这里建立存储方案链表
 };
 
-char *buttonStr(Button button);
-
 extern struct GameStruct Game;
+
+char *buttonStr(Button button);
 
 void gameOver();
 

@@ -23,6 +23,7 @@ void detectAndInsertRoundButton(char* buttonAllStr);
 void detectCharAndConvertToNumber(char* achieveStr);
 void detectAndInsertShiftButton(char* buttonAllStr);
 void detectAndInsertInsertButton(char* buttonAllStr);
+void detectAndInsertBitPlusButton(char* buttonAllStr);
 
 int isNumberBit(char* p);
 

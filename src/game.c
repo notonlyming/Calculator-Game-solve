@@ -91,6 +91,10 @@ char *buttonStr(Button button) {
         case SHIFT_TIMES:
             sprintf(infoStr, "Shift<%d", button.attachedInfo.shiftTimes);
             break;
+        case BIT_PLUS:
+            sprintf(infoStr, "at %dth plus%c", button.attachedInfo.plusBitInfo.plusBit,
+            button.attachedInfo.plusBitInfo.plusNumberChar);
+            break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
             break;
