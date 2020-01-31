@@ -880,4 +880,205 @@
         "buttons":"shift>",
         "protal":"n"
     },
+    {
+        "name":"Level 110",
+        "achieve":"121",
+        "start":"101",
+        "max_step":"3",
+        "buttons":"shift> shift< +2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 111",
+        "achieve":"1999",
+        "start":"98",
+        "max_step":"4",
+        "buttons":"1 9 89=>99 shift>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 112",
+        "achieve":"129",
+        "start":"70",
+        "max_step":"4",
+        "buttons":"*3 9 shift>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 113",
+        "achieve":"210",
+        "start":"120",
+        "max_step":"5",
+        "buttons":"+1 +/- shift<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 114",
+        "achieve":"210",
+        "start":"1001",
+        "max_step":"5",
+        "buttons":"+2 12=>0 shift>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 115",
+        "achieve":"501",
+        "start":"100",
+        "max_step":"3",
+        "buttons":"+5 0 shift<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 116",
+        "achieve":"3",
+        "start":"212",
+        "max_step":"4",
+        "buttons":"+11 3=>1 sum shift<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 117",
+        "achieve":"121",
+        "start":"356",
+        "max_step":"4",
+        "buttons":"-2 /3 shift>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 118",
+        "achieve":"13",
+        "start":"2152",
+        "max_step":"6",
+        "buttons":"25=>12 21=>3 12=>5 shift> reverse",
+        "protal":"n"
+    },
+    # 520?
+    {
+        "name":"Level 119",
+        "achieve":"520",
+        "start":"1025",
+        "max_step":"5",
+        "buttons":"50=>0 25=>525 51=>5 shift>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 120",
+        "achieve":"2332",
+        "start":"23",
+        "max_step":"1",
+        "buttons":"mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 121",
+        "achieve":"1221",
+        "start":"0",
+        "max_step":"3",
+        "buttons":"1 2 mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 122",
+        "achieve":"19",
+        "start":"91",
+        "max_step":"6",
+        "buttons":"+5 sum mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 123",
+        "achieve":"116",
+        "start":"22",
+        "max_step":"4",
+        "buttons":"-3 6 sum mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 124",
+        "achieve":"20",
+        "start":"125",
+        "max_step":"7",
+        "buttons":"6=>2 0 sum mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 125",
+        "achieve":"3",
+        "start":"22",
+        "max_step":"4",
+        "buttons":"sum /2 mirror <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 126",
+        "achieve":"1111",
+        "start":"0",
+        "max_step":"5",
+        "buttons":"+2 *6 21=>11 mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 127",
+        "achieve":"2020",
+        "start":"-1",
+        "max_step":"8",
+        "buttons":"*3 +8 +2 reverse mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 128",
+        "achieve":"112",
+        "start":"13",
+        "max_step":"6",
+        "buttons":"99=>60 /3 *3 shift> mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 129",
+        "achieve":"18",
+        "start":"140",
+        "max_step":"6",
+        "buttons":"-3 +9 /12 << mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 130",
+        "achieve":"33",
+        "start":"17",
+        "max_step":"4",
+        "buttons":"*2 -4 mirror shift<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 131",
+        "achieve":"20",
+        "start":"125",
+        "max_step":"8",
+        "buttons":"mirror sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 132",
+        "achieve":"15",
+        "start":"10",
+        "max_step":"3",
+        "buttons":"+2 [+]1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 133",
+        "achieve":"14",
+        "start":"0",
+        "max_step":"4",
+        "buttons":"1 +2 [+]1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 134",
+        "achieve":"34",
+        "start":"0",
+        "max_step":"3",
+        "buttons":"2 3 [+]1",
+        "protal":"n"
+    },
 ]
