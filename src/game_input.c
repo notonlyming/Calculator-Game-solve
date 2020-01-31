@@ -173,8 +173,8 @@ void detectAndInsertShiftButton(char* buttonAllStr)
 {
     //基于shift只有一个这一事实，使用替换。
     char* shiftStrStartP = strstr(buttonAllStr, "shift");
-    // 如果包含shift字符串，且后边不跟数字，则需要替换！
-    if(shiftStrStartP && !isNumberBit(shiftStrStartP + strlen("shift")))
+    // 如果包含shift字符串，后边不跟<只有shift，则需要替换！
+    if(shiftStrStartP && shiftStrStartP[strlen("shift")] != '<')
     {
         strrpc(buttonAllStr, "shift", "shift1 shift2 shift3 shift4 shift5 shift6");
     }

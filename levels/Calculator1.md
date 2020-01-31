@@ -790,18 +790,6 @@ note: 1364 time(s) try, 1 solution(s) found
 note: 3905 time(s) try, 20 solution(s) found
 ### Level 108
 -----------------------2311-----------------------
-发现解(1步)：(Shift<2) 结果：2311
-发现解(2步)：(Shift<1) (Shift<1) 结果：2311
-发现解(2步)：(Shift<5) (Shift<1) 结果：2311
-发现解(2步)：(Shift<) (Shift<1) 结果：2311
-发现解(2步)：(Shift<4) (Shift<2) 结果：2311
-发现解(2步)：(Shift<3) (Shift<3) 结果：2311
-发现解(2步)：(Shift<2) (Shift<4) 结果：2311
-发现解(2步)：(Shift<1) (Shift<5) 结果：2311
-发现解(2步)：(Shift<5) (Shift<5) 结果：2311
-发现解(2步)：(Shift<) (Shift<5) 结果：2311
-发现解(2步)：(Shift<1) (Shift<) 结果：2311
-发现解(2步)：(Shift<5) (Shift<) 结果：2311
 发现解(2步)：(Shift<) (Shift<) 结果：2311
 
-note: 42 time(s) try, 13 solution(s) found
+note: 2 time(s) try, 1 solution(s) found
