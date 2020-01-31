@@ -1129,4 +1129,108 @@
         "buttons":"store",
         "protal":"n"
     },
+    {
+        "name":"Level 143",
+        "achieve":"121",
+        "start":"0",
+        "max_step":"5",
+        "buttons":"+1 store",
+        "protal":"n"
+    },
+    {
+        "name":"Level 144",
+        "achieve":"122",
+        "start":"12",
+        "max_step":"5",
+        "buttons":"store reverse <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 145",
+        "achieve":"17",
+        "start":"10",
+        "max_step":"6",
+        "buttons":"+2 /3 reverse store",
+        "protal":"n"
+    },
+    {
+        "name":"Level 146",
+        "achieve":"1234",
+        "start":"23",
+        "max_step":"5",
+        "buttons":"*2 -5 store shift<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 147",
+        "achieve":"1025",
+        "start":"125",
+        "max_step":"7",
+        "buttons":"*2 store <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 148",
+        "achieve":"115",
+        "start":"23",
+        "max_step":"6",
+        "buttons":"-8 store +/-",
+        "protal":"n"
+    },
+    {
+        "name":"Level 149",
+        "achieve":"16",
+        "start":"15",
+        "max_step":"5",
+        "buttons":"store 11=>33 reverse sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 150",
+        "achieve":"61",
+        "start":"0",
+        "max_step":"8",
+        "buttons":"5 << sum store",
+        "protal":"n"
+    },
+    {
+        "name":"Level 151",
+        "achieve":"101",
+        "start":"0",
+        "max_step":"6",
+        "buttons":"*6 5 shift> 3=>1 store",
+        "protal":"n"
+    },
+    {
+        "name":"Level 152",
+        "achieve":"12525",
+        "start":"125",
+        "max_step":"6",
+        "buttons":"1 /5 reverse store",
+        "protal":"n"
+    },
+    {
+        "name":"Level 153",
+        "achieve":"17",
+        "start":"70",
+        "max_step":"7",
+        "buttons":"8=>1 /2 store sum 0",
+        "protal":"n"
+    },
+    {
+        "name":"Level 154",
+        "achieve":"101",
+        "start":"12",
+        "max_step":"5",
+        "buttons":"21=>0 12=>1 store mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 155",
+        "achieve":"3001",
+        "start":"9",
+        "max_step":"9",
+        "buttons":"39=>93 /3 store 31=>00",
+        "protal":"n"
+    },
 ]
