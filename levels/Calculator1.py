@@ -208,22 +208,6 @@
         "protal":"n"
     },
     {
-        "name":"Level 27",
-        "achieve":"102",
-        "start":"0",
-        "max_step":"4",
-        "buttons":"10 +1 <<",
-        "protal":"n"
-    },
-    {
-        "name":"Level 27",
-        "achieve":"102",
-        "start":"0",
-        "max_step":"4",
-        "buttons":"10 +1 <<",
-        "protal":"n"
-    },
-    {
         "name":"Level 28",
         "achieve":"222",
         "start":"0",
@@ -1079,6 +1063,70 @@
         "start":"0",
         "max_step":"3",
         "buttons":"2 3 [+]1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 135",
+        "achieve":"101",
+        "start":"0",
+        "max_step":"5",
+        "buttons":"2 +5 [+]2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 136",
+        "achieve":"28",
+        "start":"0",
+        "max_step":"5",
+        "buttons":"1 +2 [+]3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 137",
+        "achieve":"42",
+        "start":"0",
+        "max_step":"5",
+        "buttons":"-2 +5 *2 [+]1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 138",
+        "achieve":"25",
+        "start":"0",
+        "max_step":"5",
+        "buttons":"+2 *3 -3 [+]2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 139",
+        "achieve":"41",
+        "start":"5",
+        "max_step":"4",
+        "buttons":"+4 +8 *3 [+]2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 140",
+        "achieve":"31",
+        "start":"33",
+        "max_step":"5",
+        "buttons":"*4 +2 +3 [+]1 sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 141",
+        "achieve":"268",
+        "start":"25",
+        "max_step":"5",
+        "buttons":"+8 *2 *5 [+]1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 142",
+        "achieve":"1111",
+        "start":"1",
+        "max_step":"4",
+        "buttons":"store",
         "protal":"n"
     },
 ]
