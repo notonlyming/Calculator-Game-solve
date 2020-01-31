@@ -872,4 +872,12 @@
         "buttons":"shift<",
         "protal":"n"
     },
+    {
+        "name":"Level 109",
+        "achieve":"3254",
+        "start":"5432",
+        "max_step":"2",
+        "buttons":"shift>",
+        "protal":"n"
+    },
 ]

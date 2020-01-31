@@ -793,3 +793,8 @@ note: 3905 time(s) try, 20 solution(s) found
 发现解(2步)：(Shift<) (Shift<) 结果：2311
 
 note: 2 time(s) try, 1 solution(s) found
+### Level 109
+-----------------------3254-----------------------
+发现解(2步)：(Shift>) (Shift>) 结果：3254
+
+note: 2 time(s) try, 1 solution(s) found
