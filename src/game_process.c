@@ -543,6 +543,13 @@ unsigned int *solveIt(unsigned int counter[2], short isOutputSteps, short isSile
             {
                 tempResult = Game.startNum;  //每次按尝试一种存储方式都要重置结果变量
                 for (int step = 0; step < stepsNum; step++) {
+                    // 更新，store按钮也算步数，加起来超步数将break并置为error
+                    if (storeAnswer && stepsNum + countOnes(storeAnswer->isStoreAnswer, stepsNum) > Game.allowMaxStep)
+                    {
+                        Game.isOnError = TRUE;
+                        break;
+                    }
+                    
                     //判断是否存在store按钮
                     if (storeAnswer) {
                         //根据存储按钮答案数组，决定是否存储

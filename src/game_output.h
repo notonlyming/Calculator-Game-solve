@@ -11,4 +11,6 @@ void printWelcome();
 
 void printSolution(unsigned short answer[], int stepsNum);
 
+int countOnes(unsigned short array[], size_t arrayLen);
+
 #endif

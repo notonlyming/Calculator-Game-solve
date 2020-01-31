@@ -42,10 +42,27 @@ void printWelcome() {
     puts("https://github.com/notonlyming/Calculator-Game-solve");
 }
 
+// 计算数组里面有多少个1，用于计算按下store的数目
+int countOnes(unsigned short array[], size_t arrayLen)
+{
+    int result = 0;
+    for (size_t i = 0; i < arrayLen; i++)
+    {
+        if(array[i]) result += 1;
+    }
+    return result;
+}
+
 void printSolution(unsigned short answer[], int stepsNum) {
     resetButton();
     int tempResult = Game.startNum;
-    printf("发现解(%d步)：", stepsNum);
+    //修正包含store按钮计数
+    int fixStepsNumber = stepsNum;
+    if(Game.storeOrNotAnswerStructP)
+    {
+        fixStepsNumber += countOnes(Game.storeOrNotAnswerStructP->isStoreAnswer, stepsNum);
+    }
+    printf("发现解(%d步)：", fixStepsNumber);
     //打印解
     for (int step = 0; step < stepsNum; step++) {
         if (Game.storeOrNotAnswerStructP) {
