@@ -138,6 +138,7 @@ struct GameStruct *getGameLevelInfo(short isSilent) {
     detectAndInsertRoundButton(buttonAllStr);
     detectAndInsertInsertButton(buttonAllStr);
     detectAndInsertBitPlusButton(buttonAllStr);
+    detectABCButton(buttonAllStr);
 
     //计算按钮个数和申请空间
     Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr, ' ') + 1);
@@ -166,6 +167,23 @@ void detectAndInsertDeleteButton(char* buttonAllStr)
     if(deleteStrStartP && !isNumberBit(deleteStrStartP + strlen("delete")))
     {
         strrpc(buttonAllStr, "delete", "delete1 delete2 delete3 delete4 delete5 delete6");
+    }
+}
+
+// 检测并替换ABC按钮
+void detectABCButton(char* buttonAllStr)
+{
+    char* abcStartP = strstr(buttonAllStr, "abc");
+    // 如果包含abc字符串，则删除！
+    if(abcStartP)
+    {
+        strrpc(buttonAllStr, "abc", "+0");
+        Game.hasABC = TRUE;
+        Game.allowMaxStep--;
+    }
+    else
+    {
+        Game.hasABC = FALSE;
     }
 }
 

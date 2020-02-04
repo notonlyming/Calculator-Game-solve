@@ -99,6 +99,7 @@ struct GameStruct {
     portal *portalPointer;  //传送门指针
     Button *unchangedButtons;  //如果按钮被更改，将会复制一份原始值到这里
     storeOrNotAnswerStruct *storeOrNotAnswerStructP;  //如果存在store按钮，将会在这里建立存储方案链表
+    short hasABC;  // 如果为真，则最终输出解包含ABC按钮
 };
 
 extern struct GameStruct Game;

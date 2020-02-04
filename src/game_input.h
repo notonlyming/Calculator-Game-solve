@@ -24,6 +24,7 @@ void detectCharAndConvertToNumber(char* achieveStr);
 void detectAndInsertShiftButton(char* buttonAllStr);
 void detectAndInsertInsertButton(char* buttonAllStr);
 void detectAndInsertBitPlusButton(char* buttonAllStr);
+void detectABCButton(char* buttonAllStr);
 
 int isNumberBit(char* p);
 
