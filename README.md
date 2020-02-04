@@ -46,11 +46,15 @@ Calculator就是一个萌萌的计算器手机游戏。
 
 并且Calculator: the game支持IOS/Android平台
 
+Caldulator2 已推出，本解算器已支持部分特性。
+
 ### 下载地址
 
-[苹果平台(App Store)](https://itunes.apple.com/cn/app/calculator-the-game/id1243055750?mt=8)
+[Calculator1 苹果平台(App Store)](https://itunes.apple.com/cn/app/calculator-the-game/id1243055750?mt=8)  
+[Calculator2 苹果平台(App Store)](https://apps.apple.com/cn/app/%E8%AE%A1%E7%AE%97%E5%99%A82-%E6%B8%B8%E6%88%8F/id1436348748)
 
-[安卓平台(Google Play)](https://play.google.com/store/apps/details?id=com.sm.calculateme)
+[Calculator1 安卓平台(Google Play)](https://play.google.com/store/apps/details?id=com.sm.calculateme)  
+[Calculator2 安卓平台(Google Play)](https://play.google.com/store/apps/details?id=com.simplemachine.calculator2)
 
 项目烹饪说明
 -----------
@@ -243,6 +247,46 @@ note：输入的按钮是去除clear、设置等按钮后，真正能对计算�
 * 是否有传送门，在180关以上会出现传送门
 
 note：传送门入口位置表示从右边开始数，数字会消失的位置。出口表示数字会出现的位置。
+
+### 特殊按钮说明
+delete
+======
+这是在第二版中出现的按钮，它可以删除任意位的数字。  
+在录入按钮时使用delete即可，但程序内部实际上实现了一个删除特定位的按钮。  
+因此delete实际上会在内部被替换为：delete1 delete2 delete3 delete4 delete5 delete6  
+你将会看到6个按钮，不要惊慌~
+
+shift
+=====
+这也是在第二版中出现的按钮，区别在于它可以移动任意方向任意次数，且只记一次步数。  
+程序内部同样实现了一个按特定次数位移的按钮。  
+只要输入shift，字符串就被替换为：shift1 shift2 shift3 shift4 shift5 shift6  
+将会有6个按钮。
+
+replace
+=======
+将任意位替换为指定数字。  
+输入replace?    ?是会替换成的数字。  
+内部实现了一个指定位替换的按钮。所以同上，你的按钮会被替换。  
+
+round
+======
+同上
+
+insert
+======
+同上
+
+按位加
+=====
+第二版中好像是紫色按钮的+?表示可在任意位上加上一个数。   
+录入时请使用：bit+?   的格式。?是要加上的数字。   
+同上，他会被替换成6个按钮，分别对应所有位。
+
+store
+=====
+似乎在某次更新以后ios和android版本的store长按也是记录次数的。  
+解算器已经更新为store长按记录次数。  
 
 ### 如何使用输出信息
 
