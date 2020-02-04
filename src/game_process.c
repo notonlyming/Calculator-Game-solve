@@ -256,6 +256,9 @@ int pressButton(Button buttonToPress, int currentNumber) {
         case BIT_PLUS:
             result = plusBit(result, buttonToPress.attachedInfo.plusBitInfo);
             break;
+        case BIT_MINUS:
+            result = minusBit(result, buttonToPress.attachedInfo.minusBitInfo);
+            break;
         case UNKNOW:; //do nothing
             break;
     }
@@ -283,6 +286,7 @@ int plusBit(int number, struct plusBitInfo plusBitInfo)
 {
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
+    // 要操作的位，有效性判断
     if(plusBitInfo.plusBit <= strlen(numberStr) + 1 && plusBitInfo.plusBit >= 1)
     {
         unsigned short digit = numberStr[plusBitInfo.plusBit - 1] - 48;
@@ -297,6 +301,28 @@ int plusBit(int number, struct plusBitInfo plusBitInfo)
     }
     return number;
 }
+
+int minusBit(int number, struct minusBitInfo minusBitInfo)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%d", number);
+    // 要操作的位，有效性判断
+    if(minusBitInfo.minusBit <= strlen(numberStr) + 1 && minusBitInfo.minusBit >= 1)
+    {
+        unsigned short digit = numberStr[minusBitInfo.minusBit - 1] - 48;
+        digit += 10;   // 防止减成负数
+        digit -= minusBitInfo.minusNumberChar - 48;
+        digit %= 10;
+        numberStr[minusBitInfo.minusBit - 1] = digit + 48;
+        sscanf(numberStr, "%d", &number);
+    }
+    else
+    {
+        Game.isOnError = TRUE;
+    }
+    return number;
+}
+
 
 int numberInsertBit(int number, struct insertBitInfo insertBitInfo)
 {

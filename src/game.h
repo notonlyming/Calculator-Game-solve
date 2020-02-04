@@ -22,6 +22,7 @@ typedef enum {
     MULTIPLY,     //算术乘
     DIVIDE,       //算术除
     BIT_PLUS,     //按位加
+    BIT_MINUS,    //按位减
     BACKSPACE,    //退格，既:<<
     REPLACE,      //替换
     REPLACE_BIT,  //按位替换
@@ -79,6 +80,10 @@ typedef struct {
             unsigned short plusBit;
             char plusNumberChar;
         } plusBitInfo;
+        struct minusBitInfo {
+            unsigned short minusBit;
+            char minusNumberChar;
+        } minusBitInfo;
         int shiftTimes;    //移位次数
     } attachedInfo;
 } Button;            //存储按钮的详细信息

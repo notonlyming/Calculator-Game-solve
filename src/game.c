@@ -95,6 +95,10 @@ char *buttonStr(Button button) {
             sprintf(infoStr, "at %dth plus%c", button.attachedInfo.plusBitInfo.plusBit,
             button.attachedInfo.plusBitInfo.plusNumberChar);
             break;
+        case BIT_MINUS:
+            sprintf(infoStr, "at %dth minus%c", button.attachedInfo.minusBitInfo.minusBit,
+            button.attachedInfo.minusBitInfo.minusNumberChar);
+            break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
             break;

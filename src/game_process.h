@@ -47,6 +47,7 @@ int powInt(int base, int exponent);
 int sortNumber(int number, enum sort sortType);
 
 int plusBit(int number, struct plusBitInfo plusBitInfo);
+int minusBit(int number, struct minusBitInfo minusBitInfo);
 
 int descendCmp(const void*, const void*);
 int ascendCmp(const void*, const void*);

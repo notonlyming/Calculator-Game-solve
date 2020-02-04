@@ -137,7 +137,7 @@ struct GameStruct *getGameLevelInfo(short isSilent) {
     detectAndInsertReplaceButton(buttonAllStr);
     detectAndInsertRoundButton(buttonAllStr);
     detectAndInsertInsertButton(buttonAllStr);
-    detectAndInsertBitPlusButton(buttonAllStr);
+    detectAndInsertBitPlusOrMinusButton(buttonAllStr);
     detectABCButton(buttonAllStr);
 
     //计算按钮个数和申请空间
@@ -269,24 +269,45 @@ void detectAndInsertInsertButton(char* buttonAllStr)
 }
 
 // 传入用户输入的按钮字符串，如果内含bitPlus则替换为任意位以实现插入任意位。
-void detectAndInsertBitPlusButton(char* buttonAllStr)
+void detectAndInsertBitPlusOrMinusButton(char* buttonAllStr)
 {
     char* bitPlusStrStartP;
     int numberToPlus;
     char bitPlusStr[BUTTON_STR_MAX_LENGTH];
-    // 如果包含bitPlus字符串，且前边没指定数字，且后边有数字，则需要替换！
-    while( 
-        ((bitPlusStrStartP = strstr(buttonAllStr, "bit+")) &&
-        !isNumberBit(bitPlusStrStartP - 1) && isNumberBit(bitPlusStrStartP + strlen("bit+"))) ||
-        (bitPlusStrStartP = strstr(buttonAllStr, " bit+"))
-    )
+    short isMinus = FALSE;
+    short isBegin = FALSE;  // bit+/-是不是在开头
+    // 如果包含bitPlus字符串，则需要替换！
+    // 这里要特别处理开头就是bit，因为?bit?的设计不容易甄别。
+    // 用空格bit还有搜索bit是不是开头指针来判断是?bit?还是bit?
+    while(
+            (isBegin = ( strstr(buttonAllStr, "bit+") == buttonAllStr || (strstr(buttonAllStr, "bit-") == buttonAllStr) ) )  ||
+            (bitPlusStrStartP = strstr(buttonAllStr, " bit+")) || (bitPlusStrStartP = strstr(buttonAllStr, " bit-")) 
+         )
     {
-        if (bitPlusStrStartP[0] != ' ') sscanf(bitPlusStrStartP, "bit+%d", &numberToPlus);
-        else sscanf(bitPlusStrStartP, " bit+%d", &numberToPlus);
+        // 如果开头就是bit+/-
+        if (isBegin)
+        {
+            bitPlusStrStartP = buttonAllStr;
+            sscanf(bitPlusStrStartP + strlen("bit+"), "%d", &numberToPlus);
+            if (bitPlusStrStartP[strlen("bit")] == '-') isMinus = TRUE;
+        }
+        else
+        {
+            // 指针移动到空格后
+            bitPlusStrStartP++;
+            sscanf(bitPlusStrStartP + strlen(" bit+"), "%d", &numberToPlus);
+            if (bitPlusStrStartP[strlen("bit")] == '-') isMinus = TRUE;
+        }
         sprintf(bitPlusStr, "1bit+%d 2bit+%d 3bit+%d 4bit+%d 5bit+%d 6bit+%d",
         numberToPlus, numberToPlus, numberToPlus,
         numberToPlus, numberToPlus, numberToPlus
         );
+        // 如果是减就替换一下
+        if (isMinus)
+        {
+            strrpc(bitPlusStr, "+", "-");
+        }
+        
         char before[BUTTON_STR_MAX_LENGTH];
         // 复制bit+前面的部分
         memset(before, 0, sizeof(before));
@@ -368,6 +389,15 @@ Button analyseButtonStr(char *buttonStr) {
             tempButton.type = BIT_PLUS;
             sscanf(buttonStr, "%hdbit+%c", &tempButton.attachedInfo.plusBitInfo.plusBit,
             &tempButton.attachedInfo.plusBitInfo.plusNumberChar);
+        }
+    } else if(strstr(buttonStr, "bit-")) {
+        char* minusStrStartP = strstr(buttonStr, "bit-");
+        // 类似上面的按钮
+        if(isNumberBit(minusStrStartP - 1))
+        {
+            tempButton.type = BIT_MINUS;
+            sscanf(buttonStr, "%hdbit-%c", &tempButton.attachedInfo.minusBitInfo.minusBit,
+            &tempButton.attachedInfo.minusBitInfo.minusNumberChar);
         }
     }
         //隐含条件，先排除第一个是用于表示位的数字的特殊功能按钮，再判定第一个是数字才能确定是追加按钮
