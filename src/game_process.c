@@ -300,28 +300,37 @@ int plusBit(int number, struct plusBitInfo plusBitInfo)
 
 int numberInsertBit(int number, struct insertBitInfo insertBitInfo)
 {
+    
     //先劈开再拼接以实现插入！
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
-    if(insertBitInfo.insertBit <= strlen(numberStr) + 1 && insertBitInfo.insertBit >= 1)
+    // 如果一开始是0，则只能替换这个0，我也不知道为啥。。
+    if (number == 0)
     {
-        char before[NUMBER_STR_MAX_LENGTH];
-        char after[NUMBER_STR_MAX_LENGTH];
-        // 这里减二一个是从零开始减一，另一个是在前面插入，减一。
-        int insertBitIndex = insertBitInfo.insertBit - 2;
-        for(int i = 0; i <= insertBitIndex; i++)
-        {
-            before[i] = numberStr[i];
-        }
-        before[insertBitIndex + 1] = insertBitInfo.insertNumberChar;
-        before[insertBitIndex + 2] = '\0';
-        strcpy(after, numberStr + insertBitIndex + 1);
-        strcat(before, after);
-        sscanf(before, "%d", &number);
+        number = insertBitInfo.insertNumberChar - 48;
     }
     else
     {
-        Game.isOnError = TRUE;
+        if(insertBitInfo.insertBit <= strlen(numberStr) + 1 && insertBitInfo.insertBit >= 1)
+        {
+            char before[NUMBER_STR_MAX_LENGTH];
+            char after[NUMBER_STR_MAX_LENGTH];
+            // 这里减二一个是从零开始减一，另一个是在前面插入，减一。
+            int insertBitIndex = insertBitInfo.insertBit - 2;
+            for(int i = 0; i <= insertBitIndex; i++)
+            {
+                before[i] = numberStr[i];
+            }
+            before[insertBitIndex + 1] = insertBitInfo.insertNumberChar;
+            before[insertBitIndex + 2] = '\0';
+            strcpy(after, numberStr + insertBitIndex + 1);
+            strcat(before, after);
+            sscanf(before, "%d", &number);
+        }
+        else
+        {
+            Game.isOnError = TRUE;
+        }
     }
     return number;
 }
