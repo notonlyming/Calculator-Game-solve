@@ -534,9 +534,9 @@ unsigned int *solveIt(unsigned int counter[2], short isOutputSteps, short isSile
     //从最少的步数开始尝试，看看有没有最优解
     storeOrNotAnswerStruct *storeAnswer = createStoreAnswerListForStoreButton();  //存储当前尝试的store答案数组指针
     // 先看看是不是不用计算就有结果
-    counter[0]++; counter[1]++;
     if (Game.startNum == Game.gameAchieve)
     {
+        counter[0]++; counter[1]++;
         if (Game.hasABC)
         {
             printf("发现解(1步) (ABC) 结果：%d  \n", Game.startNum);
