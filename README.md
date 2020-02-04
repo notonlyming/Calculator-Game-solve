@@ -254,7 +254,8 @@ delete
 这是在第二版中出现的按钮，它可以删除任意位的数字。  
 在录入按钮时使用delete即可，但程序内部实际上实现了一个删除特定位的按钮。  
 因此delete实际上会在内部被替换为：delete1 delete2 delete3 delete4 delete5 delete6  
-你将会看到6个按钮，不要惊慌~
+你将会看到6个按钮，不要惊慌~  
+delete位是从左边开始数起的位置
 
 shift
 =====
