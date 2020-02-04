@@ -48,4 +48,6 @@ if __name__ == '__main__':
         # 调用一次程序解算
         os.system("cat {} | ./calculator_game --silent >> {}".format(inputFilePath, outputFilePath))
         printThread.stopRun()
+
+    os.system("rm -rf ./levels/*.input")
         
