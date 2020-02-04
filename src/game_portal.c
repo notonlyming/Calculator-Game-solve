@@ -46,7 +46,7 @@ void getAndInitialisePortal(short isSilent) {
         if (Game.portalPointer == NULL) {
             Game.portalPointer = (portal *) malloc(sizeof(portal));
         }
-        printf("请输入传送门传送入口和传送出口位置（空格分隔）：");
+        if(!isSilent) printf("请输入传送门传送入口和传送出口位置（空格分隔）：");
         scanf("%d%d", &Game.portalPointer->portalEntranceIndex, &Game.portalPointer->portalExitIndex);
     }
     getchar();  //拿掉换行符

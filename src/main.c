@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
             gameP = getGameLevelInfo(isSilent);
             for (int i=0; i < achieveCount; i++)
             {
-            printf("-----------------------%d-----------------------\n", achieveNumbers[i]);
+            printf("-----------------------%d-----------------------  \n", achieveNumbers[i]);
                 gameP->gameAchieve = achieveNumbers[i];
                 startTime = clock();
                 solveIt(counter, isOutputSteps, isSilent);

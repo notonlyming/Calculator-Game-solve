@@ -74,5 +74,5 @@ void printSolution(unsigned short answer[], int stepsNum) {
         tempResult = pressButton(Game.buttons[answer[step]], tempResult);
         printf("(%s) ", buttonStr(Game.buttons[answer[step]]));
     }
-    printf("结果：%d\n", tempResult);
+    printf("结果：%d  \n", tempResult);
 }
