@@ -287,7 +287,7 @@ int plusBit(int number, struct plusBitInfo plusBitInfo)
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
     // 要操作的位，有效性判断
-    if(plusBitInfo.plusBit <= strlen(numberStr) + 1 && plusBitInfo.plusBit >= 1)
+    if(plusBitInfo.plusBit <= strlen(numberStr) && plusBitInfo.plusBit >= 1)
     {
         unsigned short digit = numberStr[plusBitInfo.plusBit - 1] - 48;
         digit += plusBitInfo.plusNumberChar - 48;
@@ -307,7 +307,7 @@ int minusBit(int number, struct minusBitInfo minusBitInfo)
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
     // 要操作的位，有效性判断
-    if(minusBitInfo.minusBit <= strlen(numberStr) + 1 && minusBitInfo.minusBit >= 1)
+    if(minusBitInfo.minusBit <= strlen(numberStr) && minusBitInfo.minusBit >= 1)
     {
         unsigned short digit = numberStr[minusBitInfo.minusBit - 1] - 48;
         digit += 10;   // 防止减成负数
