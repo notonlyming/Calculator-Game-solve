@@ -58,5 +58,6 @@ int roundBit(int number, size_t roundBit);
 int numberReplaceBit(int number, struct replaceBitInfo rplBitInfo);
 int numberInsertBit(int number, struct insertBitInfo insertBitInfo);
 
+int shiftTimes(int number, int shiftTimes);
 
 #endif

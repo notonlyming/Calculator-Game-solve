@@ -213,10 +213,7 @@ int pressButton(Button buttonToPress, int currentNumber) {
             result = shiftNumber(result, buttonToPress.attachedInfo.shiftDirection);
             break;
         case SHIFT_TIMES:
-            for (int i = 0; i < buttonToPress.attachedInfo.shiftTimes; i++)
-            {
-                result = shiftNumber(result, SHIFT_LEFT);
-            }
+            result = shiftTimes(result, buttonToPress.attachedInfo.shiftTimes);
             break;
         case MIRROR:
             result = mirrorNumber(result);
@@ -279,6 +276,25 @@ int pressButton(Button buttonToPress, int currentNumber) {
         }
     }
     return result;
+}
+
+int shiftTimes(int number, int shiftTimes)
+{
+    char numberStr[NUMBER_STR_MAX_LENGTH];
+    sprintf(numberStr, "%d", number);
+    int maxShiftTimes = strlen(numberStr) - (number < 0 ? 1 : 0); // 移动次数要小于按钮长度，否则是无用功
+    if (shiftTimes < maxShiftTimes)
+    {
+        for (int i = 0; i < shiftTimes; i++)
+        {
+            number = shiftNumber(number, SHIFT_LEFT);
+        }
+    }
+    else
+    {
+        Game.isOnError = TRUE;
+    }
+    return number;
 }
 
 // 按位加
