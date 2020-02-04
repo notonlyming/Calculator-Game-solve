@@ -719,4 +719,188 @@
         "buttons":"bit+2 bit-2",
         "protal":"n"
     },
+    {
+        "name":"Level 91",
+        "achieve":"40",
+        "start":"25",
+        "max_step":"2",
+        "buttons":"bit+2 bit-5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 92",
+        "achieve":"18",
+        "start":"21",
+        "max_step":"3",
+        "buttons":"bit+2 4=>8 reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 93",
+        "achieve":"316 136",
+        "start":"100",
+        "max_step":"3",
+        "buttons":"bit+2 +8",
+        "protal":"n"
+    },
+    {
+        "name":"Level 94",
+        "achieve":"0 100",
+        "start":"25",
+        "max_step":"2",
+        "buttons":"bit+5 +25",
+        "protal":"n"
+    },
+    {
+        "name":"Level 95",
+        "achieve":"210 90",
+        "start":"12",
+        "max_step":"3",
+        "buttons":"bit+4 *4 +2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 96",
+        "achieve":"900 1000",
+        "start":"555",
+        "max_step":"3",
+        "buttons":"bit+9 *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 97",
+        "achieve":"250 500",
+        "start":"50",
+        "max_step":"4",
+        "buttons":"bit+4 insert1 delete *4",
+        "protal":"n"
+    },
+    {
+        "name":"Level 98",
+        "achieve":"3456 303",
+        "start":"650",
+        "max_step":"4",
+        "buttons":"bit-2 cut6 insert3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 99",
+        "achieve":"1750 150 25",
+        "start":"1990",
+        "max_step":"4",
+        "buttons":"bit+8 bit+5 round delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 100",
+        "achieve":"EVEN ODD",
+        "start":"2825",
+        "max_step":"3",
+        "buttons":"ABC sort< cut8",
+        "protal":"n"
+    },
+    {
+        "name":"Level 101",
+        "achieve":"8",
+        "start":"2",
+        "max_step":"3",
+        "buttons":"+/- +5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 102",
+        "achieve":"2",
+        "start":"6",
+        "max_step":"4",
+        "buttons":"+/- +5 *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 103",
+        "achieve":"-6",
+        "start":"62",
+        "max_step":"4",
+        "buttons":"+/- bit+2 -12",
+        "protal":"n"
+    },
+    {
+        "name":"Level 104",
+        "achieve":"-12",
+        "start":"208",
+        "max_step":"4",
+        "buttons":"+/- delete +2 /2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 105",
+        "achieve":"-8",
+        "start":"47",
+        "max_step":"5",
+        "buttons":"+/- +5 /2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 106",
+        "achieve":"14 66",
+        "start":"10",
+        "max_step":"5",
+        "buttons":"+/- +8 *3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 107",
+        "achieve":"-48 66",
+        "start":"54",
+        "max_step":"4",
+        "buttons":"+/- -6 +3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 108",
+        "achieve":"182 180",
+        "start":"181",
+        "max_step":"4",
+        "buttons":"+/- -8 -9",
+        "protal":"n"
+    },
+    {
+        "name":"Level 109",
+        "achieve":"40 21",
+        "start":"41",
+        "max_step":"5",
+        "buttons":"+/- << 1 +2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 110",
+        "achieve":"312 231",
+        "start":"123",
+        "max_step":"1",
+        "buttons":"shift",
+        "protal":"n"
+    },
+    {
+        "name":"Level 111",
+        "achieve":"151",
+        "start":"121",
+        "max_step":"3",
+        "buttons":"shift +3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 112",
+        "achieve":"5",
+        "start":"84",
+        "max_step":"3",
+        "buttons":"shift +2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 113",
+        "achieve":"125",
+        "start":"215",
+        "max_step":"2",
+        "buttons":"shift reverse",
+        "protal":"n"
+    },
 ]
