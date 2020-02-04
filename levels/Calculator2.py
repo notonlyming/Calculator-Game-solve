@@ -903,4 +903,28 @@
         "buttons":"shift reverse",
         "protal":"n"
     },
+    {
+        "name":"Level 114",
+        "achieve":"678",
+        "start":"918",
+        "max_step":"3",
+        "buttons":"shift << 1=>67",
+        "protal":"n"
+    },
+    {
+        "name":"Level 115",
+        "achieve":"306",
+        "start":"1206",
+        "max_step":"2",
+        "buttons":"shift /2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 116",
+        "achieve":"101 22",
+        "start":"55",
+        "max_step":"3",
+        "buttons":"shift *2",
+        "protal":"n"
+    },
 ]
