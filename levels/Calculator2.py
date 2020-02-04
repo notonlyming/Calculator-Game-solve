@@ -319,4 +319,220 @@
         "buttons":"abc -2",
         "protal":"n"
     },
+    {
+        "name":"Level 41",
+        "achieve":"22",
+        "start":"210210",
+        "max_step":"2",
+        "buttons":"cut0 cut1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 42",
+        "achieve":"1",
+        "start":"20",
+        "max_step":"3",
+        "buttons":"cut1 *5 +1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 43",
+        "achieve":"2",
+        "start":"33",
+        "max_step":"3",
+        "buttons":"cut1 +3 *3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 44",
+        "achieve":"6",
+        "start":"4454",
+        "max_step":"4",
+        "buttons":"cut4 +2 +4 <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 45",
+        "achieve":"72",
+        "start":"6996",
+        "max_step":"3",
+        "buttons":"+3 cut9",
+        "protal":"n"
+    },
+    {
+        "name":"Level 46",
+        "achieve":"23",
+        "start":"1234",
+        "max_step":"2",
+        "buttons":"cut1 <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 47",
+        "achieve":"15",
+        "start":"12345",
+        "max_step":"3",
+        "buttons":"cut1 /3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 48",
+        "achieve":"22",
+        "start":"11",
+        "max_step":"4",
+        "buttons":"cut1 *11 *12 +5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 49",
+        "achieve":"2",
+        "start":"99999",
+        "max_step":"5",
+        "buttons":"cut1 3=>1 9=>3 -8",
+        "protal":"n"
+    },
+    {
+        "name":"Level 50",
+        "achieve":"123",
+        "start":"10203",
+        "max_step":"2",
+        "buttons":"delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 51",
+        "achieve":"40",
+        "start":"55",
+        "max_step":"3",
+        "buttons":"*2 *4 delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 52",
+        "achieve":"10",
+        "start":"5",
+        "max_step":"3",
+        "buttons":"*4 *7 delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 53",
+        "achieve":"22",
+        "start":"101",
+        "max_step":"2",
+        "buttons":"delete *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 54",
+        "achieve":"8 6",
+        "start":"3",
+        "max_step":"3",
+        "buttons":"+1 *5 *4 delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 55",
+        "achieve":"9",
+        "start":"121",
+        "max_step":"3",
+        "buttons":"/9 delete 12=>18",
+        "protal":"n"
+    },
+    {
+        "name":"Level 56",
+        "achieve":"50 60",
+        "start":"56",
+        "max_step":"2",
+        "buttons":"delete 0",
+        "protal":"n"
+    },
+    {
+        "name":"Level 57",
+        "achieve":"42 22",
+        "start":"12",
+        "max_step":"3",
+        "buttons":"delete 1 *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 58",
+        "achieve":"18 9",
+        "start":"120",
+        "max_step":"4",
+        "buttons":"delete *3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 59",
+        "achieve":"12 100 15",
+        "start":"10",
+        "max_step":"4",
+        "buttons":"/2 *5 delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 60",
+        "achieve":"COS SIN",
+        "start":"735",
+        "max_step":"3",
+        "buttons":"/5 +10 abc",
+        "protal":"n"
+    },
+    {
+        "name":"Level 61",
+        "achieve":"234",
+        "start":"4",
+        "max_step":"2",
+        "buttons":"insert2 insert3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 62",
+        "achieve":"48",
+        "start":"14",
+        "max_step":"3",
+        "buttons":"delete insert2 *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 63",
+        "achieve":"21 12",
+        "start":"4",
+        "max_step":"3",
+        "buttons":"insert1 *5 delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 64",
+        "achieve":"110 20",
+        "start":"2",
+        "max_step":"2",
+        "buttons":"insert1 +8",
+        "protal":"n"
+    },
+    {
+        "name":"Level 65",
+        "achieve":"220 120 100",
+        "start":"1",
+        "max_step":"3",
+        "buttons":"insert2 *5 *4",
+        "protal":"n"
+    },
+    {
+        "name":"Level 66",
+        "achieve":"21 99 45",
+        "start":"3",
+        "max_step":"3",
+        "buttons":"+2 *3 insert1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 67",
+        "achieve":"7 20 242",
+        "start":"4505",
+        "max_step":"3",
+        "buttons":"insert2 +2 delete cut5",
+        "protal":"n"
+    },
 ]
