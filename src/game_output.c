@@ -62,6 +62,10 @@ void printSolution(unsigned short answer[], int stepsNum) {
     {
         fixStepsNumber += countOnes(Game.storeOrNotAnswerStructP->isStoreAnswer, stepsNum);
     }
+    if (Game.hasABC)
+    {
+        fixStepsNumber++;
+    }
     printf("发现解(%d步)：", fixStepsNumber);
     //打印解
     for (int step = 0; step < stepsNum; step++) {

@@ -537,7 +537,14 @@ unsigned int *solveIt(unsigned int counter[2], short isOutputSteps, short isSile
     counter[0]++; counter[1]++;
     if (Game.startNum == Game.gameAchieve)
     {
-       printf("发现解(0步) %s结果：%d  \n", Game.hasABC?"(ABC) ":"",Game.startNum);
+        if (Game.hasABC)
+        {
+            printf("发现解(1步) (ABC) 结果：%d  \n", Game.startNum);
+        }
+        else
+        {
+            printf("发现解(0步) 结果：%d  \n", Game.startNum);
+        }
     }
     
     for (unsigned short stepsNum = 1; stepsNum <= Game.allowMaxStep; stepsNum++) {
