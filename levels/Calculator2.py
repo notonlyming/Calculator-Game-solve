@@ -927,4 +927,20 @@
         "buttons":"shift *2",
         "protal":"n"
     },
+    {
+        "name":"Level 117",
+        "achieve":"210 102",
+        "start":"214",
+        "max_step":"4",
+        "buttons":"shift -1 /2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 118",
+        "achieve":"55 25",
+        "start":"5252",
+        "max_step":"4",
+        "buttons":"shift cut1 25=>15 52=>12",
+        "protal":"n"
+    },
 ]
