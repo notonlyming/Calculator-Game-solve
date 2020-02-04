@@ -356,14 +356,28 @@ int numberReplaceBit(int number, struct replaceBitInfo rplBitInfo)
 int roundBit(int number, size_t roundBit)
 {
     char numberStr[NUMBER_STR_MAX_LENGTH];
-    sprintf(numberStr, "%d", number);
+    // 注意这里在前面预留了一个0以供进位，所以roundBit就要+1了
+    sprintf(numberStr, "0%d", number);
+    roundBit++;
     size_t numberStrLen = strlen(numberStr);
-    // 仅当传入的要round的位不是最后一位且不超过总位数时才执行操作
+    // 仅当传入的round的位不是最后一位且不超过总位数时才执行操作
     if (roundBit < numberStrLen && roundBit > 0)
     {
         // 往前读一位
         char bit = numberStr[roundBit];
-        if (bit > '4') numberStr[roundBit - 1] += 1;
+        if (bit > '4')
+        {
+            // 进位
+            numberStr[roundBit - 1]++;
+            // 如果进位后超过9
+            if (numberStr[roundBit - 1] > '9')
+            {
+                // 再向前进一位
+                numberStr[roundBit - 1] -= 10;
+                numberStr[roundBit - 2]++;
+            }
+            
+        } 
         // 从round前面的一位开始，一直到最后一位，全部置零。
         for (size_t i = roundBit; i < numberStrLen; i++)
         {
