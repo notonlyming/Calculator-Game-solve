@@ -295,7 +295,7 @@ void detectAndInsertBitPlusOrMinusButton(char* buttonAllStr)
         {
             // 指针移动到空格后
             bitPlusStrStartP++;
-            sscanf(bitPlusStrStartP + strlen(" bit+"), "%d", &numberToPlus);
+            sscanf(bitPlusStrStartP + strlen("bit+"), "%d", &numberToPlus);
             if (bitPlusStrStartP[strlen("bit")] == '-') isMinus = TRUE;
         }
         sprintf(bitPlusStr, "1bit+%d 2bit+%d 3bit+%d 4bit+%d 5bit+%d 6bit+%d",
