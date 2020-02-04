@@ -430,7 +430,7 @@ Button analyseButtonStr(char *buttonStr) {
         sscanf(buttonStr, "round%zd", &tempButton.attachedInfo.roundBit);
     }
     if (tempButton.type == UNKNOW) {
-        fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息~\n程序将退出！\n");
+        fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息(%s)~\n程序将退出！\n", buttonStr);
         exit(1);
     }
     return tempButton;
