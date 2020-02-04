@@ -656,3 +656,319 @@ note: 2954 time(s) try, 10 solution(s) found
 发现解(3步)：(at 1th Insert2) (CUT5) (＋2) 结果：242  
 
 note: 2954 time(s) try, 3 solution(s) found
+### Level 68
+-----------------------32-----------------------  
+发现解(3步)：(×3) (Delete Bit:2) (at 2th Insert2) 结果：32  
+发现解(3步)：(Delete Bit:2) (×3) (at 2th Insert2) 结果：32  
+发现解(3步)：(×3) (at 3th Insert2) (Delete Bit:2) 结果：32  
+发现解(3步)：(×3) (at 2th Insert2) (Delete Bit:3) 结果：32  
+
+note: 2379 time(s) try, 4 solution(s) found
+-----------------------36-----------------------  
+发现解(3步)：(at 3th Insert2) (×3) (Delete Bit:2) 结果：36  
+发现解(3步)：(at 2th Insert2) (×3) (Delete Bit:3) 结果：36  
+发现解(3步)：(Delete Bit:2) (at 2th Insert2) (×3) 结果：36  
+发现解(3步)：(at 3th Insert2) (Delete Bit:2) (×3) 结果：36  
+发现解(3步)：(at 2th Insert2) (Delete Bit:3) (×3) 结果：36  
+
+note: 2379 time(s) try, 5 solution(s) found
+-----------------------60-----------------------  
+发现解(3步)：(at 2th Insert2) (×3) (Delete Bit:1) 结果：60  
+发现解(3步)：(at 1th Insert2) (×3) (Delete Bit:2) 结果：60  
+发现解(3步)：(at 2th Insert2) (Delete Bit:1) (×3) 结果：60  
+发现解(3步)：(at 1th Insert2) (Delete Bit:2) (×3) 结果：60  
+
+note: 2379 time(s) try, 4 solution(s) found
+### Level 69
+-----------------------3003-----------------------  
+发现解(3步)：(＋1) (at 4th Insert1) (×3) 结果：3003  
+
+note: 584 time(s) try, 1 solution(s) found
+-----------------------3300-----------------------  
+发现解(3步)：(＋1) (at 1th Insert1) (×3) 结果：3300  
+发现解(3步)：(＋1) (at 2th Insert1) (×3) 结果：3300  
+
+note: 584 time(s) try, 2 solution(s) found
+-----------------------3030-----------------------  
+发现解(3步)：(＋1) (at 3th Insert1) (×3) 结果：3030  
+
+note: 584 time(s) try, 1 solution(s) found
+### Level 70
+-----------------------202-----------------------  
+发现解(2步)：(Reverse) (＋1) 结果：202  
+
+note: 6 time(s) try, 1 solution(s) found
+### Level 71
+-----------------------144-----------------------  
+发现解(3步)：(Reverse) (＋8) (at 1th Insert1) 结果：144  
+发现解(3步)：(at 3th Insert1) (Reverse) (＋8) 结果：144  
+发现解(3步)：(Reverse) (at 1th Insert1) (＋8) 结果：144  
+
+note: 584 time(s) try, 3 solution(s) found
+### Level 72
+-----------------------21-----------------------  
+发现解(3步)：(－2) (Reverse) (Reverse) 结果：21  
+发现解(3步)：(－2) (Sort>) (Reverse) 结果：21  
+发现解(3步)：(Sort>) (－2) (Reverse) 结果：21  
+
+note: 39 time(s) try, 3 solution(s) found
+### Level 73
+-----------------------59-----------------------  
+发现解(3步)：(Reverse) (－8) (CUT0) 结果：59  
+
+note: 39 time(s) try, 1 solution(s) found
+### Level 74
+-----------------------9-----------------------  
+发现解(3步)：(Reverse) (×3) (－3) 结果：9  
+
+note: 39 time(s) try, 1 solution(s) found
+-----------------------18-----------------------  
+发现解(3步)：(×3) (Reverse) (－3) 结果：18  
+
+note: 39 time(s) try, 1 solution(s) found
+### Level 75
+-----------------------144-----------------------  
+发现解(3步)：(Reverse) (＋6) (×3) 结果：144  
+
+note: 39 time(s) try, 1 solution(s) found
+-----------------------9-----------------------  
+发现解(3步)：(＋6) (Reverse) (＋6) 结果：9  
+发现解(3步)：(＋6) (Reverse) (×3) 结果：9  
+发现解(3步)：(＋6) (×3) (Reverse) 结果：9  
+
+note: 39 time(s) try, 3 solution(s) found
+### Level 76
+-----------------------22-----------------------  
+发现解(3步)：(Reverse) (－2) (÷2) 结果：22  
+
+note: 39 time(s) try, 1 solution(s) found
+-----------------------3-----------------------  
+发现解(3步)：(÷2) (－2) (Reverse) 结果：3  
+
+note: 39 time(s) try, 1 solution(s) found
+-----------------------21-----------------------  
+发现解(3步)：(÷2) (Reverse) (－2) 结果：21  
+发现解(3步)：(Reverse) (÷2) (－2) 结果：21  
+
+note: 39 time(s) try, 2 solution(s) found
+### Level 77
+-----------------------52-----------------------  
+发现解(4步)：(Delete Bit:2) (×5) (×5) (Reverse) 结果：52  
+发现解(4步)：(Reverse) (×5) (×5) (Delete Bit:3) 结果：52  
+
+note: 4680 time(s) try, 2 solution(s) found
+-----------------------3-----------------------  
+发现解(3步)：(×5) (×5) (Reverse) 结果：3  
+发现解(4步)：(×5) (×5) (Reverse) (Reverse) 结果：3  
+发现解(4步)：(×5) (Reverse) (×5) (Reverse) 结果：3  
+发现解(4步)：(×5) (Delete Bit:2) (×5) (Reverse) 结果：3  
+发现解(4步)：(×5) (×5) (Delete Bit:2) (Reverse) 结果：3  
+发现解(4步)：(×5) (×5) (Delete Bit:3) (Reverse) 结果：3  
+发现解(4步)：(×5) (×5) (Reverse) (Delete Bit:1) 结果：3  
+发现解(4步)：(×5) (Reverse) (×5) (Delete Bit:2) 结果：3  
+发现解(4步)：(×5) (Delete Bit:2) (×5) (Delete Bit:2) 结果：3  
+发现解(4步)：(×5) (×5) (Delete Bit:2) (Delete Bit:2) 结果：3  
+发现解(4步)：(×5) (×5) (Delete Bit:3) (Delete Bit:2) 结果：3  
+
+note: 4680 time(s) try, 11 solution(s) found
+-----------------------15-----------------------  
+发现解(3步)：(Reverse) (×5) (Delete Bit:2) 结果：15  
+发现解(4步)：(×5) (×5) (Reverse) (×5) 结果：15  
+
+note: 4680 time(s) try, 2 solution(s) found
+### Level 78
+-----------------------651-----------------------  
+发现解(3步)：(＋1) (2=>5) (Reverse) 结果：651  
+发现解(3步)：(2=>5) (＋1) (Reverse) 结果：651  
+发现解(3步)：(＋1) (Reverse) (2=>5) 结果：651  
+
+note: 39 time(s) try, 3 solution(s) found
+-----------------------555-----------------------  
+发现解(3步)：(Reverse) (＋1) (2=>5) 结果：555  
+
+note: 39 time(s) try, 1 solution(s) found
+### Level 79
+-----------------------50-----------------------  
+发现解(2步)：(Reverse) (＋2) 结果：50  
+发现解(3步)：(Reverse) (＋2) (CUT4) 结果：50  
+发现解(4步)：(Reverse) (＋2) (CUT4) (CUT4) 结果：50  
+发现解(4步)：(Reverse) (Reverse) (Reverse) (＋2) 结果：50  
+
+note: 7380 time(s) try, 4 solution(s) found
+-----------------------2-----------------------  
+发现解(4步)：(at 1th Insert1) (CUT4) (＋2) (Reverse) 结果：2  
+发现解(4步)：(CUT4) (at 1th Insert1) (＋2) (Reverse) 结果：2  
+
+note: 7380 time(s) try, 2 solution(s) found
+-----------------------11-----------------------  
+发现解(4步)：(CUT4) (＋2) (at 1th Insert1) (Reverse) 结果：11  
+发现解(4步)：(CUT4) (＋2) (at 2th Insert1) (Reverse) 结果：11  
+发现解(4步)：(CUT4) (＋2) (Reverse) (at 1th Insert1) 结果：11  
+发现解(4步)：(CUT4) (＋2) (Reverse) (at 2th Insert1) 结果：11  
+
+note: 7380 time(s) try, 4 solution(s) found
+### Level 80
+p =======> 6
+i =======> 3
+r =======> 6
+新的游戏目标：2 63 6
+-----------------------2-----------------------  
+发现解(2步)：(÷3) (ABC) 结果：2  
+发现解(3步)：(÷3) (＋0) (ABC) 结果：2  
+发现解(3步)：(＋0) (÷3) (ABC) 结果：2  
+
+note: 12 time(s) try, 3 solution(s) found
+-----------------------63-----------------------  
+发现解(2步)：(3) (ABC) 结果：63  
+发现解(3步)：(3) (＋0) (ABC) 结果：63  
+发现解(3步)：(＋0) (3) (ABC) 结果：63  
+
+note: 12 time(s) try, 3 solution(s) found
+-----------------------6-----------------------  
+发现解(1步) (ABC) 结果：6  
+发现解(2步)：(＋0) (ABC) 结果：6  
+发现解(3步)：(＋0) (＋0) (ABC) 结果：6  
+
+note: 13 time(s) try, 3 solution(s) found
+### Level 81
+-----------------------120-----------------------  
+发现解(1步)：(Round Bit:2) 结果：120  
+
+note: 6 time(s) try, 1 solution(s) found
+-----------------------100-----------------------  
+发现解(1步)：(Round Bit:1) 结果：100  
+
+note: 6 time(s) try, 1 solution(s) found
+### Level 82
+-----------------------200-----------------------  
+发现解(2步)：(at 2th Insert5) (Round Bit:1) 结果：200  
+
+note: 156 time(s) try, 1 solution(s) found
+### Level 83
+-----------------------40-----------------------  
+发现解(2步)：(Round Bit:1) (×2) 结果：40  
+发现解(3步)：(×2) (4=>3) (Round Bit:1) 结果：40  
+发现解(3步)：(Round Bit:1) (×2) (Round Bit:1) 结果：40  
+发现解(3步)：(Round Bit:1) (Round Bit:1) (×2) 结果：40  
+发现解(3步)：(4=>3) (Round Bit:1) (×2) 结果：40  
+发现解(3步)：(Round Bit:1) (4=>3) (×2) 结果：40  
+
+note: 584 time(s) try, 6 solution(s) found
+-----------------------50-----------------------  
+发现解(2步)：(×2) (Round Bit:1) 结果：50  
+发现解(3步)：(×2) (Round Bit:1) (Round Bit:1) 结果：50  
+发现解(3步)：(4=>3) (×2) (Round Bit:1) 结果：50  
+发现解(3步)：(×2) (Round Bit:1) (4=>3) 结果：50  
+
+note: 584 time(s) try, 4 solution(s) found
+### Level 84
+-----------------------500-----------------------  
+发现解(2步)：(Reverse) (Round Bit:1) 结果：500  
+发现解(3步)：(Reverse) (Round Bit:1) (Round Bit:1) 结果：500  
+发现解(3步)：(Reverse) (Round Bit:2) (Round Bit:1) 结果：500  
+发现解(3步)：(Round Bit:3) (Reverse) (Round Bit:1) 结果：500  
+发现解(3步)：(Reverse) (Round Bit:1) (Round Bit:2) 结果：500  
+
+note: 399 time(s) try, 5 solution(s) found
+-----------------------2-----------------------  
+发现解(2步)：(Round Bit:1) (Reverse) 结果：2  
+发现解(3步)：(Round Bit:1) (Round Bit:1) (Reverse) 结果：2  
+发现解(3步)：(Round Bit:2) (Round Bit:1) (Reverse) 结果：2  
+发现解(3步)：(Round Bit:3) (Round Bit:1) (Reverse) 结果：2  
+发现解(3步)：(Round Bit:1) (Round Bit:2) (Reverse) 结果：2  
+发现解(3步)：(Round Bit:1) (Round Bit:3) (Reverse) 结果：2  
+发现解(3步)：(Round Bit:1) (Reverse) (Reverse) 结果：2  
+
+note: 399 time(s) try, 7 solution(s) found
+### Level 85
+-----------------------400-----------------------  
+发现解(3步)：(CUT5) (＋10) (Round Bit:1) 结果：400  
+
+note: 584 time(s) try, 1 solution(s) found
+-----------------------300-----------------------  
+发现解(2步)：(CUT5) (Round Bit:1) 结果：300  
+发现解(2步)：(Round Bit:2) (CUT5) 结果：300  
+发现解(3步)：(CUT5) (Round Bit:1) (Round Bit:1) 结果：300  
+发现解(3步)：(CUT5) (Round Bit:2) (Round Bit:1) 结果：300  
+发现解(3步)：(Round Bit:2) (CUT5) (Round Bit:1) 结果：300  
+发现解(3步)：(Round Bit:3) (CUT5) (Round Bit:1) 结果：300  
+发现解(3步)：(CUT5) (CUT5) (Round Bit:1) 结果：300  
+发现解(3步)：(CUT5) (Round Bit:1) (Round Bit:2) 结果：300  
+发现解(3步)：(Round Bit:2) (CUT5) (Round Bit:2) 结果：300  
+发现解(3步)：(CUT5) (Round Bit:1) (CUT5) 结果：300  
+发现解(3步)：(Round Bit:2) (Round Bit:2) (CUT5) 结果：300  
+发现解(3步)：(Round Bit:3) (Round Bit:2) (CUT5) 结果：300  
+发现解(3步)：(Round Bit:2) (Round Bit:3) (CUT5) 结果：300  
+发现解(3步)：(Round Bit:2) (CUT5) (CUT5) 结果：300  
+
+note: 584 time(s) try, 14 solution(s) found
+### Level 86
+-----------------------300-----------------------  
+发现解(2步)：(Sort>) (Round Bit:1) 结果：300  
+发现解(3步)：(Sort>) (Round Bit:1) (Round Bit:1) 结果：300  
+发现解(3步)：(Sort>) (Sort>) (Round Bit:1) 结果：300  
+发现解(3步)：(Sort>) (Round Bit:1) (Round Bit:2) 结果：300  
+
+note: 2379 time(s) try, 4 solution(s) found
+-----------------------1000-----------------------  
+发现解(2步)：(at 1th Insert1) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 1th Insert1) (Round Bit:1) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 1th Insert1) (Round Bit:2) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 1th Insert1) (Round Bit:3) (Round Bit:1) 结果：1000  
+发现解(3步)：(Round Bit:1) (at 1th Insert1) (Round Bit:1) 结果：1000  
+发现解(3步)：(Round Bit:2) (at 1th Insert1) (Round Bit:1) 结果：1000  
+发现解(3步)：(Sort>) (at 1th Insert1) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 1th Insert1) (Sort>) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 2th Insert1) (Sort>) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 3th Insert1) (Sort>) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 4th Insert1) (Sort>) (Round Bit:1) 结果：1000  
+发现解(3步)：(at 1th Insert1) (Round Bit:1) (Round Bit:2) 结果：1000  
+发现解(3步)：(at 1th Insert1) (Round Bit:1) (Round Bit:3) 结果：1000  
+
+note: 2379 time(s) try, 13 solution(s) found
+### Level 87
+-----------------------2000-----------------------  
+发现解(3步)：(5=>12) (×5) (Round Bit:1) 结果：2000  
+发现解(3步)：(×5) (5=>12) (Round Bit:1) 结果：2000  
+
+note: 584 time(s) try, 2 solution(s) found
+-----------------------1600-----------------------  
+发现解(3步)：(5=>12) (×5) (Round Bit:2) 结果：1600  
+
+note: 584 time(s) try, 1 solution(s) found
+### Level 88
+-----------------------44-----------------------  
+发现解(3步)：(Round Bit:1) (Reverse) (4) 结果：44  
+发现解(3步)：(Round Bit:1) (Sort>) (4) 结果：44  
+发现解(3步)：(Round Bit:1) (4) (Sort>) 结果：44  
+
+note: 819 time(s) try, 3 solution(s) found
+-----------------------2000-----------------------  
+发现解(3步)：(Sort>) (4) (Round Bit:1) 结果：2000  
+发现解(3步)：(4) (Sort>) (Round Bit:1) 结果：2000  
+
+note: 819 time(s) try, 2 solution(s) found
+-----------------------2500-----------------------  
+发现解(3步)：(Reverse) (4) (Round Bit:2) 结果：2500  
+
+note: 819 time(s) try, 1 solution(s) found
+### Level 89
+-----------------------10001-----------------------  
+发现解(3步)：(Reverse) (Round Bit:1) (＋1) 结果：10001  
+
+note: 584 time(s) try, 1 solution(s) found
+-----------------------3-----------------------  
+发现解(3步)：(Round Bit:1) (Reverse) (＋1) 结果：3  
+
+note: 584 time(s) try, 1 solution(s) found
+-----------------------900-----------------------  
+发现解(3步)：(Round Bit:3) (Reverse) (Round Bit:1) 结果：900  
+发现解(3步)：(＋1) (Reverse) (Round Bit:1) 结果：900  
+
+note: 584 time(s) try, 2 solution(s) found
+### Level 90
+-----------------------2222-----------------------  
+发现解(2步)：(at 4th minus2) (at 2th plus2) 结果：2222  
+发现解(2步)：(at 2th plus2) (at 4th minus2) 结果：2222  
+
+note: 156 time(s) try, 2 solution(s) found

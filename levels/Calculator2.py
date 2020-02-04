@@ -535,4 +535,188 @@
         "buttons":"insert2 +2 delete cut5",
         "protal":"n"
     },
+    {
+        "name":"Level 68",
+        "achieve":"32 36 60",
+        "start":"10",
+        "max_step":"3",
+        "buttons":"insert2 delete *3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 69",
+        "achieve":"3003 3300 3030",
+        "start":"99",
+        "max_step":"3",
+        "buttons":"*3 insert1 +1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 70",
+        "achieve":"202",
+        "start":"102",
+        "max_step":"2",
+        "buttons":"reverse +1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 71",
+        "achieve":"144",
+        "start":"63",
+        "max_step":"3",
+        "buttons":"reverse insert1 +8",
+        "protal":"n"
+    },
+    {
+        "name":"Level 72",
+        "achieve":"21",
+        "start":"212",
+        "max_step":"3",
+        "buttons":"reverse sort> -2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 73",
+        "achieve":"59",
+        "start":"715",
+        "max_step":"3",
+        "buttons":"-8 reverse cut0",
+        "protal":"n"
+    },
+    {
+        "name":"Level 74",
+        "achieve":"9 18",
+        "start":"40",
+        "max_step":"3",
+        "buttons":"*3 reverse -3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 75",
+        "achieve":"144 9",
+        "start":"24",
+        "max_step":"3",
+        "buttons":"+6 *3 reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 76",
+        "achieve":"22 3 21",
+        "start":"64",
+        "max_step":"3",
+        "buttons":"reverse -2 /2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 77",
+        "achieve":"52 3 15",
+        "start":"12",
+        "max_step":"4",
+        "buttons":"reverse *5 delete",
+        "protal":"n"
+    },
+    {
+        "name":"Level 78",
+        "achieve":"651 555",
+        "start":"125",
+        "max_step":"3",
+        "buttons":"reverse 2=>5 +1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 79",
+        "achieve":"50 2 11",
+        "start":"84",
+        "max_step":"4",
+        "buttons":"reverse cut4 insert1 +2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 80",
+        "achieve":"2 PI R",
+        "start":"6",
+        "max_step":"3",
+        "buttons":"ABC 3 /3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 81",
+        "achieve":"120 100",
+        "start":"123",
+        "max_step":"1",
+        "buttons":"round",
+        "protal":"n"
+    },
+    {
+        "name":"Level 82",
+        "achieve":"200",
+        "start":"10",
+        "max_step":"2",
+        "buttons":"round insert5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 83",
+        "achieve":"40 50",
+        "start":"24",
+        "max_step":"3",
+        "buttons":"round 4=>3 *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 84",
+        "achieve":"500 2",
+        "start":"2150",
+        "max_step":"3",
+        "buttons":"round reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 85",
+        "achieve":"400 300",
+        "start":"3540",
+        "max_step":"3",
+        "buttons":"round cut5 +10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 86",
+        "achieve":"300 1000",
+        "start":"354",
+        "max_step":"3",
+        "buttons":"round insert1 sort>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 87",
+        "achieve":"2000 1600",
+        "start":"35",
+        "max_step":"3",
+        "buttons":"round *5 5=>12",
+        "protal":"n"
+    },
+    {
+        "name":"Level 88",
+        "achieve":"44 2000 2500",
+        "start":"352",
+        "max_step":"3",
+        "buttons":"round reverse 4 sort>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 89",
+        "achieve":"10001 3 900",
+        "start":"2189",
+        "max_step":"3",
+        "buttons":"round reverse +1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 90",
+        "achieve":"2222",
+        "start":"2024",
+        "max_step":"2",
+        "buttons":"bit+2 bit-2",
+        "protal":"n"
+    },
 ]
