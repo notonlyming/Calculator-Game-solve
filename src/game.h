@@ -21,7 +21,7 @@ typedef enum {
     MINUS,        //算术减
     MULTIPLY,     //算术乘
     DIVIDE,       //算术除
-    BIT_PLUS,    //按位加
+    BIT_PLUS,     //按位加
     BACKSPACE,    //退格，既:<<
     REPLACE,      //替换
     REPLACE_BIT,  //按位替换

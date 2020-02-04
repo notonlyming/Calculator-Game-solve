@@ -157,7 +157,7 @@ struct GameStruct *getGameLevelInfo(short isSilent) {
     return &Game;
 }
 
-// 传入用户输入的按钮字符串，如果内含独立的delete则替换为8个独立的delete以实现删除任意位。
+// 传入用户输入的按钮字符串，如果内含独立的delete则替换为6个独立的delete以实现删除任意位。
 void detectAndInsertDeleteButton(char* buttonAllStr)
 {
     //基于delete只有一个这一事实，使用替换。
