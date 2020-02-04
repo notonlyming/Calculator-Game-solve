@@ -1233,4 +1233,356 @@
         "buttons":"39=>93 /3 store 31=>00",
         "protal":"n"
     },
+    {
+        "name":"Level 156",
+        "achieve":"99",
+        "start":"0",
+        "max_step":"3",
+        "buttons":"1 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 157",
+        "achieve":"2",
+        "start":"1",
+        "max_step":"3",
+        "buttons":"-1 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 158",
+        "achieve":"15",
+        "start":"14",
+        "max_step":"3",
+        "buttons":"+5 *5 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 159",
+        "achieve":"12",
+        "start":"21",
+        "max_step":"3",
+        "buttons":"-7 *5 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 160",
+        "achieve":"13",
+        "start":"67",
+        "max_step":"4",
+        "buttons":"+3 reverse lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 161",
+        "achieve":"88",
+        "start":"23",
+        "max_step":"5",
+        "buttons":"-4 -2 reverse lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 162",
+        "achieve":"105",
+        "start":"5",
+        "max_step":"5",
+        "buttons":"*3 /9 store lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 163",
+        "achieve":"23",
+        "start":"24",
+        "max_step":"4",
+        "buttons":"+6 *3 reverse lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 164",
+        "achieve":"17",
+        "start":"7",
+        "max_step":"4",
+        "buttons":"+3 *3 *4 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 165",
+        "achieve":"21",
+        "start":"35",
+        "max_step":"5",
+        "buttons":"*9 /5 13=>10 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 166",
+        "achieve":"18",
+        "start":"9",
+        "max_step":"5",
+        "buttons":"*3 sum lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 167",
+        "achieve":"101",
+        "start":"12",
+        "max_step":"5",
+        "buttons":"+4 lnv10 sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 168",
+        "achieve":"99",
+        "start":"26",
+        "max_step":"6",
+        "buttons":"2 sum lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 169",
+        "achieve":"13",
+        "start":"15",
+        "max_step":"7",
+        "buttons":"sum mirror lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 170",
+        "achieve":"99",
+        "start":"78",
+        "max_step":"6",
+        "buttons":"1=>6 6=>11 /6 reverse lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 171",
+        "achieve":"9",
+        "start":"34",
+        "max_step":"4",
+        "buttons":"*6 lnv10 <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 172",
+        "achieve":"872",
+        "start":"0",
+        "max_step":"8",
+        "buttons":"8 88=>34 lnv10 <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 173",
+        "achieve":"33",
+        "start":"5",
+        "max_step":"5",
+        "buttons":"*7 +8 -9 *2 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 174",
+        "achieve":"23",
+        "start":"12",
+        "max_step":"7",
+        "buttons":"*5 sum store lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 175",
+        "achieve":"1991",
+        "start":"1",
+        "max_step":"6",
+        "buttons":"store lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 176",
+        "achieve":"26",
+        "start":"12",
+        "max_step":"5",
+        "buttons":"<< sum store lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 177",
+        "achieve":"48",
+        "start":"51",
+        "max_step":"6",
+        "buttons":"+6 *3 reverse lnv10 4=>6",
+        "protal":"n"
+    },
+    {
+        "name":"Level 178",
+        "achieve":"1",
+        "start":"0",
+        "max_step":"6",
+        "buttons":"+5 *3 lnv10 /6 reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 179",
+        "achieve":"777",
+        "start":"369",
+        "max_step":"5",
+        "buttons":"93=>63 63=>33 36=>93 39=>33 lnv10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 180",
+        "achieve":"10",
+        "start":"99",
+        "max_step":"3",
+        "buttons":"1 -1",
+        "protal":"y\n3 1"
+    },
+    {
+        "name":"Level 181",
+        "achieve":"64",
+        "start":"9",
+        "max_step":"2",
+        "buttons":"4 6",
+        "protal":"y\n3 2"
+    },
+    {
+        "name":"Level 182",
+        "achieve":"35",
+        "start":"50",
+        "max_step":"3",
+        "buttons":"+5 *3 *5",
+        "protal":"y\n3 2"
+    },
+    {
+        "name":"Level 183",
+        "achieve":"131",
+        "start":"306",
+        "max_step":"4",
+        "buttons":"3 +1 *2",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 184",
+        "achieve":"123",
+        "start":"321",
+        "max_step":"5",
+        "buttons":"/2 1 3 0",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 185",
+        "achieve":"150",
+        "start":"525",
+        "max_step":"5",
+        "buttons":"+1 6 7 /2",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 186",
+        "achieve":"212",
+        "start":"301",
+        "max_step":"5",
+        "buttons":"10 -2 3",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 187",
+        "achieve":"13",
+        "start":"99",
+        "max_step":"4",
+        "buttons":"sum mirror lnv10",
+        "protal":"y\n4 2"
+    },
+    {
+        "name":"Level 188",
+        "achieve":"822",
+        "start":"25",
+        "max_step":"6",
+        "buttons":"mirror 5 store <<",
+        "protal":"y\n4 2"
+    },
+    {
+        "name":"Level 189",
+        "achieve":"516",
+        "start":"45",
+        "max_step":"4",
+        "buttons":"+10 mirror reverse",
+        "protal":"y\n4 2"
+    },
+    {
+        "name":"Level 190",
+        "achieve":"212",
+        "start":"238",
+        "max_step":"4",
+        "buttons":"28=>21 -5 lnv10 shift>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 191",
+        "achieve":"90",
+        "start":"85",
+        "max_step":"4",
+        "buttons":"*6 lnv10 shift>",
+        "protal":"n"
+    },
+    {
+        "name":"Level 192",
+        "achieve":"500",
+        "start":"189",
+        "max_step":"6",
+        "buttons":"+8 *4 9 lnv10 7=>0",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 193",
+        "achieve":"321",
+        "start":"234",
+        "max_step":"4",
+        "buttons":"9 +9 53=>32",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 194",
+        "achieve":"123",
+        "start":"333",
+        "max_step":"4",
+        "buttons":"1 3 /2 [+]1",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 195",
+        "achieve":"777",
+        "start":"613",
+        "max_step":"5",
+        "buttons":"5 *2 +3 lnv10",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 196",
+        "achieve":"550",
+        "start":"60",
+        "max_step":"7",
+        "buttons":"+5 *5 2 lnv10",
+        "protal":"y\n4 2"
+    },
+    {
+        "name":"Level 197",
+        "achieve":"4321",
+        "start":"1234",
+        "max_step":"5",
+        "buttons":"24=>13 12=>32 23=>32 13=>21 23=>43",
+        "protal":"n"
+    },
+    {
+        "name":"Level 198",
+        "achieve":"750",
+        "start":"6",
+        "max_step":"6",
+        "buttons":"+6 4 lnv10 *3",
+        "protal":"y\n4 2"
+    },
+    {
+        "name":"Level 199",
+        "achieve":"3507",
+        "start":"3002",
+        "max_step":"6",
+        "buttons":"7 3=>5 lnv10 shift>",
+        "protal":"y\n5 1"
+    },
 ]
