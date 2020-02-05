@@ -105,6 +105,7 @@ int cutNumber(int number, char* cutNum)
     sprintf(numberStr, "%d", number);
     strrpc(numberStr, cutNum, "");
     sscanf(numberStr, "%d", &number);
+    if(strlen(numberStr) == 0) number = 0;
     return number;
 }
 
