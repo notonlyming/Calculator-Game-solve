@@ -119,6 +119,7 @@ char** split(char* strToSplit, char* splitChar)
 
 //读入数据，并返回存储好数据的game结构指针，方便查阅
 struct GameStruct *getGameLevelInfo(short isSilent) {
+    Game.lockLink = NULL;
     if(!isSilent) printf("请输入计算器起始的数值：");
     scanf("%d", &(Game.startNum));
 
@@ -139,6 +140,7 @@ struct GameStruct *getGameLevelInfo(short isSilent) {
     detectAndInsertInsertButton(buttonAllStr);
     detectAndInsertBitPlusOrMinusButton(buttonAllStr);
     detectABCButton(buttonAllStr);
+    detectAndInsertLockButton(buttonAllStr);
 
     //计算按钮个数和申请空间
     Game.buttonNum = (unsigned short) (countBlankNum(buttonAllStr, ' ') + 1);
@@ -156,6 +158,15 @@ struct GameStruct *getGameLevelInfo(short isSilent) {
     getAndInitialisePortal(isSilent);
     if(!isSilent) printButtons(Game.buttons, Game.buttonNum);
     return &Game;
+}
+
+void detectAndInsertLockButton(char* buttonAllStr)
+{
+    char* lockStartP = strstr(buttonAllStr, "lock");
+    if(lockStartP && lockStartP[strlen("lock")] == ' ')
+    {
+        strrpc(buttonAllStr, "lock", "lock1 lock2 lock3 lock4 lock5 lock6");
+    }
 }
 
 // 传入用户输入的按钮字符串，如果内含独立的delete则替换为6个独立的delete以实现删除任意位。
@@ -458,12 +469,45 @@ Button analyseButtonStr(char *buttonStr) {
     } else if(strstr(buttonStr, "round")) {
         tempButton.type = ROUND;
         sscanf(buttonStr, "round%zd", &tempButton.attachedInfo.roundBit);
+    } else if(strstr(buttonStr, "lock"))
+    {
+        tempButton.type = LOCK;
+        locker* tmpLock = (locker*) malloc(sizeof(locker));  //动态生成锁
+        tmpLock->state = UNLOCK; tmpLock->keepLockBit = -1; tmpLock->next = NULL;
+        sscanf(buttonStr, "lock%hu", &(tmpLock->lockBit));
+        appendLock(tmpLock);   //追加锁到链表
+        tempButton.attachedInfo.lockP = tmpLock;   //将按钮与锁关联起来
     }
     if (tempButton.type == UNKNOW) {
         fprintf(stderr, "啊啊啊，您输入了无法识别的按钮信息(%s)~\n程序将退出！\n", buttonStr);
         exit(1);
     }
     return tempButton;
+}
+
+//将传入的锁追加到链表后面
+void appendLock(locker* lockP)
+{
+    if (Game.lockLink == NULL)
+    {
+        Game.lockLink = lockP;
+    }
+    else
+    {
+        locker* gameLastLockP = Game.lockLink;
+        while (gameLastLockP)
+        {
+            if (gameLastLockP->next == NULL)
+            {
+                gameLastLockP->next = lockP;
+                break;
+            }
+            else
+            {
+                gameLastLockP = gameLastLockP->next;
+            }
+        }
+    }
 }
 
 //字符串转小写函数

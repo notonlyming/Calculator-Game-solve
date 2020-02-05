@@ -259,10 +259,14 @@ int pressButton(Button buttonToPress, int currentNumber) {
         case BIT_MINUS:
             result = minusBit(result, buttonToPress.attachedInfo.minusBitInfo);
             break;
+        case LOCK:
+            setLockState(buttonToPress.attachedInfo.lockP);
+            break;
         case UNKNOW:; //do nothing
             break;
     }
     checkNumberLarge(result);
+    result = performLock(result);
     int before = result;
     if (Game.portalPointer) {
         while(1)
@@ -279,6 +283,49 @@ int pressButton(Button buttonToPress, int currentNumber) {
         }
     }
     return result;
+}
+
+// 检测锁的状态并执行锁的功能
+int performLock(int number)
+{
+    // 遍历列表
+    locker* lockP = Game.lockLink;
+    while (lockP)
+    {
+        if (lockP->state == LOCKING)
+        {
+            //执行锁
+            int before = number % powInt(10, lockP->lockBit-1);  // 取锁定为前半部分
+            int after = number / powInt(10, lockP->lockBit) * powInt(10, lockP->lockBit);  //后半部分乘位权
+            number = before + lockP->keepLockBit * powInt(10, lockP->lockBit - 1) + after;
+            lockP->state = UNLOCK;
+            break;  //一般只会有一个锁运行
+        } else if(lockP->state == READY)
+        {
+            //下一轮执行锁
+            if (number<0) Game.isOnError = TRUE;   //暂时不允许锁定负值, 锁定负值将引发错误
+            lockP->keepLockBit =  number / powInt(10, lockP->lockBit-1) % 10 ;  //取出位
+            lockP->state = LOCKING;
+            break;  //一般只会有一个锁运行
+        }
+        lockP = lockP->next;
+    }
+    return number;
+}
+
+// 按下lock按钮后会调用的函数
+// 将会设置lock按钮的状态
+void setLockState(locker* lockP)
+{
+    if (lockP->state == UNLOCK)
+    {
+        lockP->state = READY;
+    }
+    else
+    {
+        // 锁已经开始发挥作用，不允许再按lock按钮
+        Game.isOnError = TRUE;
+    }
 }
 
 int shiftTimes(int number, int shiftTimes)
@@ -679,12 +726,24 @@ unsigned int *solveIt(unsigned int counter[2], short isOutputSteps, short isSile
                     Game.isOnError = FALSE;
                 }
                 resetButton();
+                lockReset();   //防止上次尝试在最后一次按lock，导致新一轮尝试有上次锁的影响
             } while (storeAnswer != NULL && !numerationAddOne(storeAnswer->isStoreAnswer, 2, stepsNum));
         } while (!numerationAddOne(answer, Game.buttonNum, stepsNum));
     }
     findEnd:
     free(answer); //释放
     return counter;
+}
+
+// 将所有锁的状态置为unlock
+void lockReset(void)
+{
+    locker* lockP = Game.lockLink;
+    while (lockP)
+    {
+        lockP->state = UNLOCK;
+        lockP = lockP->next;
+    }
 }
 
 unsigned short isArithmeticButton(Button *button) {

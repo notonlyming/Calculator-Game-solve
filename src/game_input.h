@@ -25,7 +25,9 @@ void detectAndInsertShiftButton(char* buttonAllStr);
 void detectAndInsertInsertButton(char* buttonAllStr);
 void detectAndInsertBitPlusOrMinusButton(char* buttonAllStr);
 void detectABCButton(char* buttonAllStr);
+void detectAndInsertLockButton(char* buttonAllStr);
 
 int isNumberBit(char* p);
+void appendLock(locker* lockP);
 
 #endif

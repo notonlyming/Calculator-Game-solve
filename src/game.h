@@ -41,8 +41,18 @@ typedef enum {
     ROUND,        //对任意位四舍五入，位右边全部置零
     DELETE,       //删除任意位上的数字
     INSERT,       //在某一位 “前” 插入。因此传入的位索引是1~长度加1
+    LOCK,         //给特定的位加锁，加锁一次，效果持续一回合
     UNKNOW        //未知类型
 } ButtonType;
+
+enum lockState {READY, LOCKING, UNLOCK};
+typedef struct locker {
+    enum lockState state;         //锁定的状态
+    unsigned short lockBit;       //从右边数起的锁定的位
+    unsigned short keepLockBit;   //锁定时保存的锁定的位
+    struct locker* next;          //链表next指针
+} locker;
+
 
 typedef struct {
     ButtonType type; //按钮类型
@@ -85,6 +95,7 @@ typedef struct {
             char minusNumberChar;
         } minusBitInfo;
         int shiftTimes;    //移位次数
+        locker* lockP;     //该按钮对应的lock的指针
     } attachedInfo;
 } Button;            //存储按钮的详细信息
 
@@ -105,6 +116,7 @@ struct GameStruct {
     Button *unchangedButtons;  //如果按钮被更改，将会复制一份原始值到这里
     storeOrNotAnswerStruct *storeOrNotAnswerStructP;  //如果存在store按钮，将会在这里建立存储方案链表
     short hasABC;  // 如果为真，则最终输出解包含ABC按钮
+    locker* lockLink;  // 如果有锁，将会在input阶段检测到，并malloc动态生成链表加到后面
 };
 
 extern struct GameStruct Game;
@@ -118,5 +130,7 @@ void resetButton();
 void backupButton();
 
 void freeStoreWayList();
+
+void freeLockList();
 
 #endif

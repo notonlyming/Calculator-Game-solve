@@ -58,4 +58,8 @@ int numberInsertBit(int number, struct insertBitInfo insertBitInfo);
 
 int shiftTimes(int number, int shiftTimes);
 
+void lockReset(void);
+int performLock(int number);
+void setLockState(locker* lockP);
+
 #endif

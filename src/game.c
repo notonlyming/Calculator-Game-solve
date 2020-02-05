@@ -99,6 +99,9 @@ char *buttonStr(Button button) {
             sprintf(infoStr, "at %dth minus%c", button.attachedInfo.minusBitInfo.minusBit,
             button.attachedInfo.minusBitInfo.minusNumberChar);
             break;
+        case LOCK:
+            sprintf(infoStr, "lock%d", button.attachedInfo.lockP->lockBit);
+            break;
         case UNKNOW:
             strcpy(infoStr, "UNKNOW");
             break;
@@ -111,10 +114,24 @@ void gameOver() {
     free(Game.buttons); //有借有还
     free(Game.unchangedButtons);
     freeStoreWayList();
+    freeLockList();
     free(Game.portalPointer);
     Game.buttons = NULL;
     Game.unchangedButtons = NULL;
     Game.portalPointer = NULL;
+}
+
+void freeLockList()
+{
+    locker* lockP = Game.lockLink;
+    locker* before = NULL;
+    while (lockP)
+    {
+        before = lockP;
+        lockP = lockP->next;
+        before->next = NULL;
+        free(before);
+    }
 }
 
 void freeStoreWayList() {

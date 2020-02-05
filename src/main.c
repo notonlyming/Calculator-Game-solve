@@ -26,21 +26,20 @@ int main(int argc, char **argv) {
     if (argc == 1 || isOutputSteps || isSilent) {
         unsigned int counter[2] = {0};
         clock_t startTime;
-        struct GameStruct *gameP;
         if(!isSilent) printWelcome();
         char isContinue;
         do {
             if(!isSilent) puts("-------------------新的一关开始啦-------------------");
             int achieveCount;
             int* achieveNumbers = getGameAchieve(&achieveCount, isSilent);
-            gameP = getGameLevelInfo(isSilent);
+            getGameLevelInfo(isSilent);
             for (int i=0; i < achieveCount; i++)
             {
             printf("-----------------------%d-----------------------  \n", achieveNumbers[i]);
-                gameP->gameAchieve = achieveNumbers[i];
+                Game.gameAchieve = achieveNumbers[i];
                 startTime = clock();
                 solveIt(counter, isOutputSteps, isSilent);
-                printSolutionInfo(counter, gameP);
+                printSolutionInfo(counter, &Game);
             }
             free(achieveNumbers);
             gameOver();
