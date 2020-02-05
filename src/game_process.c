@@ -304,7 +304,9 @@ int plusBit(int number, struct plusBitInfo plusBitInfo)
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
     // 要操作的位，有效性判断
-    if(plusBitInfo.plusBit <= strlen(numberStr) && plusBitInfo.plusBit >= 1)
+    if(plusBitInfo.plusBit <= strlen(numberStr) && plusBitInfo.plusBit >= 1 &&
+        plusBitInfo.plusNumberChar >= '0' && plusBitInfo.plusNumberChar <= '9'
+    )
     {
         if(number < 0) plusBitInfo.plusBit+=1;  //如果是负数，前面的负号占了一位
         unsigned short digit = numberStr[plusBitInfo.plusBit - 1] - 48;
@@ -325,7 +327,9 @@ int minusBit(int number, struct minusBitInfo minusBitInfo)
     char numberStr[NUMBER_STR_MAX_LENGTH];
     sprintf(numberStr, "%d", number);
     // 要操作的位，有效性判断
-    if(minusBitInfo.minusBit <= strlen(numberStr) && minusBitInfo.minusBit >= 1)
+    if(minusBitInfo.minusBit <= strlen(numberStr) && minusBitInfo.minusBit >= 1 &&
+        minusBitInfo.minusNumberChar >= '0' && minusBitInfo.minusNumberChar <= '9'
+    )
     {
         if(number < 0) minusBitInfo.minusBit+=1;  //如果是负数，前面的负号占了一位
         unsigned short digit = numberStr[minusBitInfo.minusBit - 1] - 48;
@@ -356,7 +360,9 @@ int numberInsertBit(int number, struct insertBitInfo insertBitInfo)
     }
     else
     {
-        if(insertBitInfo.insertBit <= strlen(numberStr) + 1 && insertBitInfo.insertBit >= 1)
+        if(insertBitInfo.insertBit <= strlen(numberStr) + 1 && insertBitInfo.insertBit >= 1 &&
+            insertBitInfo.insertNumberChar <= '9' && insertBitInfo.insertNumberChar >= '0'
+        )
         {
             char before[NUMBER_STR_MAX_LENGTH];
             char after[NUMBER_STR_MAX_LENGTH];
@@ -717,6 +723,8 @@ void modifyButtons(char operationChar, int operationNum) {
                     Game.buttons[i].attachedInfo.plusBitInfo.plusNumberChar += operationNum;
                 } else if (Game.buttons[i].type == BIT_MINUS){
                     Game.buttons[i].attachedInfo.minusBitInfo.minusNumberChar += operationNum;
+                } else if (Game.buttons[i].type == INSERT) {
+                    Game.buttons[i].attachedInfo.insertBitInfo.insertNumberChar += operationNum;
                 } else if (isArithmeticButton(Game.buttons + i)){
                     Game.buttons[i].attachedInfo.operationNum += operationNum;
                 }
@@ -733,6 +741,8 @@ void modifyButtons(char operationChar, int operationNum) {
                     Game.buttons[i].attachedInfo.plusBitInfo.plusNumberChar -= operationNum;
                 } else if (Game.buttons[i].type == BIT_MINUS){
                     Game.buttons[i].attachedInfo.minusBitInfo.minusNumberChar -= operationNum;
+                } else if (Game.buttons[i].type == INSERT) {
+                    Game.buttons[i].attachedInfo.insertBitInfo.insertNumberChar -= operationNum;
                 } else if (isArithmeticButton(Game.buttons + i)){
                     Game.buttons[i].attachedInfo.operationNum -= operationNum;
                 }
