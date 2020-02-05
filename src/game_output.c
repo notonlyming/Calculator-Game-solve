@@ -25,10 +25,10 @@ void printSolutionInfo(unsigned int counter[2], struct GameStruct *gameP) {
         fprintf(stderr,
                 "我们做了%d次尝试，还是无法找到任何解。\n请检查输入是否有误，如果确认无误且有解，请在Github提issue。\n",
                 counter[0]);
-        printf("note:\n  start:%d steps:%d achieve:%d Buttons:%d\n",
+        printf("note:\n  start:%d steps:%d achieve:%d Buttons:%d  \n",
                gameP->startNum, gameP->allowMaxStep, gameP->gameAchieve, gameP->buttonNum);
     } else {
-        printf("\nnote: %d time(s) try, %d solution(s) found\n", counter[0], counter[1]);
+        printf("\nnote: %d time(s) try, %d solution(s) found  \n", counter[0], counter[1]);
     }
 }
 
