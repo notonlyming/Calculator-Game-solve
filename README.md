@@ -23,6 +23,7 @@ Code by LittleMing 2018.08.25
 - [程序使用说明](#程序使用说明)
     - [下载和运行程序](#下载和运行程序)
     - [如何录入关卡](#如何录入关卡)
+    - [特殊按钮说明](#特殊按钮说明)
     - [如何使用输出信息](#如何使用输出信息)
     - [如果没有找到解](#如果没有找到解)
     - [如何退出程序](#如何退出程序)
@@ -46,7 +47,7 @@ Calculator就是一个萌萌的计算器手机游戏。
 
 并且Calculator: the game支持IOS/Android平台
 
-Caldulator2 已推出，本解算器已支持部分特性。
+Caldulator2 已推出，本解算器已支持所有新特性。
 
 ### 下载地址
 
@@ -204,7 +205,7 @@ Note：在cmd中 请始终使用 `cd /D "路径"`切换
 
 3.编译
 
-主程序：`tcc src/*.c -Wall -Wextra -Werror -o calculator_game.exe`
+主程序：`tcc src/*.c -Ofast -Wall -Wextra -Werror -o calculator_game.exe`
 
 若编译器无报错则编译成功！
 
