@@ -38,8 +38,6 @@ short initAllIsStoreAnswer();
 
 unsigned short isArithmeticButton(Button *button);
 
-unsigned short isModifiableButton(Button *button);
-
 int lnv10(int number);
 
 int powInt(int base, int exponent);

@@ -700,76 +700,61 @@ unsigned short isArithmeticButton(Button *button) {
     return isTrue;
 }
 
-unsigned short isModifiableButton(Button *button) {
-    unsigned short isTrue = FALSE;
-    isTrue = isArithmeticButton(button);
-    if (button->type == APPEND) {
-        isTrue = TRUE;
-    } else if (button->type == CUT)
-    {
-        isTrue = TRUE;
-    }
-    
-    return isTrue;
-}
-
 void modifyButtons(char operationChar, int operationNum) {
     if (Game.isButtonModify == FALSE)
         backupButton();
     for (int i = 0; i < Game.buttonNum; i++) {
-        if (isModifiableButton(&Game.buttons[i])) {
-            switch (operationChar) {
-                case '+':
-                    if (Game.buttons[i].type == APPEND) {
-                        Game.buttons[i].attachedInfo.appendNum += operationNum;
-                    } else if (Game.buttons[i].type == CUT) {
-                        int tmpNum;
-                        sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
-                        tmpNum += operationNum;
-                        sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
-                    } else {
-                        Game.buttons[i].attachedInfo.operationNum += operationNum;
-                    }
-                    break;
-                case '-':
-                    if (Game.buttons[i].type == APPEND) {
-                        Game.buttons[i].attachedInfo.appendNum -= operationNum;
-                    } else if (Game.buttons[i].type == CUT) {
-                        int tmpNum;
-                        sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
-                        tmpNum -= operationNum;
-                        sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
-                    } else {
-                        Game.buttons[i].attachedInfo.operationNum -= operationNum;
-                    }
-                    break;
-                case '*':
-                    if (Game.buttons[i].type == APPEND) {
-                        Game.buttons[i].attachedInfo.appendNum *= operationNum;
-                    } else if (Game.buttons[i].type == CUT) {
-                        int tmpNum;
-                        sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
-                        tmpNum *= operationNum;
-                        sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
-                    } else {
-                        Game.buttons[i].attachedInfo.operationNum *= operationNum;
-                    }
-                    break;
-                case '/':
-                    if (Game.buttons[i].type == APPEND) {
-                        Game.buttons[i].attachedInfo.appendNum /= operationNum;
-                    } else if (Game.buttons[i].type == CUT) {
-                        int tmpNum;
-                        sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
-                        tmpNum /= operationNum;
-                        sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
-                    } else {
-                        Game.buttons[i].attachedInfo.operationNum /= operationNum;
-                    }
-                    break;
-                default:
-                    break;
-            }
+        switch (operationChar) {
+            case '+':
+                if (Game.buttons[i].type == APPEND) {
+                    Game.buttons[i].attachedInfo.appendNum += operationNum;
+                } else if (Game.buttons[i].type == CUT) {
+                    int tmpNum;
+                    sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
+                    tmpNum += operationNum;
+                    sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
+                } else if (isArithmeticButton(Game.buttons + i)){
+                    Game.buttons[i].attachedInfo.operationNum += operationNum;
+                }
+                break;
+            case '-':
+                if (Game.buttons[i].type == APPEND) {
+                    Game.buttons[i].attachedInfo.appendNum -= operationNum;
+                } else if (Game.buttons[i].type == CUT) {
+                    int tmpNum;
+                    sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
+                    tmpNum -= operationNum;
+                    sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
+                } else if (isArithmeticButton(Game.buttons + i)){
+                    Game.buttons[i].attachedInfo.operationNum -= operationNum;
+                }
+                break;
+            case '*':
+                if (Game.buttons[i].type == APPEND) {
+                    Game.buttons[i].attachedInfo.appendNum *= operationNum;
+                } else if (Game.buttons[i].type == CUT) {
+                    int tmpNum;
+                    sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
+                    tmpNum *= operationNum;
+                    sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
+                } else if (isArithmeticButton(Game.buttons + i)){
+                    Game.buttons[i].attachedInfo.operationNum *= operationNum;
+                }
+                break;
+            case '/':
+                if (Game.buttons[i].type == APPEND) {
+                    Game.buttons[i].attachedInfo.appendNum /= operationNum;
+                } else if (Game.buttons[i].type == CUT) {
+                    int tmpNum;
+                    sscanf(Game.buttons[i].attachedInfo.cutNum, "%d", &tmpNum);
+                    tmpNum /= operationNum;
+                    sprintf(Game.buttons[i].attachedInfo.cutNum, "%d", tmpNum);
+                } else if (isArithmeticButton(Game.buttons + i)){
+                    Game.buttons[i].attachedInfo.operationNum /= operationNum;
+                }
+                break;
+            default:
+                break;
         }
     }
 }
