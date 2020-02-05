@@ -709,13 +709,16 @@ unsigned int *solveIt(unsigned int counter[2], short isOutputSteps, short isSile
                 if (tempResult == Game.gameAchieve && Game.isOnError == FALSE) {
                     printSolution(answer, stepsNum);
                     counter[1]++;
-                    if (counter[1] == 10 && !isSilent) {
+                    if (counter[1] == 10) {
                         char isCalculateAllSolve;
-                        printf("该level可能有10个以上的解...\n"
-                               "继续计算可能需要消耗大量时间，是否继续？(y/n):");
-                        scanf("%c", &isCalculateAllSolve);
-						getchar();  //拿掉换行符
-                        if (isCalculateAllSolve == 'n') {
+                        if (!isSilent)
+                        {
+                            printf("该level可能有10个以上的解...\n"
+                                   "继续计算可能需要消耗大量时间，是否继续？(y/n):");
+                            scanf("%c", &isCalculateAllSolve);
+						    getchar();  //拿掉换行符
+                        }
+                        if (isSilent || isCalculateAllSolve == 'n') {
                             resetButton();
                             goto findEnd;
                         }
