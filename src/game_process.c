@@ -173,6 +173,8 @@ int pressButton(Button buttonToPress, int currentNumber) {
     switch (buttonToPress.type) {
         case PLUS:
             result += buttonToPress.attachedInfo.operationNum;
+            // 判断+0时出错，因为+0是ABC占位用的，不能按
+            if(buttonToPress.attachedInfo.operationNum == 0) Game.isOnError = TRUE;
             break;
         case MINUS:
             result -= buttonToPress.attachedInfo.operationNum;
