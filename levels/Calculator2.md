@@ -255,10 +255,8 @@ note: 39 time(s) try, 1 solution(s) found
 发现解(4步)：(1=>3) (2=>3) (Sort>) (<<) 结果：333  
 发现解(4步)：(2=>3) (Sort>) (1=>3) (<<) 结果：333  
 发现解(4步)：(Sort>) (2=>3) (1=>3) (<<) 结果：333  
-发现解(4步)：(1=>3) (Sort>) (2=>3) (<<) 结果：333  
-发现解(4步)：(Sort>) (1=>3) (2=>3) (<<) 结果：333  
 
-note: 340 time(s) try, 12 solution(s) found  
+note: 301 time(s) try, 10 solution(s) found  
 ### Level 36
 -----------------------123-----------------------  
 发现解(3步)：(Sort>) (<<) (<<) 结果：123  
@@ -310,9 +308,8 @@ note: 340 time(s) try, 5 solution(s) found
 发现解(5步)：(＋6) (Sort<) (3) (＋6) (Sort<) 结果：963  
 发现解(5步)：(Sort<) (＋6) (3) (＋6) (Sort<) 结果：963  
 发现解(5步)：(＋6) (3) (Sort<) (＋6) (Sort<) 结果：963  
-发现解(5步)：(3) (＋6) (Sort<) (＋6) (Sort<) 结果：963  
 
-note: 1364 time(s) try, 11 solution(s) found  
+note: 1084 time(s) try, 10 solution(s) found  
 -----------------------321-----------------------  
 发现解(4步)：(÷5) (＋6) (3) (Sort<) 结果：321  
 发现解(4步)：(3) (＋6) (＋6) (＋6) 结果：321  
@@ -369,14 +366,8 @@ note: 39 time(s) try, 1 solution(s) found
 发现解(4步)：(CUT4) (<<) (＋4) (＋2) 结果：6  
 发现解(4步)：(<<) (<<) (<<) (＋2) 结果：6  
 发现解(4步)：(CUT4) (<<) (＋2) (＋4) 结果：6  
-发现解(4步)：(＋4) (＋2) (CUT4) (<<) 结果：6  
-发现解(4步)：(＋2) (＋4) (CUT4) (<<) 结果：6  
-发现解(4步)：(＋4) (＋4) (CUT4) (<<) 结果：6  
-发现解(4步)：(＋4) (CUT4) (＋2) (<<) 结果：6  
-发现解(4步)：(＋2) (CUT4) (＋4) (<<) 结果：6  
-发现解(4步)：(＋4) (CUT4) (＋4) (<<) 结果：6  
 
-note: 340 time(s) try, 16 solution(s) found  
+note: 241 time(s) try, 10 solution(s) found  
 ### Level 45
 -----------------------72-----------------------  
 发现解(3步)：(CUT9) (＋3) (＋3) 结果：72  
@@ -426,10 +417,8 @@ note: 42 time(s) try, 2 solution(s) found
 发现解(3步)：(×2) (Delete Bit:2) (×4) 结果：40  
 发现解(3步)：(×4) (×2) (Delete Bit:1) 结果：40  
 发现解(3步)：(×2) (×4) (Delete Bit:1) 结果：40  
-发现解(3步)：(×4) (×2) (Delete Bit:2) 结果：40  
-发现解(3步)：(×2) (×4) (Delete Bit:2) 结果：40  
 
-note: 584 time(s) try, 12 solution(s) found  
+note: 209 time(s) try, 10 solution(s) found  
 ### Level 52
 -----------------------10-----------------------  
 发现解(3步)：(×7) (×4) (Delete Bit:2) 结果：10  
@@ -498,10 +487,8 @@ note: 584 time(s) try, 3 solution(s) found
 发现解(4步)：(Delete Bit:3) (×3) (Delete Bit:1) (×3) 结果：18  
 发现解(4步)：(×3) (Delete Bit:1) (Delete Bit:2) (×3) 结果：18  
 发现解(4步)：(Delete Bit:1) (×3) (Delete Bit:2) (×3) 结果：18  
-发现解(4步)：(Delete Bit:3) (Delete Bit:1) (×3) (×3) 结果：18  
-发现解(4步)：(Delete Bit:1) (Delete Bit:2) (×3) (×3) 结果：18  
 
-note: 2800 time(s) try, 12 solution(s) found  
+note: 2549 time(s) try, 10 solution(s) found  
 -----------------------9-----------------------  
 发现解(4步)：(×3) (Delete Bit:2) (×3) (Delete Bit:2) 结果：9  
 发现解(4步)：(Delete Bit:2) (×3) (×3) (Delete Bit:2) 结果：9  
@@ -642,7 +629,7 @@ note: 2954 time(s) try, 9 solution(s) found
 发现解(3步)：(at 3th Insert2) (Delete Bit:1) (CUT5) 结果：20  
 发现解(3步)：(at 1th Insert2) (Delete Bit:2) (CUT5) 结果：20  
 
-note: 2954 time(s) try, 10 solution(s) found  
+note: 2871 time(s) try, 10 solution(s) found  
 -----------------------242-----------------------  
 发现解(3步)：(CUT5) (＋2) (at 1th Insert2) 结果：242  
 发现解(3步)：(CUT5) (at 1th Insert2) (＋2) 结果：242  
@@ -761,9 +748,8 @@ note: 4680 time(s) try, 2 solution(s) found
 发现解(4步)：(×5) (Reverse) (×5) (Delete Bit:2) 结果：3  
 发现解(4步)：(×5) (Delete Bit:2) (×5) (Delete Bit:2) 结果：3  
 发现解(4步)：(×5) (×5) (Delete Bit:2) (Delete Bit:2) 结果：3  
-发现解(4步)：(×5) (×5) (Delete Bit:3) (Delete Bit:2) 结果：3  
 
-note: 4680 time(s) try, 11 solution(s) found  
+note: 2322 time(s) try, 10 solution(s) found  
 -----------------------15-----------------------  
 发现解(3步)：(Reverse) (×5) (Delete Bit:2) 结果：15  
 发现解(4步)：(×5) (×5) (Reverse) (×5) 结果：15  
@@ -883,12 +869,8 @@ note: 584 time(s) try, 1 solution(s) found
 发现解(3步)：(CUT5) (Round Bit:1) (Round Bit:2) 结果：300  
 发现解(3步)：(Round Bit:2) (CUT5) (Round Bit:2) 结果：300  
 发现解(3步)：(CUT5) (Round Bit:1) (CUT5) 结果：300  
-发现解(3步)：(Round Bit:2) (Round Bit:2) (CUT5) 结果：300  
-发现解(3步)：(Round Bit:3) (Round Bit:2) (CUT5) 结果：300  
-发现解(3步)：(Round Bit:2) (Round Bit:3) (CUT5) 结果：300  
-发现解(3步)：(Round Bit:2) (CUT5) (CUT5) 结果：300  
 
-note: 584 time(s) try, 14 solution(s) found  
+note: 463 time(s) try, 10 solution(s) found  
 ### Level 86
 -----------------------300-----------------------  
 发现解(2步)：(Sort>) (Round Bit:1) 结果：300  
@@ -908,11 +890,8 @@ note: 2379 time(s) try, 4 solution(s) found
 发现解(3步)：(at 1th Insert1) (Sort>) (Round Bit:1) 结果：1000  
 发现解(3步)：(at 2th Insert1) (Sort>) (Round Bit:1) 结果：1000  
 发现解(3步)：(at 3th Insert1) (Sort>) (Round Bit:1) 结果：1000  
-发现解(3步)：(at 4th Insert1) (Sort>) (Round Bit:1) 结果：1000  
-发现解(3步)：(at 1th Insert1) (Round Bit:1) (Round Bit:2) 结果：1000  
-发现解(3步)：(at 1th Insert1) (Round Bit:1) (Round Bit:3) 结果：1000  
 
-note: 2379 time(s) try, 13 solution(s) found  
+note: 347 time(s) try, 10 solution(s) found  
 ### Level 87
 -----------------------2000-----------------------  
 发现解(3步)：(5=>12) (×5) (Round Bit:1) 结果：2000  
@@ -1026,9 +1005,8 @@ note: 399 time(s) try, 2 solution(s) found
 发现解(4步)：(at 2th plus4) (×4) (at 2th plus4) (at 3th plus4) 结果：250  
 发现解(4步)：(×4) (at 3th Insert1) (at 3th plus4) (Delete Bit:2) 结果：250  
 发现解(4步)：(×4) (at 2th Insert1) (at 2th plus4) (Delete Bit:3) 结果：250  
-发现解(4步)：(×4) (at 2th Insert1) (at 2th plus4) (Delete Bit:4) 结果：250  
 
-note: 137560 time(s) try, 11 solution(s) found  
+note: 103778 time(s) try, 10 solution(s) found  
 -----------------------500-----------------------  
 发现解(4步)：(×4) (at 2th Insert1) (Delete Bit:1) (at 1th plus4) 结果：500  
 发现解(4步)：(×4) (at 1th Insert1) (Delete Bit:2) (at 1th plus4) 结果：500  
@@ -1048,10 +1026,8 @@ note: 137560 time(s) try, 4 solution(s) found
 发现解(4步)：(at 3th minus2) (at 1th minus2) (at 1th Insert3) (at 4th minus2) 结果：3456  
 发现解(4步)：(at 1th minus2) (at 3th minus2) (at 1th Insert3) (at 4th minus2) 结果：3456  
 发现解(4步)：(at 3th minus2) (at 3th minus2) (at 1th minus2) (at 1th Insert3) 结果：3456  
-发现解(4步)：(at 3th minus2) (at 1th minus2) (at 3th minus2) (at 1th Insert3) 结果：3456  
-发现解(4步)：(at 1th minus2) (at 3th minus2) (at 3th minus2) (at 1th Insert3) 结果：3456  
 
-note: 30940 time(s) try, 12 solution(s) found  
+note: 17787 time(s) try, 10 solution(s) found  
 -----------------------303-----------------------  
 发现解(3步)：(at 4th Insert3) (CUT6) (at 1th minus2) 结果：303  
 发现解(3步)：(CUT6) (at 3th Insert3) (at 1th minus2) 结果：303  
@@ -1063,16 +1039,8 @@ note: 30940 time(s) try, 12 solution(s) found
 发现解(4步)：(CUT6) (at 3th Insert3) (CUT6) (at 1th minus2) 结果：303  
 发现解(4步)：(CUT6) (CUT6) (at 3th Insert3) (at 1th minus2) 结果：303  
 发现解(4步)：(at 4th Insert3) (CUT6) (at 1th minus2) (CUT6) 结果：303  
-发现解(4步)：(CUT6) (at 3th Insert3) (at 1th minus2) (CUT6) 结果：303  
-发现解(4步)：(at 4th Insert3) (at 2th minus2) (CUT6) (CUT6) 结果：303  
-发现解(4步)：(at 2th minus2) (at 4th Insert3) (CUT6) (CUT6) 结果：303  
-发现解(4步)：(CUT6) (at 1th minus2) (at 3th Insert3) (CUT6) 结果：303  
-发现解(4步)：(at 2th minus2) (CUT6) (at 3th Insert3) (CUT6) 结果：303  
-发现解(4步)：(CUT6) (CUT6) (at 1th minus2) (at 3th Insert3) 结果：303  
-发现解(4步)：(CUT6) (at 1th minus2) (CUT6) (at 3th Insert3) 结果：303  
-发现解(4步)：(at 2th minus2) (CUT6) (CUT6) (at 3th Insert3) 结果：303  
 
-note: 30940 time(s) try, 18 solution(s) found  
+note: 15650 time(s) try, 10 solution(s) found  
 ### Level 99
 -----------------------1750-----------------------  
 发现解(3步)：(at 3th plus8) (at 3th plus8) (at 2th plus8) 结果：1750  
@@ -1085,33 +1053,8 @@ note: 30940 time(s) try, 18 solution(s) found
 发现解(4步)：(at 3th plus5) (at 4th plus8) (Round Bit:3) (at 2th plus8) 结果：1750  
 发现解(4步)：(at 4th plus8) (at 3th plus5) (Round Bit:3) (at 2th plus8) 结果：1750  
 发现解(4步)：(at 4th plus5) (at 3th plus5) (Round Bit:3) (at 2th plus8) 结果：1750  
-发现解(4步)：(at 3th plus5) (at 4th plus5) (Round Bit:3) (at 2th plus8) 结果：1750  
-发现解(4步)：(Round Bit:3) (at 3th plus8) (at 2th plus8) (at 3th plus8) 结果：1750  
-发现解(4步)：(at 3th plus8) (Round Bit:3) (at 2th plus8) (at 3th plus8) 结果：1750  
-发现解(4步)：(Round Bit:3) (at 2th plus8) (at 3th plus8) (at 3th plus8) 结果：1750  
-发现解(4步)：(at 2th plus8) (Round Bit:3) (at 3th plus8) (at 3th plus8) 结果：1750  
-发现解(4步)：(at 3th plus8) (at 2th plus8) (Round Bit:3) (at 3th plus8) 结果：1750  
-发现解(4步)：(at 2th plus8) (at 3th plus8) (Round Bit:3) (at 3th plus8) 结果：1750  
-发现解(4步)：(at 3th plus5) (Round Bit:2) (at 2th plus8) (at 3th plus5) 结果：1750  
-发现解(4步)：(at 3th plus5) (at 2th plus8) (Round Bit:2) (at 3th plus5) 结果：1750  
-发现解(4步)：(at 2th plus8) (at 3th plus5) (Round Bit:2) (at 3th plus5) 结果：1750  
-发现解(4步)：(at 3th plus8) (at 3th plus8) (at 2th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 3th plus5) (at 4th plus8) (at 2th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 4th plus8) (at 3th plus5) (at 2th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 4th plus5) (at 3th plus5) (at 2th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 3th plus5) (at 4th plus5) (at 2th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 3th plus8) (at 2th plus8) (at 3th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 2th plus8) (at 3th plus8) (at 3th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 3th plus5) (at 2th plus8) (at 4th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 2th plus8) (at 3th plus5) (at 4th plus8) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 4th plus8) (at 2th plus8) (at 3th plus5) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 4th plus5) (at 2th plus8) (at 3th plus5) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 2th plus8) (at 4th plus8) (at 3th plus5) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 2th plus8) (at 4th plus5) (at 3th plus5) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 3th plus5) (at 2th plus8) (at 4th plus5) (Round Bit:3) 结果：1750  
-发现解(4步)：(at 2th plus8) (at 3th plus5) (at 4th plus5) (Round Bit:3) 结果：1750  
 
-note: 346200 time(s) try, 35 solution(s) found  
+note: 36514 time(s) try, 10 solution(s) found  
 -----------------------150-----------------------  
 发现解(3步)：(Delete Bit:2) (at 2th plus8) (at 2th plus8) 结果：150  
 发现解(3步)：(Delete Bit:3) (at 2th plus8) (at 2th plus8) 结果：150  
@@ -1123,161 +1066,8 @@ note: 346200 time(s) try, 35 solution(s) found
 发现解(3步)：(at 2th plus8) (at 2th plus8) (Delete Bit:3) 结果：150  
 发现解(3步)：(at 2th plus5) (Round Bit:2) (Delete Bit:3) 结果：150  
 发现解(3步)：(at 2th plus5) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(Delete Bit:2) (Round Bit:2) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(Delete Bit:3) (Round Bit:2) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus8) (Delete Bit:2) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus5) (Delete Bit:2) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(Round Bit:3) (Delete Bit:2) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus8) (Delete Bit:3) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus5) (Delete Bit:3) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(Round Bit:3) (Delete Bit:3) (at 2th plus8) (at 2th plus8) 结果：150  
-发现解(4步)：(Delete Bit:2) (at 2th plus8) (Round Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(Delete Bit:3) (at 2th plus8) (Round Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus8) (Delete Bit:2) (Round Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus8) (Delete Bit:3) (Round Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus8) (Delete Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus8) (at 3th plus8) (Delete Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus5) (at 3th plus8) (Delete Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(Round Bit:3) (at 3th plus8) (Delete Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus5) (Delete Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus8) (Round Bit:3) (Delete Bit:2) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus8) (Delete Bit:3) (at 2th plus8) 结果：150  
-发现解(4步)：(at 3th plus5) (at 2th plus8) (Delete Bit:3) (at 2th plus8) 结果：150  
-发现解(4步)：(Round Bit:3) (at 2th plus8) (Delete Bit:3) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus8) (at 3th plus8) (Delete Bit:3) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus8) (at 3th plus5) (Delete Bit:3) (at 2th plus8) 结果：150  
-发现解(4步)：(at 2th plus8) (Round Bit:3) (Delete Bit:3) (at 2th plus8) 结果：150  
-发现解(4步)：(Delete Bit:2) (at 2th plus5) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:3) (at 2th plus5) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:4) (at 2th plus5) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:4) (Delete Bit:1) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(at 3th plus5) (Delete Bit:2) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(at 2th plus5) (Delete Bit:3) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:1) (Delete Bit:3) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(at 2th plus5) (Delete Bit:4) (Round Bit:1) (at 2th plus5) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:1) (Delete Bit:2) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:1) (Round Bit:1) (Delete Bit:2) (at 2th plus5) 结果：150  
-发现解(4步)：(at 2th plus8) (Round Bit:2) (Delete Bit:2) (at 2th plus5) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (Delete Bit:2) (at 2th plus5) 结果：150  
-发现解(4步)：(at 3th plus5) (Round Bit:2) (Delete Bit:2) (at 2th plus5) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:1) (Delete Bit:3) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:1) (Round Bit:1) (Delete Bit:3) (at 2th plus5) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:1) (Delete Bit:4) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:1) (Round Bit:1) (Delete Bit:4) (at 2th plus5) 结果：150  
-发现解(4步)：(Delete Bit:2) (at 2th plus8) (at 2th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:3) (at 2th plus8) (at 2th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (Delete Bit:2) (at 2th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus8) (Delete Bit:3) (at 2th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:2) (at 2th plus5) (at 3th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:3) (at 2th plus5) (at 3th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:4) (at 2th plus5) (at 3th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus5) (Delete Bit:2) (at 3th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Delete Bit:3) (at 3th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Delete Bit:4) (at 3th plus8) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:2) (at 3th plus8) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:3) (at 3th plus8) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:4) (at 3th plus8) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:2) (at 3th plus5) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:3) (at 3th plus5) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus8) (Delete Bit:2) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus5) (Delete Bit:2) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus8) (Delete Bit:3) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus5) (Delete Bit:3) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (Delete Bit:4) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus8) (Delete Bit:4) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus5) (Delete Bit:4) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Round Bit:3) (Delete Bit:4) (at 2th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:2) (at 2th plus5) (at 3th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:3) (at 2th plus5) (at 3th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus5) (Delete Bit:2) (at 3th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Delete Bit:3) (at 3th plus5) (Round Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:4) (at 2th plus5) (Round Bit:2) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Delete Bit:4) (Round Bit:2) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 3th plus8) (Delete Bit:2) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus5) (at 4th plus8) (Delete Bit:2) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus8) (at 3th plus5) (Delete Bit:2) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus5) (at 3th plus5) (Delete Bit:2) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus5) (at 4th plus5) (Delete Bit:2) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus8) (at 2th plus8) (Delete Bit:3) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus8) (Delete Bit:3) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus8) (at 2th plus5) (Delete Bit:3) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus5) (at 2th plus5) (Delete Bit:3) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus5) (Delete Bit:3) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (Delete Bit:3) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (at 3th plus8) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus8) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus5) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus8) (at 2th plus5) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 4th plus5) (at 2th plus5) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(Round Bit:3) (at 2th plus5) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus5) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:3) (Delete Bit:4) (Round Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 3th plus8) (at 2th plus8) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus8) (at 3th plus8) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 2th plus8) (at 3th plus8) (at 3th plus8) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (at 3th plus8) (at 3th plus8) (Delete Bit:2) 结果：150  
-发现解(4步)：(Round Bit:3) (at 3th plus8) (at 3th plus8) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus5) (at 3th plus8) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (Round Bit:3) (at 3th plus8) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 3th plus8) (at 2th plus5) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:1) (at 3th plus5) (Delete Bit:2) 结果：150  
-发现解(4步)：(Delete Bit:1) (Round Bit:1) (at 3th plus5) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 2th plus8) (Round Bit:2) (at 3th plus5) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (at 3th plus5) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus5) (Round Bit:2) (at 3th plus5) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 3th plus8) (Round Bit:3) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus5) (at 4th plus8) (Round Bit:3) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 4th plus8) (at 3th plus5) (Round Bit:3) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 4th plus5) (at 3th plus5) (Round Bit:3) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus5) (at 4th plus5) (Round Bit:3) (Delete Bit:2) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus8) (at 2th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 3th plus5) (at 2th plus8) (at 2th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(Round Bit:3) (at 2th plus8) (at 2th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus8) (at 3th plus8) (at 2th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus8) (at 3th plus5) (at 2th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus8) (Round Bit:3) (at 2th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus8) (at 2th plus8) (at 3th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (at 3th plus8) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:1) (at 2th plus5) (Delete Bit:3) 结果：150  
-发现解(4步)：(Delete Bit:1) (Round Bit:1) (at 2th plus5) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus8) (at 2th plus8) (at 3th plus5) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (at 3th plus5) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (at 3th plus8) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus8) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus5) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 4th plus8) (at 2th plus5) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 4th plus5) (at 2th plus5) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(Round Bit:3) (at 2th plus5) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus5) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:3) (Round Bit:2) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus8) (at 2th plus8) (Round Bit:3) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus8) (Round Bit:3) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 4th plus8) (at 2th plus5) (Round Bit:3) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 4th plus5) (at 2th plus5) (Round Bit:3) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus5) (Round Bit:3) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (Round Bit:3) (Delete Bit:3) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (at 4th plus8) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:1) (at 2th plus5) (Delete Bit:4) 结果：150  
-发现解(4步)：(Delete Bit:1) (Round Bit:1) (at 2th plus5) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (at 4th plus5) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (at 3th plus8) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus8) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 3th plus8) (at 2th plus5) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 4th plus8) (at 2th plus5) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 4th plus5) (at 2th plus5) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(Round Bit:3) (at 2th plus5) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus5) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:3) (Round Bit:2) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus8) (Round Bit:3) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 4th plus8) (at 2th plus5) (Round Bit:3) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 4th plus5) (at 2th plus5) (Round Bit:3) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (at 4th plus5) (Round Bit:3) (Delete Bit:4) 结果：150  
-发现解(4步)：(at 2th plus5) (Round Bit:2) (Round Bit:3) (Delete Bit:4) 结果：150  
 
-note: 346200 time(s) try, 163 solution(s) found  
+note: 13016 time(s) try, 10 solution(s) found  
 -----------------------25-----------------------  
 发现解(4步)：(Delete Bit:4) (Delete Bit:2) (Round Bit:1) (at 2th plus5) 结果：25  
 发现解(4步)：(Delete Bit:2) (Delete Bit:3) (Round Bit:1) (at 2th plus5) 结果：25  
@@ -1289,54 +1079,8 @@ note: 346200 time(s) try, 163 solution(s) found
 发现解(4步)：(Delete Bit:4) (Round Bit:2) (Delete Bit:2) (at 2th plus5) 结果：25  
 发现解(4步)：(Round Bit:1) (Delete Bit:2) (Delete Bit:2) (at 2th plus5) 结果：25  
 发现解(4步)：(Round Bit:2) (Delete Bit:2) (Delete Bit:2) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:3) (Delete Bit:2) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:3) (Delete Bit:2) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:4) (Delete Bit:2) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:4) (Delete Bit:2) (at 2th plus5) 结果：25  
-发现解(4步)：(Delete Bit:2) (Round Bit:1) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Delete Bit:3) (Round Bit:1) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Delete Bit:4) (Round Bit:1) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Delete Bit:4) (Round Bit:2) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:2) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:2) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:3) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:3) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:4) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:4) (Delete Bit:3) (at 2th plus5) 结果：25  
-发现解(4步)：(Delete Bit:2) (Round Bit:1) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Delete Bit:3) (Round Bit:1) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Delete Bit:4) (Round Bit:1) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Delete Bit:4) (Round Bit:2) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:2) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:2) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:3) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:3) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:4) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:4) (at 3th plus5) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:1) (at 4th plus5) (Delete Bit:2) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:2) (at 4th plus5) (Delete Bit:2) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:1) (at 4th plus5) (Delete Bit:3) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:2) (at 4th plus5) (Delete Bit:3) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:1) (at 3th plus5) (Delete Bit:4) (Delete Bit:2) 结果：25  
-发现解(4步)：(Round Bit:2) (at 3th plus5) (Delete Bit:4) (Delete Bit:2) 结果：25  
-发现解(4步)：(Delete Bit:2) (Round Bit:1) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Delete Bit:3) (Round Bit:1) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Delete Bit:4) (Round Bit:1) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Delete Bit:4) (Round Bit:2) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:2) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:2) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:3) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:3) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:1) (Delete Bit:4) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:2) (Delete Bit:4) (at 2th plus5) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:1) (at 3th plus5) (Delete Bit:2) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:2) (at 3th plus5) (Delete Bit:2) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:1) (at 2th plus5) (Delete Bit:3) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:2) (at 2th plus5) (Delete Bit:3) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:1) (at 2th plus5) (Delete Bit:4) (Delete Bit:3) 结果：25  
-发现解(4步)：(Round Bit:2) (at 2th plus5) (Delete Bit:4) (Delete Bit:3) 结果：25  
 
-note: 346200 time(s) try, 56 solution(s) found  
+note: 122606 time(s) try, 10 solution(s) found  
 ### Level 100
 e =======> 2
 v =======> 8
@@ -1383,12 +1127,8 @@ note: 4680 time(s) try, 1 solution(s) found
 发现解(4步)：(+/-) (÷2) (＋2) (Delete Bit:3) 结果：-12  
 发现解(4步)：(÷2) (Delete Bit:2) (+/-) (＋2) 结果：-12  
 发现解(4步)：(Delete Bit:2) (÷2) (+/-) (＋2) 结果：-12  
-发现解(4步)：(÷2) (+/-) (Delete Bit:3) (＋2) 结果：-12  
-发现解(4步)：(+/-) (÷2) (Delete Bit:3) (＋2) 结果：-12  
-发现解(4步)：(Delete Bit:2) (+/-) (÷2) (＋2) 结果：-12  
-发现解(4步)：(+/-) (Delete Bit:3) (÷2) (＋2) 结果：-12  
 
-note: 7380 time(s) try, 14 solution(s) found  
+note: 5997 time(s) try, 10 solution(s) found  
 ### Level 105
 ------------------------8-----------------------  
 发现解(5步)：(＋5) (÷2) (÷2) (+/-) (＋5) 结果：-8  
@@ -1459,9 +1199,8 @@ note: 1364 time(s) try, 4 solution(s) found
 发现解(5步)：(+/-) (<<) (<<) (＋2) (1) 结果：21  
 发现解(5步)：(<<) (<<) (<<) (＋2) (1) 结果：21  
 发现解(5步)：(＋2) (<<) (<<) (＋2) (1) 结果：21  
-发现解(5步)：(<<) (＋2) (<<) (＋2) (1) 结果：21  
 
-note: 1364 time(s) try, 11 solution(s) found  
+note: 1068 time(s) try, 10 solution(s) found  
 ### Level 110
 -----------------------312-----------------------  
 发现解(1步)：(Shift<2) 结果：312  
@@ -1534,29 +1273,8 @@ note: 4680 time(s) try, 2 solution(s) found
 发现解(4步)：(Shift<3) (25=>15) (Shift<2) (CUT1) 结果：55  
 发现解(4步)：(Shift<1) (25=>15) (Shift<3) (CUT1) 结果：55  
 发现解(4步)：(Shift<3) (25=>15) (Shift<3) (CUT1) 结果：55  
-发现解(4步)：(Shift<1) (25=>15) (CUT1) (CUT1) 结果：55  
-发现解(4步)：(Shift<3) (25=>15) (CUT1) (CUT1) 结果：55  
-发现解(4步)：(Shift<2) (Shift<1) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(CUT1) (Shift<1) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(25=>15) (Shift<1) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<1) (Shift<2) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<3) (Shift<2) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(25=>15) (Shift<2) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<2) (Shift<3) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(CUT1) (Shift<3) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(25=>15) (Shift<3) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<1) (CUT1) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<3) (CUT1) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<1) (25=>15) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<3) (25=>15) (25=>15) (CUT1) 结果：55  
-发现解(4步)：(Shift<1) (25=>15) (52=>12) (CUT1) 结果：55  
-发现解(4步)：(Shift<3) (25=>15) (52=>12) (CUT1) 结果：55  
-发现解(4步)：(Shift<1) (25=>15) (CUT1) (25=>15) 结果：55  
-发现解(4步)：(Shift<3) (25=>15) (CUT1) (25=>15) 结果：55  
-发现解(4步)：(Shift<1) (25=>15) (CUT1) (52=>12) 结果：55  
-发现解(4步)：(Shift<3) (25=>15) (CUT1) (52=>12) 结果：55  
 
-note: 7380 time(s) try, 31 solution(s) found  
+note: 5421 time(s) try, 10 solution(s) found  
 -----------------------25-----------------------  
 发现解(4步)：(25=>15) (52=>12) (CUT1) (Shift<1) 结果：25  
 发现解(4步)：(25=>15) (52=>12) (Shift<1) (CUT1) 结果：25  
@@ -1588,178 +1306,8 @@ note: 579194 time(s) try, 5 solution(s) found
 发现解(3步)：(Round Bit:1) (Round Bit:2) (＋2) 结果：202  
 发现解(4步)：(Shift<1) (Shift<1) (Round Bit:2) (Shift<1) 结果：202  
 发现解(4步)：(Shift<2) (＋2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(4步)：(Shift<2) (Round Bit:2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(4步)：(Shift<2) (Round Bit:2) (Shift<1) (Reverse) 结果：202  
-发现解(4步)：(Round Bit:1) (＋2) (Reverse) (Reverse) 结果：202  
-发现解(4步)：(Shift<2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(4步)：(＋2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(4步)：(Round Bit:1) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(4步)：(Round Bit:2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(4步)：(Round Bit:1) (Round Bit:2) (＋2) (Reverse) 结果：202  
-发现解(4步)：(Shift<1) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Shift<2) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Shift<1) (Shift<2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Reverse) (Reverse) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Shift<2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(＋2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Round Bit:1) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Round Bit:2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Shift<2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(＋2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Round Bit:1) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Round Bit:2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Shift<2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(＋2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Round Bit:1) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Round Bit:2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(4步)：(Round Bit:1) (＋2) (Round Bit:2) (＋2) 结果：202  
-发现解(4步)：(Shift<2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(4步)：(＋2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(4步)：(Round Bit:1) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(4步)：(Round Bit:2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(4步)：(Round Bit:1) (Round Bit:2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<2) (Shift<1) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<2) (Shift<1) (Shift<2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<1) (Shift<2) (Shift<2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Reverse) (Reverse) (Shift<2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Round Bit:2) (＋2) (Shift<2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Reverse) (Shift<1) (Reverse) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<2) (Reverse) (Reverse) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (＋2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (＋2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (＋2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (Round Bit:2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (Round Bit:2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Round Bit:2) (Round Bit:2) (Shift<1) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (Round Bit:2) (Shift<1) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (Round Bit:2) (Shift<1) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Round Bit:2) (Shift<1) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Shift<1) (Reverse) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Reverse) (Reverse) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (＋2) (Reverse) (Reverse) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (＋2) (Reverse) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (＋2) (Reverse) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (＋2) (Reverse) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (＋2) (Reverse) (Reverse) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (Shift<1) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Shift<1) (Shift<2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Reverse) (Reverse) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(＋2) (＋2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:2) (＋2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(＋2) (Round Bit:2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:2) (Round Bit:1) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Round Bit:2) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (Round Bit:2) (＋2) (Reverse) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (Round Bit:2) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (Round Bit:2) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (Round Bit:2) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (Round Bit:2) (＋2) (Reverse) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<2) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Shift<2) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (＋2) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Round Bit:2) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Shift<1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<1) (Shift<2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Shift<1) (Shift<2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<2) (Shift<2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<2) (Shift<2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Reverse) (Reverse) (Shift<2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (＋2) (Shift<2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Reverse) (Shift<1) (Reverse) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Reverse) (Reverse) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Reverse) (Reverse) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Reverse) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<1) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Reverse) (Reverse) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (＋2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (＋2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:2) (＋2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<1) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Reverse) (Reverse) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (＋2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (＋2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:2) (Round Bit:1) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<1) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Reverse) (Reverse) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (＋2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (＋2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:2) (Round Bit:2) (Round Bit:1) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Shift<1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Reverse) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (＋2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (＋2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (＋2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (＋2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (＋2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (＋2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<1) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Shift<1) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<1) (Shift<2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Reverse) (Reverse) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (＋2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(＋2) (＋2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (＋2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:2) (Round Bit:1) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (＋2) (Round Bit:2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Shift<2) (Round Bit:1) (Round Bit:2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(＋2) (Round Bit:1) (Round Bit:2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:1) (Round Bit:2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:2) (Round Bit:1) (Round Bit:2) (Round Bit:2) (＋2) 结果：202  
-发现解(5步)：(Round Bit:1) (Round Bit:2) (Round Bit:2) (Round Bit:2) (＋2) 结果：202  
 
-note: 579194 time(s) try, 180 solution(s) found  
+note: 4818 time(s) try, 10 solution(s) found  
 -----------------------125-----------------------  
 发现解(2步)：(Reverse) (Shift<2) 结果：125  
 发现解(2步)：(Shift<1) (Reverse) 结果：125  
@@ -1771,65 +1319,8 @@ note: 579194 time(s) try, 180 solution(s) found
 发现解(4步)：(Shift<1) (Shift<1) (Reverse) (Shift<1) 结果：125  
 发现解(4步)：(Reverse) (Shift<2) (Shift<1) (Shift<2) 结果：125  
 发现解(4步)：(Shift<1) (Reverse) (Shift<1) (Shift<2) 结果：125  
-发现解(4步)：(Reverse) (Shift<1) (Shift<2) (Shift<2) 结果：125  
-发现解(4步)：(Shift<2) (Reverse) (Shift<2) (Shift<2) 结果：125  
-发现解(4步)：(Shift<2) (Shift<1) (Reverse) (Shift<2) 结果：125  
-发现解(4步)：(Shift<1) (Shift<2) (Reverse) (Shift<2) 结果：125  
-发现解(4步)：(Reverse) (Reverse) (Reverse) (Shift<2) 结果：125  
-发现解(4步)：(Round Bit:2) (＋2) (Reverse) (Shift<2) 结果：125  
-发现解(4步)：(Shift<2) (Shift<1) (Shift<1) (Reverse) 结果：125  
-发现解(4步)：(Shift<1) (Shift<2) (Shift<1) (Reverse) 结果：125  
-发现解(4步)：(Reverse) (Reverse) (Shift<1) (Reverse) 结果：125  
-发现解(4步)：(Round Bit:2) (＋2) (Shift<1) (Reverse) 结果：125  
-发现解(4步)：(Shift<1) (Shift<1) (Shift<2) (Reverse) 结果：125  
-发现解(4步)：(Reverse) (Shift<2) (Reverse) (Reverse) 结果：125  
-发现解(4步)：(Shift<1) (Reverse) (Reverse) (Reverse) 结果：125  
-发现解(5步)：(Reverse) (Shift<2) (Shift<1) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Shift<1) (Reverse) (Shift<1) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Reverse) (Shift<1) (Shift<2) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Reverse) (Shift<2) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Shift<1) (Reverse) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Shift<1) (Shift<2) (Reverse) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Reverse) (Reverse) (Reverse) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Round Bit:2) (＋2) (Reverse) (Shift<1) (Shift<1) 结果：125  
-发现解(5步)：(Reverse) (Shift<1) (Shift<1) (Shift<2) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Reverse) (Shift<1) (Shift<2) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Shift<2) (Reverse) (Shift<2) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Shift<2) (Shift<1) (Reverse) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Shift<1) (Shift<2) (Reverse) (Shift<1) 结果：125  
-发现解(5步)：(Shift<1) (Shift<2) (Shift<2) (Reverse) (Shift<1) 结果：125  
-发现解(5步)：(Reverse) (Reverse) (Shift<2) (Reverse) (Shift<1) 结果：125  
-发现解(5步)：(Round Bit:2) (＋2) (Shift<2) (Reverse) (Shift<1) 结果：125  
-发现解(5步)：(Reverse) (Shift<1) (Reverse) (Reverse) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Reverse) (Reverse) (Reverse) (Shift<1) 结果：125  
-发现解(5步)：(Reverse) (Shift<1) (Round Bit:2) (＋2) (Shift<1) 结果：125  
-发现解(5步)：(Shift<2) (Reverse) (Round Bit:2) (＋2) (Shift<1) 结果：125  
-发现解(5步)：(Reverse) (Shift<1) (Shift<1) (Shift<1) (Shift<2) 结果：125  
-发现解(5步)：(Shift<2) (Reverse) (Shift<1) (Shift<1) (Shift<2) 结果：125  
-发现解(5步)：(Shift<2) (Shift<2) (Reverse) (Shift<1) (Shift<2) 结果：125  
-发现解(5步)：(Reverse) (Shift<2) (Shift<2) (Shift<2) (Shift<2) 结果：125  
-发现解(5步)：(Shift<1) (Reverse) (Shift<2) (Shift<2) (Shift<2) 结果：125  
-发现解(5步)：(Shift<1) (Shift<1) (Reverse) (Shift<2) (Shift<2) 结果：125  
-发现解(5步)：(Shift<1) (Shift<1) (Shift<1) (Reverse) (Shift<2) 结果：125  
-发现解(5步)：(Shift<2) (Shift<2) (Shift<2) (Reverse) (Shift<2) 结果：125  
-发现解(5步)：(＋2) (Round Bit:2) (＋2) (Reverse) (Shift<2) 结果：125  
-发现解(5步)：(Round Bit:2) (Round Bit:2) (＋2) (Reverse) (Shift<2) 结果：125  
-发现解(5步)：(Shift<1) (Shift<1) (Shift<1) (Shift<1) (Reverse) 结果：125  
-发现解(5步)：(Shift<2) (Shift<2) (Shift<2) (Shift<1) (Reverse) 结果：125  
-发现解(5步)：(＋2) (Round Bit:2) (＋2) (Shift<1) (Reverse) 结果：125  
-发现解(5步)：(Round Bit:2) (Round Bit:2) (＋2) (Shift<1) (Reverse) 结果：125  
-发现解(5步)：(Shift<2) (Shift<2) (Shift<1) (Shift<2) (Reverse) 结果：125  
-发现解(5步)：(Shift<2) (Shift<1) (Shift<2) (Shift<2) (Reverse) 结果：125  
-发现解(5步)：(Shift<1) (Shift<2) (Shift<2) (Shift<2) (Reverse) 结果：125  
-发现解(5步)：(Reverse) (Reverse) (Shift<2) (Shift<2) (Reverse) 结果：125  
-发现解(5步)：(Round Bit:2) (＋2) (Shift<2) (Shift<2) (Reverse) 结果：125  
-发现解(5步)：(Reverse) (Shift<1) (Reverse) (Shift<2) (Reverse) 结果：125  
-发现解(5步)：(Shift<2) (Reverse) (Reverse) (Shift<2) (Reverse) 结果：125  
-发现解(5步)：(Reverse) (Shift<1) (Shift<1) (Reverse) (Reverse) 结果：125  
-发现解(5步)：(Shift<2) (Reverse) (Shift<1) (Reverse) (Reverse) 结果：125  
-发现解(5步)：(Shift<2) (Shift<2) (Reverse) (Reverse) (Reverse) 结果：125  
 
-note: 579194 time(s) try, 67 solution(s) found  
+note: 5783 time(s) try, 10 solution(s) found  
 ### Level 120
 p =======> 6
 e =======> 2
@@ -1885,7 +1376,7 @@ note: 14 time(s) try, 2 solution(s) found
 发现解(4步)：(SUM) (SUM) (＋3) (＋3) 结果：7  
 发现解(4步)：(SUM) (Reverse) (＋3) (＋3) 结果：7  
 
-note: 120 time(s) try, 10 solution(s) found  
+note: 115 time(s) try, 10 solution(s) found  
 ### Level 126
 -----------------------0-----------------------  
 发现解(3步)：(＋4) (SUM) (CUT1) 结果：0  
@@ -2008,14 +1499,8 @@ note: 340 time(s) try, 2 solution(s) found
 发现解(5步)：(Reverse) (Reverse) (×5) (×5) (Mirror) 结果：5005  
 发现解(5步)：(Reverse) (×5) (×5) (Mirror) (Reverse) 结果：5005  
 发现解(5步)：(×5) (×5) (Mirror) (Reverse) (Reverse) 结果：5005  
-发现解(5步)：(×5) (Mirror) (×5) (Reverse) (Reverse) 结果：5005  
-发现解(5步)：(Reverse) (×5) (Mirror) (×5) (Reverse) 结果：5005  
-发现解(5步)：(×5) (Mirror) (Reverse) (×5) (Reverse) 结果：5005  
-发现解(5步)：(Reverse) (Reverse) (×5) (Mirror) (×5) 结果：5005  
-发现解(5步)：(Reverse) (×5) (Mirror) (Reverse) (×5) 结果：5005  
-发现解(5步)：(×5) (Mirror) (Reverse) (Reverse) (×5) 结果：5005  
 
-note: 363 time(s) try, 16 solution(s) found  
+note: 237 time(s) try, 10 solution(s) found  
 -----------------------1001-----------------------  
 发现解(2步)：(×5) (Mirror) 结果：1001  
 发现解(3步)：(Reverse) (×5) (Mirror) 结果：1001  
@@ -2028,7 +1513,7 @@ note: 363 time(s) try, 16 solution(s) found
 发现解(5步)：(Reverse) (×5) (Mirror) (Reverse) (Reverse) 结果：1001  
 发现解(5步)：(×5) (Mirror) (Reverse) (Reverse) (Reverse) 结果：1001  
 
-note: 363 time(s) try, 10 solution(s) found  
+note: 240 time(s) try, 10 solution(s) found  
 -----------------------275-----------------------  
 发现解(5步)：(×5) (×5) (Reverse) (Mirror) (×5) 结果：275  
 发现解(5步)：(×5) (Reverse) (×5) (Mirror) (×5) 结果：275  
@@ -2096,9 +1581,8 @@ note: 62 time(s) try, 2 solution(s) found
 发现解(5步)：([+]1) (Mirror) (Mirror) (SUM) (＋3) 结果：15  
 发现解(5步)：([+]1) (＋3) (Mirror) (SUM) (＋3) 结果：15  
 发现解(5步)：([+]1) ([+]1) (＋4) (＋4) (＋4) 结果：15  
-发现解(5步)：([+]1) (＋3) (＋3) (＋3) (＋3) 结果：15  
 
-note: 1364 time(s) try, 11 solution(s) found  
+note: 1349 time(s) try, 10 solution(s) found  
 ### Level 146
 -----------------------20-----------------------  
 发现解(5步)：([+]2) (×5) (×5) ([+]2) (CUT5) 结果：20  
@@ -2121,20 +1605,8 @@ note: 39 time(s) try, 1 solution(s) found
 发现解(5步)：(43=>2) (at 1th plus2) ([+]1) (at 2th plus3) ([+]1) 结果：36  
 发现解(5步)：(at 1th plus2) (43=>2) ([+]1) (at 2th plus3) ([+]1) 结果：36  
 发现解(5步)：(at 1th plus2) ([+]1) (43=>2) (at 2th plus3) ([+]1) 结果：36  
-发现解(5步)：(at 1th plus2) ([+]1) (at 2th plus3) (43=>2) ([+]1) 结果：36  
-发现解(5步)：(43=>2) (43=>2) (at 1th plus2) ([+]1) (at 2th plus3) 结果：36  
-发现解(5步)：(43=>2) (at 1th plus2) (43=>2) ([+]1) (at 2th plus3) 结果：36  
-发现解(5步)：(at 1th plus2) (43=>2) (43=>2) ([+]1) (at 2th plus3) 结果：36  
-发现解(5步)：(43=>2) (at 1th plus2) ([+]1) (43=>2) (at 2th plus3) 结果：36  
-发现解(5步)：(at 1th plus2) (43=>2) ([+]1) (43=>2) (at 2th plus3) 结果：36  
-发现解(5步)：(at 1th plus2) ([+]1) (43=>2) (43=>2) (at 2th plus3) 结果：36  
-发现解(5步)：(at 1th plus2) ([+]1) (at 2th plus3) ([+]1) (43=>2) 结果：36  
-发现解(5步)：(43=>2) (at 1th plus2) ([+]1) (at 2th plus3) (43=>2) 结果：36  
-发现解(5步)：(at 1th plus2) (43=>2) ([+]1) (at 2th plus3) (43=>2) 结果：36  
-发现解(5步)：(at 1th plus2) ([+]1) (43=>2) (at 2th plus3) (43=>2) 结果：36  
-发现解(5步)：(at 1th plus2) ([+]1) (at 2th plus3) (43=>2) (43=>2) 结果：36  
 
-note: 37448 time(s) try, 22 solution(s) found  
+note: 6154 time(s) try, 10 solution(s) found  
 -----------------------6-----------------------  
 发现解(5步)：([+]1) (at 1th plus3) (43=>2) ([+]1) (at 1th plus4) 结果：6  
 发现解(5步)：([+]1) (at 1th plus3) (at 1th plus3) (at 1th plus3) (at 1th plus3) 结果：6  
@@ -2156,154 +1628,8 @@ note: 37448 time(s) try, 6 solution(s) found
 发现解(4步)：([+]2) (at 4th Insert5) (SUM) ([+]2) 结果：11  
 发现解(4步)：([+]2) (at 1th Insert5) ([+]2) (SUM) 结果：11  
 发现解(4步)：([+]2) (at 2th Insert5) ([+]2) (SUM) 结果：11  
-发现解(4步)：([+]2) (at 3th Insert5) ([+]2) (SUM) 结果：11  
-发现解(4步)：([+]2) (at 4th Insert5) ([+]2) (SUM) 结果：11  
-发现解(4步)：([+]2) (at 1th Insert5) (56=>10) (SUM) 结果：11  
-发现解(4步)：([+]2) (at 2th Insert5) (56=>10) (SUM) 结果：11  
-发现解(4步)：([+]2) (at 3th Insert5) (56=>10) (SUM) 结果：11  
-发现解(4步)：([+]2) (at 4th Insert5) (56=>10) (SUM) 结果：11  
-发现解(4步)：(SUM) ([+]2) (at 1th Insert5) (SUM) 结果：11  
-发现解(4步)：(56=>10) ([+]2) (at 1th Insert5) (SUM) 结果：11  
-发现解(4步)：([+]2) (SUM) (at 1th Insert5) (SUM) 结果：11  
-发现解(4步)：([+]2) (56=>10) (at 1th Insert5) (SUM) 结果：11  
-发现解(4步)：(SUM) ([+]2) (at 2th Insert5) (SUM) 结果：11  
-发现解(4步)：(56=>10) ([+]2) (at 2th Insert5) (SUM) 结果：11  
-发现解(4步)：([+]2) (SUM) (at 2th Insert5) (SUM) 结果：11  
-发现解(4步)：([+]2) (56=>10) (at 2th Insert5) (SUM) 结果：11  
-发现解(4步)：(56=>10) ([+]2) (at 3th Insert5) (SUM) 结果：11  
-发现解(4步)：([+]2) (56=>10) (at 3th Insert5) (SUM) 结果：11  
-发现解(4步)：(56=>10) ([+]2) (at 4th Insert5) (SUM) 结果：11  
-发现解(4步)：([+]2) (56=>10) (at 4th Insert5) (SUM) 结果：11  
-发现解(4步)：([+]2) (at 1th Insert5) (SUM) (56=>10) 结果：11  
-发现解(4步)：([+]2) (at 2th Insert5) (SUM) (56=>10) 结果：11  
-发现解(4步)：([+]2) (at 3th Insert5) (SUM) (56=>10) 结果：11  
-发现解(4步)：([+]2) (at 4th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (SUM) ([+]2) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (SUM) ([+]2) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (SUM) ([+]2) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (SUM) ([+]2) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) ([+]2) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) ([+]2) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) ([+]2) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) ([+]2) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (56=>10) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (56=>10) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (56=>10) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (56=>10) (SUM) ([+]2) 结果：11  
-发现解(5步)：(SUM) ([+]2) (at 1th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 1th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (SUM) (at 1th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 1th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：(SUM) ([+]2) (at 2th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 2th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (SUM) (at 2th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 2th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 3th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 3th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 4th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 4th Insert5) (SUM) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (SUM) (56=>10) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (SUM) (56=>10) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (SUM) (56=>10) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (SUM) (56=>10) ([+]2) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) ([+]2) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) ([+]2) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) ([+]2) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) ([+]2) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (56=>10) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (56=>10) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (56=>10) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (56=>10) ([+]2) (SUM) 结果：11  
-发现解(5步)：(SUM) ([+]2) (at 1th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 1th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (SUM) (at 1th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 1th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：(SUM) ([+]2) (at 2th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 2th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (SUM) (at 2th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 2th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 3th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 3th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 4th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 4th Insert5) ([+]2) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) ([+]2) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) ([+]2) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) ([+]2) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) ([+]2) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (56=>10) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (56=>10) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (56=>10) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (56=>10) (56=>10) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 1th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 1th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：(SUM) ([+]2) (at 2th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 2th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (SUM) (at 2th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 2th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 3th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 3th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 4th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 4th Insert5) (56=>10) (SUM) 结果：11  
-发现解(5步)：(SUM) (SUM) ([+]2) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) (SUM) ([+]2) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(SUM) (56=>10) ([+]2) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) (56=>10) ([+]2) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(SUM) ([+]2) (SUM) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (SUM) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (SUM) (SUM) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (SUM) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(SUM) ([+]2) (56=>10) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (56=>10) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (SUM) (56=>10) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (56=>10) (at 1th Insert5) (SUM) 结果：11  
-发现解(5步)：(SUM) (SUM) ([+]2) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) (SUM) ([+]2) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(SUM) (56=>10) ([+]2) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) (56=>10) ([+]2) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(SUM) ([+]2) (SUM) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (SUM) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (SUM) (SUM) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (SUM) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(SUM) ([+]2) (56=>10) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (56=>10) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (SUM) (56=>10) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (56=>10) (at 2th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) (56=>10) ([+]2) (at 3th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (56=>10) (at 3th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (56=>10) (at 3th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) (56=>10) ([+]2) (at 4th Insert5) (SUM) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (56=>10) (at 4th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (56=>10) (56=>10) (at 4th Insert5) (SUM) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (SUM) ([+]2) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (SUM) ([+]2) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (SUM) ([+]2) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (SUM) ([+]2) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) ([+]2) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) ([+]2) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) ([+]2) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) ([+]2) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (56=>10) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (56=>10) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (56=>10) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (56=>10) (SUM) (56=>10) 结果：11  
-发现解(5步)：(SUM) ([+]2) (at 1th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 1th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (SUM) (at 1th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 1th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：(SUM) ([+]2) (at 2th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 2th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (SUM) (at 2th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 2th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 3th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 3th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：(56=>10) ([+]2) (at 4th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (56=>10) (at 4th Insert5) (SUM) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 1th Insert5) (SUM) (56=>10) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 2th Insert5) (SUM) (56=>10) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 3th Insert5) (SUM) (56=>10) (56=>10) 结果：11  
-发现解(5步)：([+]2) (at 4th Insert5) (SUM) (56=>10) (56=>10) 结果：11  
 
-note: 66429 time(s) try, 156 solution(s) found  
+note: 1585 time(s) try, 10 solution(s) found  
 -----------------------1-----------------------  
 发现解(5步)：(SUM) ([+]2) (at 1th Insert5) (56=>10) (SUM) 结果：1  
 发现解(5步)：([+]2) (SUM) (at 1th Insert5) (56=>10) (SUM) 结果：1  
@@ -2361,18 +1687,8 @@ note: 69904 time(s) try, 4 solution(s) found
 发现解(4步)：(at 2th plus1) (at 1th Replace6) (＋5) (at 2th plus1) 结果：72  
 发现解(4步)：(at 1th Replace6) (at 2th Replace6) (＋5) (at 2th plus1) 结果：72  
 发现解(4步)：(at 2th Replace6) (at 2th Replace6) (＋5) (at 2th plus1) 结果：72  
-发现解(4步)：(at 2th plus1) (at 2th Replace6) (＋5) (at 2th plus1) 结果：72  
-发现解(4步)：(at 1th Replace6) (at 2th plus1) (＋5) (at 2th plus1) 结果：72  
-发现解(4步)：(at 2th Replace6) (at 2th plus1) (at 1th Replace6) (＋5) 结果：72  
-发现解(4步)：(at 2th plus1) (at 2th plus1) (at 1th Replace6) (＋5) 结果：72  
-发现解(4步)：(at 2th Replace6) (at 1th Replace6) (at 2th plus1) (＋5) 结果：72  
-发现解(4步)：(at 2th plus1) (at 1th Replace6) (at 2th plus1) (＋5) 结果：72  
-发现解(4步)：(at 1th Replace6) (at 2th Replace6) (at 2th plus1) (＋5) 结果：72  
-发现解(4步)：(at 2th Replace6) (at 2th Replace6) (at 2th plus1) (＋5) 结果：72  
-发现解(4步)：(at 2th plus1) (at 2th Replace6) (at 2th plus1) (＋5) 结果：72  
-发现解(4步)：(at 1th Replace6) (at 2th plus1) (at 2th plus1) (＋5) 结果：72  
 
-note: 69904 time(s) try, 20 solution(s) found  
+note: 44834 time(s) try, 10 solution(s) found  
 -----------------------26-----------------------  
 发现解(3步)：(÷5) (at 1th plus1) (at 2th Replace6) 结果：26  
 发现解(3步)：(÷5) (at 2th Replace6) (at 1th plus1) 结果：26  
@@ -2384,23 +1700,8 @@ note: 69904 time(s) try, 20 solution(s) found
 发现解(4步)：(at 1th plus1) (÷5) (at 1th plus1) (at 2th Replace6) 结果：26  
 发现解(4步)：(＋5) (÷5) (at 1th plus1) (at 2th Replace6) 结果：26  
 发现解(4步)：(÷5) (at 1th plus1) (at 2th plus1) (at 2th Replace6) 结果：26  
-发现解(4步)：(÷5) (at 2th Replace6) (＋5) (at 2th Replace6) 结果：26  
-发现解(4步)：(÷5) (at 1th plus1) (＋5) (at 2th Replace6) 结果：26  
-发现解(4步)：(÷5) (＋5) (＋5) (at 2th Replace6) 结果：26  
-发现解(4步)：(at 1th plus1) (÷5) (＋5) (at 2th Replace6) 结果：26  
-发现解(4步)：(÷5) (at 2th Replace6) (at 2th Replace6) (at 1th plus1) 结果：26  
-发现解(4步)：(÷5) (at 2th plus1) (at 2th Replace6) (at 1th plus1) 结果：26  
-发现解(4步)：(÷5) (＋5) (at 2th Replace6) (at 1th plus1) 结果：26  
-发现解(4步)：(at 1th Replace6) (÷5) (at 2th Replace6) (at 1th plus1) 结果：26  
-发现解(4步)：(at 1th plus1) (÷5) (at 2th Replace6) (at 1th plus1) 结果：26  
-发现解(4步)：(＋5) (÷5) (at 2th Replace6) (at 1th plus1) 结果：26  
-发现解(4步)：(at 1th plus1) (÷5) (at 2th plus1) (at 1th plus1) 结果：26  
-发现解(4步)：(＋5) (at 1th plus1) (÷5) (at 1th plus1) 结果：26  
-发现解(4步)：(at 1th plus1) (＋5) (÷5) (at 1th plus1) 结果：26  
-发现解(4步)：(at 1th plus1) (÷5) (at 1th plus1) (at 2th plus1) 结果：26  
-发现解(4步)：(÷5) (at 2th Replace6) (＋5) (＋5) 结果：26  
 
-note: 69904 time(s) try, 25 solution(s) found  
+note: 10912 time(s) try, 10 solution(s) found  
 ### Level 156
 -----------------------18-----------------------  
 发现解(2步)：(at 1th Replace7) (SUM) 结果：18  
@@ -2424,14 +1725,8 @@ note: 819 time(s) try, 2 solution(s) found
 发现解(4步)：(at 1th Replace6) (Mirror) (at 1th Replace6) (SUM) 结果：12  
 发现解(4步)：(at 1th Replace6) (at 1th Replace6) (at 2th Replace6) (SUM) 结果：12  
 发现解(4步)：(at 2th Replace6) (at 1th Replace6) (at 2th Replace6) (SUM) 结果：12  
-发现解(4步)：(at 1th Replace6) (at 2th Replace6) (at 2th Replace6) (SUM) 结果：12  
-发现解(4步)：(Mirror) (at 1th Replace6) (at 4th Replace6) (SUM) 结果：12  
-发现解(4步)：(at 1th Replace6) (Mirror) (at 4th Replace6) (SUM) 结果：12  
-发现解(4步)：(at 1th Replace6) (at 1th Replace6) (Mirror) (SUM) 结果：12  
-发现解(4步)：(SUM) (at 1th Replace6) (Mirror) (SUM) 结果：12  
-发现解(4步)：(at 1th Replace6) (SUM) (Mirror) (SUM) 结果：12  
 
-note: 11110 time(s) try, 16 solution(s) found  
+note: 10212 time(s) try, 10 solution(s) found  
 -----------------------64-----------------------  
 发现解(4步)：(Mirror) (SUM) (Mirror) (at 1th Replace6) 结果：64  
 
@@ -2458,7 +1753,7 @@ note: 1110 time(s) try, 1 solution(s) found
 发现解(4步)：(at 3th Replace8) (at 1th Replace8) (Mirror) (SUM) 结果：32  
 发现解(4步)：(at 1th Replace8) (at 3th Replace8) (Mirror) (SUM) 结果：32  
 
-note: 16104 time(s) try, 10 solution(s) found  
+note: 13223 time(s) try, 10 solution(s) found  
 -----------------------181-----------------------  
 发现解(4步)：(SUM) (Mirror) (＋2) (at 2th Replace8) 结果：181  
 
@@ -2519,13 +1814,8 @@ note: 584 time(s) try, 2 solution(s) found
 发现解(4步)：(lnv10) (SUM) (×3) (SUM) 结果：9  
 发现解(4步)：(×3) (SUM) (×3) (SUM) 结果：9  
 发现解(4步)：(lnv10) (<<) (×3) (SUM) 结果：9  
-发现解(4步)：(lnv10) (×3) (×3) (SUM) 结果：9  
-发现解(4步)：(SUM) (×3) (×3) (SUM) 结果：9  
-发现解(4步)：(×3) (×3) (×3) (SUM) 结果：9  
-发现解(4步)：(lnv10) (SUM) (lnv10) (<<) 结果：9  
-发现解(4步)：(SUM) (×3) (lnv10) (<<) 结果：9  
 
-note: 340 time(s) try, 15 solution(s) found  
+note: 205 time(s) try, 10 solution(s) found  
 ### Level 164
 -----------------------7-----------------------  
 发现解(3步)：(3=>5) (÷5) (lnv10) 结果：7  
@@ -2571,13 +1861,8 @@ note: 7380 time(s) try, 3 solution(s) found
 发现解(4步)：(Delete Bit:1) (＋6) (9=>5) (lnv10) 结果：40  
 发现解(4步)：(＋6) (Delete Bit:1) (9=>5) (lnv10) 结果：40  
 发现解(4步)：(9=>5) (＋6) (lnv10) (Delete Bit:1) 结果：40  
-发现解(4步)：(＋6) (9=>5) (lnv10) (Delete Bit:1) 结果：40  
-发现解(4步)：(＋6) (lnv10) (9=>5) (Delete Bit:1) 结果：40  
-发现解(4步)：(Delete Bit:1) (＋6) (lnv10) (9=>5) 结果：40  
-发现解(4步)：(＋6) (Delete Bit:1) (lnv10) (9=>5) 结果：40  
-发现解(4步)：(＋6) (lnv10) (Delete Bit:1) (9=>5) 结果：40  
 
-note: 7380 time(s) try, 15 solution(s) found  
+note: 2295 time(s) try, 10 solution(s) found  
 ### Level 167
 -----------------------1-----------------------  
 发现解(3步)：(SUM) (SUM) (lnv10) 结果：1  
@@ -2590,9 +1875,8 @@ note: 7380 time(s) try, 15 solution(s) found
 发现解(5步)：(SUM) (SUM) (SUM) (lnv10) (SUM) 结果：1  
 发现解(5步)：(SUM) (SUM) (lnv10) (SUM) (SUM) 结果：1  
 发现解(5步)：(＋2) (lnv10) (SUM) (SUM) (SUM) 结果：1  
-发现解(5步)：(lnv10) (SUM) (lnv10) (＋2) (SUM) 结果：1  
 
-note: 363 time(s) try, 11 solution(s) found  
+note: 240 time(s) try, 10 solution(s) found  
 -----------------------99-----------------------  
 发现解(3步)：(＋2) (SUM) (lnv10) 结果：99  
 发现解(4步)：(SUM) (lnv10) (SUM) (lnv10) 结果：99  
@@ -2649,25 +1933,8 @@ note: 69904 time(s) try, 8 solution(s) found
 发现解(4步)：(Round Bit:2) (<<) (lnv10) (Round Bit:1) 结果：60  
 发现解(4步)：(<<) (lnv10) (at 2th Replace2) (Round Bit:1) 结果：60  
 发现解(4步)：(lnv10) (<<) (at 2th Replace2) (Round Bit:1) 结果：60  
-发现解(4步)：(<<) (lnv10) (Round Bit:1) (Round Bit:1) 结果：60  
-发现解(4步)：(lnv10) (<<) (Round Bit:1) (Round Bit:1) 结果：60  
-发现解(4步)：(at 3th Replace2) (lnv10) (<<) (Round Bit:1) 结果：60  
-发现解(4步)：(Round Bit:2) (lnv10) (<<) (Round Bit:1) 结果：60  
-发现解(4步)：(lnv10) (at 2th Replace2) (<<) (Round Bit:1) 结果：60  
-发现解(4步)：(lnv10) (at 3th Replace2) (<<) (Round Bit:1) 结果：60  
-发现解(4步)：(lnv10) (Round Bit:1) (<<) (Round Bit:1) 结果：60  
-发现解(4步)：(lnv10) (Round Bit:2) (<<) (Round Bit:1) 结果：60  
-发现解(4步)：(at 2th Replace2) (Round Bit:1) (lnv10) (<<) 结果：60  
-发现解(4步)：(lnv10) (Round Bit:1) (at 3th Replace2) (<<) 结果：60  
-发现解(4步)：(at 3th Replace2) (lnv10) (Round Bit:1) (<<) 结果：60  
-发现解(4步)：(Round Bit:2) (lnv10) (Round Bit:1) (<<) 结果：60  
-发现解(4步)：(lnv10) (at 2th Replace2) (Round Bit:1) (<<) 结果：60  
-发现解(4步)：(lnv10) (at 3th Replace2) (Round Bit:1) (<<) 结果：60  
-发现解(4步)：(lnv10) (Round Bit:1) (Round Bit:1) (<<) 结果：60  
-发现解(4步)：(lnv10) (Round Bit:2) (Round Bit:1) (<<) 结果：60  
-发现解(4步)：(lnv10) (Round Bit:1) (Round Bit:2) (<<) 结果：60  
 
-note: 69904 time(s) try, 27 solution(s) found  
+note: 41985 time(s) try, 10 solution(s) found  
 -----------------------80-----------------------  
 发现解(4步)：(<<) (Round Bit:1) (at 1th Replace2) (lnv10) 结果：80  
 发现解(4步)：(Round Bit:1) (<<) (at 1th Replace2) (lnv10) 结果：80  
@@ -2732,10 +1999,8 @@ note: 340 time(s) try, 1 solution(s) found
 发现解(5步)：(Store) (lnv10) (lnv10) (Store) (lnv10) 结果：99  
 发现解(5步)：(lnv10) (Store) (lnv10) (Store) (lnv10) 结果：99  
 发现解(5步)：(lnv10) (SUM) (SUM) (Store) (9) 结果：99  
-发现解(5步)：(lnv10) (SUM) (lnv10) (SUM) (lnv10) 结果：99  
-发现解(5步)：(lnv10) (lnv10) (lnv10) (lnv10) (lnv10) 结果：99  
 
-note: 9330 time(s) try, 12 solution(s) found  
+note: 491 time(s) try, 10 solution(s) found  
 -----------------------82-----------------------  
 发现解(4步)：(SUM) (Store) (lnv10) (2) 结果：82  
 发现解(5步)：(Store) (SUM) (Store) (lnv10) (2) 结果：82  
@@ -2753,3 +2018,461 @@ note: 1364 time(s) try, 1 solution(s) found
 发现解(5步)：(Store) (33) (SUM) (Store) (12) 结果：1212  
 
 note: 1364 time(s) try, 1 solution(s) found  
+### Level 177
+-----------------------12-----------------------  
+发现解(4步)：(at 1th plus5) (Store) (60) (SUM) 结果：12  
+发现解(5步)：(Store) (at 1th plus5) (Store) (60) (SUM) 结果：12  
+发现解(5步)：(at 1th plus5) (Store) (60) (Store) (SUM) 结果：12  
+发现解(4步)：(at 2th plus5) (Store) (15) (SUM) 结果：12  
+发现解(5步)：(Store) (at 2th plus5) (Store) (15) (SUM) 结果：12  
+发现解(5步)：(at 2th plus5) (Store) (15) (Store) (SUM) 结果：12  
+发现解(5步)：(Store) (at 2th plus5) (at 1th plus5) (10) (SUM) 结果：12  
+发现解(5步)：(SUM) (at 1th plus5) (Store) (6) (SUM) 结果：12  
+发现解(5步)：(Store) (at 1th plus5) (at 2th plus5) (10) (SUM) 结果：12  
+发现解(5步)：(at 1th plus5) (Store) (SUM) (60) (SUM) 结果：12  
+
+note: 62627 time(s) try, 10 solution(s) found  
+-----------------------710-----------------------  
+发现解(5步)：(Store) (10) (SUM) (at 1th plus5) (10) 结果：710  
+发现解(5步)：(Store) (at 1th plus5) (10) (SUM) (10) 结果：710  
+发现解(5步)：(Store) (at 2th plus5) (10) (SUM) (10) 结果：710  
+发现解(5步)：(Store) (10) (at 1th plus5) (SUM) (10) 结果：710  
+发现解(5步)：(Store) (10) (at 2th plus5) (SUM) (10) 结果：710  
+发现解(5步)：(Store) (10) (at 3th plus5) (SUM) (10) 结果：710  
+发现解(5步)：(Store) (10) (at 4th plus5) (SUM) (10) 结果：710  
+发现解(5步)：(Store) (10) (SUM) (10) (at 1th plus5) 结果：710  
+
+note: 1118480 time(s) try, 8 solution(s) found  
+### Level 178
+-----------------------2112-----------------------  
+发现解(4步)：(<<) (Store) (Reverse) (12) 结果：2112  
+发现解(5步)：(Store) (<<) (Store) (Reverse) (12) 结果：2112  
+发现解(5步)：(<<) (Store) (Reverse) (12) (Reverse) 结果：2112  
+发现解(5步)：(Store) (<<) (Reverse) (123) (<<) 结果：2112  
+
+note: 9330 time(s) try, 4 solution(s) found  
+-----------------------33-----------------------  
+发现解(5步)：(Reverse) (<<) (<<) (Store) (3) 结果：33  
+
+note: 9330 time(s) try, 1 solution(s) found  
+### Level 179
+-----------------------131-----------------------  
+发现解(5步)：(<<) (Store) (＋2) (11) (<<) 结果：131  
+发现解(6步)：(Store) (<<) (Store) (＋2) (11) (<<) 结果：131  
+发现解(5步)：(<<) (＋2) (Store) (13) (<<) 结果：131  
+发现解(6步)：(Store) (<<) (＋2) (Store) (13) (<<) 结果：131  
+发现解(6步)：(<<) (Store) (＋2) (Store) (13) (<<) 结果：131  
+发现解(6步)：(<<) (Store) (＋2) (11) (Store) (<<) 结果：131  
+发现解(6步)：(<<) (＋2) (Store) (13) (Store) (<<) 结果：131  
+发现解(6步)：(<<) (<<) (Store) (1) (＋2) (1) 结果：131  
+发现解(6步)：(<<) (Store) (＋2) (11) (＋2) (<<) 结果：131  
+发现解(6步)：(<<) (＋2) (Store) (13) (＋2) (<<) 结果：131  
+
+note: 7767 time(s) try, 10 solution(s) found  
+-----------------------33-----------------------  
+发现解(5步)：(<<) (<<) (＋2) (Store) (3) 结果：33  
+发现解(6步)：(Store) (<<) (<<) (＋2) (Store) (3) 结果：33  
+发现解(6步)：(<<) (Store) (<<) (＋2) (Store) (3) 结果：33  
+发现解(6步)：(<<) (<<) (Store) (＋2) (Store) (3) 结果：33  
+发现解(6步)：(<<) (＋2) (<<) (＋2) (Store) (3) 结果：33  
+发现解(6步)：(＋2) (<<) (<<) (＋2) (Store) (3) 结果：33  
+发现解(6步)：(<<) (<<) (Store) (＋2) (1) (＋2) 结果：33  
+
+note: 55986 time(s) try, 7 solution(s) found  
+-----------------------123-----------------------  
+发现解(6步)：(＋2) (<<) (Store) (12) (<<) (＋2) 结果：123  
+
+note: 55986 time(s) try, 1 solution(s) found  
+### Level 180
+s =======> 7
+u =======> 7
+b =======> 1
+t =======> 7
+r =======> 6
+a =======> 1
+c =======> 1
+t =======> 7
+新的游戏目标：771 76 117
+-----------------------771-----------------------  
+发现解(3步)：(Reverse) (at 2th plus6) (ABC) 结果：771  
+发现解(3步)：(at 2th plus6) (Reverse) (ABC) 结果：771  
+
+note: 1110 time(s) try, 2 solution(s) found  
+-----------------------76-----------------------  
+发现解(4步)：(at 1th plus6) (<<) (＋5) (ABC) 结果：76  
+发现解(4步)：(Reverse) (<<) (＋5) (ABC) 结果：76  
+发现解(4步)：(<<) (at 1th plus6) (＋5) (ABC) 结果：76  
+发现解(4步)：(<<) (＋5) (at 1th plus6) (ABC) 结果：76  
+
+note: 1110 time(s) try, 4 solution(s) found  
+-----------------------117-----------------------  
+发现解(1步) (ABC) 结果：117  
+发现解(3步)：(Reverse) (Reverse) (ABC) 结果：117  
+
+note: 1111 time(s) try, 2 solution(s) found  
+### Level 181
+-----------------------25-----------------------  
+发现解(2步)：(lock1) (＋12) 结果：25  
+
+note: 56 time(s) try, 1 solution(s) found  
+### Level 182
+-----------------------55-----------------------  
+发现解(2步)：(lock1) (Reverse) 结果：55  
+
+note: 56 time(s) try, 1 solution(s) found  
+### Level 183
+-----------------------28-----------------------  
+发现解(2步)：(lock2) (SUM) 结果：28  
+
+note: 56 time(s) try, 1 solution(s) found  
+-----------------------108-----------------------  
+发现解(2步)：(lock3) (SUM) 结果：108  
+
+note: 56 time(s) try, 1 solution(s) found  
+### Level 184
+-----------------------49-----------------------  
+发现解(3步)：(Sort>) (lock2) (÷5) 结果：49  
+
+note: 584 time(s) try, 1 solution(s) found  
+-----------------------11-----------------------  
+发现解(3步)：(lock2) (Sort>) (÷5) 结果：11  
+
+note: 584 time(s) try, 1 solution(s) found  
+### Level 185
+-----------------------2400-----------------------  
+发现解(3步)：(lock3) (Round Bit:1) (at 2th plus5) 结果：2400  
+发现解(3步)：(lock3) (Round Bit:2) (at 2th plus5) 结果：2400  
+
+note: 6174 time(s) try, 2 solution(s) found  
+-----------------------7070-----------------------  
+发现解(3步)：(at 1th plus5) (lock2) (Round Bit:1) 结果：7070  
+发现解(3步)：(at 1th plus5) (lock2) (Round Bit:2) 结果：7070  
+发现解(3步)：(lock2) (Round Bit:1) (at 1th plus5) 结果：7070  
+发现解(3步)：(lock2) (Round Bit:2) (at 1th plus5) 结果：7070  
+
+note: 6174 time(s) try, 4 solution(s) found  
+### Level 186
+-----------------------2222-----------------------  
+发现解(3步)：(lock1) (Reverse) (Mirror) 结果：2222  
+
+note: 584 time(s) try, 1 solution(s) found  
+-----------------------1111-----------------------  
+发现解(3步)：(lock2) (Reverse) (Mirror) 结果：1111  
+
+note: 584 time(s) try, 1 solution(s) found  
+### Level 187
+-----------------------13-----------------------  
+发现解(3步)：(lock1) (at 3th Insert7) (SUM) 结果：13  
+发现解(3步)：(lock2) (at 3th Insert7) (SUM) 结果：13  
+发现解(4步)：(lock1) (at 3th Insert7) (SUM) (lock1) 结果：13  
+发现解(4步)：(lock1) (at 3th Insert7) (SUM) (lock2) 结果：13  
+发现解(4步)：(lock2) (at 3th Insert7) (SUM) (lock2) 结果：13  
+发现解(4步)：(lock1) (at 3th Insert7) (SUM) (lock3) 结果：13  
+发现解(4步)：(lock2) (at 3th Insert7) (SUM) (lock3) 结果：13  
+发现解(4步)：(lock1) (at 3th Insert7) (SUM) (lock4) 结果：13  
+发现解(4步)：(lock2) (at 3th Insert7) (SUM) (lock4) 结果：13  
+发现解(4步)：(lock1) (at 3th Insert7) (SUM) (lock5) 结果：13  
+
+note: 13300 time(s) try, 10 solution(s) found  
+-----------------------9-----------------------  
+发现解(4步)：(at 2th Insert7) (lock3) (SUM) (SUM) 结果：9  
+发现解(4步)：(at 3th Insert7) (lock3) (SUM) (SUM) 结果：9  
+
+note: 30940 time(s) try, 2 solution(s) found  
+### Level 188
+-----------------------48-----------------------  
+发现解(5步)：(lock3) (CUT2) (÷5) (lock2) (÷5) 结果：48  
+发现解(5步)：(lock3) (CUT2) (lock3) (÷5) (÷5) 结果：48  
+
+note: 37448 time(s) try, 2 solution(s) found  
+-----------------------480-----------------------  
+发现解(5步)：(lock4) (CUT2) (÷5) (lock3) (÷5) 结果：480  
+发现解(5步)：(lock4) (CUT2) (lock4) (÷5) (÷5) 结果：480  
+
+note: 37448 time(s) try, 2 solution(s) found  
+### Level 189
+-----------------------4-----------------------  
+发现解(3步)：(Round Bit:1) (Sort>) (×2) 结果：4  
+发现解(3步)：(Round Bit:1) (×2) (Sort>) 结果：4  
+发现解(3步)：(×2) (Round Bit:1) (Sort>) 结果：4  
+发现解(4步)：(Round Bit:1) (Sort>) (×2) (lock1) 结果：48  
+发现解(4步)：(Round Bit:1) (×2) (Sort>) (lock1) 结果：48  
+发现解(4步)：(×2) (Round Bit:1) (Sort>) (lock1) 结果：4  
+发现解(4步)：(Round Bit:1) (Sort>) (×2) (lock2) 结果：4  
+发现解(4步)：(Round Bit:1) (×2) (Sort>) (lock2) 结果：4  
+发现解(4步)：(×2) (Round Bit:1) (Sort>) (lock2) 结果：4  
+发现解(4步)：(Round Bit:1) (Sort>) (×2) (lock3) 结果：4  
+
+note: 9725 time(s) try, 10 solution(s) found  
+-----------------------45-----------------------  
+发现解(4步)：(lock3) (Round Bit:1) (×2) (Sort>) 结果：45  
+发现解(4步)：(×2) (lock3) (Round Bit:1) (Sort>) 结果：45  
+发现解(4步)：(×2) (Sort>) (lock1) (Round Bit:1) 结果：45  
+
+note: 41370 time(s) try, 3 solution(s) found  
+-----------------------54-----------------------  
+发现解(4步)：(lock3) (Round Bit:1) (Sort>) (×2) 结果：54  
+
+note: 41370 time(s) try, 1 solution(s) found  
+### Level 190
+-----------------------1-----------------------  
+发现解(2步)：(lnv10) (＋1) 结果：1  
+
+note: 6 time(s) try, 1 solution(s) found  
+### Level 191
+-----------------------5-----------------------  
+发现解(2步)：(1) (2=>5) 结果：5  
+
+note: 6 time(s) try, 1 solution(s) found  
+### Level 192
+-----------------------16-----------------------  
+发现解(2步)：(×2) (5) 结果：16  
+
+note: 6 time(s) try, 1 solution(s) found  
+-----------------------21-----------------------  
+发现解(2步)：(5) (×2) 结果：21  
+
+note: 6 time(s) try, 1 solution(s) found  
+### Level 193
+-----------------------57-----------------------  
+发现解(2步)：(3) (at 2th plus2) 结果：57  
+发现解(2步)：(at 1th plus2) (3) 结果：57  
+
+note: 56 time(s) try, 2 solution(s) found  
+-----------------------75-----------------------  
+发现解(2步)：(3) (at 1th plus2) 结果：75  
+发现解(2步)：(at 2th plus2) (3) 结果：75  
+
+note: 56 time(s) try, 2 solution(s) found  
+### Level 194
+-----------------------9-----------------------  
+发现解(2步)：(＋2) (lnv10) 结果：9  
+
+note: 12 time(s) try, 1 solution(s) found  
+-----------------------5-----------------------  
+发现解(2步)：(lnv10) (＋2) 结果：5  
+
+note: 12 time(s) try, 1 solution(s) found  
+-----------------------1-----------------------  
+发现解(1步)：(＋2) 结果：1  
+发现解(2步)：(0) (＋2) 结果：1  
+发现解(2步)：(＋2) (0) 结果：1  
+
+note: 12 time(s) try, 3 solution(s) found  
+### Level 195
+-----------------------7-----------------------  
+发现解(3步)：(1) (1) (SUM) 结果：7  
+发现解(4步)：(SUM) (1) (1) (SUM) 结果：7  
+发现解(4步)：(1) (SUM) (1) (SUM) 结果：7  
+发现解(4步)：(1) (1) (SUM) (SUM) 结果：7  
+
+note: 120 time(s) try, 4 solution(s) found  
+-----------------------121-----------------------  
+发现解(4步)：(1) (Mirror) (SUM) (1) 结果：121  
+
+note: 120 time(s) try, 1 solution(s) found  
+-----------------------111-----------------------  
+发现解(4步)：(Mirror) (Mirror) (SUM) (1) 结果：111  
+发现解(4步)：(Mirror) (1) (SUM) (1) 结果：111  
+
+note: 120 time(s) try, 2 solution(s) found  
+### Level 196
+-----------------------2-----------------------  
+发现解(4步)：(Mirror) (lnv10) (Store) (982) 结果：2  
+
+note: 1554 time(s) try, 1 solution(s) found  
+-----------------------992-----------------------  
+发现解(3步)：(Store) (lnv10) (91) 结果：992  
+发现解(2步)：(lnv10) (Mirror) 结果：992  
+发现解(3步)：(Store) (lnv10) (Mirror) 结果：992  
+发现解(3步)：(lnv10) (Store) (Mirror) 结果：992  
+发现解(4步)：(Store) (lnv10) (Store) (Mirror) 结果：992  
+发现解(4步)：(lnv10) (Mirror) (lnv10) (lnv10) 结果：992  
+发现解(4步)：(lnv10) (lnv10) (lnv10) (Mirror) 结果：992  
+
+note: 1554 time(s) try, 7 solution(s) found  
+-----------------------920-----------------------  
+发现解(3步)：(lnv10) (Store) (19) 结果：920  
+发现解(4步)：(Store) (lnv10) (Store) (19) 结果：920  
+
+note: 1554 time(s) try, 2 solution(s) found  
+### Level 197
+-----------------------525-----------------------  
+发现解(5步)：(Store) (<<) (lnv10) (15) (15) 结果：525  
+发现解(5步)：(Store) (lnv10) (<<) (15) (15) 结果：525  
+
+note: 9330 time(s) try, 2 solution(s) found  
+-----------------------220-----------------------  
+发现解(5步)：(Store) (lnv10) (15) (<<) (15) 结果：220  
+
+note: 9330 time(s) try, 1 solution(s) found  
+### Level 198
+-----------------------860-----------------------  
+发现解(4步)：(SUM) (at 1th Replace4) (Mirror) (Mirror) 结果：860  
+发现解(4步)：(at 2th Replace4) (at 1th Replace4) (Mirror) (Mirror) 结果：860  
+发现解(4步)：(at 1th Replace4) (at 2th Replace4) (Mirror) (Mirror) 结果：860  
+
+note: 16104 time(s) try, 3 solution(s) found  
+-----------------------500-----------------------  
+发现解(3步)：(Mirror) (at 1th Replace4) (Mirror) 结果：500  
+发现解(4步)：(Mirror) (at 1th Replace4) (at 1th Replace4) (Mirror) 结果：500  
+发现解(4步)：(Mirror) (at 3th Replace4) (at 1th Replace4) (Mirror) 结果：500  
+发现解(4步)：(Mirror) (at 1th Replace4) (at 3th Replace4) (Mirror) 结果：500  
+
+note: 16104 time(s) try, 4 solution(s) found  
+-----------------------78-----------------------  
+发现解(2步)：(Mirror) (<<) 结果：78  
+发现解(3步)：(Mirror) (at 3th Replace4) (<<) 结果：78  
+发现解(4步)：(<<) (Mirror) (Mirror) (<<) 结果：78  
+发现解(4步)：(Mirror) (at 3th Replace4) (at 3th Replace4) (<<) 结果：78  
+
+note: 16104 time(s) try, 4 solution(s) found  
+-----------------------444-----------------------  
+发现解(3步)：(Mirror) (at 2th Replace4) (at 1th Replace4) 结果：444  
+发现解(3步)：(at 2th Replace4) (Mirror) (at 2th Replace4) 结果：444  
+发现解(3步)：(Mirror) (at 1th Replace4) (at 2th Replace4) 结果：444  
+发现解(3步)：(SUM) (Mirror) (at 3th Replace4) 结果：444  
+发现解(4步)：(Mirror) (at 2th Replace4) (at 1th Replace4) (at 1th Replace4) 结果：444  
+发现解(4步)：(at 2th Replace4) (Mirror) (at 2th Replace4) (at 1th Replace4) 结果：444  
+发现解(4步)：(Mirror) (at 1th Replace4) (at 2th Replace4) (at 1th Replace4) 结果：444  
+发现解(4步)：(Mirror) (at 2th Replace4) (at 2th Replace4) (at 1th Replace4) 结果：444  
+发现解(4步)：(Mirror) (at 3th Replace4) (at 2th Replace4) (at 1th Replace4) 结果：444  
+发现解(4步)：(SUM) (Mirror) (at 3th Replace4) (at 1th Replace4) 结果：444  
+
+note: 6064 time(s) try, 10 solution(s) found  
+### Level 199
+-----------------------93-----------------------  
+发现解(5步)：(9) (at 3th Insert2) (9) (1) (CUT0) 结果：93  
+发现解(5步)：(9) (9) (at 3th Insert2) (1) (CUT0) 结果：93  
+发现解(5步)：(9) (9) (1) (at 3th Insert2) (CUT0) 结果：93  
+发现解(6步)：(1) (Sort>) (at 3th Insert2) (9) (9) (CUT0) 结果：93  
+发现解(6步)：(1) (Sort>) (9) (at 3th Insert2) (9) (CUT0) 结果：93  
+发现解(6步)：(1) (9) (Sort>) (at 3th Insert2) (9) (CUT0) 结果：93  
+发现解(6步)：(9) (1) (Sort>) (at 3th Insert2) (9) (CUT0) 结果：93  
+发现解(6步)：(Sort>) (9) (at 3th Insert2) (9) (1) (CUT0) 结果：93  
+发现解(6步)：(CUT0) (9) (at 3th Insert2) (9) (1) (CUT0) 结果：93  
+发现解(6步)：(9) (Sort>) (at 3th Insert2) (9) (1) (CUT0) 结果：93  
+
+note: 1021591 time(s) try, 10 solution(s) found  
+-----------------------131-----------------------  
+发现解(5步)：(1) (9) (at 4th Insert2) (at 3th Insert2) (CUT0) 结果：131  
+发现解(5步)：(1) (at 3th Insert2) (9) (at 5th Insert2) (CUT0) 结果：131  
+发现解(5步)：(1) (9) (at 3th Insert2) (at 5th Insert2) (CUT0) 结果：131  
+发现解(6步)：(1) (1) (9) (at 5th Insert2) (1) (9) 结果：131  
+发现解(6步)：(1) (9) (9) (at 5th Insert2) (1) (1) 结果：131  
+发现解(6步)：(at 1th Insert2) (at 1th Insert2) (9) (9) (Sort>) (1) 结果：131  
+发现解(6步)：(at 1th Insert2) (at 2th Insert2) (9) (9) (Sort>) (1) 结果：131  
+发现解(6步)：(at 1th Insert2) (9) (at 1th Insert2) (9) (Sort>) (1) 结果：131  
+发现解(6步)：(9) (at 1th Insert2) (at 1th Insert2) (9) (Sort>) (1) 结果：131  
+发现解(6步)：(at 1th Insert2) (9) (at 2th Insert2) (9) (Sort>) (1) 结果：131  
+
+note: 291413 time(s) try, 10 solution(s) found  
+-----------------------1-----------------------  
+发现解(4步)：(9) (9) (9) (1) 结果：1  
+发现解(5步)：(1) (Sort>) (9) (9) (9) 结果：1  
+发现解(5步)：(1) (9) (Sort>) (9) (9) 结果：1  
+发现解(5步)：(9) (1) (Sort>) (9) (9) 结果：1  
+发现解(5步)：(1) (9) (9) (Sort>) (9) 结果：1  
+发现解(5步)：(9) (1) (9) (Sort>) (9) 结果：1  
+发现解(5步)：(9) (9) (1) (Sort>) (9) 结果：1  
+发现解(5步)：(Sort>) (9) (9) (9) (1) 结果：1  
+发现解(5步)：(CUT0) (9) (9) (9) (1) 结果：1  
+发现解(5步)：(9) (Sort>) (9) (9) (1) 结果：1  
+
+note: 21191 time(s) try, 10 solution(s) found  
+-----------------------9933-----------------------  
+发现解(5步)：(at 1th Insert2) (at 1th Insert2) (9) (1) (1) 结果：9933  
+发现解(5步)：(at 1th Insert2) (at 2th Insert2) (9) (1) (1) 结果：9933  
+发现解(5步)：(at 1th Insert2) (9) (at 1th Insert2) (1) (1) 结果：9933  
+发现解(5步)：(9) (at 1th Insert2) (at 1th Insert2) (1) (1) 结果：9933  
+发现解(5步)：(at 1th Insert2) (9) (at 2th Insert2) (1) (1) 结果：9933  
+发现解(5步)：(9) (at 1th Insert2) (at 2th Insert2) (1) (1) 结果：9933  
+发现解(5步)：(at 1th Insert2) (9) (1) (at 1th Insert2) (1) 结果：9933  
+发现解(5步)：(9) (at 1th Insert2) (1) (at 1th Insert2) (1) 结果：9933  
+发现解(5步)：(9) (1) (at 1th Insert2) (at 1th Insert2) (1) 结果：9933  
+发现解(5步)：(at 1th Insert2) (9) (1) (at 2th Insert2) (1) 结果：9933  
+
+note: 24213 time(s) try, 10 solution(s) found  
+-----------------------31-----------------------  
+发现解(5步)：(at 2th Insert2) (9) (9) (9) (at 4th Insert2) 结果：31  
+发现解(5步)：(9) (at 2th Insert2) (9) (9) (at 4th Insert2) 结果：31  
+发现解(5步)：(9) (9) (at 2th Insert2) (9) (at 4th Insert2) 结果：31  
+发现解(5步)：(9) (9) (9) (at 2th Insert2) (at 4th Insert2) 结果：31  
+发现解(5步)：(at 1th Insert2) (at 1th Insert2) (9) (9) (CUT0) 结果：31  
+发现解(5步)：(at 1th Insert2) (at 2th Insert2) (9) (9) (CUT0) 结果：31  
+发现解(5步)：(at 1th Insert2) (9) (at 1th Insert2) (9) (CUT0) 结果：31  
+发现解(5步)：(9) (at 1th Insert2) (at 1th Insert2) (9) (CUT0) 结果：31  
+发现解(5步)：(at 1th Insert2) (9) (at 2th Insert2) (9) (CUT0) 结果：31  
+发现解(5步)：(9) (at 1th Insert2) (at 2th Insert2) (9) (CUT0) 结果：31  
+
+note: 101431 time(s) try, 10 solution(s) found  
+### Level 200
+l =======> 4
+e =======> 2
+g =======> 3
+s =======> 7
+h =======> 3
+e =======> 2
+a =======> 1
+d =======> 2
+a =======> 1
+r =======> 6
+m =======> 5
+s =======> 7
+c =======> 1
+o =======> 5
+r =======> 6
+e =======> 2
+新的游戏目标：4237 3212 1657 1562
+-----------------------4237-----------------------  
+发现解(6步)：(at 3th plus5) (at 3th plus3) (at 2th plus3) (at 2th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 3th plus3) (at 3th plus5) (at 2th plus3) (at 2th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 3th plus5) (at 2th plus3) (at 3th plus3) (at 2th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 2th plus3) (at 3th plus5) (at 3th plus3) (at 2th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 3th plus3) (at 2th plus3) (at 3th plus5) (at 2th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 2th plus3) (at 3th plus3) (at 3th plus5) (at 2th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 3th plus5) (at 2th plus3) (at 2th plus3) (at 3th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 2th plus3) (at 3th plus5) (at 2th plus3) (at 3th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 2th plus1) (at 3th plus5) (at 2th plus5) (at 3th plus3) (at 1th plus3) (ABC) 结果：4237  
+发现解(6步)：(at 3th plus5) (at 2th plus1) (at 2th plus5) (at 3th plus3) (at 1th plus3) (ABC) 结果：4237  
+
+note: 3291166 time(s) try, 10 solution(s) found  
+-----------------------3212-----------------------  
+发现解(7步)：(at 4th plus5) (at 3th plus3) (at 3th plus3) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 3th plus3) (at 4th plus5) (at 3th plus3) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 3th plus1) (at 4th plus5) (at 3th plus5) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 4th plus5) (at 3th plus1) (at 3th plus5) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 3th plus3) (at 3th plus3) (at 4th plus5) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 3th plus1) (at 3th plus5) (at 4th plus5) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 3th plus5) (at 3th plus1) (at 4th plus5) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 4th plus5) (at 3th plus5) (at 3th plus1) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 3th plus5) (at 4th plus5) (at 3th plus1) (at 2th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+发现解(7步)：(at 4th plus5) (at 3th plus3) (at 2th plus3) (at 3th plus3) (at 2th plus3) (at 1th plus2) (ABC) 结果：3212  
+
+note: 23209017 time(s) try, 10 solution(s) found  
+-----------------------1657-----------------------  
+发现解(1步) (ABC) 结果：1657  
+发现解(3步)：(at 1th plus5) (at 1th plus5) (ABC) 结果：1657  
+发现解(3步)：(at 2th plus5) (at 2th plus5) (ABC) 结果：1657  
+发现解(3步)：(at 3th plus5) (at 3th plus5) (ABC) 结果：1657  
+发现解(3步)：(at 4th plus5) (at 4th plus5) (ABC) 结果：1657  
+发现解(4步)：(at 1th plus5) (at 1th plus3) (at 1th plus2) (ABC) 结果：1657  
+发现解(4步)：(at 1th plus3) (at 1th plus5) (at 1th plus2) (ABC) 结果：1657  
+发现解(4步)：(at 2th plus5) (at 2th plus3) (at 2th plus2) (ABC) 结果：1657  
+发现解(4步)：(at 2th plus3) (at 2th plus5) (at 2th plus2) (ABC) 结果：1657  
+发现解(4步)：(at 3th plus5) (at 3th plus3) (at 3th plus2) (ABC) 结果：1657  
+
+note: 2767 time(s) try, 10 solution(s) found  
+-----------------------1562-----------------------  
+发现解(6步)：(at 3th plus1) (at 4th plus5) (at 2th plus5) (at 2th plus2) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 4th plus5) (at 3th plus1) (at 2th plus5) (at 2th plus2) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 3th plus1) (at 2th plus5) (at 4th plus5) (at 2th plus2) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 2th plus5) (at 3th plus1) (at 4th plus5) (at 2th plus2) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 4th plus5) (at 2th plus5) (at 3th plus1) (at 2th plus2) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 2th plus5) (at 4th plus5) (at 3th plus1) (at 2th plus2) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 3th plus1) (at 4th plus5) (at 2th plus2) (at 2th plus5) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 4th plus5) (at 3th plus1) (at 2th plus2) (at 2th plus5) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 3th plus1) (at 2th plus2) (at 4th plus5) (at 2th plus5) (at 2th plus2) (ABC) 结果：1562  
+发现解(6步)：(at 2th plus2) (at 3th plus1) (at 4th plus5) (at 2th plus5) (at 2th plus2) (ABC) 结果：1562  
+
+note: 1417428 time(s) try, 10 solution(s) found  

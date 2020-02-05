@@ -1407,4 +1407,196 @@
         "buttons":"store sum",
         "protal":"n"
     },
+    {
+        "name":"Level 177",
+        "achieve":"12 710",
+        "start":"10",
+        "max_step":"5",
+        "buttons":"store bit+5 sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 178",
+        "achieve":"2112 33",
+        "start":"123",
+        "max_step":"5",
+        "buttons":"store reverse <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 179",
+        "achieve":"131 33 123",
+        "start":"118",
+        "max_step":"6",
+        "buttons":"store +2 <<",
+        "protal":"n"
+    },
+    {
+        "name":"Level 180",
+        "achieve":"SUB TR ACT",
+        "start":"117",
+        "max_step":"4",
+        "buttons":"ABC << +5 bit+6 reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 181",
+        "achieve":"25",
+        "start":"15",
+        "max_step":"2",
+        "buttons":"lock +12",
+        "protal":"n"
+    },
+    {
+        "name":"Level 182",
+        "achieve":"55",
+        "start":"25",
+        "max_step":"2",
+        "buttons":"lock reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 183",
+        "achieve":"28 108",
+        "start":"125",
+        "max_step":"2",
+        "buttons":"lock sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 184",
+        "achieve":"49 11",
+        "start":"54",
+        "max_step":"3",
+        "buttons":"lock sort> /5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 185",
+        "achieve":"2400 7070",
+        "start":"1975",
+        "max_step":"3",
+        "buttons":"lock round bit+5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 186",
+        "achieve":"2222 1111",
+        "start":"12",
+        "max_step":"3",
+        "buttons":"lock mirror reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 187",
+        "achieve":"13 9",
+        "start":"35",
+        "max_step":"4",
+        "buttons":"lock insert7 sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 188",
+        "achieve":"48 480",
+        "start":"2222",
+        "max_step":"5",
+        "buttons":"lock cut2 /5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 189",
+        "achieve":"4 45 54",
+        "start":"1750",
+        "max_step":"4",
+        "buttons":"lock *2 sort> round",
+        "protal":"n"
+    },
+    {
+        "name":"Level 190",
+        "achieve":"1",
+        "start":"11",
+        "max_step":"2",
+        "buttons":"+1 lnv10",
+        "protal":"y\n3 1"
+    },
+    {
+        "name":"Level 191",
+        "achieve":"5",
+        "start":"1",
+        "max_step":"2",
+        "buttons":"1 2=>5",
+        "protal":"y\n2 1"
+    },
+    {
+        "name":"Level 192",
+        "achieve":"16 21",
+        "start":"55",
+        "max_step":"2",
+        "buttons":"5 *2",
+        "protal":"y\n3 1"
+    },
+    {
+        "name":"Level 193",
+        "achieve":"57 75",
+        "start":"25",
+        "max_step":"2",
+        "buttons":"bit+2 3",
+        "protal":"y\n3 1"
+    },
+    {
+        "name":"Level 194",
+        "achieve":"9 5 1",
+        "start":"62",
+        "max_step":"2",
+        "buttons":"+2 0 lnv10",
+        "protal":"y\n2 1"
+    },
+    {
+        "name":"Level 195",
+        "achieve":"7 121 111",
+        "start":"14",
+        "max_step":"4",
+        "buttons":"mirror 1 sum",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 196",
+        "achieve":"2 992 920",
+        "start":"91",
+        "max_step":"4",
+        "buttons":"lnv10 store mirror",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 197",
+        "achieve":"525 220",
+        "start":"15",
+        "max_step":"5",
+        "buttons":"lnv10 store <<",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 198",
+        "achieve":"860 500 78 444",
+        "start":"77",
+        "max_step":"4",
+        "buttons":"mirror << sum replace4",
+        "protal":"y\n4 1"
+    },
+    {
+        "name":"Level 199",
+        "achieve":"93 131 1 9933 31",
+        "start":"9",
+        "max_step":"6",
+        "buttons":"9 1 insert2 sort> cut0",
+        "protal":"y\n5 1"
+    },
+    {
+        "name":"Level 200",
+        "achieve":"LEGS HEAD ARMS CORE",
+        "start":"1657",
+        "max_step":"7",
+        "buttons":"abc bit+2 bit+3 bit+5 bit+1",
+        "protal":"n"
+    },
 ]
