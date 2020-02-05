@@ -943,4 +943,252 @@
         "buttons":"shift cut1 25=>15 52=>12",
         "protal":"n"
     },
+    {
+        "name":"Level 119",
+        "achieve":"305 202 125",
+        "start":"152",
+        "max_step":"5",
+        "buttons":"shift reverse +2 round",
+        "protal":"n"
+    },
+    {
+        "name":"Level 120",
+        "achieve":"PE MD AS",
+        "start":"17",
+        "max_step":"3",
+        "buttons":"ABC +1 *3 -9 reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 121",
+        "achieve":"10",
+        "start":"19",
+        "max_step":"1",
+        "buttons":"sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 122",
+        "achieve":"1",
+        "start":"19",
+        "max_step":"2",
+        "buttons":"sum",
+        "protal":"n"
+    },
+    {
+        "name":"Level 123",
+        "achieve":"7",
+        "start":"123",
+        "max_step":"2",
+        "buttons":"sum 1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 124",
+        "achieve":"11",
+        "start":"55",
+        "max_step":"3",
+        "buttons":"sum +5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 125",
+        "achieve":"7",
+        "start":"91",
+        "max_step":"4",
+        "buttons":"sum reverse +3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 126",
+        "achieve":"0 9",
+        "start":"1213",
+        "max_step":"3",
+        "buttons":"sum cut1 +4",
+        "protal":"n"
+    },
+    {
+        "name":"Level 127",
+        "achieve":"12 30",
+        "start":"3",
+        "max_step":"3",
+        "buttons":"sum *5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 128",
+        "achieve":"8",
+        "start":"1111",
+        "max_step":"4",
+        "buttons":"sum *4 1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 129",
+        "achieve":"35",
+        "start":"5000",
+        "max_step":"5",
+        "buttons":"sum reverse +4",
+        "protal":"n"
+    },
+    {
+        "name":"Level 130",
+        "achieve":"1221",
+        "start":"12",
+        "max_step":"1",
+        "buttons":"mirror",
+        "protal":"n"
+    },
+    {
+        "name":"Level 131",
+        "achieve":"1331",
+        "start":"11",
+        "max_step":"2",
+        "buttons":"mirror +2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 132",
+        "achieve":"2442",
+        "start":"42",
+        "max_step":"2",
+        "buttons":"mirror reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 133",
+        "achieve":"5555",
+        "start":"505",
+        "max_step":"2",
+        "buttons":"mirror shift",
+        "protal":"n"
+    },
+    {
+        "name":"Level 134",
+        "achieve":"22",
+        "start":"4",
+        "max_step":"3",
+        "buttons":"mirror cut1 *3",
+        "protal":"n"
+    },
+    {
+        "name":"Level 135",
+        "achieve":"1199",
+        "start":"90",
+        "max_step":"5",
+        "buttons":"mirror shift< 10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 136",
+        "achieve":"2112",
+        "start":"123",
+        "max_step":"4",
+        "buttons":"mirror sum reverse",
+        "protal":"n"
+    },
+    {
+        "name":"Level 137",
+        "achieve":"1111 1000",
+        "start":"201",
+        "max_step":"4",
+        "buttons":"mirror reverse cut2 -1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 138",
+        "achieve":"3333 3223",
+        "start":"9933",
+        "max_step":"4",
+        "buttons":"mirror cut1 /3 31=>2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 139",
+        "achieve":"5005 1001 275",
+        "start":"2",
+        "max_step":"5",
+        "buttons":"mirror reverse *5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 140",
+        "achieve":"PLUS MINUS",
+        "start":"53577",
+        "max_step":"4",
+        "buttons":"ABC delete bit+1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 141",
+        "achieve":"13",
+        "start":"11",
+        "max_step":"2",
+        "buttons":"[+]1 +1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 142",
+        "achieve":"30",
+        "start":"16",
+        "max_step":"3",
+        "buttons":"[+]4 +10",
+        "protal":"n"
+    },
+    {
+        "name":"Level 143",
+        "achieve":"20",
+        "start":"4",
+        "max_step":"3",
+        "buttons":"[+]3 +5",
+        "protal":"n"
+    },
+    {
+        "name":"Level 144",
+        "achieve":"360",
+        "start":"10",
+        "max_step":"5",
+        "buttons":"[+]1 *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 145",
+        "achieve":"15",
+        "start":"3",
+        "max_step":"5",
+        "buttons":"[+]1 mirror sum +2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 146",
+        "achieve":"20",
+        "start":"10",
+        "max_step":"5",
+        "buttons":"[+]2 *3 cut1",
+        "protal":"n"
+    },
+    {
+        "name":"Level 147",
+        "achieve":"123",
+        "start":"82",
+        "max_step":"3",
+        "buttons":"[+]1 /2 *2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 148",
+        "achieve":"36 6",
+        "start":"13",
+        "max_step":"5",
+        "buttons":"[+]1 bit+2 43=>2",
+        "protal":"n"
+    },
+    {
+        "name":"Level 149",
+        "achieve":"11 1",
+        "start":"222",
+        "max_step":"5",
+        "buttons":"[+]2 sum 56=>10 insert3",
+        "protal":"n"
+    },
 ]
