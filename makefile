@@ -1,2 +1,2 @@
 calculator_game:src/*.c
-	clang $^ -Wall -Wextra -Werror -lm -o $@
+	clang $^ -Wall -Wextra -Werror -lm -o $@ -Ofast
