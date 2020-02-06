@@ -57,6 +57,12 @@ Caldulator2 已推出，本解算器已支持所有新特性。
 [Calculator1 安卓平台(Google Play)](https://play.google.com/store/apps/details?id=com.sm.calculateme)  
 [Calculator2 安卓平台(Google Play)](https://play.google.com/store/apps/details?id=com.simplemachine.calculator2)
 
+### 通关攻略
+下面两个markdown由solveLevels.py脚本给出。  
+每个Level最多仅包含10个解，如果要查看所有的解则需要运行程序。  
+[Calculator1](levels/Calculator1.md)  
+[Calculator2](levels/Calculator2.md)  
+
 项目烹饪说明
 -----------
 
