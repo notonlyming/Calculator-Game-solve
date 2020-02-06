@@ -36,7 +36,7 @@ void detectCharAndConvertToNumber(char* achieveStr)
     }
     if(convertedCode != -1)
     {
-        printf("新的游戏目标：%s\n", achieveStr);
+        printf("\n新的游戏目标：%s  \n", achieveStr);
     }
 }
 
