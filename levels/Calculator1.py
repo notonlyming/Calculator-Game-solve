@@ -208,6 +208,14 @@
         "protal":"n"
     },
     {
+        "name":"Level 27",
+        "achieve":"102",
+        "start":"0",
+        "max_step":"4",
+        "buttons":"10 +1 <<",
+        "protal":"n"
+    },
+    {
         "name":"Level 28",
         "achieve":"222",
         "start":"0",
