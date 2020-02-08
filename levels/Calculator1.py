@@ -1524,8 +1524,8 @@
     {
         "name":"Level 191",
         "achieve":"90",
-        "start":"85",
-        "max_step":"4",
+        "start":"58",
+        "max_step":"5",
         "buttons":"*6 lnv10 shift>",
         "protal":"n"
     },
@@ -1580,8 +1580,8 @@
     {
         "name":"Level 198",
         "achieve":"750",
-        "start":"6",
-        "max_step":"6",
+        "start":"4",
+        "max_step":"7",
         "buttons":"+6 4 lnv10 *3",
         "protal":"y\n4 2"
     },
